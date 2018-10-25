@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="file-convert" />
+        <module name="file-web" />
+        <module name="jspx-cms" />
+        <module name="sys-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="file-convert" target="1.6" />
+      <module name="file-web" target="1.8" />
+      <module name="jspx-cms" target="1.7" />
+      <module name="springboot-modules" target="1.5" />
+      <module name="sys-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
