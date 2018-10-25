@@ -2,56 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9deba5b-61a2-4a76-a1c7-3faaa1208609" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_lmax_disruptor_3_4_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_20.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_20.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_20.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_1_5_7_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_1_5_7_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_1_5_7_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_1_5_7_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_1_5_7_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_5_7_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_5_7_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_websocket_1_5_7_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_1_5_7_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_1_5_7_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_11_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_11_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_11_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_11_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_11_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_4_3_11_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_11_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_11_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_11_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_4_3_11_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/FileLogListening.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/LoggerDisruptorQueue.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/LoggerMessage.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/ProcessLogFilter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/WebSocketConfig.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/WebsocketApplication.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/disruptor/FileLoggerEvent.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/disruptor/FileLoggerEventFactory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/disruptor/FileLoggerEventHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/disruptor/LoggerEvent.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/disruptor/LoggerEventFactory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/disruptor/LoggerEventHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/resources/application.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/resources/logback.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/main/resources/static/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/src/test/java/com/kl/websocket/WebsocketApplicationTests.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/websocket-log/websocket-log.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -174,7 +125,7 @@
         <entry file="file://$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/WebsocketApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
-              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+              <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
               <folding>
                 <element signature="e#833#834#0" expanded="true" />
                 <element signature="e#879#880#0" expanded="true" />
@@ -197,17 +148,27 @@
         <entry file="file://$PROJECT_DIR$/websocket-log/src/main/resources/static/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="779">
-              <caret line="41" column="34" lean-forward="true" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+              <caret line="41" column="34" lean-forward="false" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileLogListening.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FileLogListening.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/FileLogListening.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-314">
-              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="313">
+              <caret line="52" column="9" lean-forward="false" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -321,6 +282,11 @@
             <path>
               <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
               <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="websocket-log" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -453,6 +419,8 @@
     <configuration name="WebsocketApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.kl.websocket.WebsocketApplication" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <module name="websocket-log" />
       <envs />
     </configuration>
@@ -513,7 +481,7 @@
       <workItem from="1540443900786" duration="2626000" />
       <workItem from="1540452144078" duration="452000" />
       <workItem from="1540453165412" duration="143000" />
-      <workItem from="1540454324136" duration="358000" />
+      <workItem from="1540454324136" duration="511000" />
     </task>
     <task id="LOCAL-00001" summary="版本控制">
       <created>1540452505184</created>
@@ -522,11 +490,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540452505184</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="websocket-log">
+      <created>1540454733591</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1540454733591</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5256000" />
+    <option name="totallyTimeSpent" value="5409000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -599,7 +574,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="版本控制" />
-    <option name="LAST_COMMIT_MESSAGE" value="版本控制" />
+    <MESSAGE value="websocket-log" />
+    <option name="LAST_COMMIT_MESSAGE" value="websocket-log" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -610,14 +586,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="49" column="34" lean-forward="false" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/common/conf/MyFreeMarkerConfigurer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="817">
@@ -985,7 +953,7 @@
     <entry file="file://$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/WebsocketApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding>
             <element signature="e#833#834#0" expanded="true" />
             <element signature="e#879#880#0" expanded="true" />
@@ -1004,15 +972,23 @@
     <entry file="file://$PROJECT_DIR$/websocket-log/src/main/resources/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="779">
-          <caret line="41" column="34" lean-forward="true" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+          <caret line="41" column="34" lean-forward="false" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/websocket-log/src/main/java/com/kl/websocket/FileLogListening.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-314">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="313">
+          <caret line="52" column="9" lean-forward="false" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
