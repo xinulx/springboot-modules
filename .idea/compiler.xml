@@ -10,6 +10,7 @@
         <module name="file-web" />
         <module name="jspx-cms" />
         <module name="sys-web" />
+        <module name="websocket-log" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -18,6 +19,7 @@
       <module name="jspx-cms" target="1.7" />
       <module name="springboot-modules" target="1.5" />
       <module name="sys-web" target="1.8" />
+      <module name="websocket-log" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

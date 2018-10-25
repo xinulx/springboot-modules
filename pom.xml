@@ -13,6 +13,7 @@
         <module>file-convert</module>
         <module>file-web</module>
         <module>jspx-cms</module>
+        <module>websocket-log</module>
     </modules>
 
 
