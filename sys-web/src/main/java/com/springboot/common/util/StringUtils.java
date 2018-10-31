@@ -14,6 +14,29 @@ import java.util.Random;
 public class StringUtils {
 
     /**
+     * 获取字符串的编码格式
+     *
+     * @param str
+     * @return
+     */
+    public static String getEncoding(String str) {
+        String[] encodes = new String[]{"ISO-8859-1","UTF-8","GB2312","GBK"};
+        String encode = "UTF-8";
+        for(String e:encodes){
+            try {
+                //如果已获取到匹配的字符串格式，那么直接跳出循环
+                if (str.equals(new String(str.getBytes(e), e))) {
+                    encode = e;
+                    break;
+                }
+            } catch (UnsupportedEncodingException e1) {
+                e1.printStackTrace();
+            }
+        }
+        return encode;
+    }
+
+    /**
      * 给整数左补位：0|空格
      *
      * @param i

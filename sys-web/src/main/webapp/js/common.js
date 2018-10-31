@@ -133,18 +133,6 @@ window.alert = function (msg,callback){
       }
   });
 };
-
-window.confirm = function (msg,okName,cancleName,callback){
-    layer.confirm(msg,{
-        icon:3,
-        btn: [okName == undefined?'确定':okName,cancleName == undefined ?'取消':cancleName] //按钮
-    },function (index) {
-        layer.close(index);
-        if(typeof(callback) === "function"){
-            callback("ok");
-        }
-    });
-};
 function resetHeight(id,cuteHeight) {
     var h = document.documentElement.clientHeight; //获取当前窗口可视操作区域高度
     var bodyHeight = document.getElementById(id); //寻找ID为content的对象

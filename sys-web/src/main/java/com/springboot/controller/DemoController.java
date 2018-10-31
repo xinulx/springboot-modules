@@ -165,4 +165,9 @@ public class DemoController {
         return "/site/system/role";
     }
 
+    @RequestMapping("/chart/release_data")
+    public String chart(){
+        return "/design/data_release_chart";
+    }
+
 }
