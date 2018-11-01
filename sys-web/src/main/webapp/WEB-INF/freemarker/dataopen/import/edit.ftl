@@ -67,6 +67,10 @@
                 'unitValue':'绝对量:required;',
                 'growth':'增速:required;'
             },
+            focusCleanup: true,
+            timely: 2,
+            theme:'yellow_right_effect',
+            msgClass:'n-bottom',
             valid: function () {
                 doSave();
             }

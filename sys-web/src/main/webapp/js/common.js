@@ -126,7 +126,7 @@ var Mine = {
 };
 
 window.alert = function (msg,callback){
-  layer.alert(msg,function (index) {
+  layer.alert(msg,{icon:7},function (index) {
       layer.close(index);
       if(typeof(callback) === "function"){
           callback("ok");
