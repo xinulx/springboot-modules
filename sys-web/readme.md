@@ -1,3 +1,4 @@
+###代码提交失败，请到官网个人账户重新验证邮箱
 #打包
     cd 项目跟目录（和pom.xml同级）
     mvn clean package
