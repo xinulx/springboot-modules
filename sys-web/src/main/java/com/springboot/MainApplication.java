@@ -1,7 +1,6 @@
 package com.springboot;
 
 import com.springboot.activemq.producer.Producer;
-import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.coyote.http11.AbstractHttp11Protocol;
 import org.hibernate.SessionFactory;
 import org.hibernate.jpa.HibernateEntityManagerFactory;
@@ -17,8 +16,8 @@ import org.springframework.jms.annotation.EnableJms;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.annotation.Resource;
-import javax.jms.Destination;
-import javax.jms.Queue;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * SpringBootApplication注解组合了@Configuration、@EnableAutoConfiguration、@ComponentScan
@@ -34,12 +33,11 @@ public class MainApplication extends SpringBootServletInitializer {
     private Producer producer;
 
     @Bean
-    public Queue queue() {
-        Destination activeMQQueue = new ActiveMQQueue("sample.queue");
-        producer.sendMessage(activeMQQueue, "1-初始化模拟队列消息输送完成！");
-        activeMQQueue = new ActiveMQQueue("sample.queue2");
-        producer.sendMessage(activeMQQueue, "2-初始化模拟队列消息输送完成！");
-        return (Queue) activeMQQueue;
+    public boolean message() {
+        producer.sendMessage("1-初始化模拟队列消息输送完成！");
+        producer.sendMessage("2-初始化模拟队列消息输送完成！");
+        producer.sendMessage("3-初始化模拟队列消息输送完成！","main-thread-queue");
+        return true;
     }
 
     /**
@@ -94,7 +92,8 @@ public class MainApplication extends SpringBootServletInitializer {
         Runtime run = Runtime.getRuntime();
         try{
             run.exec(cmd);
-            System.out.println("启动浏览器打开项目成功");
+            String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+            System.out.println(date + " [INFO] - 启动浏览器打开项目成功");
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
