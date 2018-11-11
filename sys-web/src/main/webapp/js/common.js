@@ -145,3 +145,72 @@ function autoHeight(id,cuteHeight){
         resetHeight(id,cuteHeight);
     },200);
 }
+
+var stompClient = null;
+/**
+ * 监听服务端系统消息
+ */
+function initSocket() {
+    if (stompClient == null) {
+        var socket = new SockJS('http://localhost:8816/websocket?token=mq');
+        stompClient = Stomp.over(socket);
+    }
+    var tipsCount = 0;
+    stompClient.connect({token: "mq"}, function (frame) {
+        stompClient.subscribe('/queue/receiveMessage', function (event) {
+            var content = JSON.parse(event.body);
+            //捕获页
+            if(!content){
+                return;
+            }
+            var time = new Date().getTime();
+            var msgDiv = '<div id="messageContent_'+time+'" class="hidden message-content"></div>';
+            $('body').append(msgDiv);
+            tipsCount ++;
+            var msg = '';
+            if(content.status == 1){
+                msg = content.body;
+            }else{
+                msg = '<span class=\'text-danger\'>'+content.body+'</span>';
+            }
+            msg +='<div id="process_'+time+'" class="bg-warning" style="height: 5px;width: 100%"></div>';
+            $("#messageContent_"+time).html(msg).css({"cursor":"pointer"}).click(function(){
+                layer.close(index);
+                $("#messageContent_"+time).remove();
+                if(tipsCount>0){ tipsCount --}
+            }).attr("title","点击立即关闭提醒");
+            var index = layer.open({
+                type: 1,
+                shade: false,
+                offset:[function(){
+                    if(tipsCount == 1){
+                        return 75;
+                    }else{
+                        return 75 + (tipsCount-1)*130;
+                    }
+                },document.body.clientWidth-380],
+                closeBtn:0,//不显示关闭按钮
+                title: false, //不显示标题
+                content: $("#messageContent_"+time),
+                cancel: function(){
+                    $("#messageContent_"+time).remove();
+                    if(tipsCount>0){ tipsCount --}
+                }
+            });
+            var i = 0;
+            var id = setInterval(function(){
+                i ++;
+                $("#process_"+time).css("width",(100-(i*0.1))+"%");
+            },30);
+            setTimeout(function(){
+                clearInterval(id);
+                layer.close(index);
+                $("#messageContent_"+time).remove();
+                if(tipsCount>0){ tipsCount --}
+            },30000);
+        }, {
+            token: "mq_message"
+        });
+    });
+    console.info("initSocket success");
+}

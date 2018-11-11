@@ -26,3 +26,14 @@
 #mainBody{
     overflow: auto;
 }
+.message-content{
+    width: 360px;
+    height: 100px;
+    padding: 10px;
+    text-align: left;
+    line-height: 100px;
+    font-size: 18px;
+    color:#FFFFFF;
+    vertical-align: middle;
+    background: #009688;
+}

@@ -1,7 +1,9 @@
 package com.springboot.controller;
 
+import com.springboot.activemq.producer.Producer;
 import com.springboot.common.busi.ResponseData;
 import com.springboot.service.common.ICommonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,5 +35,14 @@ public class CommonController {
     @RequestMapping(value = "/{errorCode}", method = RequestMethod.GET)
     public String errorPage(@PathVariable("errorCode") String errorCode) {
         return "/pages/error/" + errorCode;
+    }
+
+    @Autowired
+    private Producer producer;
+    @RequestMapping(value = "/activeMQ/process")
+    @ResponseBody
+    public boolean generalStatic(String message) {
+        producer.sendMessage(message);
+        return Boolean.TRUE;
     }
 }
