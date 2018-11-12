@@ -28,7 +28,7 @@
 }
 .message-content{
     width: 360px;
-    height: 100px;
+    min-height: 100px;
     padding: 10px;
     text-align: left;
     line-height: 100px;
