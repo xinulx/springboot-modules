@@ -54,4 +54,43 @@ public class CommonTest {
         System.out.println(Integer.parseInt("03")%3);
         System.out.println();
     }
+
+
+    @Test
+    public void test2(){
+        // 二元一组
+        int a = 3 , b= 2 ,r = 280;
+        // 二元二组
+        int c = 6 , d= 3 ,r2 = 498;
+
+        // 最小公倍数
+        int lcm = get_lcm(a, c);
+        System.out.println(lcm);
+
+        // 计数一元组
+        int a1=a * (lcm/a),b1= b * (lcm/a),r_= r * (lcm/a);
+        // 计数一元组
+        int c1=a * (lcm/c),d1= d * (lcm/c),r2_= r2 * (lcm/c);
+
+        // 第二元结果
+        int lanqiu_price = (r2_-r_)/(d1-b1);
+        System.out.println(lanqiu_price);
+
+    }
+
+    public static int get(int a, int b) {
+        int max, min;
+        max = (a > b) ? a : b;
+        min = (a < b) ? a : b;
+
+        if (max % min != 0) {
+            return get(min, max % min);
+        } else{
+            return min;
+        }
+    }
+
+    public static int get_lcm(int a, int b) {
+        return a * b / get(a, b);
+    }
 }

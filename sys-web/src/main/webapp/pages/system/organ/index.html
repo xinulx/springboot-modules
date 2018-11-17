@@ -106,7 +106,7 @@
                     "<a data-toggle='tooltip' title='修改组织机构' id='diyBtn2_" + treeNode.id + "' onclick='edit(" + treeNode.id + ",\"edit\");return false;'>&nbsp;<img width='16' src='/images/organ/modify.png'>&nbsp;</a>" +
                     "<a data-toggle='tooltip' title='删除组织机构' id='diyBtn2_" + treeNode.id + "' onclick='delorgan(" + treeNode.id + ");return false;'>&nbsp;<img width='16' src='/images/organ/delete.png'>&nbsp;</a>";
                 aObj.after(editStr);
-                $("[data-toggle='tooltip']").tooltip();
+                $("[data-toggle='tooltip']").tooltip({placement:'bottom'});
             }
         },
         data: {
