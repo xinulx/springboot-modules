@@ -1,6 +1,7 @@
 <h3 class="bg-warning">jvm进程内的日志</h3>
 <button class="btn btn-success" onclick="openSocket()">开启日志</button>
 <button class="btn btn-primary" onclick="sendSocket()">发送消息</button>
+<button class="btn btn-primary" onclick="senJsonp()">测试JSONP</button>
 <button class="btn btn-danger" onclick="closeSocket()">关闭日志</button>
 <br/><br/>
 <div id="log-container" style="height: 300px; overflow-y: scroll; background: #333; color: #aaa; padding: 10px;">
@@ -43,6 +44,33 @@
         Mine.layer.tips("日志已开启",1);
     }
 
+    function senJsonp(){
+        $.ajax({
+            async : true,
+            url : "http://dict-mobile.iciba.com/interface/index.php",
+            type : "GET",
+            dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
+            jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+            jsonpCallback: 'handleResponse', //设置回调函数名
+            data : {
+                c:"word",
+                nums:10,
+                m:"getsuggest",
+                ck:"709a0db45332167b0e2ce1868b84773e",
+                client:6,
+                uid:0,
+                timestamp:new Date().getTime(),
+                is_need_mean:1,
+                word:"shenfenzheng"
+            },
+            success: function(data, status, xhr){
+                console.log('状态为：' + status + ',状态是：' + xhr.statusText);
+                console.log(data);
+                sendSocket(JSON.stringify(data))
+            }
+        });
+    }
+
     function closeSocket() {
         if (stompClient != null) {
             stompClient.disconnect();
@@ -51,7 +79,10 @@
         Mine.layer.tips("日志已关闭",1);
     }
 
-    function sendSocket(){
-        $.post("/common/activeMQ/process",{message:"我是一条消息！时间-"+new Date().toLocaleTimeString()});
+    function sendSocket(message){
+        if(!message){
+            message = "我是一条消息！时间-"+new Date().toLocaleTimeString();
+        }
+        $.post("/common/activeMQ/process",{message:message});
     }
 </script>
