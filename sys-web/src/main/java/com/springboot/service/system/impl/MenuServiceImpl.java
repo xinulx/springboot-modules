@@ -1,5 +1,6 @@
 package com.springboot.service.system.impl;
 
+import com.springboot.common.util.ThreadUtil;
 import com.springboot.entity.mybatis.BtnInfoEO;
 import com.springboot.entity.mybatis.MenuEO;
 import com.springboot.mapper.MenuMapper;
@@ -18,6 +19,10 @@ public class MenuServiceImpl implements IMenuService {
 
     @Override
     public List<MenuEO> getMenuTree(MenuEO eo) {
+        Long roleId = ThreadUtil.getLong(ThreadUtil.LocalParamsKey.RoleId);
+        Long organId = ThreadUtil.getLong(ThreadUtil.LocalParamsKey.OrganId);
+        eo.setRoleId(roleId);
+        eo.setOrganId(organId);
         return menuMapper.getMenuTree(eo);
     }
 

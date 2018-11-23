@@ -18,7 +18,15 @@
         <if test="organType !=null and organType != ''">
             and organ_type = #{organType}
         </if>
-        order by create_time desc
+        order by create_time asc
+    </select>
+    <select id="getOrganById" parameterType="Long" resultType="OrganEO">
+        select
+        id,organ_type organType, organ_id organId,organ_name organName,leader,address,address_phone addressPhone,
+        organ_desc organDesc,phone,parent_id parentId,create_time createTime,update_time updateTime,
+        update_user updateUser,create_user createUser,is_effect isEffect,record_state recordState,
+        link_url linkUrl ,organ_icon organIcon
+        from sys_organ where is_effect = 1 and record_state = 'Normal' and id = #{organId}
     </select>
     <insert id="saveOrganInfo" useGeneratedKeys="true" keyProperty="id" parameterType="OrganEO">
 		insert into sys_organ(

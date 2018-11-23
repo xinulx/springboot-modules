@@ -6,6 +6,6 @@
 		select rid as id,userid as userId,
 		username as userName,password as passWord,
 		 status as status ,create_date as createDate,
-		 update_date as updateDate from sys_user where userId = #{userId}
+		 update_date as updateDate,password_key as passwordKey from sys_user where userId = #{userId}
 	</select>
 </mapper> 

@@ -136,3 +136,6 @@
 2018-10-29 09:10:47.436  INFO 10492 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
 2018-10-29 09:10:47.630  INFO 10492 --- [main] cn.keking.FilePreviewApplicationTests    : Started FilePreviewApplicationTests in 8.605 seconds (JVM running for 10.388)
 2018-10-29 09:10:47.702  INFO 10492 --- [Thread-3] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@5170bcf4: startup date [Mon Oct 29 09:10:39 GMT+08:00 2018]; root of context hierarchy
+2018-11-23 14:13:30.852  INFO 7944 --- [main] cn.keking.FilePreviewApplication         : Starting FilePreviewApplication on 6HBEIXUXCQTTFQS with PID 7944 (E:\minespace\springboot-modules\file-web\target\classes started by Administrator in E:\minespace\springboot-modules\file-web)
+2018-11-23 14:13:30.932  INFO 7944 --- [main] cn.keking.FilePreviewApplication         : The following profiles are active: dev
+2018-11-23 14:13:31.090  INFO 7944 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5f9678e1: startup date [Fri Nov 23 14:13:31 GMT+08:00 2018]; root of context hierarchy

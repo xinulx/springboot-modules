@@ -30,6 +30,26 @@ public class MenuEO {
 
     private String iconClass;
 
+    private Long roleId;
+
+    private Long organId;
+
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
+    public Long getOrganId() {
+        return organId;
+    }
+
+    public void setOrganId(Long organId) {
+        this.organId = organId;
+    }
+
     public String getIconClass() {
         return iconClass;
     }

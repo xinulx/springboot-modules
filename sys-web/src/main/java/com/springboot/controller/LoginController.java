@@ -5,13 +5,20 @@ import com.springboot.common.busi.ResponseData;
 import com.springboot.common.filter.ShiroUtil;
 import com.springboot.common.util.CodeUtil;
 import com.springboot.common.util.GraphicHelper;
+import com.springboot.common.util.IpUtil;
+import com.springboot.common.util.ThreadUtil;
+import com.springboot.dao.business.IUserDao;
+import com.springboot.entity.business.HbUserEO;
+import com.springboot.entity.mybatis.OrganEO;
 import com.springboot.entity.mybatis.UserEO;
+import com.springboot.service.system.IOrganService;
 import com.springboot.service.system.IUserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +34,9 @@ import javax.servlet.http.HttpSession;
 import java.awt.image.RenderedImage;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/login")
@@ -117,6 +126,7 @@ public class LoginController {
             subject.login(token);
             // 用户认证成功,获取当前用户
             userEO = ShiroUtil.getCurrentUser();
+            initThreadLocal(userEO,request);
         } catch (Exception e) {
             // 用户认证失败,删除当前用户
             ShiroUtil.removeCurrentUser();
@@ -135,6 +145,32 @@ public class LoginController {
             return ResponseData.success("欢迎来到管理员页面");
         }
         return ResponseData.success(userEO, "普通用户登陆成功");
+    }
+
+    @Autowired
+    private IUserDao userDao;
+    @Autowired
+    private IOrganService organService;
+
+    /**
+     * 初始化线程线程本地变量
+     * @param eo
+     */
+    private void initThreadLocal(UserEO eo,HttpServletRequest request) {
+        HbUserEO userEO = userDao.getEntity(HbUserEO.class, eo.getId());
+        OrganEO organEO = organService.getOrganById(userEO.getOrganId());
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put(ThreadUtil.LocalParamsKey.RoleId.toString(), userEO.getRoleId());
+        map.put(ThreadUtil.LocalParamsKey.UserId.toString(), eo.getId());
+        map.put(ThreadUtil.LocalParamsKey.Uid.toString(), UUID.randomUUID());
+        map.put(ThreadUtil.LocalParamsKey.PersonName.toString(), eo.getUserName());
+        map.put(ThreadUtil.LocalParamsKey.OrganId.toString(), userEO.getOrganId());
+        map.put(ThreadUtil.LocalParamsKey.OrganName.toString(), organEO.getOrganName());
+        map.put(ThreadUtil.LocalParamsKey.Callback.toString(), "callback");
+        map.put(ThreadUtil.LocalParamsKey.DataFlag.toString(), true);
+        map.put(ThreadUtil.LocalParamsKey.IP.toString(), IpUtil.getIpAddr(request));
+        ShiroUtil.setAttribute("threadLocal",map);
+        ThreadUtil.set(map);
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)

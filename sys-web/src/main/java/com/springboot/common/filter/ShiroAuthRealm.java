@@ -69,7 +69,7 @@ public class ShiroAuthRealm extends AuthorizingRealm {
         }
         UserEO userEO = (UserEO) apiResponse.getData();
         // 使用主键作为加盐
-        Long salt = userEO.getId();
+        String salt = userEO.getPasswordKey();
         // 获取用户状态
         String userStatus = userEO.getStatus();
         // 获取用户密码
@@ -81,11 +81,11 @@ public class ShiroAuthRealm extends AuthorizingRealm {
             throw new IncorrectCredentialsException("密码错误");
         }
         // 账号锁定
-        if (userStatus == UserEO.Status.Locked.name()) {
+        if (userStatus.equals(UserEO.Status.Locked.name())) {
             throw new LockedAccountException("帐号已锁定");
         }
         // 账号禁用
-        if (userStatus == UserEO.Status.Disabled.name()) {
+        if (userStatus.equals(UserEO.Status.Disabled.name())) {
             throw new DisabledAccountException("帐号不可用");
         }
         // 保存当前用户信息到shiro session中
@@ -105,9 +105,9 @@ public class ShiroAuthRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         // 获取用户账号
-        // String userAccount = (String) principals.getPrimaryPrincipal();
+        String userAccount = (String) principals.getPrimaryPrincipal();
         // 依据用户账号在数据库中查找权限信息
-        log.info("用户请求授权");
+        log.info("用户请求授权,当前登录账号：" + userAccount);
         // 角色
         List<String> roles = new ArrayList<>();
         roles.add("admin");

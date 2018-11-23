@@ -6,9 +6,6 @@
         <button type="button" class="btn btn-danger" onclick="batchDel()">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;删除
         </button>
-        <button type="button" class="btn btn-success" onclick="menuAuth()">
-            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;菜单权限
-        </button>
         <button type="button" class="btn btn-warning" style="float: right" onclick="searchAll()">
             <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>&nbsp;显示全部
         </button>
@@ -18,15 +15,13 @@
         <input style="width:300px;float: right" type="text" class="form-control" id="key" name="key" placeholder="编码/名称" />
     </div>
     <div id="dataGrid" class="mini-datagrid" style="width: 100%;overflow-x:hidden"
-         url="${ctx}/role/getPage" idField="id"
+         url="${ctx}/user/getPage" idField="id"
          sizeList="[15,30,50,100]" pageSize="15" multiSelect="true" allowResize="true">
         <div property="columns">
             <div type="checkcolumn" width="5%">选择</div>
             <div type="indexcolumn" width="5%" headerAlign="center">序号</div>
-            <div field="id" width="10%" headerAlign="center">ID</div>
-            <div field="roleCode" width="15%" headerAlign="center">角色编码</div>
-            <div field="roleName" width="15%" headerAlign="center" renderer="onGenderRenderer">角色名称</div>
-            <div field="roleDesc" width="20%%" headerAlign="center" >描述</div>
+            <div field="userId" width="20%" headerAlign="center">用户ID</div>
+            <div field="userName" width="20%" headerAlign="center" renderer="onGenderRenderer">用户名称</div>
             <div field="createDate" width="15%" headerAlign="center" dateFormat="yyyy-MM-dd HH:mm:ss">创建日期</div>
             <div headerAlign="center" width="15%" align="center" renderer="onActionRenderer">操作</div>
         </div>
@@ -45,19 +40,6 @@
     function searchAll(){
         $("#key").val('');
         grid.load({organId:organId});
-    }
-
-    function menuAuth(){
-        var id;
-        var rows = grid.getSelecteds();
-        if(rows.length == 0 || rows.length > 1){
-            layer.msg("请选择一条记录",{icon:7,shade: 0.01,time:1000});
-            return;
-        }else{
-            id = rows[0]['id'];
-        }
-        var url = "/role/menuAuth?organId="+organId+"&id="+id;
-        roleIndex = Mine.layer.openWin("配置菜单",url,300,450);
     }
 
     function onActionRenderer(e) {
@@ -92,7 +74,7 @@
             btn: ['确定','取消'] //按钮
         }, function(){
             try {
-                $.post("/role/delete", {ids: ids}, function (result) {
+                $.post("/user/delete", {ids: ids}, function (result) {
                     if (result.status == 1) {
                         layer.msg(result.desc, {icon: 1, shade: 0.01, time: 1000}, function (index) {
                             layer.close(index);
@@ -110,7 +92,7 @@
     }
     var roleIndex;
     function addOrEdit(id){
-        var url = id == null?"/role/edit?organId="+organId:"/role/edit?organId="+organId+"&id="+id;
-        roleIndex = Mine.layer.openWin(id==null?"添加角色":"修改角色",url,500,400);
+        var url = id == null?"/user/edit?organId="+organId:"/user/edit?organId="+organId+"&id="+id;
+        roleIndex = Mine.layer.openWin(id==null?"添加":"修改",url,500,400);
     }
 </script>

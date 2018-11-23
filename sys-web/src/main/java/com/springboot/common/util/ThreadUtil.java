@@ -1,5 +1,7 @@
 package com.springboot.common.util;
 
+import com.springboot.common.filter.ShiroUtil;
+
 import java.util.Map;
 
 public abstract class ThreadUtil {
@@ -19,6 +21,9 @@ public abstract class ThreadUtil {
     public static Object get(ThreadUtil.LocalParamsKey key) {
         if (key != null && !"".equals(key.toString())) {
             Map<String, Object> map = (Map) session.get();
+            if(map == null || map.size() == 0){
+                map = (Map<String, Object>) ShiroUtil.getAttribute("threadLocal");
+            }
             Object value = null;
             if (map != null && map.size() > 0) {
                 value = map.get(key.toString());
@@ -58,9 +63,8 @@ public abstract class ThreadUtil {
         OP_MenuId,
         OP_ColumnId,
         OP_OrganId,
-        OP_CatId;
+        OP_CatId, RoleId;
 
-        private LocalParamsKey() {
-        }
+        private LocalParamsKey() {}
     }
 }

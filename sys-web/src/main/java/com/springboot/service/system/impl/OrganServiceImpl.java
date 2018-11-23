@@ -34,4 +34,9 @@ public class OrganServiceImpl implements IOrganService {
     public Integer del(OrganEO eo) {
         return organMapper.del(eo);
     }
+
+    @Override
+    public OrganEO getOrganById(Long organId) {
+        return organMapper.getOrganById(organId);
+    }
 }

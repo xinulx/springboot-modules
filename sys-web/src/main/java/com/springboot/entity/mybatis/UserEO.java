@@ -21,6 +21,15 @@ public class UserEO implements Serializable {
     private Date createDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateDate;
+    private String passwordKey;
+
+    public String getPasswordKey() {
+        return passwordKey;
+    }
+
+    public void setPasswordKey(String passwordKey) {
+        this.passwordKey = passwordKey;
+    }
 
     public enum Sex {Male, FeMale}
 

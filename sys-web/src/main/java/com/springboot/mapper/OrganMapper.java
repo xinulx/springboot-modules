@@ -14,4 +14,5 @@ public interface OrganMapper {
 
     Integer del(OrganEO eo);
 
+    OrganEO getOrganById(Long organId);
 }

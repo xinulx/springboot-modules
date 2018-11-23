@@ -12,4 +12,5 @@ public interface IOrganService {
 
     Integer del(OrganEO eo);
 
+    OrganEO getOrganById(Long organId);
 }

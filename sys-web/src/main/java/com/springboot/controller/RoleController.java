@@ -1,8 +1,12 @@
 package com.springboot.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.springboot.common.busi.ResponseData;
+import com.springboot.dao.business.IMenuRelDao;
 import com.springboot.dao.business.IRoleDao;
+import com.springboot.entity.business.MenuRelEO;
 import com.springboot.entity.business.RoleEO;
+import com.springboot.entity.hibernate.impl.AMockEntity;
 import com.springboot.vo.QueryRoleVO;
 import com.springboot.vo.StatisResultVO;
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -25,6 +30,8 @@ import java.util.Map;
 public class RoleController {
     @Autowired
     private IRoleDao roleDao;
+    @Autowired
+    private IMenuRelDao menuRelDao;
 
     @RequestMapping("/index")
     public String getIndex(){
@@ -97,5 +104,69 @@ public class RoleController {
         }
         model.addAttribute("organId",organId);
         return "/role/form";
+    }
+
+    @RequestMapping("/menuAuth")
+    public String menuAuth(Long organId,Long id,Model model){
+        model.addAttribute("organId",organId);
+        model.addAttribute("id",id);
+        Map<String,Object> map = new HashMap<String,Object>();
+        map.put("organId",organId);
+        map.put("roleId",id);
+        map.put("recordStatus", AMockEntity.RecordStatus.Normal.name());
+        List<MenuRelEO> eos = menuRelDao.getEntitiesByHql("from MenuRelEO where recordStatus=:recordStatus and organId=:organId and roleId=:roleId",map);
+        List<Long> existMenuId = new ArrayList<>();
+        for(MenuRelEO eo:eos){
+            existMenuId.add(eo.getMenuId());
+        }
+        model.addAttribute("existMenuId", JSON.toJSONString(existMenuId));
+        return "/role/menu_auth";
+    }
+
+    @RequestMapping("/saveMenuRel")
+    @ResponseBody
+    public ResponseData saveMenuRel(Long organId,Long roleId,Long[] ids){
+        Map<String,Object> map = new HashMap<String,Object>();
+        map.put("organId",organId);
+        map.put("roleId",roleId);
+        map.put("recordStatus", AMockEntity.RecordStatus.Normal.name());
+        List<MenuRelEO> eos = menuRelDao.getEntitiesByHql("from MenuRelEO where recordStatus=:recordStatus and organId=:organId and roleId=:roleId",map);
+        if(eos == null || eos.size() == 0){
+            if(ids.length == 0){
+                log.info("没有做任何修改");
+            }else{
+                List<MenuRelEO> relEOS = new ArrayList<>();
+                for(Long id:ids){
+                    MenuRelEO eo = new MenuRelEO();
+                    eo.setMenuId(id);
+                    eo.setOrganId(organId);
+                    eo.setRoleId(roleId);
+                    relEOS.add(eo);
+                }
+                // 保存配置
+                menuRelDao.save(relEOS);
+            }
+        }else{
+            if(ids.length == 0){
+                // 需要删除所有
+                menuRelDao.delete(eos);
+            }else{
+                // 选择性删除
+                List<Long> existMenuId = new ArrayList<>();
+                for(MenuRelEO eo:eos){
+                    existMenuId.add(eo.getMenuId());
+                }
+                for(Long id:ids){
+                    if(!existMenuId.contains(id)){
+                        MenuRelEO eo = new MenuRelEO();
+                        eo.setMenuId(id);
+                        eo.setOrganId(organId);
+                        eo.setRoleId(roleId);
+                        menuRelDao.save(eo);
+                    }
+                }
+            }
+        }
+        return ResponseData.success("保存成功！");
     }
 }
