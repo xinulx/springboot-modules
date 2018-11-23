@@ -125,7 +125,7 @@ public class RoleController {
 
     @RequestMapping("/saveMenuRel")
     @ResponseBody
-    public ResponseData saveMenuRel(Long organId,Long roleId,Long[] ids){
+    public ResponseData saveMenuRel(Long organId,Long roleId,@RequestParam(value="ids[]") Long[] ids){
         Map<String,Object> map = new HashMap<String,Object>();
         map.put("organId",organId);
         map.put("roleId",roleId);
