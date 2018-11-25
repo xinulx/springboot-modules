@@ -8,7 +8,6 @@ import java.util.Map;
 /**
  * 缓存实体关系类				<br/>
  * 每种存储结构为一个实体对象 ADD REASON. <br/>
- *
  * @date: 2015年10月22日 下午4:21:28 <br/>
  */
 public class CacheEntity {

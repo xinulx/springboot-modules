@@ -43,7 +43,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
         byte[] keyByteArray = getKey(key);
         // 从redis中获取数据
         byte[] valueByteArray = RedisUtil.get(keyByteArray);
-//        log.debug("从缓存中获取数据");
         // 返回对应的数据
         return valueByteArray == null ? null : SerializationUtils.deserialize(valueByteArray);
     }
@@ -61,7 +60,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
         byte[] keyByteArray = getKey(key);
         byte[] valueByteArray = SerializationUtils.serialize((Serializable) value);
         RedisUtil.set(keyByteArray, valueByteArray);
-        log.debug("保存shiro缓存到redis");
         // 返回保存的值
         return SerializationUtils.deserialize(valueByteArray);
     }
@@ -80,7 +78,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
         byte[] valueByteArray = RedisUtil.get(keyByteArray);
         // 删除
         RedisUtil.del(keyByteArray);
-        log.debug("从redis中删除");
         // 返回删除的数据
         return SerializationUtils.deserialize(valueByteArray);
     }
@@ -91,7 +88,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
      */
     @Override
     public void clear() throws CacheException {
-        log.debug("清空所有的缓存");
         RedisUtil.delByPrefix(ShiroUtil.SHIRO_CACHE_PREFIX);
     }
 
@@ -102,7 +98,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
     @Override
     public int size() {
         Set<byte[]> keyByteArraySet = RedisUtil.keys(ShiroUtil.SHIRO_CACHE_PREFIX);
-        log.debug("获取缓存个数");
         return keyByteArraySet.size();
     }
 
@@ -113,7 +108,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
     @Override
     public Set keys() {
         Set<byte[]> keyByteArraySet = RedisUtil.keys(ShiroUtil.SHIRO_CACHE_PREFIX);
-        log.debug("获取缓存所有的key");
         return keyByteArraySet;
     }
 
@@ -130,8 +124,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
             byte[] valueByteArray = RedisUtil.get(keyByteArray);
             valueList.add(SerializationUtils.deserialize(valueByteArray));
         }
-        log.debug("获取缓存所有的value");
         return valueList;
     }
-
 }

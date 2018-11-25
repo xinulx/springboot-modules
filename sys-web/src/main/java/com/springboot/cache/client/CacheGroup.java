@@ -2,8 +2,6 @@ package com.springboot.cache.client;
 
 /**
  * redis存储键值常量 <br/>
- *
- * @author fangtinghua <br/>
  * @version v1.0 <br/>
  * @date 2015年10月9日 <br/>
  */

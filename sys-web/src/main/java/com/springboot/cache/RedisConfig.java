@@ -21,7 +21,6 @@ import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 
 /**
  * redis配置
- *
  * @author wangshibao
  */
 @Configuration
@@ -44,7 +43,6 @@ public class RedisConfig extends CachingConfigurerSupport {
         RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
         //设置默认缓存过期时间
         cacheManager.setDefaultExpiration(2 * 60);
-
         // 设置其他缓存时间,可以使用@Cacheable(value = "12h", keyGenerator = "keyGenerator")
         // value = "people#120#90", key = "#person.id"
         Map<String, Long> expires = new HashMap<>();
