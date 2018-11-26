@@ -3,14 +3,20 @@ package com.springboot.controller;
 import com.springboot.common.anno.LogParams;
 import com.springboot.common.busi.ResponseData;
 import com.springboot.common.filter.ShiroUtil;
+import com.springboot.common.util.BrowserUtils;
 import com.springboot.common.util.CodeUtil;
 import com.springboot.common.util.GraphicHelper;
 import com.springboot.common.util.IpUtil;
+import com.springboot.common.util.LoginPersonUtil;
+import com.springboot.common.util.OSUtil;
+import com.springboot.common.util.Screen;
 import com.springboot.common.util.ThreadUtil;
 import com.springboot.dao.business.IUserDao;
+import com.springboot.entity.business.CmsLoginHistoryEO;
 import com.springboot.entity.business.HbUserEO;
 import com.springboot.entity.mybatis.OrganEO;
 import com.springboot.entity.mybatis.UserEO;
+import com.springboot.service.hibernate.ICmsLoginHistoryService;
 import com.springboot.service.system.IOrganService;
 import com.springboot.service.system.IUserService;
 import org.apache.shiro.SecurityUtils;
@@ -46,6 +52,9 @@ public class LoginController {
 
     @Resource
     private IUserService userService;
+
+    @Autowired
+    private ICmsLoginHistoryService cmsLoginHistoryService;
 
     @RequestMapping("/loginIn")
     public String toLogin() {
@@ -122,15 +131,34 @@ public class LoginController {
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
         UserEO userEO = null;
         // 执行认证登陆
+        CmsLoginHistoryEO eo = new CmsLoginHistoryEO();
+        String curIp = IpUtil.getIpAddr(request);
+        eo.setLoginIp(curIp);
+        eo.setColumnId(0L);
+        eo.setType(CmsLoginHistoryEO.Type.PC.getValue());
+        eo.setSiteId(LoginPersonUtil.getSiteId());
+        eo.setOs(OSUtil.get().get("os.name").toString());
+        eo.setResolutionRatio(Screen.getScreen());
+        eo.setBrowser(BrowserUtils.checkBrowse(request) + "-" + BrowserUtils.getBrowserType(request).name());
         try {
             subject.login(token);
             // 用户认证成功,获取当前用户
             userEO = ShiroUtil.getCurrentUser();
             initThreadLocal(userEO,request);
+            eo.setLoginStatus(CmsLoginHistoryEO.LoginStatus.Success.name());
+            eo.setDescription("登录成功");
+            eo.setUid(ThreadUtil.getString(ThreadUtil.LocalParamsKey.UserName));
+            eo.setCreateUser(ThreadUtil.getString(ThreadUtil.LocalParamsKey.PersonName));
+            eo.setOrganId(ThreadUtil.getLong(ThreadUtil.LocalParamsKey.OrganId));
+            eo.setOrganName(ThreadUtil.getString(ThreadUtil.LocalParamsKey.OrganName));
         } catch (Exception e) {
             // 用户认证失败,删除当前用户
             ShiroUtil.removeCurrentUser();
+            eo.setLoginStatus(CmsLoginHistoryEO.LoginStatus.Failure.name());
+            eo.setDescription("登录失败");
             return ResponseData.fail(e.getMessage(), "登陆失败");
+        }finally {
+            cmsLoginHistoryService.saveEntity(eo);
         }
         //根据权限，指定返回数据
         ResponseData role = userService.selectByUserAccount(username);
@@ -162,8 +190,9 @@ public class LoginController {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put(ThreadUtil.LocalParamsKey.RoleId.toString(), userEO.getRoleId());
         map.put(ThreadUtil.LocalParamsKey.UserId.toString(), eo.getId());
+        map.put(ThreadUtil.LocalParamsKey.UserName.toString(), userEO.getUserId());
         map.put(ThreadUtil.LocalParamsKey.Uid.toString(), UUID.randomUUID());
-        map.put(ThreadUtil.LocalParamsKey.PersonName.toString(), eo.getUserName());
+        map.put(ThreadUtil.LocalParamsKey.PersonName.toString(), userEO.getUserName());
         map.put(ThreadUtil.LocalParamsKey.OrganId.toString(), userEO.getOrganId());
         map.put(ThreadUtil.LocalParamsKey.OrganName.toString(), organEO.getOrganName());
         map.put(ThreadUtil.LocalParamsKey.Callback.toString(), "callback");

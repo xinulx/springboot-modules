@@ -83,6 +83,9 @@
             simpleData: {
                 enable: true,
                 pIdKey:"pid"
+            },
+            key:{
+                title:"my_title"
             }
         },
         callback: {
@@ -166,7 +169,7 @@
             dataType: 'json',
             async: false,
             success: function (result) {
-                zNodes = result;
+                initTreeData(zNodes,result,'name');
             }
         });
         return zNodes;

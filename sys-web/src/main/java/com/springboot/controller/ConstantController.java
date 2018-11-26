@@ -1,6 +1,7 @@
 package com.springboot.controller;
 
 import com.springboot.common.busi.ResponseData;
+import com.springboot.common.util.SysLog;
 import com.springboot.entity.mybatis.ConstantEO;
 import com.springboot.vo.PaginationVO;
 import com.springboot.service.system.IConstantService;
@@ -48,6 +49,7 @@ public class ConstantController {
     @ResponseBody
     public ResponseData saveConstant(ConstantEO eo) {
         boolean b = constantService.saveConstant(eo);
+        SysLog.log("系统管理-保存常量","DataItemEO","更新");
         if (b) {
             return ResponseData.success("保存成功！");
         } else {
@@ -64,6 +66,7 @@ public class ConstantController {
     @RequestMapping("/del")
     @ResponseBody
     public ResponseData delConstant(Integer id) {
+        SysLog.log("系统管理-删除常量","DataItemEO","删除");
         try {
             constantService.del(id);
         } catch (Exception e) {

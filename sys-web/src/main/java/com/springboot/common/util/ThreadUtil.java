@@ -63,7 +63,7 @@ public abstract class ThreadUtil {
         OP_MenuId,
         OP_ColumnId,
         OP_OrganId,
-        OP_CatId, RoleId;
+        OP_CatId, RoleId, UserName;
 
         private LocalParamsKey() {}
     }

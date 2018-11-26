@@ -2,6 +2,7 @@ package com.springboot.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.springboot.common.busi.ResponseData;
+import com.springboot.common.util.SysLog;
 import com.springboot.dao.business.IMenuRelDao;
 import com.springboot.dao.business.IRoleDao;
 import com.springboot.entity.business.MenuRelEO;
@@ -81,6 +82,7 @@ public class RoleController {
     @RequestMapping("/save")
     @ResponseBody
     public Object saveEO(RoleEO eo){
+        SysLog.log("系统管理-保存角色","RoleEO","更新");
         if(eo.getId() != null){
             roleDao.update(eo);
         }else{
@@ -93,6 +95,7 @@ public class RoleController {
     @ResponseBody
     public Object delete(@RequestParam(value = "ids[]")Long[] ids){
         roleDao.delete(RoleEO.class,ids);
+        SysLog.log("系统管理-删除角色","RoleEO","删除");
         return ResponseData.success("操作成功！");
     }
 
@@ -126,6 +129,7 @@ public class RoleController {
     @RequestMapping("/saveMenuRel")
     @ResponseBody
     public ResponseData saveMenuRel(Long organId,Long roleId,@RequestParam(value="ids[]") Long[] ids){
+        SysLog.log("系统管理-保存角色菜单权限","RoleEO","更新");
         Map<String,Object> map = new HashMap<String,Object>();
         map.put("organId",organId);
         map.put("roleId",roleId);

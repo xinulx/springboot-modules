@@ -2,6 +2,7 @@ package com.springboot.controller;
 
 import com.springboot.common.busi.ResponseData;
 import com.springboot.common.filter.ShiroAuthRealm;
+import com.springboot.common.util.SysLog;
 import com.springboot.dao.business.IUserDao;
 import com.springboot.entity.business.HbUserEO;
 import com.springboot.entity.mybatis.OrganEO;
@@ -46,6 +47,7 @@ public class UserController {
     @ResponseBody
     public Object saveEO(HbUserEO eo){
         // 密码加密
+        SysLog.log("系统管理-保存用户","HbUserEO","更新");
         eo.setPassWord(ShiroAuthRealm.encrypt(eo.getPassWord(),eo.getKey()));
         if(eo.getId() != null){
             userDao.update(eo);
@@ -59,6 +61,7 @@ public class UserController {
     @ResponseBody
     public Object delete(@RequestParam(value = "ids[]")Long[] ids){
         userDao.delete(HbUserEO.class,ids);
+        SysLog.log("系统管理-删除用户","HbUserEO","删除");
         return ResponseData.success("操作成功！");
     }
 

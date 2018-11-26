@@ -2,6 +2,7 @@ package com.springboot.controller;
 
 import com.springboot.common.busi.ResponseData;
 import com.springboot.common.util.PoiExcelUtil;
+import com.springboot.common.util.SysLog;
 import com.springboot.dao.business.IDataItemDao;
 import com.springboot.dao.business.IReleaseDataDao;
 import com.springboot.entity.business.DataItemEO;
@@ -71,6 +72,7 @@ public class DataReleasedController {
     @RequestMapping("/dataItem/saveItem")
     @ResponseBody
     public Object getItemEO(DataItemEO eo){
+        SysLog.log("数据采集-保存数据项","DataItemEO","更新");
         if(eo.getId() != null){
             dataItemDao.update(eo);
         }else{
@@ -82,6 +84,7 @@ public class DataReleasedController {
     @RequestMapping("/dataItem/batchDel")
     @ResponseBody
     public Object batchDel(@RequestParam(value = "ids[]")Long[] ids){
+        SysLog.log("数据采集-删除数据项","DataItemEO","删除");
         if(ids != null && ids.length > 0){
             Map map = new HashMap();
             // 数据项改为treeGird表格管理，取消了批量删除，此处只有一个ID
@@ -140,6 +143,7 @@ public class DataReleasedController {
     @RequestMapping("/dataImport/process")
     @ResponseBody
     public Object saveData(@RequestParam("file") MultipartFile file, HttpServletRequest request){
+        SysLog.log("数据采集-导入数据项数据","DataItemEO","导入");
         if (file.getSize() == 0L){
             return ResponseData.fail("请选择导入文件!");
         }
@@ -199,6 +203,7 @@ public class DataReleasedController {
     @ResponseBody
     public Object batchDataDel(@RequestParam(value = "ids[]")Long[] ids){
         releaseDataDao.delete(ReleaseDataEO.class, ids);
+        SysLog.log("数据采集-删除数据项数据","DataItemEO","删除");
         return ResponseData.success();
     }
 }

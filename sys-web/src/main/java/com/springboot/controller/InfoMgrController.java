@@ -1,6 +1,7 @@
 package com.springboot.controller;
 
 import com.springboot.common.busi.ResponseData;
+import com.springboot.common.util.SysLog;
 import com.springboot.dao.business.IBaseContentDao;
 import com.springboot.entity.business.BaseContentEO;
 import com.springboot.entity.mongo.ContentMongoEO;
@@ -45,6 +46,7 @@ public class InfoMgrController {
     @RequestMapping("saveTpl")
     @ResponseBody
     public ResponseData saveTpl(String content){
+        SysLog.log("站点信息-保存菜单模板","String","更新");
         BaseContentEO baseContentEO = new BaseContentEO();
         baseContentEO.setTitle("menu tpl");
         baseContentEO.setContentName("菜单模板");

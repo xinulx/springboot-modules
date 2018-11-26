@@ -1,5 +1,6 @@
 package com.springboot;
 
+import com.alibaba.fastjson.JSON;
 import com.springboot.common.util.DateUtil;
 import com.springboot.function.DateFormat;
 import org.apache.commons.lang3.StringEscapeUtils;
@@ -9,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 
 public class CommonTest {
 
@@ -52,7 +54,12 @@ public class CommonTest {
         System.out.println(new SimpleDateFormat("yyyy.MM").format(calendar.getTime()));
         System.out.println("2018.3".split("\\.")[1]);
         System.out.println(Integer.parseInt("03")%3);
+        System.out.println("oracle位置" + "oracle.jdbc.OracleDriver".indexOf("oracle"));
         System.out.println();
+        Map map = (Map)JSON.parse("{\"aab004\":\"21\",\"aae006\":\"\",\"aab013\":\"\",\"aab001\":\"\",\"aab036\":\"\",\"aab002\":\"\"}");
+        System.out.println(map);
+        String paramStr = "{&quot;aab004&quot;:&quot;132&quot;,&quot;aae006&quot;:&quot;&quot;,&quot;aab013&quot;:&quot;&quot;,&quot;aab001&quot;:&quot;&quot;,&quot;aab036&quot;:&quot;&quot;,&quot;aab002&quot;:&quot;&quot;}".replaceAll("&quot;","\"");
+        System.out.println(paramStr);
     }
 
 

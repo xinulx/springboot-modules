@@ -1,6 +1,7 @@
 package com.springboot.controller;
 
 import com.springboot.common.busi.ResponseData;
+import com.springboot.common.util.SysLog;
 import com.springboot.entity.mybatis.OrganEO;
 import com.springboot.service.system.IOrganService;
 import org.slf4j.Logger;
@@ -39,8 +40,7 @@ public class OrganController {
     @ResponseBody
     public ResponseData save(OrganEO eo) {
         logger.info("保存组织机构信息...");
-        eo.setCreateUser(1);
-        eo.setUpdateUser(1);
+        SysLog.log("系统管理-保存组织机构","OrganEO","更新");
         Integer primaryKey = organService.saveOrganInfo(eo);
         return ResponseData.success(primaryKey, "保存成功！");
     }
@@ -48,6 +48,7 @@ public class OrganController {
     @RequestMapping("/del")
     @ResponseBody
     public ResponseData del(OrganEO eo) {
+        SysLog.log("系统管理-删除组织机构","OrganEO","删除");
         logger.info("删除组织机构信息...");
         Integer cnt = organService.del(eo);
         return ResponseData.success(cnt, "删除成功！");

@@ -1,6 +1,7 @@
 package com.springboot.controller;
 
 import com.springboot.common.busi.ResponseData;
+import com.springboot.common.util.SysLog;
 import com.springboot.entity.mybatis.BtnInfoEO;
 import com.springboot.entity.mybatis.MenuEO;
 import com.springboot.vo.PaginationVO;
@@ -66,6 +67,7 @@ public class MenuController {
         logger.info("保存菜单信息...");
         eo.setCreateUser(1);
         Integer primaryKey = menuService.saveMenuInfo(eo);
+        SysLog.log("系统管理-编辑菜单","MenuEO",eo.getId() == null?"新增":"修改");
         return ResponseData.success(primaryKey, "保存成功！");
     }
 
@@ -74,6 +76,7 @@ public class MenuController {
     public ResponseData del(MenuEO eo) {
         logger.info("删除菜单信息...");
         Integer cnt = menuService.del(eo);
+        SysLog.log("系统管理-删除菜单","MenuEO","删除");
         return ResponseData.success(cnt, "删除成功！");
     }
 
@@ -95,6 +98,7 @@ public class MenuController {
     @RequestMapping("/saveBtn")
     @ResponseBody
     public ResponseData saveBtnInfo(BtnInfoEO eo) {
+        SysLog.log("系统管理-保存按钮","BtnInfoEO","更新");
         if(eo.getRemark() == null){
             eo.setRemark("");
         }
@@ -115,6 +119,7 @@ public class MenuController {
     @RequestMapping("/delBtn")
     @ResponseBody
     public ResponseData delBtnById(Integer id) {
+        SysLog.log("系统管理-删除按钮","BtnInfoEO","删除");
         try {
             menuService.delBtnById(id);
         } catch (Exception e) {
@@ -126,6 +131,7 @@ public class MenuController {
     @RequestMapping("/batchDelBtn")
     @ResponseBody
     public ResponseData batchDelBtn(@RequestParam("ids[]") List<Integer> ids) {
+        SysLog.log("系统管理-批量删除按钮","BtnInfoEO","批量删除");
         try {
             if(ids != null){
                 for(Integer id:ids){

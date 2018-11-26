@@ -9,7 +9,8 @@
     var setting = {
         data: {
             key: {
-                name: "organName"
+                name: "organName",
+                title:'my_title'
             },
             simpleData: {
                 enable: true,
@@ -37,7 +38,7 @@
             dataType: 'json',
             async: false,
             success: function (result) {
-                zNodes = result;
+                initTreeData(zNodes,result,'organName');
                 for(var i = 0 ; i < zNodes.length ; i ++){
                     zNodes[i].icon = '/images/organ/'+ zNodes[i].organType +'.png';
                 }

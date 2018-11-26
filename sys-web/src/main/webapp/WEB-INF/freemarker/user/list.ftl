@@ -20,8 +20,9 @@
         <div property="columns">
             <div type="checkcolumn" width="5%">选择</div>
             <div type="indexcolumn" width="5%" headerAlign="center">序号</div>
+            <div field="id" width="10%" headerAlign="center">ID</div>
             <div field="userId" width="20%" headerAlign="center">用户ID</div>
-            <div field="userName" width="20%" headerAlign="center" renderer="onGenderRenderer">用户名称</div>
+            <div field="userName" width="30%" headerAlign="center" renderer="onGenderRenderer">用户名称</div>
             <div field="createDate" width="15%" headerAlign="center" dateFormat="yyyy-MM-dd HH:mm:ss">创建日期</div>
             <div headerAlign="center" width="15%" align="center" renderer="onActionRenderer">操作</div>
         </div>

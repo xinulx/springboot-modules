@@ -231,3 +231,11 @@ function initSocket() {
     });
     console.info("initSocket success");
 }
+function initTreeData(result,oldData,type){
+    if(oldData && oldData.length > 0){
+        for(var i = 0; i < oldData.length; i ++){
+            oldData[i]['my_title'] = oldData[i][type] + "ID：" + oldData[i].id;
+            result.push(oldData[i]);
+        }
+    }
+}
