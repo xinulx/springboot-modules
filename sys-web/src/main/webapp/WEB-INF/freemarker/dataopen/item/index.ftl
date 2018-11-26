@@ -1,6 +1,6 @@
 <div class="portlet light">
     <div class="portlet-body">
-        <div class="table-toolbar">
+        <div class="table-toolbar" style="margin-bottom: 5px">
             <div class="row">
                 <div class="col-md-6 col-lg-6">
                     <button type="button" class="btn btn-primary" onClick="edit(0,0)">添加分类</button>
@@ -16,7 +16,6 @@
                 </div>
             </div>
         </div>
-        <br/>
         <div id="datagrid" class="mini-treegrid ls-mini-grid-cell" style="width:100%;height:600px;" multiSelect="true"
              url="/dataPublish/dataItem/getPage" expandOnLoad="true"
              showTreeIcon="false" treeColumn="itemName" idField="id" parentField="parentId" resultAsTree="false">

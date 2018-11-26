@@ -1,6 +1,6 @@
 <div class="portlet light">
     <div class="portlet-body">
-        <div class="table-toolbar">
+        <div class="table-toolbar" style="margin-bottom: 5px">
             <div class="row">
                 <div class="col-md-6 col-lg-6">
                     <button type="button" class="btn btn-default" onClick="edit()">添加指标信息</button>
@@ -21,7 +21,6 @@
                 </div>
             </div>
         </div>
-        <br/>
         <div id="datagrid" class="mini-datagrid ls-mini-grid-cell" style="width:100%;height:600px;" multiSelect="true"
              idField="id" sizeList="[15,20,30,45]" pageSize="20"
              url="/dataPublish/dataImport/getPage">
