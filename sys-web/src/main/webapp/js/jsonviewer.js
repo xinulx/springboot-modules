@@ -51,7 +51,7 @@
           html += '<li>';
           /* Add toggle button if item is collapsable */
           if (isCollapsable(json[i])) {
-            html += '<a href class="json-toggle"></a>';
+            html += '<a href="javascript:void(0)" class="json-toggle"></a>';
           }
           html += json2html(json[i], options);
           /* Add comma if item is not last */
@@ -77,7 +77,7 @@
               '<span class="json-string">"' + key + '"</span>' : key;
             /* Add toggle button if item is collapsable */
             if (isCollapsable(json[key])) {
-              html += '<a href class="json-toggle">' + keyRepr + '</a>';
+              html += '<a href="javascript:void(0)" class="json-toggle">' + keyRepr + '</a>';
             }
             else {
               html += keyRepr;
@@ -112,7 +112,7 @@
       /* Transform to HTML */
       var html = json2html(json, options);
       if (isCollapsable(json))
-        html = '<a href class="json-toggle"></a>' + html;
+        html = '<a href="javascript:void(0)" class="json-toggle"></a>' + html;
 
       /* Insert HTML in target DOM element */
       $(this).html(html);
@@ -128,7 +128,7 @@
         else {
           var count = target.children('li').length;
           var placeholder = count + (count > 1 ? ' items' : ' item');
-          target.after('<a href class="json-placeholder">' + placeholder + '</a>');
+          target.after('<a href="javascript:void(0)" class="json-placeholder">' + placeholder + '</a>');
         }
         return false;
       });

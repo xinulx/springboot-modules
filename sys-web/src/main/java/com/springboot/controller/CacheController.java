@@ -43,23 +43,30 @@ public class CacheController {
         if (key == null) {
             return null;
         }
-        if(key.indexOf("lonsun") != -1){
-            Map<String, Object> eo = RedisUtil.getMap(key);
+        try{
+            if(key.indexOf("lonsun") != -1){
+                Map<String, Object> eo = RedisUtil.getMap(key);
+                Map<String,Object> map = new HashMap<String,Object>();
+                map.put("attributes",eo);
+                return map;
+            }
+            // 序列化键
+            byte[] keyByteArray = key.getBytes();
+            // 从redis中获取数据
+            byte[] valueByteArray = RedisUtil.get(keyByteArray);
+            if(key.indexOf("EO") != -1){
+                Map<String,Object> map = new HashMap<String,Object>();
+                map.put("attributes",JSONArray.parse(valueByteArray));
+                return map;
+            }
+            // 返回对应的数据
+            return valueByteArray == null ? null : SerializationUtils.deserialize(valueByteArray);
+        }catch (Exception e){
             Map<String,Object> map = new HashMap<String,Object>();
-            map.put("attributes",eo);
+            map.put("attributes",e.getMessage()+","+e.getCause());
             return map;
         }
-        // 序列化键
-        byte[] keyByteArray = key.getBytes();
-        // 从redis中获取数据
-        byte[] valueByteArray = RedisUtil.get(keyByteArray);
-        if(key.indexOf("EO") != -1){
-            Map<String,Object> map = new HashMap<String,Object>();
-            map.put("attributes",JSONArray.parse(valueByteArray));
-            return map;
-        }
-        // 返回对应的数据
-        return valueByteArray == null ? null : SerializationUtils.deserialize(valueByteArray);
+
     }
 
     @RequestMapping("delete")

@@ -1,3 +1,4 @@
+<link href="/css/jsonviewer.css" type="text/css" rel="stylesheet" />
 <div class="portlet light">
     <div class="portlet-body">
         <div class="table-toolbar" style="margin-bottom: 5px">
@@ -30,7 +31,8 @@
         </div>
     </div>
 </div>
-
+<div id="jsonDiv"><pre id="json-renderer"></pre></div>
+<script src="/js/jsonviewer.js"></script>
 <script>
 
     mini.parse();
@@ -91,7 +93,18 @@
             },
             url: "/cache/getCacheBySid",
             success: function (text) {
-                alert(JSON.stringify(text.attributes));
+                try {
+                    var input = eval('(' + JSON.stringify(text.attributes) + ')');
+                }
+                catch (error) {
+                    return alert("Cannot eval JSON: " + error);
+                }
+                var options = {
+                    collapsed: false,
+                    withQuotes: true
+                };
+                $('#json-renderer').jsonViewer(input, options);
+                layer.alert($("#jsonDiv").html(),{area:["750px","640px"],scrollbar: false});
             }
         });
 

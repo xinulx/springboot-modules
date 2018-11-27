@@ -34,6 +34,7 @@
         </div>
     </div>
 </div>
+<div id="jsonDiv"><pre id="json-renderer-his" style="height: 500px"></pre></div>
 <script src="/js/jsonviewer.js"></script>
 <script>
     $(function() {
@@ -88,7 +89,18 @@
     function viewDetail(id){
         $.get("/info/getTpl",{id:id},function(d){
             if(d.status == 1){
-                alert(d.data);
+                try {
+                    var input = eval('(' + d.data + ')');
+                }
+                catch (error) {
+                    return alert("Cannot eval JSON: " + error);
+                }
+                var options = {
+                    collapsed: false,
+                    withQuotes: true
+                };
+                $('#json-renderer-his').jsonViewer(input, options);
+                layer.alert($("#jsonDiv").html(),{area:["750px","640px"],scrollbar: false});
             }
         });
     }
