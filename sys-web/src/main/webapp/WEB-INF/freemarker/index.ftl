@@ -73,6 +73,7 @@
 </div>
 <div id="layerWin" class="hidden"></div>
 <div id="layerWin2" class="hidden"></div>
+<iframe id="download_frame" name="download_frame" class="hide" src="about:blank"></iframe>
 </body>
 <script src="/js/sidebar-menu.js"></script>
 <script id="headerMenu" type="text/html">

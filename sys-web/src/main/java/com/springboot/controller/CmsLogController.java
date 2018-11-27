@@ -1,6 +1,7 @@
 package com.springboot.controller;
 
 import com.springboot.common.busi.ResponseData;
+import com.springboot.common.util.CSVUtils;
 import com.springboot.entity.business.CmsLogEO;
 import com.springboot.entity.business.CmsLoginHistoryEO;
 import com.springboot.entity.hibernate.Pagination;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -179,6 +181,14 @@ public class CmsLogController {
                 datas.add(row1);
             }
         }
+
+        //导出
+        String name = System.currentTimeMillis()+"";
+        try {
+            CSVUtils.download(name, titles, datas, response);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /***
@@ -214,6 +224,14 @@ public class CmsLogController {
                 row1[5] = log.getDescription();
                 datas.add(row1);
             }
+        }
+
+        //导出
+        String name = System.currentTimeMillis()+"";
+        try {
+            CSVUtils.download(name, titles, datas, response);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
