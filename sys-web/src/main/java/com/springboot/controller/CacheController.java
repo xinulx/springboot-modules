@@ -43,6 +43,12 @@ public class CacheController {
         if (key == null) {
             return null;
         }
+        if(key.indexOf("lonsun") != -1){
+            Map<String, Object> eo = RedisUtil.getMap(key);
+            Map<String,Object> map = new HashMap<String,Object>();
+            map.put("attributes",eo);
+            return map;
+        }
         // 序列化键
         byte[] keyByteArray = key.getBytes();
         // 从redis中获取数据

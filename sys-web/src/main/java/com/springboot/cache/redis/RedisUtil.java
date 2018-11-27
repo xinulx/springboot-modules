@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -73,6 +74,21 @@ public class RedisUtil {
         } finally {
             jedis.close();
         }
+    }
+
+    /**
+     * 获取map
+     * @param <T>
+     * @param key
+     * @return Map
+     */
+    public static <T> Map<String,T> getMap(String key){
+        if(getJedis() == null || !getJedis().exists(key.getBytes())){
+            return null;
+        }
+        byte[] in = getJedis().get(key.getBytes());
+        Map<String,T> map = (Map<String, T>) ObjectTranscoder.deserialize(in);
+        return map;
     }
 
     /**

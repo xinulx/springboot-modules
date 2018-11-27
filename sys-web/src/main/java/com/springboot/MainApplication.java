@@ -88,7 +88,7 @@ public class MainApplication extends SpringBootServletInitializer {
     }
 
     public static void openExploer(){
-        String cmd = "D:\\app\\360se6\\Application\\360se.exe http://localhost:8816";
+        String cmd = "D:\\app\\360se6\\Application\\360se.exe http://localhost:8816/login/loginIn";
         Runtime run = Runtime.getRuntime();
         try{
             run.exec(cmd);
