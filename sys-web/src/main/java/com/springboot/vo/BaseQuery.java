@@ -1,13 +1,10 @@
-package com.springboot.common.busi.query;
-
-import com.springboot.common.busi.Assert;
+package com.springboot.vo;
 
 import java.util.List;
 import java.util.Map;
 
 /**
  * 查询基类，为NamedQuery、JpqlQuery和SqlQuery提供共同行为。
- * @author yyang
  * @param <E> 查询的类型
  */
 public abstract class BaseQuery<E extends BaseQuery> {

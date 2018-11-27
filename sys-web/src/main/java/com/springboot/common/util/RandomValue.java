@@ -5,8 +5,6 @@ import java.util.Map;
 
 /**
  * 随机生成中文姓名，性别，Email，手机号，住址
- *
- * @author X-rapido
  */
 public class RandomValue {
     public static String base = "abcdefghijklmnopqrstuvwxyz0123456789";
@@ -111,7 +109,6 @@ public class RandomValue {
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
             System.out.println(getAddress());
-//          System.out.println(getEmailName(6,9));
         }
     }
 }

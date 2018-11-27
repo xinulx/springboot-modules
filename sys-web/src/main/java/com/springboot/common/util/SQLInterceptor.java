@@ -42,7 +42,6 @@ public class SQLInterceptor implements Interceptor {
      * 拦截后要执行的方法
      */
     public Object intercept(Invocation invocation) throws Throwable {
-        logger.info("已拦截到sql语句");
         // 获取拦截器
         // 如果xml和注解同时声明了拦截器需要先反射【h】
         // Plugin plugin = (Plugin) ReflectUtil.getFieldValue(invocation.getTarget(), "h");
@@ -62,16 +61,15 @@ public class SQLInterceptor implements Interceptor {
         // 获取到当前StatementHandler的
         // boundSql，这里不管是调用target.getBoundSql()还是直接调用delegate.getBoundSql()结果是一样的，因为之前已经说过了
         // RoutingStatementHandler实现的所有StatementHandler接口方法里面都是调用的delegate对应的方法
-        if(mappedStatement.getId().equals(SQLConstants.SYS_LOG_getSvcLog)){
-            BoundSql boundSql = delegate.getBoundSql();
-            // 拿到当前绑定Sql的参数对象，就是我们在调用对应的Mapper映射语句时所传入的参数对象
-            Object obj = boundSql.getParameterObject();
-            logger.debug("sql参数：{}",obj);
-            String old_sql = boundSql.getSql();
-            String new_sql = old_sql.concat(" or login_accept = 'L201709262160202'");
-            ReflectUtil.setFieldValue(boundSql,"parameterObject","3");
-            ReflectUtil.setFieldValue(boundSql,"sql",new_sql);
-        }
+        BoundSql boundSql = delegate.getBoundSql();
+        // 拿到当前绑定Sql的参数对象，就是我们在调用对应的Mapper映射语句时所传入的参数对象
+        //String sqlkey = mappedStatement.getId();
+        //Object obj = boundSql.getParameterObject();
+        //logger.debug("sql参数：{}",obj);
+        //String old_sql = boundSql.getSql();
+        //String new_sql = old_sql.concat(" or login_accept = 'L201709262160202'");
+        //ReflectUtil.setFieldValue(boundSql,"parameterObject","3");
+        //ReflectUtil.setFieldValue(boundSql,"sql",new_sql);
         return invocation.proceed();
     }
 

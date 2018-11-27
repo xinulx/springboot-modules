@@ -1,6 +1,6 @@
 package com.springboot.common.filter;
 
-import com.springboot.common.busi.ResponseData;
+import com.springboot.vo.ResponseData;
 import com.springboot.entity.mybatis.UserEO;
 import com.springboot.service.system.IUserService;
 import lombok.extern.slf4j.Slf4j;
@@ -38,8 +38,6 @@ public class ShiroAuthRealm extends AuthorizingRealm {
 
     /**
      * @description: 加密密码
-     * @author wangshibao
-     * @dateTime 2018/4/23 15:01
      */
     public static String encrypt(String password, String salt) {
         Md5Hash md5Hash = new Md5Hash(password, salt, HASH_ITERATIONS);
@@ -52,8 +50,6 @@ public class ShiroAuthRealm extends AuthorizingRealm {
 
     /**
      * @description: 用于认证
-     * @author cheng
-     * @dateTime 2018/4/18 15:42
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
@@ -100,7 +96,6 @@ public class ShiroAuthRealm extends AuthorizingRealm {
 
     /**
      * @description: 用于授权
-     * @dateTime 2018/4/18 15:42
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {

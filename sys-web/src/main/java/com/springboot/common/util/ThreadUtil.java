@@ -50,7 +50,7 @@ public abstract class ThreadUtil {
         return object == null ? null : object.toString();
     }
 
-    public static enum LocalParamsKey {
+    public enum LocalParamsKey {
         UserId,
         Uid,
         PersonName,
@@ -65,6 +65,6 @@ public abstract class ThreadUtil {
         OP_OrganId,
         OP_CatId, RoleId, UserName;
 
-        private LocalParamsKey() {}
+        LocalParamsKey() {}
     }
 }

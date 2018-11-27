@@ -1,6 +1,6 @@
 package com.springboot.service.common;
 
-import com.springboot.common.busi.ResponseData;
+import com.springboot.vo.ResponseData;
 
 public interface ILoginService {
 

@@ -1,4 +1,4 @@
-package com.springboot.cache;
+package com.springboot.cache.redis;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,19 +18,12 @@ import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 
-
-/**
- * redis配置
- * @author wangshibao
- */
 @Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
 
     @Bean
-    RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory,
-                                            MessageListenerAdapter listenerAdapter) {
-
+    RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory, MessageListenerAdapter listenerAdapter) {
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
         container.addMessageListener(listenerAdapter, new PatternTopic("chat"));

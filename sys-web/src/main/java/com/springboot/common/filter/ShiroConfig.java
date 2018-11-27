@@ -1,6 +1,6 @@
 package com.springboot.common.filter;
 
-import com.springboot.cache.RedisShiroCacheManager;
+import com.springboot.cache.redis.RedisShiroManager;
 import com.springboot.common.session.RedisShiroSessionDao;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
@@ -31,7 +31,6 @@ public class ShiroConfig {
 
     /**
      * @description:自定义realm
-     * @dateTime 2018/4/18 15:44
      */
     @Bean
     public ShiroAuthRealm createMyRealm() {
@@ -49,7 +48,6 @@ public class ShiroConfig {
 
     /**
      * @description: 自定义sessionDao
-     * @dateTime 2018/4/24 10:47
      */
     public RedisShiroSessionDao createRedisShiroSessionDao() {
         RedisShiroSessionDao sessionDao = new RedisShiroSessionDao();
@@ -61,7 +59,6 @@ public class ShiroConfig {
 
     /**
      * @description: 自定义shiro session cookie
-     * @dateTime 2018/4/24 11:09
      */
     public SimpleCookie createSessionIdCookie() {
         SimpleCookie simpleCookie = new SimpleCookie(ShiroUtil.SESSIONID_COOKIE_NAME);
@@ -76,7 +73,6 @@ public class ShiroConfig {
 
     /**
      * @description: 自定义sessionManager
-     * @dateTime 2018/4/24 10:37
      */
     public SessionManager createMySessionManager() {
         DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
@@ -96,7 +92,6 @@ public class ShiroConfig {
 
     /**
      * @description: 记住我cookie
-     * @dateTime 2018/4/24 15:39
      */
     public SimpleCookie createRemeberMeCookie() {
         SimpleCookie simpleCookie = new SimpleCookie(ShiroUtil.REMEBER_ME_COOKIE_NAME);
@@ -110,7 +105,6 @@ public class ShiroConfig {
 
     /**
      * @description: 自定义记住我
-     * @dateTime 2018/4/24 15:35
      */
     public CookieRememberMeManager createRememberMeManager() {
         CookieRememberMeManager cookieRememberMeManager = new CookieRememberMeManager();
@@ -122,17 +116,16 @@ public class ShiroConfig {
 
     /**
      * @description: 自定义缓存管理器
-     * @dateTime 2018/4/24 15:59
      */
-    public RedisShiroCacheManager createCacheManager() {
-        RedisShiroCacheManager redisShiroCacheManager = new RedisShiroCacheManager();
+    public RedisShiroManager createCacheManager() {
+        RedisShiroManager redisShiroManager = new RedisShiroManager();
         log.debug("自定义CacheManager");
-        return redisShiroCacheManager;
+        return redisShiroManager;
     }
 
     /**
-     * @description: 注意方法返回值SecurityManager为org.apache.shiro.mgt.SecurityManager, 不要导错包
-     * @dateTime 2018/4/18 15:48
+     * @description: 注意方法返回值
+     * SecurityManager为org.apache.shiro.mgt.SecurityManager, 不要导错包
      */
     public SecurityManager createSecurityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
@@ -150,7 +143,6 @@ public class ShiroConfig {
 
     /**
      * @description: shiro web过滤器
-     * @dateTime 2018/4/18 15:50
      */
     @Bean("shiroFilter")
     public ShiroFilterFactoryBean createShiroFilter() {
@@ -185,10 +177,11 @@ public class ShiroConfig {
 
     /**
      * 解决UnavailableSecurityManagerException异常问题
+     *
      * @return
      */
     @Bean
-    public FilterRegistrationBean delegatingFilterProxy(){
+    public FilterRegistrationBean delegatingFilterProxy() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         DelegatingFilterProxy proxy = new DelegatingFilterProxy();
         proxy.setTargetFilterLifecycle(true);
@@ -196,5 +189,4 @@ public class ShiroConfig {
         filterRegistrationBean.setFilter(proxy);
         return filterRegistrationBean;
     }
-
 }

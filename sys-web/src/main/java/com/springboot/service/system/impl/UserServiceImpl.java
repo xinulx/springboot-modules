@@ -1,6 +1,6 @@
 package com.springboot.service.system.impl;
 
-import com.springboot.common.busi.ResponseData;
+import com.springboot.vo.ResponseData;
 import com.springboot.entity.mybatis.UserEO;
 import com.springboot.mapper.UserMapper;
 import com.springboot.service.system.IUserService;

@@ -1,6 +1,5 @@
-package com.springboot.cache;
+package com.springboot.cache.redis;
 
-import com.springboot.common.filter.RedisUtil;
 import com.springboot.common.filter.ShiroUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.cache.Cache;
@@ -24,7 +23,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
 
     /**
      * @description: 获取加工后的key的字节数组
-     * @dateTime 2018/4/24 9:57
      */
     private byte[] getKey(Object key) {
         return (ShiroUtil.SHIRO_CACHE_PREFIX + key).getBytes();
@@ -32,7 +30,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
 
     /**
      * @description: 从缓存中获取数据
-     * @dateTime 2018/4/24 16:09
      */
     @Override
     public Object get(Object key) throws CacheException {
@@ -49,7 +46,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
 
     /**
      * @description: 保存shiro缓存到redis
-     * @dateTime 2018/4/24 16:13
      */
     @Override
     public Object put(Object key, Object value) throws CacheException {
@@ -66,7 +62,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
 
     /**
      * @description: 从redis中删除
-     * @dateTime 2018/4/24 16:19
      */
     @Override
     public Object remove(Object key) throws CacheException {
@@ -79,12 +74,14 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
         // 删除
         RedisUtil.del(keyByteArray);
         // 返回删除的数据
+        if(valueByteArray.length == 2){
+            return null;
+        }
         return SerializationUtils.deserialize(valueByteArray);
     }
 
     /**
      * @description: 清空所有的缓存
-     * @dateTime 2018/4/24 16:25
      */
     @Override
     public void clear() throws CacheException {
@@ -93,7 +90,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
 
     /**
      * @description: 缓存个数
-     * @dateTime 2018/4/24 16:56
      */
     @Override
     public int size() {
@@ -103,7 +99,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
 
     /**
      * @description: 获取所有的key
-     * @dateTime 2018/4/24 16:59
      */
     @Override
     public Set keys() {
@@ -113,7 +108,6 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
 
     /**
      * @description: 获取所有的value
-     * @dateTime 2018/4/24 16:59
      */
     @Override
     public Collection values() {

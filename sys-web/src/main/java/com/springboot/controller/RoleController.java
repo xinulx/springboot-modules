@@ -1,7 +1,7 @@
 package com.springboot.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.springboot.common.busi.ResponseData;
+import com.springboot.vo.ResponseData;
 import com.springboot.common.util.SysLog;
 import com.springboot.dao.business.IMenuRelDao;
 import com.springboot.dao.business.IRoleDao;

@@ -1,5 +1,7 @@
 package com.springboot.service.system.impl;
 
+import com.alibaba.fastjson.JSONArray;
+import com.springboot.cache.redis.RedisUtil;
 import com.springboot.common.util.ThreadUtil;
 import com.springboot.entity.mybatis.BtnInfoEO;
 import com.springboot.entity.mybatis.MenuEO;
@@ -23,7 +25,9 @@ public class MenuServiceImpl implements IMenuService {
         Long organId = ThreadUtil.getLong(ThreadUtil.LocalParamsKey.OrganId);
         eo.setRoleId(roleId);
         eo.setOrganId(organId);
-        return menuMapper.getMenuTree(eo);
+        List<MenuEO> menuTree = menuMapper.getMenuTree(eo);
+        RedisUtil.set(MenuEO.class.getName().getBytes(), JSONArray.toJSONBytes(menuTree));
+        return menuTree;
     }
 
     @Override

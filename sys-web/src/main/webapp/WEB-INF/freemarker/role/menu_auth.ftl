@@ -52,7 +52,7 @@
     function isChecked(node) {
         var flag = false;
         for(var i = 0 ; i < checkNodes.length ; i ++){
-            if(node.id == checkNodes[i]){
+            if(node.id == checkNodes[i] && node.type == 'URL'){
                 flag = true;
             }
         }
@@ -65,10 +65,10 @@
         if (nodes.length == 0) {
             $("#authMenuTree").empty().append('<li><a href="javascript:void()">暂无菜单</a></li>');
         }
-        var allNodes = zTree.getNodes();
-        for(var i = 0 ; i < allNodes.length ; i ++){
-            if(isChecked(allNodes[i])){
-                zTree.checkNode(allNodes[i], !allNodes[i].checked, true);
+        for(var i = 0 ; i < nodes.length ; i ++){
+            if(isChecked(nodes[i])){
+                var curNode = zTree.getNodeByParam("id",nodes[i].id,null);
+                zTree.checkNode(curNode, !curNode.checked, true);
             }
         }
     });

@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.springboot.common.busi.query;
+package com.springboot.vo;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -15,7 +10,6 @@ import java.util.List;
  * 查询语言或命名查询的定位参数集。JPA、Hibernate和SQL等都支持定位
  * 参数(如"... where e.name = ?")和命名参数(如"... where name = :name")两种形式。<br>
  * 尽可能采用命名参数的形式，定位参数是落后的形式。
- * @author Dzl
  */
 public class PositionalParameters implements QueryParameters {
     

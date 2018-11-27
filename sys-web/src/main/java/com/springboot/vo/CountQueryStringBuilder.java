@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.springboot.common.busi.query;
+package com.springboot.vo;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -13,7 +8,6 @@ import java.util.regex.Pattern;
 /**
  * 一个辅助类，处理查询语句，根据原始查询语句生成计算查询结果总数的查询语句
  * 因为客户代码不会直接使用该类。
- * Created by Dzl.
  */
 public class CountQueryStringBuilder {
     private final String queryString;

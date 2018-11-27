@@ -1,12 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.springboot.common.busi.query;
+package com.springboot.vo;
 
-
-import com.springboot.common.busi.Assert;
 
 /**
  * 基于对象查询语言字符串的查询。

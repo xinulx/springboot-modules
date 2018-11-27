@@ -1,6 +1,6 @@
 package com.springboot.controller;
 
-import com.springboot.common.busi.ResponseData;
+import com.springboot.vo.ResponseData;
 import com.springboot.common.filter.ShiroAuthRealm;
 import com.springboot.common.util.SysLog;
 import com.springboot.dao.business.IUserDao;

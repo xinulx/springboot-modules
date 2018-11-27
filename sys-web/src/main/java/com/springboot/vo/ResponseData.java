@@ -1,4 +1,4 @@
-package com.springboot.common.busi;
+package com.springboot.vo;
 
 /**
  * 相应数据

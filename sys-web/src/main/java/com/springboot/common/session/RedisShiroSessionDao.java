@@ -1,6 +1,6 @@
 package com.springboot.common.session;
 
-import com.springboot.common.filter.RedisUtil;
+import com.springboot.cache.redis.RedisUtil;
 import com.springboot.common.filter.ShiroUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.session.Session;
@@ -24,7 +24,6 @@ public class RedisShiroSessionDao extends EnterpriseCacheSessionDAO {
 
     /**
      * @description: 获取加工后的key的字节数组
-     * @dateTime 2018/4/24 9:57
      */
     private byte[] getKey(String key) {
         return (ShiroUtil.SHIRO_SESSION_PREFIX + key).getBytes();
@@ -32,7 +31,6 @@ public class RedisShiroSessionDao extends EnterpriseCacheSessionDAO {
 
     /**
      * @description: 更新会话；如更新会话最后访问时间/停止会话/设置超时时间/设置移除属性等会调用
-     * @dateTime 2018/4/24 9:32
      */
     @Override
     public void doUpdate(Session session) {
@@ -49,7 +47,6 @@ public class RedisShiroSessionDao extends EnterpriseCacheSessionDAO {
 
     /**
      * @description: 删除会话；当会话过期/会话停止（如用户退出时）会调用
-     * @dateTime 2018/4/24 9:31
      */
     @Override
     protected void doDelete(Session session) {
@@ -66,7 +63,6 @@ public class RedisShiroSessionDao extends EnterpriseCacheSessionDAO {
      * @description: 如DefaultSessionManager在创建完session后会调用该方法；
      * 如保存到关系数据库/文件系统/NoSQL数据库；即可以实现会话的持久化；
      * 返回会话ID；主要此处返回的ID.equals(session.getId())；
-     * @dateTime 2018/4/24 9:32
      */
     @Override
     public Serializable doCreate(Session session) {
@@ -89,7 +85,6 @@ public class RedisShiroSessionDao extends EnterpriseCacheSessionDAO {
 
     /**
      * @description: 根据会话ID获取会话
-     * @dateTime 2018/4/24 9:32
      */
     @Override
     public Session doReadSession(Serializable sessionId) {
@@ -106,7 +101,6 @@ public class RedisShiroSessionDao extends EnterpriseCacheSessionDAO {
 
     /**
      * @description: 获取当前所有活跃用户，如果用户量多此方法影响性能
-     * @dateTime 2018/4/24 9:32
      */
     @Override
     public Collection<Session> getActiveSessions() {

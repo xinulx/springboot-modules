@@ -1,4 +1,4 @@
-package com.springboot.common.busi;
+package com.springboot.vo;
 
 /**
  * 系统内置账号 <br/>

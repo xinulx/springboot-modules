@@ -59,14 +59,12 @@ public class ShiroUtil {
 
     /**
      * @description: 私有化构造函数
-     * @dateTime 2018/4/19 10:15
      */
     private ShiroUtil() {
     }
 
     /**
      * @description: 获取session
-     * @dateTime 2018/4/19 10:38
      */
     public static Session getSession() {
         Session session = null;
@@ -82,7 +80,6 @@ public class ShiroUtil {
 
     /**
      * @description: 将数据放到shiro session中
-     * @dateTime 2018/4/19 10:45
      */
     public static void setAttribute(Object key, Object value) {
         try {
@@ -96,7 +93,6 @@ public class ShiroUtil {
 
     /**
      * @description: 获取shiro session中的数据
-     * @dateTime 2018/4/19 10:48
      */
     public static Object getAttribute(Object key) {
         Object value = null;
@@ -112,7 +108,6 @@ public class ShiroUtil {
 
     /**
      * @description: 删除shiro session中的数据
-     * @dateTime 2018/4/19 10:51
      */
     public static void removeAttribute(Object key) {
         try {
@@ -126,7 +121,6 @@ public class ShiroUtil {
 
     /**
      * @description: 设置当前用户
-     * @dateTime 2018/4/19 10:59
      */
     public static void setCurrentUser(Object user) {
         setAttribute(CURRENT_USER, user);
@@ -134,7 +128,6 @@ public class ShiroUtil {
 
     /**
      * @description: 获取当前用户
-     * @dateTime 2018/4/19 10:59
      */
     public static UserEO getCurrentUser() {
         UserEO userEO = (UserEO) getAttribute(CURRENT_USER);
@@ -143,7 +136,6 @@ public class ShiroUtil {
 
     /**
      * @description:删除当前用户
-     * @dateTime 2018/4/19 10:59
      */
     public static void removeCurrentUser() {
         removeAttribute(CURRENT_USER);
@@ -151,7 +143,6 @@ public class ShiroUtil {
 
     /**
      * @description: 加密密码
-     * @dateTime 2018/4/23 15:01
      */
     public static String encrypt(String password, String salt) {
         Md5Hash md5Hash = new Md5Hash(password, salt, HASH_ITERATIONS);

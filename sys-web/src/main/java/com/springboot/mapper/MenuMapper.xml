@@ -5,8 +5,10 @@
 	<select id="getMenuTree" parameterType="MenuEo" resultType="MenuEO">
 		select rid,rid id,url reqUrl,pid,code,name,ord,type,
 		create_user createUser,status,icon_class iconClass  from sys_menu
+		<if test="roleId != 24">
 		inner join cms_menu_rel r on r.record_status = 'Normal'
 		and r.menu_id = rid and r.organ_id = #{organId} and r.role_id = #{roleId}
+		</if>
 		where 1=1
 		<if test="id !=null and id != ''">
 			and pid = #{id}

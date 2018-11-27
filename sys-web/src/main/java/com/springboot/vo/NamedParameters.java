@@ -1,6 +1,5 @@
-package com.springboot.common.busi.query;
+package com.springboot.vo;
 
-import com.springboot.common.busi.Assert;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -12,7 +11,6 @@ import java.util.Map;
  * 查询语言或命名查询的命名参数集。JPA、Hibernate和SQL等都支持定位
  * 参数(如"... where e.name = ?")和命名参数(如"... where name = :name")两种形式。<br>
  * 尽可能采用命名参数的形式，定位参数是落后的形式。
- * @author Dzl
  */
 public class NamedParameters implements QueryParameters {
     private Map<String, Object> params = new HashMap<String, Object>();
