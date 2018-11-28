@@ -34,7 +34,7 @@
         </div>
     </div>
 </div>
-<div id="jsonDiv"><pre id="json-renderer-his" style="height: 500px"></pre></div>
+<div id="jsonDiv" class="hidden"><pre id="json-renderer-his" style="height: 500px"></pre></div>
 <script src="/js/jsonviewer.js"></script>
 <script>
     $(function() {

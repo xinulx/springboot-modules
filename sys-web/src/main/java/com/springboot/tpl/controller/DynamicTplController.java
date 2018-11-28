@@ -1,5 +1,6 @@
 package com.springboot.tpl.controller;
 
+import com.springboot.common.util.AppUtil;
 import com.springboot.dao.mongo.impl.ContentMongoDaoImpl;
 import com.springboot.entity.mongo.ContentMongoEO;
 import com.springboot.tpl.util.HtmlRegUtils;
@@ -7,6 +8,7 @@ import freemarker.cache.StringTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+import org.apache.shiro.codec.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,7 +47,11 @@ public class DynamicTplController {
             contentMongoEO = new ContentMongoEO();
             contentMongoEO.setContent("这是测试模板：{mine:demo file=test/test_tag.ftl/}，嘿嘿！");
         }
-        String parseLabel = HtmlRegUtils.parseLabel(contentMongoEO.getContent());
+        if(AppUtil.isEmpty(contentMongoEO.getContent())){
+            contentMongoEO.setContent("");
+        }
+        String tplContent = URLDecoder.decode(Base64.decodeToString(contentMongoEO.getContent()), "UTF-8");
+        String parseLabel = HtmlRegUtils.parseLabel(tplContent);
         loader.putTemplate("template", parseLabel);
         cfg.setTemplateLoader(loader);
 

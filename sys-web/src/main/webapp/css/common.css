@@ -37,3 +37,12 @@
     vertical-align: middle;
     background: #009688;
 }
+.tree-edit-add{
+    background: url("/images/tree_add.gif") center 0 no-repeat!important;
+}
+.tree-edit-edit{
+    background: url("/images/tree_edit.gif") center 0 no-repeat!important;
+}
+.tree-edit-del{
+    background: url("/images/tree_del.gif") center 0 no-repeat!important;
+}

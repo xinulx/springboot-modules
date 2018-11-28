@@ -42,33 +42,56 @@ Date.prototype.format = function (formatStr) {
         }
         return zeros + value;
     };
-    return formatStr.replace(/"[^"]*"|'[^']*'|\b(?:d{1,4}|M{1,4}|yy(?:yy)?|([hHmstT])\1?|[lLZ])\b/g, function($0) {
+    return formatStr.replace(/"[^"]*"|'[^']*'|\b(?:d{1,4}|M{1,4}|yy(?:yy)?|([hHmstT])\1?|[lLZ])\b/g, function ($0) {
         switch ($0) {
-            case 'd': return date.getDate();
-            case 'dd': return zeroize(date.getDate());
-            case 'ddd': return ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat'][date.getDay()];
-            case 'dddd': return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()];
-            case 'M': return date.getMonth() + 1;
-            case 'MM': return zeroize(date.getMonth() + 1);
-            case 'MMM': return ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][date.getMonth()];
-            case 'MMMM': return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][date.getMonth()];
-            case 'yy': return new String(date.getFullYear()).substr(2);
-            case 'yyyy': return date.getFullYear();
-            case 'h': return date.getHours() % 12 || 12;
-            case 'hh': return zeroize(date.getHours() % 12 || 12);
-            case 'H': return date.getHours();
-            case 'HH': return zeroize(date.getHours());
-            case 'm': return date.getMinutes();
-            case 'mm': return zeroize(date.getMinutes());
-            case 's': return date.getSeconds();
-            case 'ss': return zeroize(date.getSeconds());
-            case 'l': return date.getMilliseconds();
-            case 'll': return zeroize(date.getMilliseconds());
-            case 'tt': return date.getHours() < 12 ? 'am' : 'pm';
-            case 'TT': return date.getHours() < 12 ? 'AM' : 'PM';
+            case 'd':
+                return date.getDate();
+            case 'dd':
+                return zeroize(date.getDate());
+            case 'ddd':
+                return ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat'][date.getDay()];
+            case 'dddd':
+                return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()];
+            case 'M':
+                return date.getMonth() + 1;
+            case 'MM':
+                return zeroize(date.getMonth() + 1);
+            case 'MMM':
+                return ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][date.getMonth()];
+            case 'MMMM':
+                return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][date.getMonth()];
+            case 'yy':
+                return new String(date.getFullYear()).substr(2);
+            case 'yyyy':
+                return date.getFullYear();
+            case 'h':
+                return date.getHours() % 12 || 12;
+            case 'hh':
+                return zeroize(date.getHours() % 12 || 12);
+            case 'H':
+                return date.getHours();
+            case 'HH':
+                return zeroize(date.getHours());
+            case 'm':
+                return date.getMinutes();
+            case 'mm':
+                return zeroize(date.getMinutes());
+            case 's':
+                return date.getSeconds();
+            case 'ss':
+                return zeroize(date.getSeconds());
+            case 'l':
+                return date.getMilliseconds();
+            case 'll':
+                return zeroize(date.getMilliseconds());
+            case 'tt':
+                return date.getHours() < 12 ? 'am' : 'pm';
+            case 'TT':
+                return date.getHours() < 12 ? 'AM' : 'PM';
         }
     });
 };
+
 // document.writeln(new Date().format("yyyy-MM-dd hh:mm:ss"));
 function getConstant(id, tableName, columnName, desc) {
     var sel = $("#" + id);
@@ -92,61 +115,70 @@ function getConstant(id, tableName, columnName, desc) {
 }
 
 var Mine = {
-  layer:{
-      openWin:function(title,url,width,height){
-          var cct = $("#layerWin").empty().load(url);
-          return layer.open({
-              type:1,
-              title:title,
-              area:[width+"px",height+"px"],
-              content:cct
-          });
-      },
-      openWin2:function(title,url,width,height){
-          var cct = $("#layerWin2").empty().load(url);
-          return layer.open({
-              type:1,
-              title:title,
-              area:[width+"px",height+"px"],
-              content:cct
-          });
-      },
-      openIframe:function(title,url,width,height){
-          return layer.open({
-              type:2,
-              title:title,
-              area:[width+"px",height+"px"],
-              content:url
-          });
-      },
-      tips:function(desc,icon){
-          layer.msg(desc, {icon: icon, shade: 0.01, time: 1000});
-      }
-  }
+    layer: {
+        openWin: function (title, url, width, height) {
+            var cct = $("#layerWin").empty().load(url);
+            return layer.open({
+                type: 1,
+                title: title,
+                area: [width + "px", height + "px"],
+                content: cct
+            });
+        },
+        openWin2: function (title, url, width, height) {
+            var cct = $("#layerWin2").empty().load(url);
+            return layer.open({
+                type: 1,
+                title: title,
+                area: [width + "px", height + "px"],
+                content: cct
+            });
+        },
+        openIframe: function (title, url, width, height) {
+            return layer.open({
+                type: 2,
+                title: title,
+                area: [width + "px", height + "px"],
+                content: url
+            });
+        },
+        tips: function (desc, icon) {
+            layer.msg(desc, {icon: icon == undefined ? 1 : icon, shade: 0.01, time: 1000});
+        }
+    },
+    encode: function (content) {
+        return window.btoa(encodeURIComponent(content));
+    },
+    decode: function (content) {
+        return decodeURIComponent(window.atob(content));
+    }
 };
 
-window.alert = function (msg,callback){
-  layer.alert(msg,{icon:7},function (index) {
-      layer.close(index);
-      if(typeof(callback) === "function"){
-          callback("ok");
-      }
-  });
+window.alert = function (msg, callback) {
+    layer.alert(msg, {icon: 7}, function (index) {
+        layer.close(index);
+        if (typeof(callback) === "function") {
+            callback("ok");
+        }
+    });
 };
-function resetHeight(id,cuteHeight) {
+
+function resetHeight(id, cuteHeight) {
     var h = document.documentElement.clientHeight; //获取当前窗口可视操作区域高度
     var bodyHeight = document.getElementById(id); //寻找ID为content的对象
-    if(bodyHeight){
+    if (bodyHeight) {
         bodyHeight.style.height = (h - cuteHeight) + "px"; //你想要自适应高度的对象
     }
 }
-function autoHeight(id,cuteHeight){
-    setInterval(function(){
-        resetHeight(id,cuteHeight);
-    },200);
+
+function autoHeight(id, cuteHeight) {
+    setInterval(function () {
+        resetHeight(id, cuteHeight);
+    }, 200);
 }
 
 var stompClient = null;
+
 /**
  * 监听服务端系统消息
  */
@@ -162,19 +194,23 @@ function initSocket() {
             $.toast({
                 text: content.body,
                 heading: 'success',
-                icon: content.status == 1?'success':'error',
+                icon: content.status == 1 ? 'success' : 'error',
                 showHideTransition: 'fade',
                 allowToastClose: true,
                 hideAfter: 15000,
                 stack: 5,
-                position: { left : 'auto', right : '20px', top : '75px', bottom : 'auto' },
+                position: {left: 'auto', right: '20px', top: '75px', bottom: 'auto'},
                 textAlign: 'left',
                 loader: true,
                 loaderBg: '#ffffbb',
-                beforeShow: function () {},
-                afterShown: function () {},
-                beforeHide: function () {},
-                afterHidden: function () {}
+                beforeShow: function () {
+                },
+                afterShown: function () {
+                },
+                beforeHide: function () {
+                },
+                afterHidden: function () {
+                }
             });
             //捕获页
             // if(!content){
@@ -231,9 +267,10 @@ function initSocket() {
     });
     console.info("initSocket success");
 }
-function initTreeData(result,oldData,type){
-    if(oldData && oldData.length > 0){
-        for(var i = 0; i < oldData.length; i ++){
+
+function initTreeData(result, oldData, type) {
+    if (oldData && oldData.length > 0) {
+        for (var i = 0; i < oldData.length; i++) {
             oldData[i]['my_title'] = oldData[i][type] + "ID：" + oldData[i].id;
             result.push(oldData[i]);
         }

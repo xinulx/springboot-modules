@@ -12,6 +12,7 @@ public class ContentMongoEO {
     private Long id;// 业务实体对象id
     private String content;// 内容
     private String type;//业务类型
+    private long version;
 
     public Long getId() {
         return id;
@@ -35,5 +36,13 @@ public class ContentMongoEO {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public void setVersion(long version) {
+        this.version = version;
+    }
+
+    public long getVersion() {
+        return version;
     }
 }
