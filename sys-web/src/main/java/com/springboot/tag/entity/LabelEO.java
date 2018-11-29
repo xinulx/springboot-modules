@@ -1,6 +1,6 @@
 package com.springboot.tag.entity;
 
-import com.springboot.entity.hibernate.impl.ABaseEntity;
+import com.springboot.entity.hibernate.impl.AMockEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,18 +11,32 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "sys_label")
-public class LabelEO extends ABaseEntity {
+public class LabelEO extends AMockEntity {
     //主键ID
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="ID")
     private Long id;
 
+    @Column(name = "PARENT_ID")
+    private Long parentId;
+
     @Column(name="LABEL_NAME")
     private String labelName;
 
-    @Column(name="LABEL_DESC")
-    private String desc;
+    /*标签配置*/
+    @Column(name = "LABEL_CONFIG")
+    private String labelConfig;
+
+    /*标签描述*/
+    @Column(name = "LABEL_NOTES")
+    private String labelNotes;
+
+    @Column(name = "LABEL_TYPE")
+    private Integer labelType;
+
+    @Column(name = "IS_PARENT")
+    private Long isParent = 0L;
 
     public Long getId() {
         return id;
@@ -40,11 +54,43 @@ public class LabelEO extends ABaseEntity {
         this.labelName = labelName;
     }
 
-    public String getDesc() {
-        return desc;
+    public Long getParentId() {
+        return parentId;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getLabelConfig() {
+        return labelConfig;
+    }
+
+    public void setLabelConfig(String labelConfig) {
+        this.labelConfig = labelConfig;
+    }
+
+    public String getLabelNotes() {
+        return labelNotes;
+    }
+
+    public void setLabelNotes(String labelNotes) {
+        this.labelNotes = labelNotes;
+    }
+
+    public Integer getLabelType() {
+        return labelType;
+    }
+
+    public void setLabelType(Integer labelType) {
+        this.labelType = labelType;
+    }
+
+    public Long getIsParent() {
+        return isParent;
+    }
+
+    public void setIsParent(Long isParent) {
+        this.isParent = isParent;
     }
 }

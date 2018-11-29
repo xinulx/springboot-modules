@@ -29,7 +29,7 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component("labelService")
+@Component("labelServiceModel")
 @Slf4j
 public class LabelServiceImpl implements TemplateDirectiveModel {
     @Override

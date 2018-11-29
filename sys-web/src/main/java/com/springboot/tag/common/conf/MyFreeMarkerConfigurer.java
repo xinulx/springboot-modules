@@ -34,7 +34,7 @@ public class MyFreeMarkerConfigurer extends FreeMarkerConfigurer {
         Map model = new HashMap();
         for (Map<String, Object> eo : eos) {
             log.info("注入自定义标签：" + eo.get("labelName"));
-            model.put(eo.get("labelName").toString(), SpringContextHolder.getBean("labelService"));
+            model.put(eo.get("labelName").toString(), SpringContextHolder.getBean("labelServiceModel"));
         }
         model.put("xml_escape", SpringContextHolder.getBean("fmXmlEscape"));  // xml解析
         model.put("mine_test", SpringContextHolder.getBean("labelDirective"));// 测试

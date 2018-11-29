@@ -46,3 +46,8 @@
 .tree-edit-del{
     background: url("/images/tree_del.gif") center 0 no-repeat!important;
 }
+.tree-edit-copy{
+    background: url("/images/tree_copy.png") center 0 no-repeat!important;
+    position: relative;
+    top:-2px;
+}

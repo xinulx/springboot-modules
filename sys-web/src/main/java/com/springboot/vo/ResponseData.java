@@ -52,11 +52,11 @@ public class ResponseData {
         return responseData;
     }
 
-    public static ResponseData success(Object data, String desc) {
+    public static ResponseData success(Object data, String... desc) {
         ResponseData responseData = new ResponseData();
         responseData.setData(data);
         responseData.setStatus(1);
-        responseData.setDesc(desc);
+        responseData.setDesc(desc == null?"操作成功！":(desc.length==0?"操作成功！":desc[0]));
         return responseData;
     }
 

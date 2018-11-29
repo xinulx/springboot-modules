@@ -42,7 +42,7 @@
             <map>
                 <entry key="xml_escape" value-ref="fmXmlEscape"/>
                 <entry key="mine_test" value-ref="labelDirective"/>
-                <entry key="demo" value-ref="labelService"/>
+                <entry key="demo" value-ref="labelServiceModel"/>
             </map>
         </property>
         <property name="defaultEncoding">
