@@ -2,31 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9deba5b-61a2-4a76-a1c7-3faaa1208609" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/JacksonMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/Jacksons.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/controller/LabelController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/dao/ILabelDao.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/dao/impl/LabelDaoImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/service/ILabelService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/service/impl/LabelServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/LabelFieldVO.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/LabelVO.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_index.ftl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_list.ftl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/images/tree_copy.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/images/label.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/images/label_insert.gif" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/ILabelDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/LabelDaoImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/common/conf/MyFreeMarkerConfigurer.java" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/common/conf/MyFreeMarkerConfigurer.java" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/common/impl/LabelServiceImpl.java" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/common/impl/LabelServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/entity/LabelEO.java" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/entity/LabelEO.java" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/ResponseData.java" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/ResponseData.java" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/sys-web/src/main/resources/applicationContext.xml" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl" />
       <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/plugins/ztree/css/zTreeStyle/zTreeStyle.css" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/plugins/ztree/css/zTreeStyle/zTreeStyle.css" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_select.js" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_select.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -92,24 +74,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="miniui_grid.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/test/miniui_grid.ftl">
+      <file leaf-file-name="index.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            <state relative-caret-position="203">
+              <caret line="97" column="24" lean-forward="false" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyFreeMarkerConfigurer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/common/conf/MyFreeMarkerConfigurer.java">
+      <file leaf-file-name="label_select.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_select.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="29" column="61" lean-forward="false" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
-              <folding>
-                <marker date="1543399501351" expanded="true" signature="1060:1119" ph="select id as... sys_label" />
-              </folding>
+            <state relative-caret-position="344">
+              <caret line="47" column="67" lean-forward="false" selection-start-line="47" selection-start-column="67" selection-end-line="47" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="545">
+              <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,14 +107,10 @@
       <file leaf-file-name="LabelController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/controller/LabelController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="60" column="51" lean-forward="false" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
+            <state relative-caret-position="43">
+              <caret line="85" column="55" lean-forward="false" selection-start-line="85" selection-start-column="55" selection-end-line="85" selection-end-column="55" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3722#3723#0" expanded="true" />
-                <element signature="e#3793#3794#0" expanded="true" />
-                <element signature="e#3897#3898#0" expanded="true" />
-                <element signature="e#3970#3971#0" expanded="true" />
+                <element signature="e#3308#3324#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,53 +119,8 @@
       <file leaf-file-name="label_index.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_index.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="label_list.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_list.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="78" column="13" lean-forward="false" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
-              <folding>
-                <marker date="1543488930832" expanded="true" signature="2938:2944" ph="&amp;nbsp;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="label_config.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="87" column="33" lean-forward="false" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zTreeStyle.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/ztree/css/zTreeStyle/zTreeStyle.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="341" column="15" lean-forward="false" selection-start-line="341" selection-start-column="11" selection-end-line="341" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DemoTplService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/generate/DemoTplService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="437">
+              <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -188,38 +129,8 @@
       <file leaf-file-name="label_mgr.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="53" column="32" lean-forward="false" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="label_edit.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1109">
-              <caret line="84" column="13" lean-forward="false" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabelServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/service/impl/LabelServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-23">
-              <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabelDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/dao/impl/LabelDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="444">
+              <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="48" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -297,7 +208,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/add_label.vm" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_select.js" />
         <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/MapVO.java" />
         <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/ParamDto.java" />
         <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/TemplateHistoryEO.java" />
@@ -321,7 +231,6 @@
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_edit.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_upload.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_history.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/tpl_manage.js" />
         <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/controller/DynamicTplController.java" />
@@ -340,13 +249,15 @@
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.vm" />
         <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/ResponseData.java" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_index.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css" />
         <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/controller/LabelController.java" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_list.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/plugins/ztree/css/zTreeStyle/zTreeStyle.css" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_select.js" />
       </list>
     </option>
   </component>
@@ -462,6 +373,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -569,6 +499,18 @@
               <item name="site" type="462c0819:PsiDirectoryNode" />
               <item name="label" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="freemarker" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="tpl" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -593,11 +535,8 @@
     <property name="RequestMappingsPanelOrder2" value="2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\workspace\springboot-modules\springboot-modules\sys-web\src\main\webapp\images" />
-      <recent name="D:\workspace\springboot-modules\springboot-modules\sys-web\src\main\webapp\css" />
-      <recent name="E:\minespace\springboot-modules\file-web" />
-      <recent name="E:\minespace\springboot-modules\file-convert" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.springboot.common.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\minespace\springboot-modules\sys-web\src\main\webapp\images" />
@@ -613,8 +552,11 @@
       <recent name="com.springboot.common.busi" />
       <recent name="com.springboot.dao.business.impl" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.springboot.common.util" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\springboot-modules\springboot-modules\sys-web\src\main\webapp\images" />
+      <recent name="D:\workspace\springboot-modules\springboot-modules\sys-web\src\main\webapp\css" />
+      <recent name="E:\minespace\springboot-modules\file-web" />
+      <recent name="E:\minespace\springboot-modules\file-convert" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -889,7 +831,7 @@
       <workItem from="1543312167774" duration="9135000" />
       <workItem from="1543364389074" duration="39364000" />
       <workItem from="1543458263675" duration="6479000" />
-      <workItem from="1543485593448" duration="4961000" />
+      <workItem from="1543485593448" duration="6789000" />
     </task>
     <task id="LOCAL-00001" summary="版本控制">
       <created>1540452505184</created>
@@ -1003,7 +945,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543397336701</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="模板标签">
+      <created>1543490581913</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1543490581913</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1039,7 +988,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253227000" />
+    <option name="totallyTimeSpent" value="255055000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1170,7 +1119,7 @@
           <properties />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="128" />
+      <option name="time" value="131" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1183,13 +1132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_select.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133">
-          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1251,13 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1286">
-          <caret line="134" column="22" lean-forward="false" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1477,28 +1412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/controller/LabelController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="60" column="51" lean-forward="false" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3722#3723#0" expanded="true" />
-            <element signature="e#3793#3794#0" expanded="true" />
-            <element signature="e#3897#3898#0" expanded="true" />
-            <element signature="e#3970#3971#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/service/impl/LabelServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-23">
@@ -1515,17 +1428,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_list.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="724">
@@ -1536,18 +1438,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="53" column="32" lean-forward="false" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/generate/DemoTplService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/ztree/css/zTreeStyle/zTreeStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="341" column="15" lean-forward="false" selection-start-line="341" selection-start-column="11" selection-end-line="341" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -1560,10 +1462,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/ztree/css/zTreeStyle/zTreeStyle.css">
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_index.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="341" column="15" lean-forward="false" selection-start-line="341" selection-start-column="11" selection-end-line="341" selection-end-column="15" />
+        <state relative-caret-position="437">
+          <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/controller/LabelController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="85" column="55" lean-forward="false" selection-start-line="85" selection-start-column="55" selection-end-line="85" selection-end-column="55" />
+          <folding>
+            <element signature="e#3308#3324#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="48" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="97" column="24" lean-forward="false" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="47" column="67" lean-forward="false" selection-start-line="47" selection-start-column="67" selection-end-line="47" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
           <folding />
         </state>
       </provider>

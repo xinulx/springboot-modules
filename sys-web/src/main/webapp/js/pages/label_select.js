@@ -45,7 +45,7 @@ var label_select = function () {
             cur.map.put(node.tId, node);
             var aObj = $("#" + node.tId + "_a");
             if (!node.isParent) {
-                var addStr = ' <span class="button add-b" nodeId=' + node.tId + ' id="addBtn_' + node.id + '" title="' + node.name + '"> </span>';
+                var addStr = ' <span class="button tree-edit-insert" nodeId=' + node.tId + ' id="addBtn_' + node.id + '" title="' + node.name + '"> </span>';
                 aObj.append(addStr);
             }
             var btn = $("#addBtn_" + node.id);
@@ -57,7 +57,13 @@ var label_select = function () {
         }
 
         function dataFilter(treeId, parentNode, responseData) {
-            return responseData;
+            var treeData = responseData.data;
+            for(var i=0,len=treeData.length;i<len;i++){
+                if(treeData[i].isParent == 0){
+                    treeData[i].icon="/images/label.png";
+                }
+            }
+            return treeData;
         }
 
         function onClick(event, treeId, node) {
@@ -66,9 +72,6 @@ var label_select = function () {
                 cur.labelTree.expandNode(node);
             }
             event.stopPropagation();
-        }
-
-        function onExpand(event, treeId, treeNode) {
         }
 
         var settings = $.extend(true, ztree_settings, {
@@ -83,11 +86,6 @@ var label_select = function () {
             callback: {
                 onClick: onClick,
                 onAsyncSuccess: function () {
-                    //cur.labelTree.expandAll(true);
-                    var nodes = cur.labelTree.getNodes();
-                    if (nodes.length > 0) {
-                        cur.labelTree.expandNode(nodes[0], true, false, true);
-                    }
                     $("#label_tree").parent().css('padding', '5px 15px 15px 5px');
                 }
             }

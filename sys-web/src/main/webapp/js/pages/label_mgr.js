@@ -41,6 +41,12 @@ var label_mgr = function () {
                             "open": true
                         };
                         isLoad = true;
+                    }else{
+                        for(var i=0,len=treeData.length;i<len;i++){
+                            if(treeData[i].isParent == 0){
+                                treeData[i].icon="/images/label.png";
+                            }
+                        }
                     }
                     return treeData;
                 }

@@ -51,3 +51,6 @@
     position: relative;
     top:-2px;
 }
+.tree-edit-insert{
+    background: url("/images/label_insert.gif") center 0 no-repeat!important;
+}

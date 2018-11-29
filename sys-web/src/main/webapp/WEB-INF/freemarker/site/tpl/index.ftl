@@ -95,7 +95,7 @@
     $(document).ready(function () {
         $("#center_tab").css('display', 'none');
         tpl_manage.tpl();
-        // label_select.label();
+        label_select.label();
     });
 
     function upload() {
