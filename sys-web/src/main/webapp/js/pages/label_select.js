@@ -13,7 +13,7 @@ var label_select = function () {
             dataType: "JSON",
             url: "",
             otherParam: {},
-            autoParam: ""
+            autoParam: ["id=pid"]
         },
         callback: {},
         data: {
@@ -80,7 +80,7 @@ var label_select = function () {
                 addDiyDom: addDiyDom
             },
             async: {
-                url: '/label/tree?dataFlag=1&pid=-1',
+                url: '/label/tree?dataFlag=1',
                 dataFilter: dataFilter
             },
             callback: {

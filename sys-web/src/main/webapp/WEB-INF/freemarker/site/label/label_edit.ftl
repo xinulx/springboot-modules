@@ -10,6 +10,20 @@
                            placeholder="" maxlength="30" value="${labelName!}">
                 </div>
                 <div class="form-group">
+                    <label>标签类型</label>
+                    <div class="form-control">
+                    <#if labelType??>
+                        <label class="radio-inline"><input type="radio" name="labelType" id="labelType0" value="0" <#if labelType==0>checked</#if>>标签目录</label>
+                        <label class="radio-inline"><input type="radio" name="labelType" id="labelType1" value="1" <#if labelType==1>checked</#if>>内部继承</label>
+                        <label class="radio-inline"><input type="radio" name="labelType" id="labelType2" value="2" <#if labelType==2>checked</#if>>自定义</label>
+                    <#else>
+                        <label class="radio-inline"><input type="radio" name="labelType" id="labelType0" value="0" checked>标签目录</label>
+                        <label class="radio-inline"><input type="radio" name="labelType" id="labelType1" value="1">内部继承</label>
+                        <label class="radio-inline"><input type="radio" name="labelType" id="labelType2" value="2">自定义</label>
+                    </#if>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label>描述</label>
                     <textarea class="form-control" name="labelNotes" rows="3"
                               placeholder="">${labelNotes!}</textarea>

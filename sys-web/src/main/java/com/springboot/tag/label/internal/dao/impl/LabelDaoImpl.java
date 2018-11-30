@@ -75,7 +75,7 @@ public class LabelDaoImpl extends MockDao<LabelEO> implements ILabelDao {
     @Override
     public Object updateLabel(LabelEO eo) {
         //this.update(eo);
-        return this.executeUpdateBySql("UPDATE SYS_LABEL SET LABEL_NAME=?,LABEL_NOTES=? WHERE ID = ?", new Object[]{eo.getLabelName(), eo.getLabelNotes(), eo.getId()});
+        return this.executeUpdateBySql("UPDATE SYS_LABEL SET LABEL_NAME=?,LABEL_NOTES=?,LABEL_TYPE=? WHERE ID = ?", new Object[]{eo.getLabelName(), eo.getLabelNotes(),eo.getLabelType(), eo.getId()});
     }
 
     @Override

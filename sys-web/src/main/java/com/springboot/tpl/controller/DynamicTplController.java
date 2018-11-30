@@ -44,8 +44,8 @@ public class DynamicTplController {
         StringTemplateLoader loader = new StringTemplateLoader();
         ContentMongoEO contentMongoEO = contentMongoDao.queryById(id);
         if (contentMongoEO == null) {
-            contentMongoEO = new ContentMongoEO();
-            contentMongoEO.setContent("这是测试模板：{mine:demo file=test/test_tag.ftl/}，嘿嘿！");
+            model.addAttribute("tplContent", "模板内容为空");
+            return "/design/preview";
         }
         if(AppUtil.isEmpty(contentMongoEO.getContent())){
             contentMongoEO.setContent("");

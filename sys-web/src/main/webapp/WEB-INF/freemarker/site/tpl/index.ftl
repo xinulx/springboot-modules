@@ -146,6 +146,7 @@
                 }else{
                     Mine.layer.tips(resp.desc, 1);
                     $('#tplContent').data("version",resp.data);
+                    sendSocket("更新模板["+cur.node.name+"]内容"+resp.desc);
                 }
             }
         });

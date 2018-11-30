@@ -78,11 +78,4 @@
         }
         Mine.layer.tips("日志已关闭",1);
     }
-
-    function sendSocket(message){
-        if(!message){
-            message = "我是一条消息！时间-"+new Date().toLocaleTimeString();
-        }
-        $.post("/common/activeMQ/process",{message:message});
-    }
 </script>

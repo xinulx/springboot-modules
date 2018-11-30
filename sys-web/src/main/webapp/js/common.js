@@ -268,6 +268,13 @@ function initSocket() {
     console.info("initSocket success");
 }
 
+function sendSocket(message){
+    if(!message){
+        message = "我是一条消息！时间-"+new Date().toLocaleTimeString();
+    }
+    $.post("/common/activeMQ/process",{message:message});
+}
+
 function initTreeData(result, oldData, type) {
     if (oldData && oldData.length > 0) {
         for (var i = 0; i < oldData.length; i++) {

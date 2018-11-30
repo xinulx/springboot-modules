@@ -35,7 +35,7 @@ public class LabelServiceImpl extends MockService<LabelEO> implements ILabelServ
     public List<LabelVO> getByName(String name) {
         List<LabelEO> list = labelDao.getByName(name);
 
-        LabelVO labelVO = null;
+        LabelVO labelVO;
         List<LabelVO> vlist = new ArrayList<LabelVO>();
         for (LabelEO lv : list) {
             labelVO = new LabelVO();
@@ -51,7 +51,7 @@ public class LabelServiceImpl extends MockService<LabelEO> implements ILabelServ
     @Override
     public List<LabelVO> getTree(Long pid) {
         List<LabelEO> list = labelDao.getTree(pid);
-        LabelVO labelVO = null;
+        LabelVO labelVO;
         List<LabelVO> vlist = new ArrayList<LabelVO>();
         for (LabelEO lv : list) {
             labelVO = new LabelVO();
@@ -64,7 +64,7 @@ public class LabelServiceImpl extends MockService<LabelEO> implements ILabelServ
             if (AppUtil.isEmpty(lv.getLabelConfig()) || lv.getLabelConfig() == "[]") {
 
             } else {
-                labelVO.setConfig(convertConfig(lv.getLabelName(), lv.getLabelConfig()));
+                labelVO.setConfig(convertConfig(lv.getLabelName(), lv.getLabelConfig(),lv.getLabelType()));
             }
             vlist.add(labelVO);
         }
@@ -138,10 +138,13 @@ public class LabelServiceImpl extends MockService<LabelEO> implements ILabelServ
         return labelDao.saveLabel(newEO);
     }
 
-    private String convertConfig(String name, String str) {
+    private String convertConfig(String name, String str, Integer labelType) {
         LabelFieldVO[] json = Jacksons.json().fromJsonToObject(str, LabelFieldVO[].class);
-        String label = "{ls:" + name + " ";
-        String val = null, fieldName = null, fieldVal = null;
+        String label = "{mine:" + name + " ";
+        if(labelType == 1){
+            label = "<@" + name + " ";
+        }
+        String fieldName, fieldVal;
         Long i = 0L;
         for (LabelFieldVO j : json) {
             fieldName = j.getFieldname();
@@ -153,9 +156,17 @@ public class LabelServiceImpl extends MockService<LabelEO> implements ILabelServ
         }
 
         if (i < 1) {
-            label += "/}";
+            if(labelType == 1){
+                label += "/>";
+            }else{
+                label += "/}";
+            }
         } else {
-            label += "}{/ls:" + name + "}";
+            if(labelType == 1){
+                label += "></@" + name + ">";
+            }else{
+                label += "}{/mine:" + name + "}";
+            }
         }
 
         return label;

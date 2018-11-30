@@ -130,7 +130,7 @@ var label_mgr = function () {
     }
 
     function editLabel(pid, id) {
-        editIndex = Mine.layer.openWin('标签属性编辑', '/label/edit?id=' + id + '&pid=' + pid, '500', '300');
+        editIndex = Mine.layer.openWin('标签属性编辑', '/label/edit?id=' + id + '&pid=' + pid, '500', '360');
     }
 
     function copyLabel(pid, id) {

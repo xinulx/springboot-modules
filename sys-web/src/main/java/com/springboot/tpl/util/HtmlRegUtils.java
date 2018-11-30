@@ -3,6 +3,7 @@ package com.springboot.tpl.util;
 import com.alibaba.fastjson.JSONObject;
 import com.springboot.common.busi.BaseRunTimeException;
 import com.springboot.common.busi.SpringContextHolder;
+import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.DocumentUtil;
 import com.springboot.tpl.service.AbstractTplService;
 
@@ -92,7 +93,7 @@ public class HtmlRegUtils {
                     continue;
                 }
                 String[] itemParam = s.split("=");
-                object.put(itemParam[0].replaceAll(" ", ""), itemParam[1].replaceAll(" ", ""));
+                object.put(itemParam[0].replaceAll(" ", ""), processStr(itemParam[1].replaceAll(" ", "")));
             }
             labelEntryList.add(new LabelEntry(labelName, param, object));
             // 替换
@@ -146,5 +147,15 @@ public class HtmlRegUtils {
         String content = "测试标签<div>[mine:title length=\"30\"]\n{mine:aa num=1 name=test}{/mine:aa}{mine:bb num=1 name=test}{/mine:bb}{mine:cc a=1 b=2/}</div>";
         System.out.println(parseLabel(content));
         System.out.println(parseProperty(content,"211221" ));
+    }
+
+    public static String processStr(String str){
+        if(AppUtil.isEmpty(str)){
+            return "";
+        }
+        if(str.length()>=2){
+            return str.substring(1,str.length()-1);
+        }
+        return "";
     }
 }

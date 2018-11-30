@@ -61,14 +61,17 @@ public class LabelController {
         model.addAttribute("actionType", actionType);
 
         String labelName = "", labelNotes = "";
+        Integer labelType = 0;
         if (id > 0) {
             LabelEO labelEO = labelService.getById(id);
             labelName = labelEO.getLabelName();
             labelNotes = labelEO.getLabelNotes();
+            labelType = labelEO.getLabelType();
         }
         System.out.println(labelNotes);
         model.addAttribute("labelName", labelName);
         model.addAttribute("labelNotes", labelNotes);
+        model.addAttribute("labelType", labelType);
 
         return "/site/label/label_edit";
     }
