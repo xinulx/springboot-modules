@@ -1,73 +1,53 @@
-<style>
-    .mini-layout-region-west .mini-layout-region-body {
-        overflow: hidden;
-    }
-</style>
-<div id="ui_layout" class="mini-layout" style="width:100%;height:100%;">
-    <div region="west" showHeader="false" splitSize="0" width="260"
-         style="border:none; background:#F6FAFD; border-right: solid 1px #e5e5e5">
-        <div style="padding:5px; overflow: auto;">
-            <div id="ui_tree" class="ztree"></div>
-        </div>
-    </div>
-    <div region="center" style="overflow-x:hidden;border:none;">
-        <div id="center_tab" class="tabbable-line" style=" margin:12px 20px 15px; display: none;height: 90%">
-            <ul class="nav nav-tabs">
-                <li class="active">
-                    <a href="#tab_1_1" data-toggle="tab">模板信息</a>
-                </li>
-                <li>
-                    <a href="#tab_1_2" data-toggle="tab">历史版本</a>
-                </li>
-            </ul>
-            <div class="tab-content" style="height: 100%; padding-top: 8px;">
-                <div class="tab-pane active" id="tab_1_1" style="width:100%;height: 100%">
-                    <div class="table-toolbar" style="height: 20px;margin-bottom: 20px">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="pdr10">
-                                    <button type="button" id="btn_save" class="btn btn-primary btn-save" onclick="saveTpl()">保 存
-                                    </button>
-                                    <button type="button" id="btn_add_label" class="btn btn-default btn-add-label" onclick="addLabelBtn()">插入标签
-                                    </button>
-                                    <button type="button" id="btn_upload" class="btn btn-default btn-upload" onclick="upload()">上 传
-                                    </button>
-                                    <button type="button" id="btn_download" class="btn btn-info btn-download" onclick="download()">下 载
-                                    </button>
-                                    <a href="javascript:void(0)" id="btn_preview" target="_blank" class="btn btn-success btn-preview">预 览
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="label_layout" class="mini-layout" style="width:100%;height:90%;border: 0">
-                        <div title="标签" visible="false" showCloseButton="true" showHeader="true" region="west"
-                             width="200" showSplit="false" showCollapseButton="false" style="height: 460px">
-                            <div id="label_tree" class="ztree"></div>
-                        </div>
-                        <div region="center" style="width: 100%;border: 0">
-                            <textarea id="tplContent" name="tplContent"
-                                      style="width:100%;height: 500px;border: 0;outline: none;color:#3d80b3"></textarea>
+<div class="col-md-2 tree-bg">
+    <div id="ui_tree" class="ztree"></div>
+</div>
+<div class="col-md-10 col-md-offset-2 right-layout">
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#tab_1_1" data-toggle="tab">模板信息</a>
+        </li>
+        <li>
+            <a href="#tab_1_2" data-toggle="tab">历史版本</a>
+        </li>
+    </ul>
+    <div class="tab-content" style="padding-top: 8px;">
+        <div class="tab-pane active" id="tab_1_1" style="width:100%">
+            <div class="table-toolbar" style="height: 20px;margin-bottom: 20px">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="pdr10">
+                            <button type="button" id="btn_save" class="btn btn-primary" onclick="saveTpl()">保 存</button>
+                            <button type="button" id="btn_add_label" class="btn btn-default" onclick="addLabelBtn()">插入标签</button>
+                            <button type="button" id="btn_upload" class="btn btn-default" onclick="upload()">上 传</button>
+                            <button type="button" id="btn_download" class="btn btn-info" onclick="download()">下 载</button>
+                            <a href="javascript:void(0)" id="btn_preview" target="_blank" class="btn btn-success">预 览</a>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" id="tab_1_2">
-                    <div id="datagrid" class="mini-datagrid" allowCellSelect="false" onlyCheckSelection="true" allowResize="true"
-                         url="/tpl/getHistoryEOByTplId" sizeList="[5,10,20,50]" pageSize="10"
-                         idField="id" multiSelect="false" showColumnsMenu="true" style="width:100%;height:560px"
-                    >
-                        <div property="columns">
-                            <div type="indexcolumn"></div>
-                            <div field="tempName" width="100%" align="left" headerAlign="left" renderer="tempName">
-                                模板名称
-                            </div>
-                            <div width="80" align="center" headerAlign="center" renderer="showDetail">模板内容
-                            </div>
-                            <div field="createDate" width="140" align="center" headerAlign="center" allowSort="true"
-                                 dateFormat="yyyy-MM-dd HH:mm:ss" allowSort="true">修改时间
-                            </div>
-                        </div>
+            </div>
+            <div id="label_layout" class="mini-layout" style="width:100%;border: 0">
+                <div title="标签" visible="false" showCloseButton="true" showHeader="true" region="west"
+                     width="200" showSplit="false" showCollapseButton="false" style="height: 460px">
+                    <div id="label_tree" class="ztree"></div>
+                </div>
+                <div region="center" style="width: 100%;border: 0">
+                    <textarea id="tplContent" name="tplContent" style="width:100%;border: 0;outline: none;color:#3d80b3"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab_1_2">
+            <div id="datagrid" class="mini-datagrid" allowCellSelect="false" onlyCheckSelection="true" allowResize="true"
+                 url="/tpl/getHistoryEOByTplId" sizeList="[5,10,20,50]" pageSize="10"
+                 idField="id" multiSelect="false" showColumnsMenu="true">
+                <div property="columns">
+                    <div type="indexcolumn"></div>
+                    <div field="tempName" width="100%" align="left" headerAlign="left" renderer="tempName">
+                        模板名称
+                    </div>
+                    <div width="80" align="center" headerAlign="center" renderer="showDetail">模板内容
+                    </div>
+                    <div field="createDate" width="140" align="center" headerAlign="center" allowSort="true"
+                         dateFormat="yyyy-MM-dd HH:mm:ss" allowSort="true">修改时间
                     </div>
                 </div>
             </div>
@@ -78,6 +58,10 @@
 <script src="${ctx}/js/pages/tpl_manage.js"></script>
 <script src="${ctx}/js/pages/label_select.js"></script>
 <script>
+    resetHeight("ui_tree",85);
+    resetHeight("label_layout",176);
+    resetHeight("tplContent",185);
+    resetHeight("datagrid",135);
     mini.parse();
     var cur = {
         editBtn: $('#btn_edit'),
@@ -96,6 +80,7 @@
         $("#center_tab").css('display', 'none');
         tpl_manage.tpl();
         label_select.label();
+        cur.historygrid.load({id: 0});
     });
 
     function upload() {
