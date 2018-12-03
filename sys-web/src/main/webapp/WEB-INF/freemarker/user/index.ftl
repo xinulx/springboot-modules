@@ -1,7 +1,7 @@
 <div class="col-md-2 tree-bg">
-    <ul id="organTree" class="ztree" style="overflow: auto"></ul>
+    <ul id="organTree" class="ztree"></ul>
 </div>
-<div class="col-md-10 hidden mr0" id="rightInfo"></div>
+<div class="col-md-10 col-md-offset-2 hidden right-layout" id="rightInfo"></div>
 
 <script type="text/javascript">
     autoHeight("organTree",85);

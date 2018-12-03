@@ -4,8 +4,12 @@
 }
 .tree-bg{
     background-color: #f6fafd;
-    padding: 0;
-    margin: 0;
+    overflow: auto;
+    position: fixed;
+}
+.right-layout{
+    padding-right: 0;
+    padding-left: 35px;
 }
 .layer-form{
     padding: 20px;
@@ -36,6 +40,10 @@
     color:#FFFFFF;
     vertical-align: middle;
     background: #009688;
+}
+.tree-edit-add-catalog{
+    background: url("/images/add.png") center 0 no-repeat!important;
+    height: 15px;
 }
 .tree-edit-add{
     background: url("/images/tree_add.gif") center 0 no-repeat!important;

@@ -1,5 +1,5 @@
-<div class="col-md-12 tree-bg">
-    <ul id="authMenuTree" class="ztree" style="overflow: auto;width: 100%;height:350px"></ul>
+<div class="col-md-12">
+    <ul id="authMenuTree" class="ztree" style="overflow: auto;height:350px"></ul>
 </div>
 <div class="col-md-12 text-center" style="margin-top: 15px">
     <button type="button" class="btn btn-success" onclick="saveMenuRel()">保 存</button>
