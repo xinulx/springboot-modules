@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-7">
                     <div class="btn-group">
-                        <button id="adduser_btn" class="btn btn-primary btn-refresh" onclick="reload()"> 刷 新</button>
+                        <button id="adduser_btn" class="btn btn-default btn-refresh" onclick="reload()"> 刷 新</button>
                     </div>
                     <div class="btn-group">
                         <button id="adduser_btn" class="btn btn-success btn-refresh-all" onclick="reloadAll()"> 刷新全部
@@ -44,7 +44,7 @@
         var str;
         var rec = e.record;
         var tgBtn = '<button id="adduser_btn" class="btn btn-info btn-sm" onclick="getValue(\'' + rec.cacheKey + '\')">查 看</button>&nbsp;'+
-                    '<button id="adduser_btn" class="btn btn-primary btn-sm" onclick="reloadByKey(\'' + rec.cacheKey + '\')">刷 新</button>&nbsp;'+
+                    '<button id="adduser_btn" class="btn btn-default btn-sm" onclick="reloadByKey(\'' + rec.cacheKey + '\')">刷 新</button>&nbsp;'+
                     '<button id="adduser_btn" class="btn btn-danger btn-sm" onclick="deleteByKey(\'' + rec.cacheKey + '\')">删 除</button>';
         str = tgBtn;
         return str;
@@ -60,6 +60,9 @@
                     } else {
                         Mine.layer.tips("成功",1);
                     }
+                },
+                error:function(e){
+                    alert("刷新失败：" + JSON.stringify(e));
                 }
             });
         }
@@ -80,6 +83,9 @@
                     } else {
                         Mine.layer.tips("刷新成功",1);
                     }
+                },
+                error:function(e){
+                    alert("刷新失败：" + JSON.stringify(e));
                 }
             });
         }
