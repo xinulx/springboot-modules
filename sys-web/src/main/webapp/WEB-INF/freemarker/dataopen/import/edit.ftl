@@ -3,27 +3,37 @@
         <div class="form-body">
             <input name="id" class="form-control" type="hidden" ms-duplex="id">
             <div class="form-group">
-                <label>日期(<font color="red">*</font>)</label>
+                <div class="cn-field">
+                    <label>日期(<font color="red">*</font>)</label>
+                </div>
                 <input class="form-control" name="periodDate" id="periodDate" placeholder=""
                        ms-duplex="periodDate" maxlength="40"/>
             </div>
             <div class="form-group">
-                <label>数据项名称(<font color="red">*</font>)</label>
+                <div class="cn-field">
+                    <label>数据项名称(<font color="red">*</font>)</label>
+                </div>
                 <input class="form-control" name="itemName" id="itemName" placeholder=""
                           ms-duplex="itemName" maxlength="40"/>
             </div>
             <div class="form-group">
-                <label>绝对量(<font color="red">*</font>)</label>
+                <div class="cn-field">
+                    <label>绝对量(<font color="red">*</font>)</label>
+                </div>
                 <input class="form-control" name="unitValue" id="unitValue" placeholder=""
                           ms-duplex="unitValue"/>
             </div>
             <div class="form-group">
-                <label>增速(<font color="red">*</font>)</label>
+                <div class="cn-field">
+                    <label>增速(<font color="red">*</font>)</label>
+                </div>
                 <input class="form-control" name="growth" id="growth" placeholder=""
                        ms-duplex="growth"/>
             </div>
             <div class="form-group">
-                <label>解读</label>
+                <div class="cn-field">
+                    <label>解读</label>
+                </div>
                 <textarea class="form-control" name="remark" id="remark" placeholder="在此添加描述信息..."
                           ms-duplex="remark"></textarea>
             </div>
@@ -68,7 +78,7 @@
                 'growth':'增速:required;'
             },
             focusCleanup: true,
-            timely: 2,
+            timely: 1,
             theme:'yellow_right_effect',
             msgClass:'n-bottom',
             valid: function () {

@@ -12,51 +12,73 @@
                 <input type="text" style="display: none" name="parentId" value="0"/>
                 <input type="text" style="display: none" name="id"/>
                 <div class="form-group">
-                    <label for="organId">组织机构编号<span class="text-danger">*</span>：</label>
+                    <div class="cn-field">
+                        <label for="organId">组织机构编号<span class="text-danger">*</span>：</label>
+                    </div>
                     <input type="number" class="form-control" id="organId" name="organId" placeholder="组织机构编号">
                 </div>
                 <div class="form-group">
-                    <label>组织机构名称<span class="text-danger">*</span>：</label>
+                    <div class="cn-field">
+                        <label>组织机构名称<span class="text-danger">*</span>：</label>
+                    </div>
                     <input type="text" class="form-control" id="organName" name="organName" placeholder="组织机构名称">
                 </div>
                 <div class="form-group">
-                    <label>组织机构类型<span class="text-danger">*</span>：</label>
+                    <div class="cn-field">
+                        <label>组织机构类型<span class="text-danger">*</span>：</label>
+                    </div>
                     <select class="form-control" id="organType" name="organType"></select>
                 </div>
                 <div class="form-group">
-                    <label>机构领导：</label>
+                    <div class="cn-field">
+                        <label>机构领导：</label>
+                    </div>
                     <input type="text" class="form-control" id="leader" name="leader" placeholder="机构领导"/>
                 </div>
                 <div class="form-group">
-                    <label>办公地址：</label>
+                    <div class="cn-field">
+                        <label>办公地址：</label>
                     <input type="text" class="form-control" id="address" name="address" placeholder="办公地址"/>
                 </div>
                 <div class="form-group">
-                    <label>办公电话：</label>
+                    <div class="cn-field">
+                        <label>办公电话：</label>
+                    </div>
                     <input type="text" class="form-control" id="addressPhone" name="addressPhone" placeholder="办公电话"/>
                 </div>
                 <div class="form-group">
-                    <label>联系方式：</label>
+                    <div class="cn-field">
+                        <label>联系方式：</label>
+                    </div>
                     <input type="text" class="form-control" id="phone" name="phone" placeholder="联系方式"/>
                 </div>
                 <div class="form-group">
-                    <label>创建时间：</label>
+                    <div class="cn-field">
+                        <label>创建时间：</label>
                     <input onclick="WdatePicker({lang:'zh-cn',skin:'twoer',readOnly:true,dateFmt:'yyyy-MM-dd HH:mm:ss'})" type="text" class="form-control" id="createTime" name="createTime" placeholder="创建时间"/>
                 </div>
                 <div class="form-group">
-                    <label>更新时间：</label>
+                    <div class="cn-field">
+                        <label>更新时间：</label>
+                    </div>
                     <input onclick="WdatePicker({lang:'zh-cn',skin:'twoer',readOnly:true,dateFmt:'yyyy-MM-dd HH:mm:ss'})" type="text" class="form-control" id="updateTime" name="updateTime" placeholder="更新时间"/>
                 </div>
                 <div class="form-group">
-                    <label>机构图标：</label>
+                    <div class="cn-field">
+                        <label>机构图标：</label>
+                    </div>
                     <input type="url" class="form-control" id="organIcon" name="organIcon" placeholder="机构图标"/>
                 </div>
                 <div class="form-group">
-                    <label>链接地址：</label>
+                    <div class="cn-field">
+                        <label>链接地址：</label>
+                    </div>
                     <input type="url" class="form-control" id="linkUrl" name="linkUrl" placeholder="链接地址"/>
                 </div>
                 <div class="form-group">
-                    <label>描述信息：</label>
+                    <div class="cn-field">
+                        <label>描述信息：</label>
+                    </div>
                     <textarea rows="3" class="form-control" id="organDesc" name="organDesc" placeholder="描述信息"></textarea>
                 </div>
                 <div class="form-group">
@@ -222,9 +244,9 @@
                 organType: "组织机构类型:required"
             },
             focusCleanup: true,
-            timely: 3,
+            timely: 1,
             theme: 'yellow_right_effect',
-            msgClass: "n-bottom",
+            msgClass: "n-top",
             valid: function (form) {
                 // form.submit();
                 var formData = decodeURIComponent($("form").serialize(), true);

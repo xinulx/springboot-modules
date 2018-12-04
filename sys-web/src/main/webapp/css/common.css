@@ -11,6 +11,9 @@
     padding-right: 0;
     padding-left: 35px;
 }
+.local-form{
+    width: 60%;
+}
 .layer-form{
     padding: 20px;
 }

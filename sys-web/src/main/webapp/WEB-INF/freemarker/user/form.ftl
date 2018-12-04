@@ -2,34 +2,48 @@
     <input type="hidden" class="form-control" id="organId" name="organId" value="${organId!''}">
     <input type="hidden" class="form-control" id="id" name="id" value="${(eo.id)!}">
     <div class="form-group">
-        <label>单位</label>
+        <div class="ch-field">
+            <label>单位</label>
+        </div>
         <input readonly value="${(organEO.organName)!}" type="text" class="form-control" placeholder="">
     </div>
     <div class="form-group">
-        <label>排序号</label>
+        <div class="ch-field">
+            <label>排序号</label>
+        </div>
         <input value="${(eo.orderNum)!''}" type="text" class="form-control" id="orderNum" name="orderNum" placeholder="">
     </div>
     <div class="form-group">
-        <label>授予角色</label>
+        <div class="ch-field">
+            <label>授予角色</label>
+        </div>
         <input value="${(eo.roleId)!''}" type="text" class="form-control" id="roleId" name="roleId" placeholder="">
     </div>
     <div class="form-group">
-        <label>用户ID</label>
+        <div class="ch-field">
+            <label>用户ID</label>
+        </div>
         <input <#if (eo.id)??>readonly</#if> value="${(eo.userId)!}" type="text" class="form-control" id="userId" name="userId" placeholder="">
     </div>
     <div class="form-group">
-        <label>用户名称</label>
+        <div class="ch-field">
+            <label>用户名称</label>
+        </div>
         <input value="${(eo.userName)!''}" type="text" class="form-control" id="userName" name="userName" placeholder="">
     </div>
     <div class="form-group">
-        <label>性别</label>
+        <div class="ch-field">
+            <label>性别</label>
+        </div>
         <select id="gender" name="gender" class="form-control">
             <option value="FeMale" <#if (eo.gender)! =='FeMale'>selected</#if>>女</option>
             <option value="Male" <#if (eo.gender)! =='Male'>selected</#if>>男</option>
         </select>
     </div>
     <div class="form-group">
-        <label>设置状态</label>
+        <div class="ch-field">
+            <label>设置状态</label>
+        </div>
         <select id="status" name="status" class="form-control">
             <option value="Normal" <#if (eo.status)! =='Normal'>selected</#if>>启用</option>
             <option value="Removed" <#if (eo.status)! =='Removed'>selected</#if>>删除</option>
@@ -38,31 +52,45 @@
         </select>
     </div>
     <div class="form-group">
-        <label>密码</label>
+        <div class="ch-field">
+            <label>密码</label>
+        </div>
         <input value="${(eo.passWord)!''}" type="password" class="form-control" id="passWord" name="passWord" placeholder="">
     </div>
     <div class="form-group">
-        <label>秘钥</label>
+        <div class="ch-field">
+            <label>秘钥</label>
+        </div>
         <input value="${(eo.key)!''}" type="key" class="form-control" id="key" name="key" placeholder="">
     </div>
     <div class="form-group">
-        <label>职务</label>
+        <div class="ch-field">
+            <label>职务</label>
+        </div>
         <input value="${(eo.position)!''}" type="text" class="form-control" id="position" name="position" placeholder="">
     </div>
     <div class="form-group">
-        <label>联系电话</label>
+        <div class="ch-field">
+            <label>联系电话</label>
+        </div>
         <input value="${(eo.phone)!''}" type="text" class="form-control" id="phone" name="phone" placeholder="">
     </div>
     <div class="form-group">
-        <label>电子邮件</label>
+        <div class="ch-field">
+            <label>电子邮件</label>
+        </div>
         <input value="${(eo.emailAddress)!''}" type="text" class="form-control" id="emailAddress" name="emailAddress" placeholder="">
     </div>
     <div class="form-group">
-        <label>办公电话</label>
+        <div class="ch-field">
+            <label>办公电话</label>
+        </div>
         <input value="${(eo.officePhone)!''}" type="text" class="form-control" id="officePhone" name="officePhone" placeholder="">
     </div>
     <div class="form-group">
-        <label>办公地址</label>
+        <div class="ch-field">
+            <label>办公地址</label>
+        </div>
         <input value="${(eo.officeAddress)!''}" type="text" class="form-control" id="officeAddress" name="officeAddress" placeholder="">
     </div>
     <div class="center-block">
@@ -81,9 +109,9 @@
             userName: "名称:required; length(2~50)"
         },
         focusCleanup: true,
-        timely: 2,
+        timely: 1,
         theme:'yellow_right_effect',
-        msgClass:'n-bottom',
+        msgClass:'n-top',
         valid: function (form) {
             // form.submit();
             var formData = decodeURIComponent($("#userForm").serialize(), true);

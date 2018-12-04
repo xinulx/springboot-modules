@@ -5,13 +5,17 @@
                 <div class="form-group">
                 </div>
                 <div class="form-group">
-                    <label>模板类型</label>
+                    <div class="cn-field">
+                        <label>模板类型</label>
+                    </div>
                     <input type="text" id="tempTypeName" name="tempTypeName" readonly class="form-control readonly" value="">
                     <input type="text" id="tempType" name="tempType" value="" style="display: none">
                     <input type="text" id="pid" name="pid" style="display: none">
                 </div>
                 <div class="form-group">
-                    <label>模板名称</label>
+                    <div class="cn-field">
+                        <label>模板名称</label>
+                    </div>
                     <input id="opt_type" type="hidden" value="${type}">
                     <input type="text" id="id" name="id" style="display: none" ms-duplex="id">
                     <input type="text" id="name" name="name" class="form-control" placeholder="填写模板名称">
@@ -70,12 +74,12 @@
     $("#tpl_form").validator({
         fields: {
             tempTypeName: "类型:required; length(1~12)",
-            tempName: "名称:required; length(2~50)"
+            name: "名称:required; length(2~50)"
         },
         focusCleanup: true,
-        timely: 2,
+        timely: 1,
         theme:'yellow_right_effect',
-        msgClass:'n-bottom',
+        msgClass:'n-top',
         valid: function (form) {
             // form.submit();
             var formData = decodeURIComponent($("#tpl_form").serialize(), true);

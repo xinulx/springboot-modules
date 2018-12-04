@@ -4,22 +4,30 @@
             <input name="id" class="form-control" type="hidden" ms-duplex="id">
             <input name="parentId" class="form-control" type="hidden" ms-duplex="parentId">
             <div class="form-group">
-                <label>数据项名称(<font color="red">*</font>)</label>
+                <div class="cn-field">
+                    <label>数据项名称(<font color="red">*</font>)</label>
+                </div>
                 <input class="form-control" name="itemName" id="itemName" placeholder=""
                           ms-duplex="itemName" maxlength="40"/>
             </div>
             <div class="form-group">
+                <div class="cn-field">
                 <label>数据项导入名称(<font color="red">*</font>)</label>
+                </div>
                 <input class="form-control" name="itemImportName" id="itemImportName" placeholder=""
                           ms-duplex="itemImportName"/>
             </div>
             <div class="form-group">
-                <label>数据项单位</label>
+                <div class="cn-field">
+                    <label>数据项单位</label>
+                </div>
                 <input class="form-control" name="itemUnit" id="itemUnit" placeholder=""
                        ms-duplex="itemUnit"/>
             </div>
             <div class="form-group">
-                <label>数据项解读</label>
+                <div class="cn-field">
+                    <label>数据项解读</label>
+                </div>
                 <textarea class="form-control" name="itemDesc" id="itemDesc" placeholder="在此添加描述信息..."
                           ms-duplex="itemDesc"></textarea>
             </div>
@@ -63,7 +71,7 @@
                 'itemImportName':'数据项导入名称:required;'
             },
             focusCleanup: true,
-            timely: 2,
+            timely: 1,
             theme:'yellow_right_effect',
             msgClass:'n-bottom',
             valid: function () {

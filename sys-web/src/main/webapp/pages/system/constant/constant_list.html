@@ -31,32 +31,24 @@
         </tfoot>
     </table>
 </div>
-<div id="editFrom" class="hidden" style="margin: 10px auto;overflow-x: hidden">
-    <form class="form-horizontal" method="post">
+<div id="editFrom" class="bg-warning hidden" style="margin: 10px auto">
+    <form class="col-md-12" method="post">
         <input style="display: none" name="rid"/>
         <div class="form-group">
-            <div class="col-sm-3 control-label text-right">编号：</div>
-            <div class="col-sm-7">
-                <input type="text" class="form-control" id="code" name="code" placeholder="编号">
-            </div>
+            <div class="cn-field"><label>编号：</label></div>
+            <input type="text" class="form-control" id="code" name="code" placeholder="编号">
         </div>
         <div class="form-group">
-            <span class="col-sm-3 control-label text-right">名称：</span>
-            <div class="col-sm-7">
-                <input type="text" class="form-control" id="name" name="name" placeholder="名称">
-            </div>
+            <div class="cn-field"><label>名称：</label></div>
+            <input type="text" class="form-control" id="name" name="name" placeholder="名称">
         </div>
         <div class="form-group">
-            <span class="col-sm-3 control-label text-right">表名：</span>
-            <div class="col-sm-7">
-                <input type="text" class="form-control" id="tableName" name="tableName" placeholder="表名">
-            </div>
+            <div class="cn-field"><label>表名：</label></div>
+            <input type="text" class="form-control" id="tableName" name="tableName" placeholder="表名">
         </div>
         <div class="form-group">
-            <span class="col-sm-3 control-label text-right">列名：</span>
-            <div class="col-sm-7">
-                <input type="text" class="form-control" id="columnName" name="columnName" placeholder="列名">
-            </div>
+            <div class="cn-field"><label>列名：</label></div>
+            <input type="text" class="form-control" id="columnName" name="columnName" placeholder="列名">
         </div>
     </form>
 </div>
@@ -237,9 +229,9 @@
                 columnName:"列名:required;"
             },
             focusCleanup: true,
-            timely: 3,
+            timely: 1,
             theme:'yellow_right_effect',
-            msgClass: "n-bottom",
+            msgClass: "n-top",
             valid: function(form) {
                 // form.submit();
                 var formData = decodeURIComponent($("form").serialize(),true);

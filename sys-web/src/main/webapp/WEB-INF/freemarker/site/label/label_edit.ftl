@@ -5,12 +5,16 @@
             <input name="parentId" class="hide">
             <div class="form-body">
                 <div class="form-group">
-                    <label>标签名称</label>
+                    <div class="cn-field">
+                        <label>标签名称</label>
+                    </div>
                     <input type="text" name="labelName" id="labelName" class="form-control"
                            placeholder="" maxlength="30" value="${labelName!}">
                 </div>
                 <div class="form-group">
-                    <label>标签类型</label>
+                    <div class="cn-field">
+                        <label>标签类型</label>
+                    </div>
                     <div class="form-control">
                     <#if labelType??>
                         <label class="radio-inline"><input type="radio" name="labelType" id="labelType0" value="0" <#if labelType==0>checked</#if>>标签目录</label>
@@ -24,7 +28,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>描述</label>
+                    <div class="cn-field">
+                        <label>描述</label>
+                    </div>
                     <textarea class="form-control" name="labelNotes" rows="3"
                               placeholder="">${labelNotes!}</textarea>
                 </div>
@@ -51,7 +57,7 @@
             fields: {
                 'labelName': '标签名称:required;'
             },
-            timely:2,
+            timely:1,
             theme:'yellow_right_effect',
             msgClass:'n-bottom',
             valid: function () {

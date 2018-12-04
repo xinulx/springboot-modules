@@ -2,15 +2,21 @@
     <input type="hidden" class="form-control" id="createOrganId" name="createOrganId" value="${organId!''}">
     <input type="hidden" class="form-control" id="id" name="id" value="${(eo.id)!}">
     <div class="form-group">
-        <label>角色编码</label>
+        <div class="ch-field">
+            <label>角色编码</label>
+        </div>
         <input <#if (eo.id)??>readonly</#if> value="${(eo.roleCode)!}" type="text" class="form-control" id="roleCode" name="roleCode" placeholder="角色编码">
     </div>
     <div class="form-group">
-        <label>角色名称</label>
+        <div class="ch-field">
+            <label>角色名称</label>
+        </div>
         <input value="${(eo.roleName)!''}" type="text" class="form-control" id="roleName" name="roleName" placeholder="角色名称">
     </div>
     <div class="form-group">
-        <label>角色描述</label>
+        <div class="ch-field">
+            <label>角色描述</label>
+        </div>
         <textarea id="roleDesc" class="form-control" name="roleDesc" placeholder="角色描述信息">${(eo.roleDesc)!''}</textarea>
         <p class="help-block text-warning">填写描述信息帮助了解角色功能.</p>
     </div>
@@ -27,9 +33,9 @@
             roleDesc: "length(0~500)"
         },
         focusCleanup: true,
-        timely: 2,
+        timely: 1,
         theme:'yellow_right_effect',
-        msgClass:'n-bottom',
+        msgClass:'n-top',
         valid: function (form) {
             // form.submit();
             var formData = decodeURIComponent($("#roleForm").serialize(), true);

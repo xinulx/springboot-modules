@@ -8,35 +8,49 @@
     <br/>
     <div class="tab-content">
         <div class="tab-pane active" id="tab_1_1">
-            <form method="post" autocomplete="off">
+            <form method="post" autocomplete="off" class="local-form">
                 <input type="text" style="display: none" name="pid" value="0"/>
                 <input type="text" style="display: none" name="id"/>
                 <div class="form-group">
-                    <label>菜单编号：</label>
+                    <div class="ch-field">
+                        <label>菜单编号：</label>
+                    </div>
                     <input type="text" class="form-control" id="code" name="code" placeholder="菜单编号">
                 </div>
                 <div class="form-group">
-                    <label>菜单名称：</label>
+                    <div class="ch-field">
+                        <label>菜单名称：</label>
+                    </div>
                     <input type="text" class="form-control" id="name" name="name" placeholder="菜单名称">
                 </div>
                 <div class="form-group">
-                    <label>排序号：</label>
+                    <div class="ch-field">
+                        <label>排序号：</label>
+                    </div>
                     <input type="text" class="form-control" id="ord" name="ord" placeholder="排序号">
                 </div>
                 <div class="form-group">
-                    <label>菜单类型：</label>
+                    <div class="ch-field">
+                        <label>菜单类型：</label>
+                    </div>
                     <select class="form-control" id="type" name="type"></select>
                 </div>
                 <div class="form-group">
-                    <label>URL：</label>
+                    <div class="ch-field">
+                        <label>URL：</label>
+                    </div>
                     <input class="form-control" id="reqUrl" name="reqUrl" placeholder="URL"/>
                 </div>
                 <div class="form-group">
-                    <label>菜单状态：</label>
+                    <div class="ch-field">
+                        <label>菜单状态：</label>
+                    </div>
                     <select class="form-control" id="status" name="status"></select>
                 </div>
                 <div class="form-group">
-                    <label>菜单图标：</label>
+                    <div class="ch-field">
+                        <label>菜单图标：</label>
+                    </div>
                     <input class="form-control" id="iconClass" name="iconClass" placeholder="菜单图标"/>
                 </div>
                 <div class="form-group">
@@ -49,32 +63,32 @@
 </div>
 <div class="col-md-10 col-md-offset-2 hidden right-layout" id="buttonInfo"></div>
 <script type="text/javascript">
-    autoHeight("menuTree",85);
-    autoHeight("buttonInfo",85);
-    var zTree, currNode, optType = "add",selectNode;
+    autoHeight("menuTree", 85);
+    autoHeight("buttonInfo", 85);
+    var zTree, currNode, optType = "add", selectNode;
     var setting = {
         view: {
             addDiyDom: function (treeId, treeNode) {
                 var aObj = $("#" + treeNode.tId + "_a");
                 var addCatalogStr = "<span class='button tree-edit-add-catalog' data-toggle='tooltip' title='添加同级菜单' id='diyBtn0_" + treeNode.id + "' onclick='add(" + treeNode.id + ")'></span>";
-                var addStr= "<span class='button tree-edit-add' data-toggle='tooltip' title='添加下级菜单' id='diyBtn1_" + treeNode.id + "' onclick='edit(" + treeNode.id + ",\"add\")'></span>";
+                var addStr = "<span class='button tree-edit-add' data-toggle='tooltip' title='添加下级菜单' id='diyBtn1_" + treeNode.id + "' onclick='edit(" + treeNode.id + ",\"add\")'></span>";
                 var editStr = "<span class='button tree-edit-edit' data-toggle='tooltip' title='修改菜单' id='diyBtn2_" + treeNode.id + "' onclick='edit(" + treeNode.id + ",\"edit\")'></span>";
                 var delStr = "<span class='button tree-edit-del' data-toggle='tooltip' title='删除菜单' id='diyBtn3_" + treeNode.id + "' onclick='delMenu(" + treeNode.id + ")'></span>";
-                if(treeNode.isParent){
+                if (treeNode.isParent) {
                     aObj.after(addCatalogStr + addStr + editStr);
-                }else{
+                } else {
                     aObj.after(addCatalogStr + addStr + editStr + delStr);
                 }
-                $("[data-toggle='tooltip']").tooltip({placement:'bottom'});
+                $("[data-toggle='tooltip']").tooltip({placement: 'bottom'});
             }
         },
         data: {
             simpleData: {
                 enable: true,
-                pIdKey:"pid"
+                pIdKey: "pid"
             },
-            key:{
-                title:"my_title"
+            key: {
+                title: "my_title"
             }
         },
         callback: {
@@ -85,13 +99,15 @@
             }
         }
     };
-    function add(id){
+
+    function add(id) {
         $("form")[0].reset();
         currNode = zTree.getNodeByParam("id", id);
         $("input[name=pid]").val(currNode['pid']);
         optType = 'add';
         showEditForm();
     }
+
     function edit(id, type) {
         optType = type;
         currNode = zTree.getNodeByParam("id", id);
@@ -100,7 +116,7 @@
             $("form")[0].reset();
             $("input[name=pid]").val(currNode['id']);
         } else {
-            $("input[name=pid]").val(currNode['pid'] == null?0:currNode['pid']);
+            $("input[name=pid]").val(currNode['pid'] == null ? 0 : currNode['pid']);
             $("input[name=id]").val(currNode['id']);
             $("input[name=code]").val(currNode['code']);
             $("input[name=name]").val(currNode['name']);
@@ -122,12 +138,12 @@
             return;
         }
         layer.confirm('删除后将不能恢复，是否确定删除？', {
-            icon:3,
-            btn: ['确定','取消'] //按钮
-        }, function(){
+            icon: 3,
+            btn: ['确定', '取消'] //按钮
+        }, function () {
             $.post(
                 "/menu/del",
-                {id:id},
+                {id: id},
                 function (result) {
                     if (result.status == 1) {
                         layer.msg(
@@ -158,7 +174,7 @@
             dataType: 'json',
             async: false,
             success: function (result) {
-                initTreeData(zNodes,result,'name');
+                initTreeData(zNodes, result, 'name');
             }
         });
         return zNodes;
@@ -190,9 +206,9 @@
                 status: "菜单状态:required;",
             },
             focusCleanup: true,
-            timely: 3,
+            timely: 1,
             theme: 'yellow_right_effect',
-            msgClass: "n-bottom",
+            msgClass: "n-top",
             valid: function (form) {
                 // form.submit();
                 var formData = decodeURIComponent($("form").serialize(), true);

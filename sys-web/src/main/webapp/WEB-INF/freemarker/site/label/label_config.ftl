@@ -3,12 +3,16 @@
         <form id="labelConfigForm" role="form" ms-controller="labelConfigForm">
             <div class="form-body">
                 <div class="form-group">
-                    <label>属性名称</label>
+                    <div class="cn-field">
+                        <label>属性名称</label>
+                    </div>
                     <input type="text" name="fieldname" class="form-control" ms-duplex="fieldname" placeholder="" maxlength="50">
                 </div>
 
                 <div class="form-group">
-                    <label>数据类型</label>
+                    <div class="cn-field">
+                        <label>数据类型</label>
+                    </div>
                     <select class="form-control" name="datatype" id="datatype" ms-duplex="datatype" placeholder="">
                         <option value="string">string</option>
                         <option value="integer">integer</option>
@@ -17,17 +21,23 @@
                 </div>
 
                 <div class="form-group">
-                    <label>允许值</label>
+                    <div class="cn-field">
+                        <label>允许值</label>
+                    </div>
                     <input type="text" name="allowval" class="form-control" ms-duplex="allowval" placeholder="" maxlength="50">
                 </div>
 
                 <div class="form-group">
-                    <label>默认值</label>
+                    <div class="cn-field">
+                        <label>默认值</label>
+                    </div>
                     <input type="text" name="defaultval" class="form-control" ms-duplex="defaultval" placeholder="" maxlength="50">
                 </div>
 
                 <div class="form-group">
-                    <label>描述</label>
+                    <div class="cn-field">
+                        <label>描述</label>
+                    </div>
                     <textarea class="form-control" name="description" ms-duplex="description" rows="3" placeholder=""></textarea>
                 </div>
                 <div class="pull-right">
@@ -70,7 +80,7 @@
                 'allowval': '允许值:required;'
             },
             focusCleanup: true,
-            timely: 2,
+            timely: 1,
             theme:'yellow_right_effect',
             msgClass:'n-bottom',
             valid: function () {
