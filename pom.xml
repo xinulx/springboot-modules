@@ -14,6 +14,7 @@
         <module>file-web</module>
         <module>jspx-cms</module>
         <module>websocket</module>
+        <module>sys-api</module>
     </modules>
 
 
