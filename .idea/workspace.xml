@@ -2,46 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9deba5b-61a2-4a76-a1c7-3faaa1208609" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/busi/RightDictCache.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/DataDictionaryUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictItemController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictDao.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictItemDao.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictDaoImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictItemDaoImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictEO.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictItemEO.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictItemService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictItemServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictServiceIml.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataDictPageVO.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataDictVO.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataSortVO.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addDict.ftl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addItem.ftl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/datadict_list.ftl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/dictItem_List.ftl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editDict.ftl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editItem.ftl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/images/tpl.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/collect/index.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/collect/index.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/edit.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/edit.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/import_form.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/import_form.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/edit.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/edit.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/index.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/index.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/info/index.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/info/index.ftl" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl" />
       <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/menu_auth.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/menu_auth.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl" />
       <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/tpl_manage.js" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/tpl_manage.js" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/log/index.html" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/log/index.html" />
       <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/plugins/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/plugins/bootstrap/css/bootstrap.min.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -276,7 +243,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constant_list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="constant_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
@@ -293,9 +260,11 @@
       <file leaf-file-name="btn_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="84" column="28" lean-forward="false" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="380">
+              <caret line="20" column="60" lean-forward="false" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -303,13 +272,13 @@
       <file leaf-file-name="list.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="15" column="71" lean-forward="false" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="71" />
+            <state relative-caret-position="38">
+              <caret line="3" column="78" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="78" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <marker date="1543998863036" expanded="true" signature="2784:2790" ph="&amp;nbsp;" />
-                <marker date="1543998863036" expanded="true" signature="2811:2817" ph="&amp;nbsp;" />
+                <marker date="1544003489789" expanded="true" signature="2828:2834" ph="&amp;nbsp;" />
+                <marker date="1544003489789" expanded="true" signature="2855:2861" ph="&amp;nbsp;" />
               </folding>
             </state>
           </provider>
@@ -318,13 +287,62 @@
       <file leaf-file-name="list.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="762">
-              <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+            <state relative-caret-position="57">
+              <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="78" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1543998862995" expanded="true" signature="3280:3286" ph="&amp;nbsp;" />
-                <marker date="1543998862995" expanded="true" signature="3307:3313" ph="&amp;nbsp;" />
+                <marker date="1544003424620" expanded="true" signature="3324:3330" ph="&amp;nbsp;" />
+                <marker date="1544003424620" expanded="true" signature="3351:3357" ph="&amp;nbsp;" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="20" column="109" lean-forward="false" selection-start-line="20" selection-start-column="103" selection-end-line="20" selection-end-column="109" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/websocket/src/main/resources/static/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/log/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/bootstrap/css/bootstrap.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="4" column="52712" lean-forward="false" selection-start-line="4" selection-start-column="52712" selection-end-line="4" selection-end-column="52712" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -374,8 +392,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ls:</find>
-      <find>mine:</find>
       <find>exe</find>
       <find>directory.gif</find>
       <find>;return false;</find>
@@ -403,6 +419,8 @@
       <find>btn-xs</find>
       <find>添加数据项</find>
       <find>添加</find>
+      <find>JVM</find>
+      <find>jvm进程内的日志</find>
       <find>key</find>
     </findStrings>
     <replaceStrings>
@@ -435,15 +453,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/applet/AppletDSC.java" />
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/awt/color/ColorSpaceDSC.java" />
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/beans/BeanDescriptorDSC.java" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/beans/BeanDSC.java" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/plugins/niceValidator/dist/jquery.validator.css" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/login.html" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/menu_list.html" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/form.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_edit.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl" />
@@ -482,10 +496,14 @@
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/datadict_list.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/DataDictionaryUtil.java" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/index.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl" />
+        <option value="$PROJECT_DIR$/websocket/src/main/resources/static/index.html" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/plugins/bootstrap/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/log/index.html" />
       </list>
     </option>
   </component>
@@ -1430,7 +1448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543914273299</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="添加数据字典及修改一些问题">
+      <created>1543998961450</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1543998961450</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1466,7 +1491,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329587000" />
+    <option name="totallyTimeSpent" value="333702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1594,7 +1619,8 @@
     <MESSAGE value="样式问题" />
     <MESSAGE value="api" />
     <MESSAGE value="表单验证样式调整" />
-    <option name="LAST_COMMIT_MESSAGE" value="表单验证样式调整" />
+    <MESSAGE value="添加数据字典及修改一些问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加数据字典及修改一些问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1620,30 +1646,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/edit.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/edit.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-418">
-          <caret line="14" column="65" lean-forward="false" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/organ/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/common/exc/FreemarkerExceptionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -1672,14 +1674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="184" column="44" lean-forward="false" selection-start-line="184" selection-start-column="44" selection-end-line="184" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4956">
-          <caret line="4" column="47740" lean-forward="false" selection-start-line="4" selection-start-column="47734" selection-end-line="4" selection-end-column="47740" />
           <folding />
         </state>
       </provider>
@@ -2047,39 +2041,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="84" column="28" lean-forward="false" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1543998862995" expanded="true" signature="3280:3286" ph="&amp;nbsp;" />
-            <marker date="1543998862995" expanded="true" signature="3307:3313" ph="&amp;nbsp;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="15" column="71" lean-forward="false" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="71" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1543998863036" expanded="true" signature="2784:2790" ph="&amp;nbsp;" />
-            <marker date="1543998863036" expanded="true" signature="2811:2817" ph="&amp;nbsp;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -2088,6 +2049,82 @@
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/websocket/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="4" column="52712" lean-forward="false" selection-start-line="4" selection-start-column="52712" selection-end-line="4" selection-end-column="52712" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="78" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1544003424620" expanded="true" signature="3324:3330" ph="&amp;nbsp;" />
+            <marker date="1544003424620" expanded="true" signature="3351:3357" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="3" column="78" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="78" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1544003489789" expanded="true" signature="2828:2834" ph="&amp;nbsp;" />
+            <marker date="1544003489789" expanded="true" signature="2855:2861" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="60" lean-forward="false" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="20" column="109" lean-forward="false" selection-start-line="20" selection-start-column="103" selection-end-line="20" selection-end-column="109" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/log/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

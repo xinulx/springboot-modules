@@ -1,20 +1,32 @@
-<div id="toolBtn" style="margin-bottom: 5px">
-    <button type="button" class="btn btn-default" onclick="save()">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加
-    </button>
-    <button type="button" class="btn btn-danger" onclick="batchDel()">
-        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>删除
-    </button>
-    <button type="button" class="btn btn-warning" onclick="general()">
-        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>一般功能
-    </button>
-    <button type="button" class="btn btn-default" style="float: right" onclick="$('#key').val('');loadList()">
-        <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>显示全部
-    </button>
-    <button type="button" class="btn btn-default" style="float: right" onclick="loadList()">
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>查询
-    </button>
-    <input style="width:300px;float: right" type="text" class="form-control" id="key" name="key" placeholder="编码/名称" />
+<div id="toolBtn" class="table-toolbar" style="margin-bottom: 5px">
+    <div class="row">
+        <div class="col-md-5">
+            <form class="form-inline tr search-toolbar pull-left" role="form">
+                <button type="button" class="btn btn-default" onclick="save()">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加
+                </button>
+                <button type="button" class="btn btn-danger" onclick="batchDel()">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>删除
+                </button>
+                <button type="button" class="btn btn-warning" onclick="general()">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>一般功能
+                </button>
+            </form>
+        </div>
+        <div class="col-md-7">
+            <form class="form-inline tr search-toolbar pull-right" role="form">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="btnkey" name="btnkey" placeholder="编码/名称" />
+                </div>
+                <button type="button" class="btn btn-primary" onclick="loadList()">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>查询
+                </button>
+                <button type="button" class="btn btn-success" onclick="$('#btnkey').val('');loadList()">
+                    <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>显示全部
+                </button>
+            </form>
+        </div>
+    </div>
 </div>
 <table id="dataTable" class="table table-bordered table-hover">
     <thead>
@@ -179,7 +191,7 @@
                 pageIndex:pageIndex,
                 pageSize:pageSize,
                 menuId:selectNode.id,
-                key:$("#key").val()
+                key:$("#btnkey").val()
             },
             function(result){
                 layer.close(loadIndex);

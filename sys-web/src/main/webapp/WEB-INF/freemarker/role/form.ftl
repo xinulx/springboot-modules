@@ -18,7 +18,7 @@
             <label>角色描述</label>
         </div>
         <textarea id="roleDesc" class="form-control" name="roleDesc" placeholder="角色描述信息">${(eo.roleDesc)!''}</textarea>
-        <p class="help-block text-warning">填写描述信息帮助了解角色功能.</p>
+        <p class="help-block bg-warning" style="height: 40px;line-height: 40px;text-indent: 2em;color:#c29d0b">温馨提示：填写描述信息帮助了解角色功能.</p>
     </div>
     <div class="center-block">
         <button type="submit" class="btn btn-default">保 存</button>

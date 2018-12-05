@@ -1,17 +1,23 @@
-<h3 class="bg-warning">jvm进程内的日志</h3>
-<button class="btn btn-success" onclick="openSocket()">开启日志</button>
-<button class="btn btn-primary" onclick="sendSocket()">发送消息</button>
-<button class="btn btn-primary" onclick="senJsonp()">测试JSONP</button>
-<button class="btn btn-danger" onclick="closeSocket()">关闭日志</button>
-<br/><br/>
+<h3 class="bg-warning" style="height: 50px;line-height: 50px;color:#c29d0b;text-indent: 1em">jvm进程内的日志</h3>
+<div class="col-xs-12" style="padding-left: 0;padding-bottom: 8px">
+    <form class="form-inline tr search-toolbar pull-left" role="form">
+        <button type="button" class="btn btn-success" onclick="openSocket()">开启日志</button>
+        <button type="button" class="btn btn-danger" onclick="closeSocket()">关闭日志</button>
+        <button type="button" class="btn btn-primary" onclick="sendSocket()">发送消息</button>
+        <button type="button" class="btn btn-primary" onclick="senJsonp()">测试JSONP</button>
+    </form>
+</div>
 <div id="log-container" style="height: 300px; overflow-y: scroll; background: #333; color: #aaa; padding: 10px;">
     <div></div>
 </div>
-<h3 class="bg-warning">指定监听日志文件的日志</h3>
-<button class="btn btn-success" onclick="openSocket()">开启日志</button>
-<button class="btn btn-danger" onclick="closeSocket()">关闭日志</button>
-<br/><br/>
-<div id="filelog-container" style="height: 300px; overflow-y: scroll; background: #333; color: #aaa; padding: 10px;">
+<h3 class="bg-warning" style="height: 50px;line-height: 50px;color:#c29d0b;text-indent: 1em">指定监听日志文件的日志</h3>
+<div class="col-xs-12" style="padding-left: 0;padding-bottom: 8px">
+    <form class="form-inline tr search-toolbar pull-left" role="form">
+        <button type="button" class="btn btn-success" onclick="openSocket()">开启日志</button>
+        <button type="button" class="btn btn-danger" onclick="closeSocket()">关闭日志</button>
+    </form>
+</div>
+<div id="filelog-container" style="height: 300px; overflow-y: scroll; background: #333; color: #aaa; padding: 10px;margin-bottom: 30px">
     <div></div>
 </div>
 <script>

@@ -1,14 +1,14 @@
 <div id="toolBtn" class="table-toolbar" style="margin-bottom: 5px">
     <div class="row">
         <div class="col-md-7">
-            <div class="btn-group">
+            <form class="form-inline tr search-toolbar pull-left" role="form">
                 <button type="button" class="btn btn-default" onclick="addOrEdit()">
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;添加
                 </button>
                 <button type="button" class="btn btn-danger" onclick="batchDel()">
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;删除
                 </button>
-            </div>
+            </form>
         </div>
         <div class="col-md-5">
             <form class="form-inline tr search-toolbar pull-right" role="form">
@@ -118,6 +118,6 @@
     var roleIndex;
     function addOrEdit(id){
         var url = id == null?"/role/edit?organId="+organId:"/role/edit?organId="+organId+"&id="+id;
-        roleIndex = Mine.layer.openWin(id==null?"添加角色":"修改角色",url,500,400);
+        roleIndex = Mine.layer.openWin(id==null?"添加角色":"修改角色",url,500,420);
     }
 </script>
