@@ -7,7 +7,7 @@
     <br/>
     <div id="presentation1">
         <div class="col-xs-12">
-            <button id="saveBtn" class="btn btn-primary" title="run save()">保存</button>
+            <button id="saveBtn" class="btn btn-default" title="run save()">保存</button>
             <button id="previewBtn" class="btn btn-success" title="run save()">预览</button>
             <button id="btn-json-viewer" class="btn btn-info" title="run jsonViewer()">转换Json数据</button>
             <label class="checkbox-inline"> <input type="checkbox" id="collapsed"> 收缩所有的节点 </label>

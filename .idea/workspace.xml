@@ -2,18 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9deba5b-61a2-4a76-a1c7-3faaa1208609" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/busi/RightDictCache.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/DataDictionaryUtil.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictItemController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictDao.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictItemDao.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictDaoImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictItemDaoImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictEO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictItemEO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictItemService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictItemServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictServiceIml.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataDictPageVO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataDictVO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataSortVO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addDict.ftl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addItem.ftl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/datadict_list.ftl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/dictItem_List.ftl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editDict.ftl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editItem.ftl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/images/tpl.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/collect/index.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/collect/index.ftl" />
       <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/edit.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/edit.ftl" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/import_form.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/import_form.ftl" />
       <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/edit.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/edit.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/index.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/index.ftl" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/info/index.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/info/index.ftl" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/menu_auth.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/menu_auth.ftl" />
       <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_edit.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_edit.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/form.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/form.ftl" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/tpl_manage.js" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/tpl_manage.js" />
       <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/menu_list.html" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/menu_list.html" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/organ/index.html" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/organ/index.html" />
+      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html" afterPath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -84,35 +112,241 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/login.html">
+      <file leaf-file-name="DynamicTplController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/controller/DynamicTplController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="48" />
+            <state relative-caret-position="462">
+              <caret line="64" column="34" lean-forward="false" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataDictItemController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictItemController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.validator.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/niceValidator/dist/jquery.validator.min.js">
+      <file leaf-file-name="DataDictController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="242">
+              <caret line="99" column="33" lean-forward="false" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1346#1347#0" expanded="true" />
+                <element signature="e#1400#1401#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataDictServiceIml.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictServiceIml.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="34" />
+              <folding>
+                <element signature="e#1002#1003#0" expanded="true" />
+                <element signature="e#1052#1053#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataDictDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding>
+                <element signature="e#868#884#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editItem.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editItem.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-836">
+              <caret line="10" column="115" lean-forward="false" selection-start-line="10" selection-start-column="115" selection-end-line="10" selection-end-column="115" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editDict.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editDict.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="54" column="14" lean-forward="false" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addItem.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addItem.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="72" column="34" lean-forward="false" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addDict.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addDict.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-114">
+              <caret line="48" column="16" lean-forward="false" selection-start-line="48" selection-start-column="16" selection-end-line="51" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dictItem_List.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/dictItem_List.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="107" column="13" lean-forward="false" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="127" column="8" lean-forward="false" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="datadict_list.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/datadict_list.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="19" column="14" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="19" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataDictionaryUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/DataDictionaryUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1098#1114#0" expanded="true" />
+                <element signature="e#1790#1802#0" expanded="true" />
+                <element signature="e#2640#2652#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/index.ftl">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/index.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="36" column="39" lean-forward="false" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+            <state relative-caret-position="927">
+              <caret line="68" column="14" lean-forward="false" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+              <folding>
+                <marker date="1543996218659" expanded="true" signature="2390:2396" ph="&amp;nbsp;" />
+                <marker date="1543996218659" expanded="true" signature="2552:2558" ph="&amp;nbsp;" />
+                <marker date="1543996218659" expanded="true" signature="3215:3232" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="constant_list.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="71" lean-forward="false" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="71" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="btn_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="84" column="28" lean-forward="false" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="15" column="71" lean-forward="false" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="71" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <marker date="1543998863036" expanded="true" signature="2784:2790" ph="&amp;nbsp;" />
+                <marker date="1543998863036" expanded="true" signature="2811:2817" ph="&amp;nbsp;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="762">
+              <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <marker date="1543998862995" expanded="true" signature="3280:3286" ph="&amp;nbsp;" />
+                <marker date="1543998862995" expanded="true" signature="3307:3313" ph="&amp;nbsp;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataDictEO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictEO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+              <folding>
+                <element signature="e#1094#1095#0" expanded="true" />
+                <element signature="e#1123#1124#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IDataDictItemService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictItemService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="463">
+              <caret line="83" column="32" lean-forward="false" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -121,129 +355,9 @@
       <file leaf-file-name="menu_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/menu_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3990">
-              <caret line="210" column="28" lean-forward="false" selection-start-line="210" selection-start-column="28" selection-end-line="210" selection-end-column="28" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+            <state relative-caret-position="95">
+              <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="25" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/form.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1558">
-              <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constant_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="41" column="41" lean-forward="false" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="41" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/organ/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="248" column="28" lean-forward="false" selection-start-line="248" selection-start-column="28" selection-end-line="248" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="838">
-              <caret line="83" column="7" lean-forward="false" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tpl_edit.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_edit.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="42" />
-              <folding>
-                <element signature="n#style#0;n#input#1;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="label_edit.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="label_config.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/edit.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.ftl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/edit.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="78" column="13" lean-forward="false" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="freemarker.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/doc/freemarker.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="335">
-                <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -260,18 +374,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cms_label</find>
-      <find>sys_label</find>
-      <find>&quot;label&quot;</find>
-      <find>labelService</find>
-      <find>@Service(&quot;labelService&quot;)</find>
-      <find>&quot;labelService&quot;</find>
-      <find>cur</find>
-      <find>labelModel</find>
-      <find>labOpt</find>
-      <find>data</find>
-      <find>description</find>
-      <find>16PX</find>
       <find>ls:</find>
       <find>mine:</find>
       <find>exe</find>
@@ -284,12 +386,24 @@
       <find>mr0</find>
       <find>console</find>
       <find>reloadCache</find>
-      <find>size</find>
       <find>WdatePicker</find>
       <find>local-form</find>
       <find>n-right</find>
       <find>label</find>
       <find>code</find>
+      <find>size</find>
+      <find>active</find>
+      <find>public</find>
+      <find>saveDict</find>
+      <find>onKeyEnter</find>
+      <find>search</find>
+      <find>grid</find>
+      <find>保 存</find>
+      <find>添加分类</find>
+      <find>btn-xs</find>
+      <find>添加数据项</find>
+      <find>添加</find>
+      <find>key</find>
     </findStrings>
     <replaceStrings>
       <replace>websocket</replace>
@@ -304,6 +418,7 @@
       <replace>站点信息</replace>
       <replace>BaseRunTimeException.TipsMode</replace>
       <replace>SYS_LABEL</replace>
+      <replace>grid2</replace>
     </replaceStrings>
     <dirStrings>
       <dir>E:\minespace\springboot-modules</dir>
@@ -320,57 +435,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/Jacksons.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/LabelDaoImpl.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/ILabelDao.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/resources/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.vm" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/ResponseData.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_index.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/plugins/ztree/css/zTreeStyle/zTreeStyle.css" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/controller/DynamicTplController.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/util/HtmlRegUtils.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/entity/LabelEO.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/controller/LabelController.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/dao/impl/LabelDaoImpl.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_select.js" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/service/impl/LabelServiceImpl.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/log/index.html" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/inter/RealSubject.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/service/RealSubject.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/inter/Subject.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/proxy/ProxySubject.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/proxy/DynamicProxy.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/proxy/ProxyFactory.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/util/CodeUtil.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/test/java/com/springboot/CommonTest.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/css/menu.css" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/index.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/index.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/menu_auth.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_list.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/cache/index.ftl" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/applet/AppletDSC.java" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/awt/color/ColorSpaceDSC.java" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/beans/BeanDescriptorDSC.java" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/beans/BeanDSC.java" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/plugins/niceValidator/dist/jquery.validator.css" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/login.html" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/index.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/menu_list.html" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/form.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/organ/index.html" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_edit.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/edit.ftl" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/edit.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/organ/index.html" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/tpl_manage.js" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/index.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataDictPageVO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/vo/DataSortVO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/internal/entity/DataDictEO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/internal/entity/DataDictItemEO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/vo/DataDictPageVO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataSortVO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictEO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictItemEO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictDao.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictItemDao.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictItemDaoImpl.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictService.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictItemService.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictServiceIml.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictItemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/busi/RightDictCache.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addDict.vm" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictDaoImpl.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictController.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editDict.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addDict.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addItem.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editItem.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictItemController.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/dictItem_List.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/datadict_list.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/DataDictionaryUtil.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/index.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html" />
       </list>
     </option>
   </component>
@@ -394,8 +509,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-24" />
-    <option name="y" value="6" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1438" />
     <option name="height" value="860" />
   </component>
@@ -448,6 +563,114 @@
               <item name="sys-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -466,7 +689,30 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
@@ -496,19 +742,7 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="freemarker" type="462c0819:PsiDirectoryNode" />
-              <item name="dataopen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
-              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="freemarker" type="462c0819:PsiDirectoryNode" />
-              <item name="dataopen" type="462c0819:PsiDirectoryNode" />
-              <item name="item" type="462c0819:PsiDirectoryNode" />
+              <item name="role" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
@@ -520,6 +754,41 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="freemarker" type="462c0819:PsiDirectoryNode" />
               <item name="site" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="freemarker" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="label" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="freemarker" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="freemarker" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="datadictionary" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
@@ -560,15 +829,18 @@
     <property name="RequestMappingsPanelOrder2" value="2" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.springboot.common.util" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\springboot-modules\springboot-modules\sys-web\src\main\webapp\images" />
+      <recent name="D:\workspace\springboot-modules\springboot-modules\sys-web\src\main\webapp\css" />
+      <recent name="E:\minespace\springboot-modules\file-web" />
+      <recent name="E:\minespace\springboot-modules\file-convert" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\minespace\springboot-modules\sys-web\src\main\webapp\images" />
-      <recent name="E:\minespace\springboot-modules\sys-web\src\main\webapp\js\pages" />
-      <recent name="E:\minespace\springboot-modules\sys-web\src\main\webapp\WEB-INF\freemarker\site" />
-      <recent name="E:\minespace\springboot-modules\sys-web\src\main\java\com\springboot\tag" />
-      <recent name="E:\minespace\springboot-modules\sys-web\src\main\java\com\springboot\service\mongodb" />
+      <recent name="E:\minespace\springboot-modules\sys-web\src\main\webapp\WEB-INF\freemarker\system" />
+      <recent name="E:\minespace\springboot-modules\sys-web\src\main\java\com\springboot\dao\business\impl" />
+      <recent name="E:\minespace\springboot-modules\sys-web\src\main\java\com\springboot\dao\business" />
+      <recent name="E:\minespace\springboot-modules\sys-web\src\main\java\com\springboot\service\hibernate\impl" />
+      <recent name="E:\minespace\springboot-modules\sys-web\src\main\java\com\springboot\service\hibernate" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.springboot.tpl.controller" />
@@ -577,11 +849,8 @@
       <recent name="com.springboot.common.busi" />
       <recent name="com.springboot.dao.business.impl" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\workspace\springboot-modules\springboot-modules\sys-web\src\main\webapp\images" />
-      <recent name="D:\workspace\springboot-modules\springboot-modules\sys-web\src\main\webapp\css" />
-      <recent name="E:\minespace\springboot-modules\file-web" />
-      <recent name="E:\minespace\springboot-modules\file-convert" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.springboot.common.util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1147,7 +1416,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543907078788</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="表单验证样式调整">
+      <created>1543913992141</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1543913992141</updated>
+    </task>
+    <task id="LOCAL-00026" summary="表单验证样式调整">
+      <created>1543914273299</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1543914273299</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1183,7 +1466,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308709000" />
+    <option name="totallyTimeSpent" value="329587000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1196,7 +1479,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875723" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4917647" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55167395" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33624455" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32896653" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1205,10 +1488,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38136828" sideWeight="0.49356222" order="13" side_tool="false" content_ui="tabs" x="0" y="11" width="1440" height="838" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36681223" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33187774" sideWeight="0.48771676" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33187774" sideWeight="0.48771676" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32896653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5082353" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29624277" sideWeight="0.5082353" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5082353" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1310,7 +1593,8 @@
     <MESSAGE value="关于代理" />
     <MESSAGE value="样式问题" />
     <MESSAGE value="api" />
-    <option name="LAST_COMMIT_MESSAGE" value="api" />
+    <MESSAGE value="表单验证样式调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="表单验证样式调整" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1327,7 +1611,7 @@
           <option name="timeStamp" value="133" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="140" />
+      <option name="time" value="148" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1336,413 +1620,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/images/organ/organ.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/images/organ/unit.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/images/add.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/bootstrap/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="1965" column="3" lean-forward="false" selection-start-line="1965" selection-start-column="3" selection-end-line="1965" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/css/menu.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="199" column="1" lean-forward="false" selection-start-line="199" selection-start-column="1" selection-end-line="199" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/menu_auth.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="173" column="9" lean-forward="false" selection-start-line="173" selection-start-column="9" selection-end-line="173" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_select.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-513">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/tpl_manage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="137" column="25" lean-forward="false" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_list.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="35" column="36" lean-forward="false" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/log/loginLog_list.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/CacheController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/cache/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="26" column="38" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="38" />
-          <folding>
-            <marker date="1543828826834" expanded="true" signature="2149:2155" ph="&amp;nbsp;" />
-            <marker date="1543828826834" expanded="true" signature="2295:2301" ph="&amp;nbsp;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/service/AbstractTplService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/controller/DynamicTplController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="80" column="49" lean-forward="false" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/websocket/src/test/java/com/kl/websocket/WebsocketApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/websocket/src/main/java/com/kl/websocket/WebSocketConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jspx-cms/src/main/webapp/template/spring.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1596">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="64" column="42" lean-forward="false" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="454" column="35" lean-forward="false" selection-start-line="454" selection-start-column="35" selection-end-line="454" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/applet/AppletDSC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/awt/color/ColorSpace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/awt/color/ColorSpaceDSC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="e#462#463#0" expanded="false" />
-            <element signature="e#504#505#0" expanded="false" />
-            <element signature="e#552#553#0" expanded="false" />
-            <element signature="e#585#586#0" expanded="false" />
-            <element signature="e#633#634#0" expanded="false" />
-            <element signature="e#664#665#0" expanded="false" />
-            <element signature="e#715#716#0" expanded="false" />
-            <element signature="e#748#749#0" expanded="false" />
-            <element signature="e#801#802#0" expanded="false" />
-            <element signature="e#834#835#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/beans/BeanDescriptorDSC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="16" column="49" lean-forward="true" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-          <folding>
-            <element signature="e#190#191#0" expanded="false" />
-            <element signature="e#222#223#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/beans/Beans.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="359" column="25" lean-forward="false" selection-start-line="359" selection-start-column="25" selection-end-line="359" selection-end-column="25" />
-          <folding>
-            <element signature="e#13429#13430#0" expanded="false" />
-            <element signature="e#13456#13457#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/beans/BeanDSC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/doc/freemarker.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="335">
-            <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/boot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="39" lean-forward="false" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/niceValidator/dist/jquery.validator.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="99" column="8" lean-forward="false" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/niceValidator/dist/jquery.validator.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/menu_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3990">
-          <caret line="210" column="28" lean-forward="false" selection-start-line="210" selection-start-column="28" selection-end-line="210" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/form.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1558">
-          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="838">
-          <caret line="83" column="7" lean-forward="false" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/organ/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="248" column="28" lean-forward="false" selection-start-line="248" selection-start-column="28" selection-end-line="248" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="41" column="41" lean-forward="false" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_edit.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#input#1;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/import_form.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-342">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/edit.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -1753,9 +1630,465 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/edit.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="78" column="13" lean-forward="false" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+        <state relative-caret-position="-418">
+          <caret line="14" column="65" lean-forward="false" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="65" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/organ/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/common/exc/FreemarkerExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="16" column="58" lean-forward="false" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/freemarker/freemarker/2.3.26-incubating/freemarker-2.3.26-incubating.jar!/freemarker/template/TemplateExceptionHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/tpl_manage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="184" column="44" lean-forward="false" selection-start-line="184" selection-start-column="44" selection-end-line="184" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4956">
+          <caret line="4" column="47740" lean-forward="false" selection-start-line="4" selection-start-column="47734" selection-end-line="4" selection-end-column="47740" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/menu_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/PageQueryVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/vo/DataDictPageVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="47" lean-forward="false" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataSortVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataDictPageVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictItemEO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataDictVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictItemDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1273">
+          <caret line="67" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictItemDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="3" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictItemServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1546">
+          <caret line="102" column="18" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2573#2574#0" expanded="false" />
+            <element signature="e#2629#2630#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/busi/RightDictCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2425">
+          <caret line="57" column="40" lean-forward="false" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/add_label.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-772">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="48" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-684">
+          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="45" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1543827122562" expanded="true" signature="2977:2983" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="81" column="86" lean-forward="true" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/controller/DynamicTplController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="64" column="34" lean-forward="false" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/InternalAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/doc/freemarker.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="487">
+            <caret line="203" column="32" lean-forward="false" selection-start-line="203" selection-start-column="32" selection-end-line="203" selection-end-column="32" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/LoginPersonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="143" column="43" lean-forward="false" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
+          <folding>
+            <element signature="e#2908#2909#0" expanded="false" />
+            <element signature="e#2989#2990#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#868#884#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="99" column="33" lean-forward="false" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1346#1347#0" expanded="true" />
+            <element signature="e#1400#1401#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addItem.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="72" column="34" lean-forward="false" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictServiceIml.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="34" />
+          <folding>
+            <element signature="e#1002#1003#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addDict.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="48" column="16" lean-forward="false" selection-start-line="48" selection-start-column="16" selection-end-line="51" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editItem.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-836">
+          <caret line="10" column="115" lean-forward="false" selection-start-line="10" selection-start-column="115" selection-end-line="10" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editDict.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="54" column="14" lean-forward="false" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="127" column="8" lean-forward="false" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/dictItem_List.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="107" column="13" lean-forward="false" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictEO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+          <folding>
+            <element signature="e#1094#1095#0" expanded="true" />
+            <element signature="e#1123#1124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictItemService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="83" column="32" lean-forward="false" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/DataDictionaryUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1098#1114#0" expanded="true" />
+            <element signature="e#1790#1802#0" expanded="true" />
+            <element signature="e#2640#2652#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="927">
+          <caret line="68" column="14" lean-forward="false" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+          <folding>
+            <marker date="1543996218659" expanded="true" signature="2390:2396" ph="&amp;nbsp;" />
+            <marker date="1543996218659" expanded="true" signature="2552:2558" ph="&amp;nbsp;" />
+            <marker date="1543996218659" expanded="true" signature="3215:3232" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/datadict_list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="14" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="19" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="84" column="28" lean-forward="false" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="762">
+          <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1543998862995" expanded="true" signature="3280:3286" ph="&amp;nbsp;" />
+            <marker date="1543998862995" expanded="true" signature="3307:3313" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="15" column="71" lean-forward="false" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1543998863036" expanded="true" signature="2784:2790" ph="&amp;nbsp;" />
+            <marker date="1543998863036" expanded="true" signature="2811:2817" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="71" lean-forward="false" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

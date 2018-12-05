@@ -151,6 +151,9 @@ var Mine = {
     },
     decode: function (content) {
         return decodeURIComponent(window.atob(content));
+    },
+    getFormData:function(formId){
+        return decodeURIComponent($('#' + formId).serialize(), true);
     }
 };
 

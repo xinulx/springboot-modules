@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-md-7">
                         <div class="pdr10">
-                            <button type="button" id="btn_save" class="btn btn-primary" onclick="saveTpl()">保 存</button>
+                            <button type="button" id="btn_save" class="btn btn-default" onclick="saveTpl()">保 存</button>
                             <button type="button" id="btn_add_label" class="btn btn-default" onclick="addLabelBtn()">插入标签</button>
                             <button type="button" id="btn_upload" class="btn btn-default" onclick="upload()">上 传</button>
                             <button type="button" id="btn_download" class="btn btn-info" onclick="download()">下 载</button>

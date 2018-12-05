@@ -2,7 +2,7 @@
     <ul id="authMenuTree" class="ztree" style="overflow: auto;height:350px"></ul>
 </div>
 <div class="col-md-12 text-center" style="margin-top: 15px">
-    <button type="button" class="btn btn-success" onclick="saveMenuRel()">保 存</button>
+    <button type="button" class="btn btn-default" onclick="saveMenuRel()">保 存</button>
     <button type="button" class="btn btn-danger" onclick="layer.close(roleIndex);">关 闭</button>
 </div>
 <script type="text/javascript">

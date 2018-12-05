@@ -12,8 +12,8 @@
                     2) 工作表名称请按照[2018.3]格式填写，以便统计年月
                 </label>
             </div>
-            <div class="form-group" align="center">
-                <button type="button" class="btn btn-success" onclick="saveData()">保存</button>
+            <div class="form-group">
+                <button type="button" class="btn btn-default" onclick="saveData()">保存</button>
                 <button type="button" class="btn btn-danger" onclick="layer.close(editIndex);">关闭</button>
             </div>
         </div>

@@ -37,8 +37,8 @@
                 <textarea class="form-control" name="remark" id="remark" placeholder="在此添加描述信息..."
                           ms-duplex="remark"></textarea>
             </div>
-            <div class="form-group" align="center">
-                <button type="submit" class="btn btn-success">保存</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">保存</button>
                 <button type="button" class="btn btn-danger" onclick="layer.close(editIndex);">关闭</button>
             </div>
         </div>

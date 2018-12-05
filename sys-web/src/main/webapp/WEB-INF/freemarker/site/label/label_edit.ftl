@@ -35,7 +35,7 @@
                               placeholder="">${labelNotes!}</textarea>
                 </div>
                 <div class="pull-right">
-                    <button type="submit" class="btn btn-success">保 存</button>
+                    <button type="submit" class="btn btn-default">保 存</button>
                     <button type="button" class="btn btn-danger" onclick="layer.close(editIndex);">关 闭</button>
                 </div>
             </div>

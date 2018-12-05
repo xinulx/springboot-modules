@@ -1,37 +1,35 @@
-<div class="table-responsive">
-    <div id="toolBtn" style="margin-bottom: 5px">
-        <button type="button" class="btn btn-default" onclick="save()">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加
-        </button>
-        <button type="button" class="btn btn-danger" onclick="batchDel()">
-            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>删除
-        </button>
-        <button type="button" class="btn btn-warning" onclick="general()">
-            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>一般功能
-        </button>
-        <button type="button" class="btn btn-default" style="float: right" onclick="$('#key').val('');loadList()">
-            <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>显示全部
-        </button>
-        <button type="button" class="btn btn-default" style="float: right" onclick="loadList()">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>查询
-        </button>
-        <input style="width:300px;float: right" type="text" class="form-control" id="key" name="key" placeholder="编码/名称" />
-    </div>
-    <table id="dataGrid" class="table table-bordered table-hover">
-        <thead>
-        <tr>
-            <th class="text-center"><input type="checkbox" name="checkAll"></th>
-            <th>编码</th>
-            <th>名称</th>
-            <th>连接</th>
-            <th>描述</th>
-            <th>操作</th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <div id="pagination" align="center"></div>
+<div id="toolBtn" style="margin-bottom: 5px">
+    <button type="button" class="btn btn-default" onclick="save()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加
+    </button>
+    <button type="button" class="btn btn-danger" onclick="batchDel()">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>删除
+    </button>
+    <button type="button" class="btn btn-warning" onclick="general()">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>一般功能
+    </button>
+    <button type="button" class="btn btn-default" style="float: right" onclick="$('#key').val('');loadList()">
+        <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>显示全部
+    </button>
+    <button type="button" class="btn btn-default" style="float: right" onclick="loadList()">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>查询
+    </button>
+    <input style="width:300px;float: right" type="text" class="form-control" id="key" name="key" placeholder="编码/名称" />
 </div>
+<table id="dataTable" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th class="text-center"><input type="checkbox" name="checkAll"></th>
+        <th>编码</th>
+        <th>名称</th>
+        <th>连接</th>
+        <th>描述</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<div id="pagination" align="center"></div>
 <div id="editFrom" class="hidden" style="margin: 10px auto;overflow-x: hidden">
     <form class="form-horizontal" method="post">
         <input style="display: none" name="id"/>
@@ -84,7 +82,7 @@
 <script>
     var pageIndex = 1,pageSize = 15;
     var winIndex;
-    var grid = $("#dataGrid tbody");
+    var grid = $("#dataTable tbody");
     $(function() {
         loadList();
         formValid();

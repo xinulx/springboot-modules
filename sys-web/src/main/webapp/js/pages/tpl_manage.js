@@ -178,6 +178,13 @@ var tpl_manage = function () {
                     "isParent": true
                 });
             }
+            for(var i=0,len=data.length;i<len;i++){
+                if(data[i].tempType == 'Real'){
+                    data[i].icon="/images/tpl.png";
+                }else{
+                    data[i].isParent = true;
+                }
+            }
             return data;
         }
         cur.treeObj = $.fn.zTree.init($("#ui_tree"), settings,getTplNodes());

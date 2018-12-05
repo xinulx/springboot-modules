@@ -3,7 +3,7 @@
         <div class="table-toolbar" style="margin-bottom: 5px">
             <div class="row">
                 <div class="col-md-6 col-lg-6">
-                    <button type="button" class="btn btn-primary" onClick="edit(0,0)">添加分类</button>
+                    <button type="button" class="btn btn-default" onClick="edit(0,0)">添加分类</button>
                 </div>
                 <div class="col-md-6 col-lg-6 pull-right">
                     <form class="form-inline tr search-toolbar pull-right" role="form">
@@ -61,7 +61,7 @@
     // 操作列
     function renderOpt(e) {
         var rec = e.record;
-        var addStr = '<button class="btn btn-default btn-sm btn-primary" onclick="edit(0,' + rec.id + ')">添加数据项</button> ';
+        var addStr = '<button class="btn btn-default btn-sm btn-default" onclick="edit(0,' + rec.id + ')">添加数据项</button> ';
         var editStr = '<button class="btn btn-default btn-sm btn-default" onclick="edit(' + rec.id + ','+rec.parentId+')">修 改</button> ';
         var moveStr = '<button class="btn btn-default btn-sm btn-danger" style="margin-right:25px" onclick="batchDel(' + rec.id + ')">删除</button> ';
         if(rec.parentId == 0){

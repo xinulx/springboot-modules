@@ -1,36 +1,46 @@
-<div class="table-responsive">
-    <div id="toolBtn" style="margin-bottom: 5px">
-        <button type="button" class="btn btn-default" onclick="save()">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加
-        </button>
-        <button type="button" class="btn btn-default" style="float: right" onclick="$('#key').val('');loadList()">
-            <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>显示全部
-        </button>
-        <button type="button" class="btn btn-default" style="float: right" onclick="loadList()">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>查询
-        </button>
-        <input style="width:300px;float: right" type="text" class="form-control" id="key" name="key" placeholder="编码/名称" />
+<div id="toolBtn" class="table-toolbar" style="margin-bottom: 5px">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default" onclick="save()">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;添加
+                </button>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <form class="form-inline tr search-toolbar pull-right" role="form">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="csttkey" name="csttkey" placeholder="编码/名称" />
+                </div>
+                <button type="button" class="btn btn-primary" onclick="loadList()">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;查询
+                </button>
+                <button type="button" class="btn btn-success" onclick="$('#csttkey').val('');loadList()">
+                    <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>&nbsp;显示全部
+                </button>
+            </form>
+        </div>
     </div>
-    <table id="dataGrid" class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>编码</th>
-                <th>名称</th>
-                <th>表名</th>
-                <th>列名</th>
-                <th>操作</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-        <tfoot>
-            <tr>
-                <td colspan="5" align="center">
-                    <div id="pagination"></div>
-                </td>
-            </tr>
-        </tfoot>
-    </table>
 </div>
+<table id="dataTable" class="table table-condensed table-bordered table-hover" width="100%">
+    <thead>
+        <tr>
+            <th>编码</th>
+            <th>名称</th>
+            <th>表名</th>
+            <th>列名</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5" align="center">
+                <div id="pagination"></div>
+            </td>
+        </tr>
+    </tfoot>
+</table>
 <div id="editFrom" class="bg-warning hidden" style="margin: 10px auto">
     <form class="col-md-12" method="post">
         <input style="display: none" name="rid"/>
@@ -75,7 +85,7 @@
 <script>
     var pageIndex = 1,pageSize = 15;
     var winIndex;
-    var grid = $("#dataGrid tbody");
+    var grid = $("#dataTable tbody");
     $(function() {
         loadList();
         formValid();
@@ -91,7 +101,7 @@
             {
                 pageIndex:pageIndex,
                 pageSize:pageSize,
-                key:$("#key").val()
+                key:$("#csttkey").val()
             },
             function(result){
                 layer.close(loadIndex);

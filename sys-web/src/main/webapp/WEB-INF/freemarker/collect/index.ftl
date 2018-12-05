@@ -49,8 +49,8 @@
         var id = record.id;
         var rowIndex = e.rowIndex;
 
-        var s = '<button class="btn btn-default btn-xs" onclick="addOrEdit(' + id + ')">修改</button>&nbsp;'
-                + '&nbsp;<button class="btn btn-danger btn-xs" onclick="batchDel(' + id + ')">删除</button>';
+        var s = '<button class="btn btn-default btn-sm" onclick="addOrEdit(' + id + ')">修改</button>&nbsp;'
+                + '&nbsp;<button class="btn btn-danger btn-sm" onclick="batchDel(' + id + ')">删除</button>';
         return s;
     }
 
