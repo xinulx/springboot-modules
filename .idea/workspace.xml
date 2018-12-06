@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9deba5b-61a2-4a76-a1c7-3faaa1208609" name="Default" comment="">
+    <list default="true" id="b9deba5b-61a2-4a76-a1c7-3faaa1208609" name="Default" comment="样式问题">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/common/menuTree.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sys-web/src/main/webapp/pages/common/orgTree.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/sys-api/sys-api.iml" afterPath="$PROJECT_DIR$/sys-api/sys-api.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,6 +43,7 @@
     <ignored path="sys-web/app/logs/spring-boot-mybatis.log.5" />
     <ignored path="sys-web/app/logs/spring-boot-mybatis.log.6" />
     <ignored path="sys-web/app/logs/spring-boot-mybatis.log.7" />
+    <ignored path="sys-web/doc/Subject.class" />
     <ignored path="$PROJECT_DIR$/sys-api/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,78 +70,16 @@
     <option name="hideWarnings" value="true" />
     <option name="HIDE_WARNINGS" value="true" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="springboot-modules" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="dashborad.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/common/dashborad.html">
+      <file leaf-file-name="modules.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/info/index.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data_release_chart.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/design/data_release_chart.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DemoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DemoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="167" column="21" lean-forward="false" selection-start-line="167" selection-start-column="21" selection-end-line="167" selection-end-column="40" />
-              <folding>
-                <element signature="e#5782#5783#0" expanded="true" />
-                <element signature="e#5833#5834#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabelServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/service/impl/LabelServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="label_edit.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
-              <caret line="84" column="13" lean-forward="false" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataDictController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -151,42 +90,43 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>javascript</find>
-      <find>href</find>
-      <find>TipsMode</find>
-      <find>SimpleData</find>
-      <find>too</find>
-      <find>opt_type</find>
-      <find>Ls.</find>
-      <find>selectNode</find>
-      <find>tplContent</find>
-      <find>atob</find>
-      <find>btoa</find>
-      <find>Mine.ENcode</find>
-      <find>jsonDiv</find>
-      <find>自定义标签</find>
-      <find>ILabelDao</find>
-      <find>CMS_LABEL</find>
-      <find>@Repository(&quot;labelDao&quot;)</find>
-      <find>cms_label</find>
-      <find>sys_label</find>
-      <find>&quot;label&quot;</find>
-      <find>labelService</find>
-      <find>@Service(&quot;labelService&quot;)</find>
-      <find>&quot;labelService&quot;</find>
-      <find>cur</find>
-      <find>labelModel</find>
-      <find>labOpt</find>
-      <find>data</find>
-      <find>description</find>
-      <find>16PX</find>
-      <find>data_release_chart</find>
+      <find>exe</find>
+      <find>directory.gif</find>
+      <find>;return false;</find>
+      <find>organId</find>
+      <find>class=&quot;col-xs-2 control-label text-right&quot;</find>
+      <find>buttonInfo</find>
+      <find>rightInfo</find>
+      <find>mr0</find>
+      <find>console</find>
+      <find>reloadCache</find>
+      <find>WdatePicker</find>
+      <find>local-form</find>
+      <find>n-right</find>
+      <find>label</find>
+      <find>code</find>
+      <find>size</find>
+      <find>active</find>
+      <find>public</find>
+      <find>saveDict</find>
+      <find>onKeyEnter</find>
+      <find>search</find>
+      <find>grid</find>
+      <find>保 存</find>
+      <find>添加分类</find>
+      <find>btn-xs</find>
+      <find>添加数据项</find>
+      <find>添加</find>
+      <find>JVM</find>
+      <find>jvm进程内的日志</find>
+      <find>key</find>
     </findStrings>
     <replaceStrings>
       <replace>websocket</replace>
@@ -201,6 +141,7 @@
       <replace>站点信息</replace>
       <replace>BaseRunTimeException.TipsMode</replace>
       <replace>SYS_LABEL</replace>
+      <replace>grid2</replace>
     </replaceStrings>
     <dirStrings>
       <dir>E:\minespace\springboot-modules</dir>
@@ -217,57 +158,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/add_label.vm" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/MapVO.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/ParamDto.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/TemplateHistoryEO.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/ITplConfDao.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/ITplHistoryDao.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/SqlUtil.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/TplConfDao.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/TplHistoryDao.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/ITplConfService.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/ITplHistoryService.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/MongoFileVO.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/mongodb/base/IMongoDbFileServer.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/mongodb/base/impl/MongoDbBaseDao.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/DocFileManage.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/mongodb/base/impl/MongoDbFileServerImpl.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/TplHistoryService.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/mongo/ContentMongoEO.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_edit.vm" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/TplConfService.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/controller/TemplateController.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_edit.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_upload.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_history.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/tpl_manage.js" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/controller/DynamicTplController.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/dao/ILabelDao.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/entity/LabelEO.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/LabelVO.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/service/ILabelService.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/LabelFieldVO.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/JacksonMapper.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/Jacksons.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/service/impl/LabelServiceImpl.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/LabelDaoImpl.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/ILabelDao.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/dao/impl/LabelDaoImpl.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/resources/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.vm" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/ResponseData.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_index.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/controller/LabelController.java" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_list.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/plugins/ztree/css/zTreeStyle/zTreeStyle.css" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js" />
+        <option value="$PROJECT_DIR$/sys-api/src/main/java/beans/BeanDSC.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/plugins/niceValidator/dist/jquery.validator.css" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/login.html" />
         <option value="$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css" />
-        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_select.js" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/menu_list.html" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/form.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_edit.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/edit.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/edit.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/organ/index.html" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/tpl_manage.js" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/index.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataDictPageVO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/vo/DataSortVO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/internal/entity/DataDictEO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/internal/entity/DataDictItemEO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/vo/DataDictPageVO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataSortVO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictEO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictItemEO.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictDao.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictItemDao.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictItemDaoImpl.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictService.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictItemService.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictServiceIml.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictItemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/busi/RightDictCache.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addDict.vm" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictDaoImpl.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictController.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editDict.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addDict.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addItem.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editItem.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictItemController.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/dictItem_List.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/datadict_list.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/DataDictionaryUtil.java" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/index.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl" />
+        <option value="$PROJECT_DIR$/websocket/src/main/resources/static/index.html" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/plugins/bootstrap/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl" />
+        <option value="$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/log/index.html" />
       </list>
     </option>
   </component>
@@ -291,10 +232,13 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-24" />
-    <option name="y" value="6" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1438" />
     <option name="height" value="860" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -311,6 +255,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -342,6 +287,91 @@
               <item name="sys-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -360,6 +390,38 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sys-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -381,7 +443,7 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="freemarker" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="role" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
@@ -392,50 +454,61 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="freemarker" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
               <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
               <item name="sys-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="freemarker" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="label" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
               <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
               <item name="sys-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="freemarker" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
               <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
               <item name="sys-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="freemarker" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="datadictionary" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springboot-modules" type="b2602c69:ProjectViewProjectNode" />
               <item name="springboot-modules" type="462c0819:PsiDirectoryNode" />
               <item name="sys-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="freemarker" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -444,7 +517,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="E:/workspace/lonsun/huaibei-suixi/ls-modules" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15684977" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -454,17 +527,21 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="show.run.dashboard.notification" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.springboot.common.util" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\springboot-modules\springboot-modules\sys-web\src\main\webapp\images" />
+      <recent name="D:\workspace\springboot-modules\springboot-modules\sys-web\src\main\webapp\css" />
+      <recent name="E:\minespace\springboot-modules\file-web" />
+      <recent name="E:\minespace\springboot-modules\file-convert" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\minespace\springboot-modules\sys-web\src\main\webapp\images" />
-      <recent name="E:\minespace\springboot-modules\sys-web\src\main\webapp\js\pages" />
-      <recent name="E:\minespace\springboot-modules\sys-web\src\main\webapp\WEB-INF\freemarker\site" />
-      <recent name="E:\minespace\springboot-modules\sys-web\src\main\java\com\springboot\tag" />
-      <recent name="E:\minespace\springboot-modules\sys-web\src\main\java\com\springboot\service\mongodb" />
+      <recent name="E:\minespace\springboot-modules\sys-web\src\main\webapp\WEB-INF\freemarker\system" />
+      <recent name="E:\minespace\springboot-modules\sys-web\src\main\java\com\springboot\dao\business\impl" />
+      <recent name="E:\minespace\springboot-modules\sys-web\src\main\java\com\springboot\dao\business" />
+      <recent name="E:\minespace\springboot-modules\sys-web\src\main\java\com\springboot\service\hibernate\impl" />
+      <recent name="E:\minespace\springboot-modules\sys-web\src\main\java\com\springboot\service\hibernate" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.springboot.tpl.controller" />
@@ -473,11 +550,8 @@
       <recent name="com.springboot.common.busi" />
       <recent name="com.springboot.dao.business.impl" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\workspace\springboot-modules\springboot-modules\sys-web\src\main\webapp\images" />
-      <recent name="D:\workspace\springboot-modules\springboot-modules\sys-web\src\main\webapp\css" />
-      <recent name="E:\minespace\springboot-modules\file-web" />
-      <recent name="E:\minespace\springboot-modules\file-convert" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.springboot.common.util" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -494,48 +568,10 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/compiler.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/modules.xml</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pom.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/controller/LabelController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/dao/impl/LabelDaoImpl.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/service/impl/LabelServiceImpl.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/controller/DynamicTplController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/util/HtmlRegUtils.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/cache/index.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/collect/index.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/edit.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/import/import_form.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/edit.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/index.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/info/index.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/index.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/menu_auth.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_list.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/tpl_edit.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/form.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/index.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/css/menu.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/images/add.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_select.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/tpl_manage.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/log/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/menu_list.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/organ/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/plugins/bootstrap/css/bootstrap.min.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-api/sys-api.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/sys-web.iml</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -543,42 +579,12 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-api/pom.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-api/src/main/java/applet/AppletDSC.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-api/src/main/java/awt/color/ColorSpaceDSC.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-api/src/main/java/beans/BeanDSC.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-api/src/main/java/beans/BeanDescriptorDSC.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-api/sys-api.iml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/busi/RightDictCache.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/DataDictionaryUtil.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/inter/Subject.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/proxy/DynamicProxy.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/proxy/ProxyFactory.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/proxy/ProxySubject.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/service/RealSubject.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/concurrent/util/CodeUtil.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictItemController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictDao.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictItemDao.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictDaoImpl.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictItemDaoImpl.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictEO.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictItemEO.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictItemService.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictService.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictItemServiceImpl.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictServiceIml.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataDictPageVO.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataDictVO.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataSortVO.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addDict.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addItem.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/datadict_list.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/dictItem_List.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editDict.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editItem.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/images/tpl.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_05.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_3_6_1.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_4_0_1.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_4_0_1.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_4_0_1.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_3_0_2.xml</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -586,13 +592,13 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/images/add_floder.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/images/delete.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/images/edit.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/images/organ/add.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/images/organ/delete.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/images/organ/directory.gif</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/images/organ/modify.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_04.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_4_0_0.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_4_0_0.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_4_0_0.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_3_0_1.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/pages/common/menuTree.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sys-web/src/main/webapp/pages/common/orgTree.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -675,11 +681,6 @@
     </UpdatedFiles>
   </component>
   <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
     <option name="ruleStates">
       <list>
         <RuleState>
@@ -690,7 +691,7 @@
         </RuleState>
       </list>
     </option>
-    <option name="contentProportion" value="0.15279299" />
+    <option name="contentProportion" value="0.1768202" />
   </component>
   <component name="RunManager" selected="Spring Boot.MainApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -699,6 +700,139 @@
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="BeanDSC" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="beans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="beans.BeanDSC" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sys-api" />
+      <envs />
+    </configuration>
+    <configuration name="BeanDescriptorDSC" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="beans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="beans.BeanDescriptorDSC" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sys-api" />
+      <envs />
+    </configuration>
+    <configuration name="CodeUtil" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.springboot.concurrent.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.springboot.concurrent.util.CodeUtil" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sys-web" />
+      <envs />
+    </configuration>
+    <configuration name="ColorSpaceDSC" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="awt.color.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="awt.color.ColorSpaceDSC" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sys-api" />
+      <envs />
+    </configuration>
+    <configuration name="DynamicProxy" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.springboot.concurrent.proxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.springboot.concurrent.proxy.DynamicProxy" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sys-web" />
+      <envs />
+    </configuration>
+    <configuration name="HtmlRegUtils" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.springboot.tpl.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.springboot.tpl.util.HtmlRegUtils" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sys-web" />
+      <envs />
+    </configuration>
+    <configuration name="ProxyFactory" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.springboot.concurrent.proxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.springboot.concurrent.proxy.ProxyFactory" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sys-web" />
+      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -713,6 +847,56 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+    </configuration>
+    <configuration name="CommonTest.test1" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.springboot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="sys-web" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.springboot" />
+      <option name="MAIN_CLASS_NAME" value="com.springboot.CommonTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="CommonTest.test2" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.springboot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="sys-web" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.springboot" />
+      <option name="MAIN_CLASS_NAME" value="com.springboot.CommonTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -765,6 +949,8 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.springboot.MainApplication" />
+      <option name="DEBUG_MODE" value="true" />
+      <option name="HIDE_BANNER" value="true" />
       <option name="VM_PARAMETERS" value="-Djava.awt.headless=false" />
       <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -812,11 +998,20 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Spring Boot.MainApplication" />
-      <item index="1" class="java.lang.String" itemvalue="Spring Boot.FilePreviewApplication" />
-      <item index="2" class="java.lang.String" itemvalue="Spring Boot.CmsApplication" />
-      <item index="3" class="java.lang.String" itemvalue="Spring Boot.WebsocketApplication" />
+    <list size="13">
+      <item index="0" class="java.lang.String" itemvalue="Application.BeanDSC" />
+      <item index="1" class="java.lang.String" itemvalue="Application.BeanDescriptorDSC" />
+      <item index="2" class="java.lang.String" itemvalue="Application.ColorSpaceDSC" />
+      <item index="3" class="java.lang.String" itemvalue="Application.HtmlRegUtils" />
+      <item index="4" class="java.lang.String" itemvalue="Application.CodeUtil" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.CommonTest.test2" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.CommonTest.test1" />
+      <item index="7" class="java.lang.String" itemvalue="Spring Boot.MainApplication" />
+      <item index="8" class="java.lang.String" itemvalue="Spring Boot.FilePreviewApplication" />
+      <item index="9" class="java.lang.String" itemvalue="Spring Boot.CmsApplication" />
+      <item index="10" class="java.lang.String" itemvalue="Spring Boot.WebsocketApplication" />
+      <item index="11" class="java.lang.String" itemvalue="Application.DynamicProxy" />
+      <item index="12" class="java.lang.String" itemvalue="Application.ProxyFactory" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -874,8 +1069,12 @@
       <workItem from="1543312167774" duration="9135000" />
       <workItem from="1543364389074" duration="39364000" />
       <workItem from="1543458263675" duration="6479000" />
-      <workItem from="1543485593448" duration="6789000" />
-      <workItem from="1544016141722" duration="3609000" />
+      <workItem from="1543485593448" duration="6835000" />
+      <workItem from="1543536719581" duration="21490000" />
+      <workItem from="1543795948840" duration="17315000" />
+      <workItem from="1543885170822" duration="58000" />
+      <workItem from="1543891572072" duration="1769000" />
+      <workItem from="1544057240936" duration="328000" />
     </task>
     <task id="LOCAL-00001" summary="版本控制">
       <created>1540452505184</created>
@@ -996,14 +1195,84 @@
       <option name="project" value="LOCAL" />
       <updated>1543490581913</updated>
     </task>
-    <task id="LOCAL-00018" summary="配置">
-      <created>1544016734420</created>
+    <task id="LOCAL-00018" summary="模板引用标签">
+      <created>1543492457421</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1544016734420</updated>
+      <updated>1543492457421</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="修改模板的一些问题">
+      <created>1543559973984</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1543559973984</updated>
+    </task>
+    <task id="LOCAL-00020" summary="关于代理">
+      <created>1543566020761</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1543566020761</updated>
+    </task>
+    <task id="LOCAL-00021" summary="样式问题">
+      <created>1543825029263</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1543825029263</updated>
+    </task>
+    <task id="LOCAL-00022" summary="样式问题">
+      <created>1543827313767</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1543827313767</updated>
+    </task>
+    <task id="LOCAL-00023" summary="样式问题">
+      <created>1543829131285</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1543829131285</updated>
+    </task>
+    <task id="LOCAL-00024" summary="api">
+      <created>1543907078788</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1543907078788</updated>
+    </task>
+    <task id="LOCAL-00025" summary="表单验证样式调整">
+      <created>1543913992141</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1543913992141</updated>
+    </task>
+    <task id="LOCAL-00026" summary="表单验证样式调整">
+      <created>1543914273299</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1543914273299</updated>
+    </task>
+    <task id="LOCAL-00027" summary="添加数据字典及修改一些问题">
+      <created>1543998961450</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1543998961450</updated>
+    </task>
+    <task id="LOCAL-00028" summary="样式问题">
+      <created>1544004141621</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1544004141621</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1039,83 +1308,58 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260540000" />
+    <option name="totallyTimeSpent" value="334230000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33139536" sideWeight="0.514485" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32349786" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875723" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2576419" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4011628" sideWeight="0.49356222" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32751092" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33139536" sideWeight="0.48551503" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28272533" sideWeight="0.5" order="2" side_tool="true" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790697" sideWeight="0.5064378" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32349786" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.558952" sideWeight="0.51228327" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3229769" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875723" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4917647" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3988355" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55167395" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32790697" sideWeight="0.49356222" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790697" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55930233" sideWeight="0.4913295" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24087983" sideWeight="0.5" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33187774" sideWeight="0.48771676" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32751092" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5082353" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5082353" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5082353" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875723" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38136828" sideWeight="0.49356222" order="13" side_tool="false" content_ui="tabs" x="0" y="11" width="1440" height="838" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -1159,8 +1403,14 @@
     <MESSAGE value="自定义属性解析" />
     <MESSAGE value="模板管理" />
     <MESSAGE value="模板标签" />
-    <MESSAGE value="配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="配置" />
+    <MESSAGE value="模板引用标签" />
+    <MESSAGE value="修改模板的一些问题" />
+    <MESSAGE value="关于代理" />
+    <MESSAGE value="api" />
+    <MESSAGE value="表单验证样式调整" />
+    <MESSAGE value="添加数据字典及修改一些问题" />
+    <MESSAGE value="样式问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="样式问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1170,8 +1420,14 @@
           <line>30</line>
           <properties />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/common/impl/LabelServiceImpl.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="131" />
+      <option name="time" value="148" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1180,370 +1436,439 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/mongodb/base/impl/MongoDbBaseDao.java">
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/index.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-912">
-          <caret line="56" column="35" lean-forward="false" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+        <state relative-caret-position="57">
+          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/net/URLDecoder.java" />
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/controller/DynamicTplController.java">
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/tpl_manage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-734">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="361">
+          <caret line="184" column="44" lean-forward="false" selection-start-line="184" selection-start-column="44" selection-end-line="184" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/menu_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/PageQueryVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/vo/DataDictPageVO.java" />
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataSortVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataDictPageVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictItemEO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/DataDictVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/IDataDictItemDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1273">
+          <caret line="67" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictItemDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="3" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/controller/TemplateController.java">
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictItemServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1451">
-          <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        <state relative-caret-position="1546">
+          <caret line="102" column="18" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2573#2574#0" expanded="false" />
+            <element signature="e#2629#2630#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/busi/RightDictCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2425">
+          <caret line="57" column="40" lean-forward="false" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/add_label.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        <state relative-caret-position="-772">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/test/miniui_grid.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/Jacksons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="205" column="22" lean-forward="false" selection-start-line="205" selection-start-column="22" selection-end-line="205" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/LabelDaoImpl.java" />
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/ILabelDao.java" />
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/JacksonMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-222">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/common/conf/MyFreeMarkerConfigurer.java">
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="29" column="61" lean-forward="false" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/service/ILabelService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/dao/ILabelDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="44" column="62" lean-forward="false" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/menu_auth.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/LabelFieldVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/common/impl/LabelServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-web/4.3.12.RELEASE/spring-web-4.3.12.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/freemarker.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="173" column="9" lean-forward="false" selection-start-line="173" selection-start-column="9" selection-end-line="173" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/dao/impl/LabelDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/ResponseData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="56" column="35" lean-forward="false" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/entity/LabelEO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/LabelVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_list.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="78" column="13" lean-forward="false" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/generate/DemoTplService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/ztree/css/zTreeStyle/zTreeStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="341" column="15" lean-forward="false" selection-start-line="341" selection-start-column="11" selection-end-line="341" selection-end-column="15" />
+          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="48" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_config.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="87" column="33" lean-forward="false" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
+        <state relative-caret-position="-684">
+          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="45" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1543827122562" expanded="true" signature="2977:2983" ph="&amp;nbsp;" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_index.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_mgr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="48" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/tpl/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="97" column="24" lean-forward="false" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/pages/label_select.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="47" column="67" lean-forward="false" selection-start-line="47" selection-start-column="67" selection-end-line="47" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/BaseContentEO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-325">
-          <caret line="82" column="27" lean-forward="true" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_4_0_0.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/sys-web.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_4_0_1.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/controller/LabelController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="88" column="55" lean-forward="false" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
-          <folding>
-            <element signature="e#3439#3455#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/system/role.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/CmsLogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/common/orgTree.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/common/menuTree.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/common/dashborad.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/info/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/design/data_release_chart.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/site/label/label_edit.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="84" column="13" lean-forward="false" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+        <state relative-caret-position="330">
+          <caret line="81" column="86" lean-forward="true" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tpl/controller/DynamicTplController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="64" column="34" lean-forward="false" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/vo/InternalAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/doc/freemarker.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="487">
+            <caret line="203" column="32" lean-forward="false" selection-start-line="203" selection-start-column="32" selection-end-line="203" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/LoginPersonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="143" column="43" lean-forward="false" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/dao/business/impl/DataDictDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DemoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="167" column="21" lean-forward="false" selection-start-line="167" selection-start-column="21" selection-end-line="167" selection-end-column="40" />
+        <state relative-caret-position="1596">
+          <caret line="99" column="33" lean-forward="false" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
           <folding>
-            <element signature="e#5782#5783#0" expanded="true" />
-            <element signature="e#5833#5834#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1346#1347#0" expanded="false" />
+            <element signature="e#1400#1401#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/test/test_tag.ftl">
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addItem.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1368">
+          <caret line="72" column="34" lean-forward="false" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/tag/label/internal/service/impl/LabelServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataDictItemController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+        <state relative-caret-position="2470">
+          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/impl/DataDictServiceIml.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="34" />
+          <folding>
+            <element signature="e#1002#1003#0" expanded="false" />
+            <element signature="e#1052#1053#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/addDict.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="48" column="16" lean-forward="false" selection-start-line="48" selection-start-column="16" selection-end-line="51" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editItem.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="115" lean-forward="false" selection-start-line="10" selection-start-column="115" selection-end-line="10" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/editDict.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="54" column="14" lean-forward="false" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1919">
+          <caret line="127" column="8" lean-forward="false" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/dictItem_List.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2033">
+          <caret line="107" column="13" lean-forward="false" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/entity/business/datadictionary/DataDictEO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+          <folding>
+            <element signature="e#1094#1095#0" expanded="false" />
+            <element signature="e#1123#1124#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/service/hibernate/IDataDictItemService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1501">
+          <caret line="83" column="32" lean-forward="false" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/common/util/DataDictionaryUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/dataopen/item/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="68" column="14" lean-forward="false" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+          <folding>
+            <marker date="1543996218659" expanded="true" signature="2390:2396" ph="&amp;nbsp;" />
+            <marker date="1543996218659" expanded="true" signature="2552:2558" ph="&amp;nbsp;" />
+            <marker date="1543996218659" expanded="true" signature="3215:3232" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/system/datadictionary/datadict_list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="14" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/constant/constant_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="71" lean-forward="false" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/websocket/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/plugins/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12483">
+          <caret line="4" column="52712" lean-forward="false" selection-start-line="4" selection-start-column="52712" selection-end-line="4" selection-end-column="52712" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="78" />
+          <folding>
+            <marker date="1544003424620" expanded="true" signature="3324:3330" ph="&amp;nbsp;" />
+            <marker date="1544003424620" expanded="true" signature="3351:3357" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/user/list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="78" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="78" />
+          <folding>
+            <marker date="1544003489789" expanded="true" signature="2828:2834" ph="&amp;nbsp;" />
+            <marker date="1544003489789" expanded="true" signature="2855:2861" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/menu/btn_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="60" lean-forward="false" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/WEB-INF/freemarker/role/form.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="109" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/webapp/pages/system/log/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h3#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-web/src/main/java/com/springboot/controller/DataReleasedController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
