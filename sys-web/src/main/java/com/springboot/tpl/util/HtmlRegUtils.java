@@ -106,7 +106,8 @@ public class HtmlRegUtils {
         int pos = 0;
         for (LabelEntry entry : labelEntryList) {
             AbstractTplService tplService = SpringContextHolder.getBean(entry.labelName + "TplService");
-            String labelResult = tplService.objToStr(entry.object);
+            tplService.setParamObj(entry.object);
+            String labelResult = tplService.objToStr();
             result = result.replace("{" + entry.labelName + ":" + pos + "}", labelResult);
             pos++;
         }

@@ -136,7 +136,7 @@ public class DemoController {
         item3.put("secList",secList3);
         firstList.add(item3);
         map.put("firstList",firstList);
-        return "/test/layerPage";
+        return "/test/fm_page";
     }
 
     @Autowired
@@ -150,7 +150,7 @@ public class DemoController {
         adviceEO.setAddress("合肥市蜀山区和谐花园");
         adviceDao.save(adviceEO);
         model.addAttribute("date",new Date());
-        return "/test/miniui_grid";
+        return "/test/fm_grid";
     }
 
     @RequestMapping("beanSet")

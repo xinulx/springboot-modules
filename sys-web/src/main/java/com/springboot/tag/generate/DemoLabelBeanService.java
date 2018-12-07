@@ -5,7 +5,7 @@ import com.springboot.tag.common.AbstractLabelService;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DemoBeanService extends AbstractLabelService {
+public class DemoLabelBeanService extends AbstractLabelService {
 
     @Override
     public Object getObject(JSONObject paramObj){

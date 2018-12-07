@@ -1,8 +1,7 @@
-package com.springboot.tag.generate;
+package com.springboot.tpl.generate;
 
-import com.alibaba.fastjson.JSONObject;
 import com.springboot.dao.business.IReleaseDataDao;
-import com.springboot.tag.common.AbstractLabelService;
+import com.springboot.tpl.service.AbstractTplService;
 import com.springboot.vo.StatisQueryVO;
 import com.springboot.vo.StatisResultVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,18 +24,18 @@ import java.util.Map;
  * @date 2018-11-06<br/>
  */
 @Component
-public class DataItemChartBeanService extends AbstractLabelService {
+public class DataItemChartTplService extends AbstractTplService {
 
     @Autowired
     private IReleaseDataDao releaseDataDao;
 
     @Override
-    public Object getObject(JSONObject paramObj) {
+    public String objToStr() {
         // 0-最新 1-进度 2-年度
-        String type = paramObj.getString("type");
-        String name = paramObj.getString("name");//图例名称
-        String importName = paramObj.getString("importName");
-        Integer seriesCount = paramObj.getInteger("seriesCount");
+        String type = getParamObj().getString("type");
+        String name = getParamObj().getString("name");//图例名称
+        String importName = getParamObj().getString("importName");
+        Integer seriesCount = getParamObj().getInteger("seriesCount");
 
         StatisQueryVO vo = new StatisQueryVO();
         vo.setType(type);
@@ -57,6 +56,7 @@ public class DataItemChartBeanService extends AbstractLabelService {
         map.put("xData",xData);
         map.put("yValue",yValue);
         map.put("ySpeed",ySpeed);
-        return map;
+        String html = processHtml(map);
+        return html;
     }
 }

@@ -105,7 +105,7 @@
         } else {
             label_mgr.grid.updateRow(formData);
         }
-        saveData();
+        editLabelConfig();
     }
 
 </script>

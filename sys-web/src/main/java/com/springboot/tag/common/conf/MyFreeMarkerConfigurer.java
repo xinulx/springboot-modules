@@ -41,15 +41,18 @@ public class MyFreeMarkerConfigurer extends FreeMarkerConfigurer {
             log.info("注入自定义标签：" + eo.get("labelName"));
             model.put(eo.get("labelName").toString(), labelServiceModel);
         }
+
         model.put("xml_escape", SpringContextHolder.getBean("fmXmlEscape"));  // xml解析
-        model.put("mine_test", SpringContextHolder.getBean("labelDirective"));// 演示标签
-        model.put("demo", labelServiceModel);// 接口标签测试
-        super.setFreemarkerVariables(model);
-        super.setTemplateLoaderPath("/WEB-INF/freemarker/");
+        model.put("test", SpringContextHolder.getBean("labelDirective"));  // 测试
         Properties properties = new Properties();
         properties.load(new FileInputStream(System.getProperty("user.dir")
                 + "/src/main/resources/freemarkerSettings.properties"));
+
+        super.setFreemarkerVariables(model);
+        super.setTemplateLoaderPath("/WEB-INF/freemarker/");
+        super.setDefaultEncoding("UTF-8");
         super.setFreemarkerSettings(properties);
+
         super.afterPropertiesSet();
     }
 

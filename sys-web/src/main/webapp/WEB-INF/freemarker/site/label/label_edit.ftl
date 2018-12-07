@@ -85,7 +85,7 @@
             type:'post',
             data: formData,
             success: function (d) {
-                if (d.status) {
+                if (d.status == 1) {
                     if (edit_cur.id == 0 || edit_cur.actionType == "copy") {
                         var node = label_mgr.ztree.getNodeByParam("id", edit_cur.pid, null);
                         label_mgr.ztree.reAsyncChildNodes(node, "refresh");

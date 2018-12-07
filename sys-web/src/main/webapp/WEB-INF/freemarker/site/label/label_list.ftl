@@ -58,7 +58,7 @@
         if (confirm("确认删除吗？")) {
             var row = label_mgr.grid.getRowByUID(row_uid);
             label_mgr.grid.removeRow(row);
-            saveData();
+            editLabelConfig();
         }
     }
 
@@ -77,7 +77,7 @@
     }
 
     //保存数据
-    function saveData() {
+    function editLabelConfig() {
         $.ajax({
             url: "/label/editLabelConfig",
             data: {
@@ -85,7 +85,7 @@
                 labelConfig: mini.encode(getFormData())
             },
             success: function (d) {
-                if (d.status) {
+                if (d.status == 1) {
                     var node = label_mgr.ztree.getNodeByParam("id", label_mgr.id, null);
                     label_mgr.ztree.reAsyncChildNodes(node, "refresh");
                     //操作成功！

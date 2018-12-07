@@ -77,7 +77,7 @@ public class LabelDirective implements TemplateDirectiveModel {
         // 直接渲染，可能使用的较少
         out.write("标签中：Akishimo num=" + params.get("num") + "的类型为:" + paramValue.getClass());
         // 将数据加载到指定模板
-        Template temp = configuration.getConfiguration().getTemplate("test/test_tag.ftl");
+        Template temp = configuration.getConfiguration().getTemplate("test/fm_tag.ftl");
         temp.process(root, out);
         if (body != null) {
             body.render(env.getOut());
