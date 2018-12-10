@@ -41,7 +41,7 @@ public class MyFreeMarkerConfigurer extends FreeMarkerConfigurer {
             log.info("注入自定义标签：" + eo.get("labelName"));
             model.put(eo.get("labelName").toString(), labelServiceModel);
         }
-
+        model.put("includeX", SpringContextHolder.getBean("includeX"));  // include
         model.put("xml_escape", SpringContextHolder.getBean("fmXmlEscape"));  // xml解析
         model.put("test", SpringContextHolder.getBean("labelDirective"));  // 测试
         Properties properties = new Properties();
