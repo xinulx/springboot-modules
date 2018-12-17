@@ -20,7 +20,7 @@
             <div field="code" width="10%" headerAlign="center" allowSort="true" align="center">字典项编码</div>
             <div field="description" width="20%" headerAlign="center" allowSort="true">描述</div>
             <div width="10%" headerAlign="center" allowSort="false" align="center" renderer="defaultVal">默认值</div>
-            <div width="15%" headerAlign="center" allowSort="true" renderer="renderOp" align="center">操作</div>
+            <div width="15%" headerAlign="center" allowSort="true" renderer="renderItemOp" align="center">操作</div>
         </div>
     </div>
 </div>
@@ -31,7 +31,7 @@
 
     grid2.load({dataFlag: 1, dictId: dId});
     //操作加载
-    function renderOp(e) {
+    function renderItemOp(e) {
         var str = "";
         var rec = e.record;
         if (!rec.siteId) {

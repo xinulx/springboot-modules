@@ -8,6 +8,9 @@
                 <button type="button" class="btn btn-danger" onclick="batchDel()">
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;删除
                 </button>
+                <button type="button" class="btn btn-success" onclick="menuAuth()">
+                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;菜单权限
+                </button>
             </form>
         </div>
         <div class="col-md-5">
