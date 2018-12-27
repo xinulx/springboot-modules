@@ -67,8 +67,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-1" id="mainMenu"></div>
-        <div class="col-md-11" id="mainContainer"></div>
+        <div class="col-md-2" id="mainMenu"></div>
+        <div class="col-md-10" id="mainContainer"></div>
     </div>
 </div>
 <div id="layerWin" class="hidden"></div>
@@ -94,15 +94,16 @@
     <% for( var n = 0 ; n < data[i].children.length ; n ++ ) {%>
     <li class="treeview" type="<%=data[i].children[n].type%>" reqUrl="<%=data[i].children[n].reqUrl%>">
         <a href="#">
-            <i class="iconfont <%=data[i].children[n].iconClass%> text-info"></i>
+            <i class="iconfont <%=data[i].children[n].iconClass%>"></i>
             <span><%=data[i].children[n].name%></span>
             <i class="iconfont icon-msnui-rightmini pull-right"></i>
         </a>
+        <%if(data[i].children[n].children.length > 0){%>
         <ul class="treeview-menu">
             <% for( var j = 0 ; j < data[i].children[n].children.length ; j ++ ) {%>
             <li type="<%=data[i].children[n].children[j].type%>" reqUrl="<%=data[i].children[n].children[j].reqUrl%>">
                 <a href="#">
-                    <i class="iconfont <%=data[i].children[n].children[j].iconClass%> text-warning"></i>
+                    <i class="iconfont <%=data[i].children[n].children[j].iconClass%>"></i>
                     <span><%=data[i].children[n].children[j].name%></span>
                     <i class="iconfont icon-msnui-rightmini pull-right"></i>
                 </a>
@@ -112,12 +113,13 @@
             </li>
             <%}%>
         </ul>
+        <%}%>
     </li>
     <%}%>
     <%}else{%>
     <li type="<%=data[i].type%>" reqUrl="<%=data[i].reqUrl%>">
         <a href="#">
-            <i class="iconfont <%=data[i].iconClass%> text-danger"></i>
+            <i class="iconfont <%=data[i].iconClass%>"></i>
             <span><%=data[i].name%></span>
             <i class="iconfont icon-msnui-rightmini pull-right"></i>
         </a>
@@ -130,7 +132,7 @@
         initSocket();
         loadSysMenu();
         $(".f_left:eq(0)").click(function(){
-            window.location.href = "/login/mainSite";
+            window.open ("/login/mainSite");
         });
         $(".f_left:eq(4)").click(function(){
             $.get("/login/logout",function(d){
@@ -159,9 +161,10 @@
             $("#mainMenu").empty().html("<ul class=\"sidebar-menu\">" + template('leftMenu', {data: result}) + "</ul>");
             $.sidebarMenu($('.sidebar-menu'));
             $('.sidebar-menu li').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
                 var type = $(this).attr("type");
                 var url = $(this).attr("reqUrl");
-                if (type == 'STATIC' || type == 'URL') {
+                if (type == 'URL') {
                     if (url == undefined || url == '') {
                         layer.msg("缺少地址参数，无法访问该功能！", {icon: 2, shade: 0.01, time: 1000});
                         return;

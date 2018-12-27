@@ -27,8 +27,8 @@
 
 .sidebar-menu > li:hover > a, .sidebar-menu > li.active > a {
     color: #fff;
-    background: #1e282c;
-    border-left-color: #3c8dbc;
+    background: #2F4056;
+    border-left-color: #FF5722;
 }
 
 .sidebar-menu > li > .treeview-menu {

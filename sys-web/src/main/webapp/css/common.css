@@ -2,6 +2,12 @@
     height: 30px;line-height: 30px;margin: 10px 0;
     background-color: #F2F2F2;
 }
+#mainMenu{
+    width: 10%;
+}
+#mainContainer{
+    width: 90%;
+}
 .tree-bg{
     background-color: #f6fafd;
     overflow: auto;
