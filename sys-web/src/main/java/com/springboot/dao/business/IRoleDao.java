@@ -1,7 +1,7 @@
 package com.springboot.dao.business;
 
 import com.springboot.entity.business.RoleEO;
-import com.springboot.vo.QueryRoleVO;
+import com.springboot.entity.vo.QueryRoleVO;
 import com.springboot.dao.hibernate.IMockDao;
 import com.springboot.entity.hibernate.Pagination;
 

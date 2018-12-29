@@ -12,7 +12,7 @@ import com.springboot.entity.hibernate.Pagination;
 import com.springboot.service.common.impl.BaseService;
 import com.springboot.service.hibernate.IDataDictItemService;
 import com.springboot.service.hibernate.IDataDictService;
-import com.springboot.vo.DataSortVO;
+import com.springboot.entity.vo.DataSortVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

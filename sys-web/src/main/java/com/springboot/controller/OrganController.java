@@ -1,6 +1,6 @@
 package com.springboot.controller;
 
-import com.springboot.vo.ResponseData;
+import com.springboot.entity.vo.ResponseData;
 import com.springboot.common.util.SysLog;
 import com.springboot.entity.mybatis.OrganEO;
 import com.springboot.service.system.IOrganService;

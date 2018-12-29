@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 
 import com.springboot.service.mongodb.base.IMongoDbFileServer;
 import com.springboot.service.mongodb.base.impl.MongoDbFileServerImpl;
-import com.springboot.vo.MongoFileVO;
+import com.springboot.entity.vo.MongoFileVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

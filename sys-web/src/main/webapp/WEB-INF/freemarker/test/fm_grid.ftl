@@ -5,12 +5,8 @@
         日期1--${date?string("yyyy-MM-dd HH:mm:ss")}<br/>
         日期2--${dateFormat(date)}
     </div>
-    <#--自定义标签-->
-    <@test num="12" file="test/fm_tag.ftl">
-        标签内部==${label_inner_var!''}
-    </@test>
     <br/>
-    <@demoLabel param="param:DemoBeanService">
+    <@demoLabel param="param:DemoBeanService" file="test/fm_tag.ftl">
         标签内部1==${resultObj!''}
     </@demoLabel>
     <@showChance param="param:这是一个机会">

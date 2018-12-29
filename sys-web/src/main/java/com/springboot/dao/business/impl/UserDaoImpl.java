@@ -4,7 +4,7 @@ import com.springboot.dao.business.IUserDao;
 import com.springboot.dao.hibernate.impl.MockDao;
 import com.springboot.entity.business.HbUserEO;
 import com.springboot.entity.hibernate.Pagination;
-import com.springboot.vo.QueryRoleVO;
+import com.springboot.entity.vo.QueryRoleVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
 

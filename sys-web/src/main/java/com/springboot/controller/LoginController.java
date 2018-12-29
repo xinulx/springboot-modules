@@ -1,7 +1,7 @@
 package com.springboot.controller;
 
 import com.springboot.common.anno.LogParams;
-import com.springboot.vo.ResponseData;
+import com.springboot.entity.vo.ResponseData;
 import com.springboot.common.filter.ShiroUtil;
 import com.springboot.common.util.BrowserUtils;
 import com.springboot.common.util.CodeUtil;

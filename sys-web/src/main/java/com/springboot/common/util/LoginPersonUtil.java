@@ -1,6 +1,6 @@
 package com.springboot.common.util;
 
-import com.springboot.vo.InternalAccount;
+import com.springboot.entity.vo.InternalAccount;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.web.subject.WebSubject;

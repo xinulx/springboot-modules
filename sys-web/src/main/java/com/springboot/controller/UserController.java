@@ -1,13 +1,13 @@
 package com.springboot.controller;
 
-import com.springboot.vo.ResponseData;
+import com.springboot.entity.vo.ResponseData;
 import com.springboot.common.filter.ShiroAuthRealm;
 import com.springboot.common.util.SysLog;
 import com.springboot.dao.business.IUserDao;
 import com.springboot.entity.business.HbUserEO;
 import com.springboot.entity.mybatis.OrganEO;
 import com.springboot.service.system.IOrganService;
-import com.springboot.vo.QueryRoleVO;
+import com.springboot.entity.vo.QueryRoleVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.springboot.tag.common.inter.LabelService;
 
 /**
- * 标签处理抽象类，用来实现默认的预处理对象
+ * freemarker标签处理抽象类，用来实现默认的预处理对象
  */
 public class AbstractLabelService implements LabelService{
 

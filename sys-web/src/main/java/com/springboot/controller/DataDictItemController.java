@@ -6,7 +6,7 @@ import com.springboot.entity.business.datadictionary.DataDictEO;
 import com.springboot.entity.business.datadictionary.DataDictItemEO;
 import com.springboot.service.hibernate.IDataDictItemService;
 import com.springboot.service.hibernate.IDataDictService;
-import com.springboot.vo.ResponseData;
+import com.springboot.entity.vo.ResponseData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

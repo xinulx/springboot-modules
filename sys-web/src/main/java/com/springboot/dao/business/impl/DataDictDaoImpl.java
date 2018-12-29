@@ -7,7 +7,7 @@ import com.springboot.dao.hibernate.IBaseDao;
 import com.springboot.dao.hibernate.impl.BaseDao;
 import com.springboot.entity.business.datadictionary.DataDictEO;
 import com.springboot.entity.hibernate.Pagination;
-import com.springboot.vo.DataDictPageVO;
+import com.springboot.entity.vo.DataDictPageVO;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;

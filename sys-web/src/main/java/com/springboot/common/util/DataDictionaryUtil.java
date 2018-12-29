@@ -5,7 +5,7 @@ import com.springboot.entity.business.datadictionary.DataDictEO;
 import com.springboot.entity.business.datadictionary.DataDictItemEO;
 import com.springboot.service.hibernate.IDataDictItemService;
 import com.springboot.service.hibernate.IDataDictService;
-import com.springboot.vo.DataDictVO;
+import com.springboot.entity.vo.DataDictVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

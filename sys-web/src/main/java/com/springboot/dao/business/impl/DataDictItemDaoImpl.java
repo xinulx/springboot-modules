@@ -5,7 +5,7 @@ import com.springboot.dao.business.IDataDictItemDao;
 import com.springboot.dao.hibernate.impl.BaseDao;
 import com.springboot.entity.business.datadictionary.DataDictItemEO;
 import com.springboot.entity.hibernate.Pagination;
-import com.springboot.vo.DataSortVO;
+import com.springboot.entity.vo.DataSortVO;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

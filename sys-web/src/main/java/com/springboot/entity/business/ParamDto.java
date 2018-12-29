@@ -1,8 +1,8 @@
 package com.springboot.entity.business;
 
 
-import com.springboot.vo.MapVO;
-import com.springboot.vo.PageQueryVO;
+import com.springboot.entity.vo.MapVO;
+import com.springboot.entity.vo.PageQueryVO;
 
 import java.util.List;
 import java.util.Set;

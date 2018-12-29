@@ -3,7 +3,7 @@ package com.springboot.dao.business;
 import com.springboot.dao.hibernate.IBaseDao;
 import com.springboot.entity.business.datadictionary.DataDictEO;
 import com.springboot.entity.hibernate.Pagination;
-import com.springboot.vo.DataDictPageVO;
+import com.springboot.entity.vo.DataDictPageVO;
 
 public interface IDataDictDao extends IBaseDao<DataDictEO> {
 

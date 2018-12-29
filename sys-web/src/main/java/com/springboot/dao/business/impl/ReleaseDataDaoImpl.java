@@ -5,9 +5,9 @@ import com.springboot.dao.business.IReleaseDataDao;
 import com.springboot.dao.hibernate.impl.BaseDao;
 import com.springboot.entity.business.ReleaseDataEO;
 import com.springboot.entity.hibernate.Pagination;
-import com.springboot.vo.ReleaseDataQueryVO;
-import com.springboot.vo.StatisQueryVO;
-import com.springboot.vo.StatisResultVO;
+import com.springboot.entity.vo.ReleaseDataQueryVO;
+import com.springboot.entity.vo.StatisQueryVO;
+import com.springboot.entity.vo.StatisResultVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
 

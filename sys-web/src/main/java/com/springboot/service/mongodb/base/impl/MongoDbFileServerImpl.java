@@ -12,7 +12,7 @@ import com.mongodb.gridfs.GridFSInputFile;
 import com.springboot.common.busi.BaseRunTimeException;
 import com.springboot.common.util.LoginPersonUtil;
 import com.springboot.service.mongodb.base.IMongoDbFileServer;
-import com.springboot.vo.MongoFileVO;
+import com.springboot.entity.vo.MongoFileVO;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.springboot.controller;
 
 import com.springboot.activemq.producer.Producer;
-import com.springboot.vo.ResponseData;
+import com.springboot.entity.vo.ResponseData;
 import com.springboot.service.common.ICommonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

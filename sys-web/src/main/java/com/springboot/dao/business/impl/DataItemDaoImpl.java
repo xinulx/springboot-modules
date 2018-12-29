@@ -3,7 +3,7 @@ package com.springboot.dao.business.impl;
 import com.springboot.dao.business.IDataItemDao;
 import com.springboot.dao.hibernate.impl.BaseDao;
 import com.springboot.entity.business.DataItemEO;
-import com.springboot.vo.DataItemQueryVO;
+import com.springboot.entity.vo.DataItemQueryVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
 

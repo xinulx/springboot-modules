@@ -2,7 +2,7 @@ package com.springboot.tag.common.conf;
 
 import com.springboot.common.busi.SpringContextHolder;
 import com.springboot.common.util.PropertiesUtil;
-import com.springboot.tag.common.db.JdbcUtil;
+import com.springboot.common.db.JdbcUtil;
 import com.springboot.tag.common.impl.LabelServiceImpl;
 import freemarker.template.TemplateException;
 import lombok.extern.slf4j.Slf4j;
@@ -43,7 +43,6 @@ public class MyFreeMarkerConfigurer extends FreeMarkerConfigurer {
         }
         model.put("includeX", SpringContextHolder.getBean("includeX"));  // include
         model.put("xml_escape", SpringContextHolder.getBean("fmXmlEscape"));  // xml解析
-        model.put("test", SpringContextHolder.getBean("labelDirective"));  // 测试
         Properties properties = new Properties();
         properties.load(new FileInputStream(System.getProperty("user.dir")
                 + "/src/main/resources/freemarkerSettings.properties"));

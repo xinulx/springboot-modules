@@ -4,7 +4,7 @@ package com.springboot.service.hibernate;
 import com.springboot.entity.business.datadictionary.DataDictEO;
 import com.springboot.entity.hibernate.Pagination;
 import com.springboot.service.common.IBaseService;
-import com.springboot.vo.DataDictPageVO;
+import com.springboot.entity.vo.DataDictPageVO;
 
 public interface IDataDictService extends IBaseService<DataDictEO> {
 

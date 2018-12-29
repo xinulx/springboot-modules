@@ -4,7 +4,7 @@ package com.springboot.service.mongodb.base;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.gridfs.GridFSDBFile;
-import com.springboot.vo.MongoFileVO;
+import com.springboot.entity.vo.MongoFileVO;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;

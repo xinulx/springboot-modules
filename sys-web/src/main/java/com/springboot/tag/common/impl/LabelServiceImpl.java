@@ -37,7 +37,6 @@ public class LabelServiceImpl implements TemplateDirectiveModel {
                         TemplateModel[] templateModels,
                         TemplateDirectiveBody templateDirectiveBody)
             throws TemplateException, IOException {
-        log.info("========================标签查询======================");
         // 完整标签
         DirectiveCallPlace currentDirectiveCallPlace = env.getCurrentDirectiveCallPlace();
         String label = currentDirectiveCallPlace.toString();
@@ -69,7 +68,6 @@ public class LabelServiceImpl implements TemplateDirectiveModel {
         Object object = labelService.getObject(paramObj);
 
         // 输出
-        // 获取输出对象
         Writer out = env.getOut();
         Map root = new HashMap();
         root.put("resultObj", object);

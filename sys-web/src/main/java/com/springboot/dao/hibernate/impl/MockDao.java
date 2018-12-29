@@ -1,12 +1,12 @@
 package com.springboot.dao.hibernate.impl;
 
 import com.springboot.common.busi.BaseRunTimeException;
-import com.springboot.vo.BaseQuery;
-import com.springboot.vo.CountQueryStringBuilder;
-import com.springboot.vo.JpqlQuery;
-import com.springboot.vo.NamedParameters;
-import com.springboot.vo.PositionalParameters;
-import com.springboot.vo.QueryParameters;
+import com.springboot.entity.vo.BaseQuery;
+import com.springboot.entity.vo.CountQueryStringBuilder;
+import com.springboot.entity.vo.JpqlQuery;
+import com.springboot.entity.vo.NamedParameters;
+import com.springboot.entity.vo.PositionalParameters;
+import com.springboot.entity.vo.QueryParameters;
 import com.springboot.common.util.ThreadUtil;
 import com.springboot.dao.hibernate.IMockDao;
 import com.springboot.entity.hibernate.impl.AMockEntity;

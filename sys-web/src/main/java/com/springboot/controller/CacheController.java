@@ -3,7 +3,7 @@ package com.springboot.controller;
 import com.alibaba.fastjson.JSONArray;
 import com.springboot.cache.redis.RedisUtil;
 import com.springboot.common.filter.ShiroUtil;
-import com.springboot.vo.ResponseData;
+import com.springboot.entity.vo.ResponseData;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.SerializationUtils;
 import org.springframework.web.bind.annotation.RequestMapping;

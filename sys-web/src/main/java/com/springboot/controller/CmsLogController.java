@@ -1,6 +1,6 @@
 package com.springboot.controller;
 
-import com.springboot.vo.ResponseData;
+import com.springboot.entity.vo.ResponseData;
 import com.springboot.common.util.CSVUtils;
 import com.springboot.entity.business.CmsLogEO;
 import com.springboot.entity.business.CmsLoginHistoryEO;

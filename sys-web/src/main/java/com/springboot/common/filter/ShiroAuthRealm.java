@@ -1,6 +1,6 @@
 package com.springboot.common.filter;
 
-import com.springboot.vo.ResponseData;
+import com.springboot.entity.vo.ResponseData;
 import com.springboot.entity.mybatis.UserEO;
 import com.springboot.service.system.IUserService;
 import lombok.extern.slf4j.Slf4j;

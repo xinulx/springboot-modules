@@ -1,6 +1,6 @@
 package com.springboot.service.common.impl;
 
-import com.springboot.vo.ResponseData;
+import com.springboot.entity.vo.ResponseData;
 import com.springboot.common.filter.ShiroUtil;
 import com.springboot.entity.mybatis.UserEO;
 import com.springboot.service.common.ILoginService;

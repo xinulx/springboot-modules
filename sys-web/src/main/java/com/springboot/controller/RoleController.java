@@ -1,15 +1,15 @@
 package com.springboot.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.springboot.vo.ResponseData;
+import com.springboot.entity.vo.ResponseData;
 import com.springboot.common.util.SysLog;
 import com.springboot.dao.business.IMenuRelDao;
 import com.springboot.dao.business.IRoleDao;
 import com.springboot.entity.business.MenuRelEO;
 import com.springboot.entity.business.RoleEO;
 import com.springboot.entity.hibernate.impl.AMockEntity;
-import com.springboot.vo.QueryRoleVO;
-import com.springboot.vo.StatisResultVO;
+import com.springboot.entity.vo.QueryRoleVO;
+import com.springboot.entity.vo.StatisResultVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
