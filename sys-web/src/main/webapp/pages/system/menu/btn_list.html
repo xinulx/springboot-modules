@@ -41,7 +41,7 @@
     </thead>
     <tbody></tbody>
 </table>
-<div id="pagination" align="center"></div>
+<ul class="page" maxshowpageitem="5" pagelistcount="10" id="page"></ul>
 <div id="editFrom" class="hidden" style="margin: 10px auto;overflow-x: hidden">
     <form class="form-horizontal" method="post">
         <input style="display: none" name="id"/>
@@ -92,7 +92,7 @@
     </table>
 </div>
 <script>
-    var pageIndex = 1,pageSize = 15;
+    var pageIndex = 1,pageSize = 10;
     var winIndex;
     var grid = $("#dataTable tbody");
     $(function() {
@@ -224,9 +224,7 @@
                     }
                     grid.empty().append(tr);
                 }
-                if(Math.ceil(result.total/pageSize) > 1){
-                    pagination(result.pageIndex,result.total);
-                }
+                pagination(result.pageIndex,result.total);
             }
         );
     }
@@ -237,22 +235,9 @@
      * @param totalPage
      */
     function pagination(currentPage,total){
-        $("#pagination").pagination({
-            currentPage: currentPage,
-            totalPage: Math.ceil(total/pageSize),
-            isShow: true,
-            count: 5,
-            homePageText: "首页",
-            endPageText: "尾页",
-            prevPageText: "上一页",
-            nextPageText: "下一页",
-            callback: function(current) {
-                // var info = $("#pagination").pagination("getPage");
-                // $("#pagination").pagination("setPage", 1, 10);
-                // console.log(info);
-                pageIndex = current;
-                loadList();
-            }
+        $("#page").initPage(total,currentPage,function(curPage){
+            pageIndex = curPage;
+            loadList();
         });
     }
 
@@ -369,6 +354,7 @@
                 if(result.status == 1){
                     layer.msg(result.desc,{icon:1,shade: 0.01,time:1000},function(index){
                         layer.close(index);
+                        pageIndex = 1;
                         loadList();
                     });
                 }else{

@@ -36,7 +36,7 @@
     <tfoot>
         <tr>
             <td colspan="5" align="center">
-                <div id="pagination"></div>
+                <ul class="page" maxshowpageitem="5" pagelistcount="10"  id="page"></ul>
             </td>
         </tr>
     </tfoot>
@@ -83,7 +83,7 @@
     </table>
 </div>
 <script>
-    var pageIndex = 1,pageSize = 15;
+    var pageIndex = 1,pageSize = 10;
     var winIndex;
     var grid = $("#dataTable tbody");
     $(function() {
@@ -144,22 +144,9 @@
      * @param totalPage
      */
     function pagination(currentPage,total){
-        $("#pagination").pagination({
-            currentPage: currentPage,
-            totalPage: Math.ceil(total/pageSize),
-            isShow: true,
-            count: 5,
-            homePageText: "首页",
-            endPageText: "尾页",
-            prevPageText: "上一页",
-            nextPageText: "下一页",
-            callback: function(current) {
-                // var info = $("#pagination").pagination("getPage");
-                // $("#pagination").pagination("setPage", 1, 10);
-                // console.log(info);
-                pageIndex = current;
-                loadList();
-            }
+        $("#page").initPage(total,currentPage,function(curPage){
+            pageIndex = curPage;
+            loadList();
         });
     }
 
@@ -277,6 +264,7 @@
                 if(result.status == 1){
                     layer.msg(result.desc,{icon:1,shade: 0.01,time:1000},function(index){
                         layer.close(index);
+                        pageIndex = 1;
                         loadList();
                     });
                 }else{
