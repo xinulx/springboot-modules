@@ -187,7 +187,7 @@ var stompClient = null;
  */
 function initSocket() {
     if (stompClient == null) {
-        var socket = new SockJS('http://localhost:8816/websocket?token=mq');
+        var socket = new SockJS('http://'+ location.host +'/websocket?token=mq');
         stompClient = Stomp.over(socket);
     }
     // var tipsCount = 0;

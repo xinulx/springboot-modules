@@ -10,9 +10,6 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/websocket")
-                .setAllowedOrigins("http://localhost:8976")
-                .addInterceptors()
-                .withSockJS();
+        registry.addEndpoint("/websocket").setAllowedOrigins("http://localhost:8976").addInterceptors().withSockJS();
     }
 }
