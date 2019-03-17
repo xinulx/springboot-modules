@@ -9,10 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>sys-web</module>
-        <module>file-convert</module>
-        <module>file-web</module>
-        <module>jspx-cms</module>
-        <module>websocket</module>
+        <module>mine-file-web</module>
+        <module>mine-file-convert</module>
+        <module>mine-sys-cms</module>
+        <module>mine-sys-web</module>
+        <module>mine-sys-websocket</module>
     </modules>
 </project>
