@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="jspx-cms:war">
-    <output-path>$PROJECT_DIR$/jspx-cms/target</output-path>
-    <root id="archive" name="jspxcms-9.0.0.war">
-      <element id="artifact" artifact-name="jspx-cms:war exploded" />
-    </root>
-  </artifact>
-</component>
