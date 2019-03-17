@@ -1,0 +1,1 @@
+<div class="text-info">${(resultObj.desc)!''} - ${resultObj.num}</div>
