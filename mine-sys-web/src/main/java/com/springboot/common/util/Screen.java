@@ -6,8 +6,8 @@ public class Screen {
      * @return
      */
     public static String getScreen() {
-        int screenWidth = ((int) java.awt.Toolkit.getDefaultToolkit().getScreenSize().width);
-        int screenHeight = ((int) java.awt.Toolkit.getDefaultToolkit().getScreenSize().height);
+        int screenWidth = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+        int screenHeight = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
         System.out.println("屏幕分辨率：" + screenWidth + " * " + screenHeight);
         return screenWidth + " * " + screenHeight;
     }

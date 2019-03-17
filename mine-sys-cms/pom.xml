@@ -7,7 +7,7 @@
 	<version>9.0.0</version>
 	<packaging>war</packaging>
 
-	<name>Jspxcms</name>
+	<name>mine-sys-cms</name>
 	<url>http://www.jspxcms.com/</url>
 	<inceptionYear>2011-2017</inceptionYear>
 
