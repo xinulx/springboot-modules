@@ -56,7 +56,6 @@ public class SQLInterceptor implements Interceptor {
 
         // 获取sqlkey
         MappedStatement mappedStatement = (MappedStatement) ReflectUtil.getFieldValue(delegate, "mappedStatement");
-        System.out.println(mappedStatement.getId());
 
         // 获取到当前StatementHandler的
         // boundSql，这里不管是调用target.getBoundSql()还是直接调用delegate.getBoundSql()结果是一样的，因为之前已经说过了
@@ -66,6 +65,7 @@ public class SQLInterceptor implements Interceptor {
         //String sqlkey = mappedStatement.getId();
         //Object obj = boundSql.getParameterObject();
         //logger.debug("sql参数：{}",obj);
+
         //String old_sql = boundSql.getSql();
         //String new_sql = old_sql.concat(" or login_accept = 'L201709262160202'");
         //ReflectUtil.setFieldValue(boundSql,"parameterObject","3");

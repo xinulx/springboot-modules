@@ -1,6 +1,8 @@
 package com.springboot.common.filter;
 
+import com.alibaba.fastjson.JSON;
 import com.springboot.common.anno.LogParams;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 import java.util.Map;
 
+@Slf4j
 public class LogIntercepter extends HandlerInterceptorAdapter {
 
     @Override
@@ -29,18 +32,19 @@ public class LogIntercepter extends HandlerInterceptorAdapter {
         }
         if (systemLogAnnotation != null) {
             // 如果自定义注解不为空, 则取出配置值
+            log.info("***********************用户登陆日志记录*************************");
             String clazz = systemLogAnnotation.value().getName();
             String type = systemLogAnnotation.type();
             String busiMethod = systemLogAnnotation.method();
             String desc = systemLogAnnotation.desc();
-            System.out.println(clazz);
-            System.out.println(type);
-            System.out.println(busiMethod);
-            System.out.println(desc);
+            log.info(clazz);
+            log.info(type);
+            log.info(busiMethod);
+            log.info(desc);
 
             // 方法参数
             Map<String, String[]> paramsMap = arg0.getParameterMap();
-            System.out.println(paramsMap.values());
+            log.info("请求参数：{}", JSON.toJSONString(paramsMap.values()));
             // 保存操作日志
             return true;
         }

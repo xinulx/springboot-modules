@@ -1,5 +1,7 @@
 package com.springboot.common.util;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -7,8 +9,10 @@ import java.io.InputStream;
 import java.util.Iterator;
 import java.util.Properties;
 
+@Slf4j
 public class PropertiesUtil {
     public static String getProperty(String key) {
+        log.info("*********************************读取配置属性start********************************");
         Properties prop = new Properties();
         try {
             //读取属性文件a.properties
@@ -19,7 +23,7 @@ public class PropertiesUtil {
             while (it.hasNext()) {
                 String tmpKey = it.next();
                 if (tmpKey.equals(key)) {
-                    System.out.println(key + ":" + prop.getProperty(key));
+                    log.warn(key + ":" + prop.getProperty(key));
                     in.close();
                     return prop.getProperty(key);
                 }
@@ -32,6 +36,7 @@ public class PropertiesUtil {
         } catch (Exception e) {
             System.out.println(e);
         }
+        log.info("*********************************读取配置属性end********************************");
         return null;
     }
 

@@ -1,7 +1,9 @@
 package com.springboot.common.filter;
 
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.filters.RemoteIpFilter;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -44,7 +46,12 @@ public class WebFilter {
         public void doFilter(ServletRequest srequest, ServletResponse sresponse, FilterChain filterChain)
                 throws IOException, ServletException {
             HttpServletRequest request = (HttpServletRequest) srequest;
-            log.info("this is webFilter,url :" + request.getRequestURI());
+            String url = request.getRequestURI();
+            if(!StringUtils.isEmpty(url) && !url.contains("css") && !url.contains("js")
+                    && !url.contains("images") && !url.contains("plugins") && !url.contains("favicon")){
+                log.info("current request url= {}" ,request.getRequestURI());
+                log.info("current request param = {}" , JSON.toJSONString(srequest.getParameterMap()));
+            }
             filterChain.doFilter(srequest, sresponse);
         }
 

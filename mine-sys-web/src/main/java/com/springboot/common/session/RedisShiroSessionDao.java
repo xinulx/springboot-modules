@@ -41,7 +41,6 @@ public class RedisShiroSessionDao extends EnterpriseCacheSessionDAO {
             byte[] value = SerializationUtils.serialize(session);
             // 把session信息存储到redis中
             RedisUtil.set(key, value);
-            log.info("update session:{}", session);
         }
     }
 
@@ -55,7 +54,7 @@ public class RedisShiroSessionDao extends EnterpriseCacheSessionDAO {
             byte[] key = getKey(session.getId().toString());
             // 从redis中删除session
             RedisUtil.del(key);
-            log.info("删除session:{}", session);
+            log.info("session已过期:{}", session);
         }
     }
 
