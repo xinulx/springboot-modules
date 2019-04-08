@@ -60,6 +60,8 @@ public class CommonTest {
         System.out.println(map);
         String paramStr = "{&quot;aab004&quot;:&quot;132&quot;,&quot;aae006&quot;:&quot;&quot;,&quot;aab013&quot;:&quot;&quot;,&quot;aab001&quot;:&quot;&quot;,&quot;aab036&quot;:&quot;&quot;,&quot;aab002&quot;:&quot;&quot;}".replaceAll("&quot;","\"");
         System.out.println(paramStr);
+        String content = "美国拒绝向中国遣返东突分子&nbsp;欧洲各国不愿接收 -ISHANGNET- <BR>　　<FONT size=4>美国《华盛顿邮报》日前连续发文，首度披露１５名在押“东突”嫌犯的真实身份和他们在美军恐怖主义嫌犯俘虏营里的真实状况。文章还透露，关塔那摩拘禁营的美军官员悄然将５名在押的“东突”嫌犯转至“轻松监狱”，以便在接到愿意接收他们的“第三国”后能迅速释放。<BR>　　<BR>　　美国在遣返关塔那摩海军基地的被羁押者时，一向是将“中等威胁和低威胁的囚犯一律送回原籍国，由原籍国依照司法程序进行处理。”但美国对中国籍被羁押者采取了不同态度，拒绝将“东突”分子遣返回中国。<BR>　　<BR>　　英国《金融报》曾援引一名美国高级官员的话称，美国非常希望欧洲国家能够接收这些“东突”分子。不过，令美国大失所望的是，意大利、法国、葡萄牙、奥地利和土耳其等国家无一例外地坚拒接收“东突”分子。联合国难民署也一口回绝了美国</FONT>的要求。";
+        System.out.println(content.substring(content.indexOf("ISHANGNET")+15,content.length()));
     }
 
 

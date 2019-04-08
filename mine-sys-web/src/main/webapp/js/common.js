@@ -181,6 +181,7 @@ function autoHeight(id, cuteHeight) {
 }
 
 var stompClient = null;
+var tipsCount = 0;
 
 /**
  * 监听服务端系统消息
@@ -200,7 +201,7 @@ function initSocket() {
                 icon: content.status == 1 ? 'success' : 'error',
                 showHideTransition: 'fade',
                 allowToastClose: true,
-                hideAfter: 15000,
+                hideAfter: 5000,
                 stack: 5,
                 position: {left: 'auto', right: '20px', top: '75px', bottom: 'auto'},
                 textAlign: 'left',
@@ -215,7 +216,7 @@ function initSocket() {
                 afterHidden: function () {
                 }
             });
-            //捕获页
+            // 捕获页
             // if(!content){
             //     return;
             // }
