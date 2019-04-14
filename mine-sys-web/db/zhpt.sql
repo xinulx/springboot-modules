@@ -5700,10 +5700,10 @@ CREATE TABLE `qrtz_triggers`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for sys_btn
+-- Table structure for cms_system_button
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_btn`;
-CREATE TABLE `sys_btn`  (
+DROP TABLE IF EXISTS `cms_system_button`;
+CREATE TABLE `cms_system_button`  (
   `RID` int(12) NOT NULL AUTO_INCREMENT,
   `CODE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `NAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -5714,361 +5714,361 @@ CREATE TABLE `sys_btn`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 352 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_btn
+-- Records of cms_system_button
 -- ----------------------------
-INSERT INTO `sys_btn` VALUES (1, 'RCRW@BUTTON#1', '新增', '/', 37, '新增');
-INSERT INTO `sys_btn` VALUES (3, 'RCRW@BUTTON#3', '删除', '/', 37, '删除');
-INSERT INTO `sys_btn` VALUES (4, 'RCRW@BUTTON#4', '批量删除', '/', 37, '批量删除');
-INSERT INTO `sys_btn` VALUES (5, 'RCRW@BUTTON#5', '批量导入', '/', 37, '批量导入EXCEL');
-INSERT INTO `sys_btn` VALUES (6, 'RCRW@BUTTON#6', '导出', '/', 37, '导出');
-INSERT INTO `sys_btn` VALUES (7, 'RCRW@BUTTON#7', '导出WORD', '/', 37, '导出WORD文档');
-INSERT INTO `sys_btn` VALUES (8, 'General@Button#1', '新增', '/', 37, '新增');
-INSERT INTO `sys_btn` VALUES (9, 'General@Button#2', '修改', '/', 37, '修改');
-INSERT INTO `sys_btn` VALUES (10, 'General@Button#4', '查询', '/', 37, '查询');
-INSERT INTO `sys_btn` VALUES (11, 'General@Button#3', '删除', '/', 37, '删除');
-INSERT INTO `sys_btn` VALUES (12, 'General@Button#6', '导出', '/', 37, '导出');
-INSERT INTO `sys_btn` VALUES (13, 'General@Button#7', '生成报表', '/', 37, '生成报表');
-INSERT INTO `sys_btn` VALUES (14, 'General@Button#5', '导入', '/', 37, '导入');
-INSERT INTO `sys_btn` VALUES (15, 'General@Button#8', '生成WORD', '/', 37, '生成WORD');
-INSERT INTO `sys_btn` VALUES (16, 'General@Button#5', '导入', '/', 40, '导入');
-INSERT INTO `sys_btn` VALUES (17, 'General@Button#1', '新增', '/', 40, '新增');
-INSERT INTO `sys_btn` VALUES (18, 'General@Button#2', '修改', '/', 40, '修改');
-INSERT INTO `sys_btn` VALUES (19, 'General@Button#4', '查询', '/', 40, '查询');
-INSERT INTO `sys_btn` VALUES (20, 'General@Button#3', '删除', '/', 40, '删除');
-INSERT INTO `sys_btn` VALUES (21, 'General@Button#6', '导出', '/', 40, '导出');
-INSERT INTO `sys_btn` VALUES (22, 'General@Button#8', '生成WORD', '/', 40, '生成WORD');
-INSERT INTO `sys_btn` VALUES (23, 'General@Button#7', '生成报表', '/', 40, '生成报表');
-INSERT INTO `sys_btn` VALUES (24, 'General@Button#2', '修改', '/', 34, '修改');
-INSERT INTO `sys_btn` VALUES (25, 'General@Button#4', '查询', '/', 34, '查询');
-INSERT INTO `sys_btn` VALUES (26, 'General@Button#1', '新增', '/', 34, '新增');
-INSERT INTO `sys_btn` VALUES (27, 'General@Button#5', '导入', '/', 34, '导入');
-INSERT INTO `sys_btn` VALUES (28, 'General@Button#3', '删除', '/', 34, '删除');
-INSERT INTO `sys_btn` VALUES (29, 'General@Button#6', '导出', '/', 34, '导出');
-INSERT INTO `sys_btn` VALUES (30, 'General@Button#8', '生成WORD', '/', 34, '生成WORD');
-INSERT INTO `sys_btn` VALUES (31, 'General@Button#7', '生成报表', '/', 34, '生成报表');
-INSERT INTO `sys_btn` VALUES (32, 'General@Button#1', '新增', '/', 36, '新增');
-INSERT INTO `sys_btn` VALUES (33, 'General@Button#2', '修改', '/', 36, '修改');
-INSERT INTO `sys_btn` VALUES (34, 'General@Button#3', '删除', '/', 36, '删除');
-INSERT INTO `sys_btn` VALUES (35, 'General@Button#4', '查询', '/', 36, '查询');
-INSERT INTO `sys_btn` VALUES (36, 'General@Button#5', '导入', '/', 36, '导入');
-INSERT INTO `sys_btn` VALUES (37, 'General@Button#6', '导出', '/', 36, '导出');
-INSERT INTO `sys_btn` VALUES (38, 'General@Button#7', '生成报表', '/', 36, '生成报表');
-INSERT INTO `sys_btn` VALUES (39, 'General@Button#8', '生成WORD', '/', 36, '生成WORD');
-INSERT INTO `sys_btn` VALUES (40, 'General@Button#1', '新增', '/', 69, '新增');
-INSERT INTO `sys_btn` VALUES (41, 'General@Button#3', '删除', '/', 69, '删除');
-INSERT INTO `sys_btn` VALUES (42, 'General@Button#2', '修改', '/', 69, '修改');
-INSERT INTO `sys_btn` VALUES (43, 'General@Button#4', '查询', '/', 69, '查询');
-INSERT INTO `sys_btn` VALUES (44, 'General@Button#5', '导入', '/', 69, '导入');
-INSERT INTO `sys_btn` VALUES (45, 'General@Button#6', '导出', '/', 69, '导出');
-INSERT INTO `sys_btn` VALUES (46, 'General@Button#7', '生成报表', '/', 69, '生成报表');
-INSERT INTO `sys_btn` VALUES (47, 'General@Button#8', '生成WORD', '/', 69, '生成WORD');
-INSERT INTO `sys_btn` VALUES (48, 'General@Button#3', '删除', '/', 73, '删除');
-INSERT INTO `sys_btn` VALUES (49, 'General@Button#4', '查询', '/', 73, '查询');
-INSERT INTO `sys_btn` VALUES (50, 'General@Button#5', '导入', '/', 73, '导入');
-INSERT INTO `sys_btn` VALUES (51, 'General@Button#2', '修改', '/', 73, '修改');
-INSERT INTO `sys_btn` VALUES (52, 'General@Button#1', '新增', '/', 73, '新增');
-INSERT INTO `sys_btn` VALUES (53, 'General@Button#6', '导出', '/', 73, '导出');
-INSERT INTO `sys_btn` VALUES (54, 'General@Button#8', '生成WORD', '/', 73, '生成WORD');
-INSERT INTO `sys_btn` VALUES (55, 'General@Button#7', '生成报表', '/', 73, '生成报表');
-INSERT INTO `sys_btn` VALUES (56, 'General@Button#3', '删除', '/', 71, '删除');
-INSERT INTO `sys_btn` VALUES (57, 'General@Button#2', '修改', '/', 71, '修改');
-INSERT INTO `sys_btn` VALUES (58, 'General@Button#1', '新增', '/', 71, '新增');
-INSERT INTO `sys_btn` VALUES (59, 'General@Button#4', '查询', '/', 71, '查询');
-INSERT INTO `sys_btn` VALUES (60, 'General@Button#5', '导入', '/', 71, '导入');
-INSERT INTO `sys_btn` VALUES (61, 'General@Button#6', '导出', '/', 71, '导出');
-INSERT INTO `sys_btn` VALUES (62, 'General@Button#7', '生成报表', '/', 71, '生成报表');
-INSERT INTO `sys_btn` VALUES (63, 'General@Button#8', '生成WORD', '/', 71, '生成WORD');
-INSERT INTO `sys_btn` VALUES (64, 'General@Button#1', '新增', '/', 70, '新增');
-INSERT INTO `sys_btn` VALUES (65, 'General@Button#4', '查询', '/', 70, '查询');
-INSERT INTO `sys_btn` VALUES (66, 'General@Button#3', '删除', '/', 70, '删除');
-INSERT INTO `sys_btn` VALUES (67, 'General@Button#2', '修改', '/', 70, '修改');
-INSERT INTO `sys_btn` VALUES (68, 'General@Button#6', '导出', '/', 70, '导出');
-INSERT INTO `sys_btn` VALUES (69, 'General@Button#5', '导入', '/', 70, '导入');
-INSERT INTO `sys_btn` VALUES (70, 'General@Button#7', '生成报表', '/', 70, '生成报表');
-INSERT INTO `sys_btn` VALUES (71, 'General@Button#8', '生成WORD', '/', 70, '生成WORD');
-INSERT INTO `sys_btn` VALUES (72, 'General@Button#2', '修改', '/', 72, '修改');
-INSERT INTO `sys_btn` VALUES (73, 'General@Button#3', '删除', '/', 72, '删除');
-INSERT INTO `sys_btn` VALUES (74, 'General@Button#1', '新增', '/', 72, '新增');
-INSERT INTO `sys_btn` VALUES (75, 'General@Button#5', '导入', '/', 72, '导入');
-INSERT INTO `sys_btn` VALUES (76, 'General@Button#4', '查询', '/', 72, '查询');
-INSERT INTO `sys_btn` VALUES (77, 'General@Button#6', '导出', '/', 72, '导出');
-INSERT INTO `sys_btn` VALUES (78, 'General@Button#7', '生成报表', '/', 72, '生成报表');
-INSERT INTO `sys_btn` VALUES (79, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
-INSERT INTO `sys_btn` VALUES (80, 'General@Button#2', '修改', '/', 72, '修改');
-INSERT INTO `sys_btn` VALUES (81, 'General@Button#1', '新增', '/', 72, '新增');
-INSERT INTO `sys_btn` VALUES (82, 'General@Button#3', '删除', '/', 72, '删除');
-INSERT INTO `sys_btn` VALUES (83, 'General@Button#4', '查询', '/', 72, '查询');
-INSERT INTO `sys_btn` VALUES (84, 'General@Button#5', '导入', '/', 72, '导入');
-INSERT INTO `sys_btn` VALUES (85, 'General@Button#6', '导出', '/', 72, '导出');
-INSERT INTO `sys_btn` VALUES (86, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
-INSERT INTO `sys_btn` VALUES (87, 'General@Button#7', '生成报表', '/', 72, '生成报表');
-INSERT INTO `sys_btn` VALUES (88, 'General@Button#2', '修改', '/', 72, '修改');
-INSERT INTO `sys_btn` VALUES (89, 'General@Button#4', '查询', '/', 72, '查询');
-INSERT INTO `sys_btn` VALUES (90, 'General@Button#1', '新增', '/', 72, '新增');
-INSERT INTO `sys_btn` VALUES (91, 'General@Button#3', '删除', '/', 72, '删除');
-INSERT INTO `sys_btn` VALUES (92, 'General@Button#6', '导出', '/', 72, '导出');
-INSERT INTO `sys_btn` VALUES (93, 'General@Button#5', '导入', '/', 72, '导入');
-INSERT INTO `sys_btn` VALUES (94, 'General@Button#7', '生成报表', '/', 72, '生成报表');
-INSERT INTO `sys_btn` VALUES (95, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
-INSERT INTO `sys_btn` VALUES (96, 'General@Button#1', '新增', '/', 72, '新增');
-INSERT INTO `sys_btn` VALUES (97, 'General@Button#4', '查询', '/', 72, '查询');
-INSERT INTO `sys_btn` VALUES (98, 'General@Button#2', '修改', '/', 72, '修改');
-INSERT INTO `sys_btn` VALUES (99, 'General@Button#3', '删除', '/', 72, '删除');
-INSERT INTO `sys_btn` VALUES (100, 'General@Button#5', '导入', '/', 72, '导入');
-INSERT INTO `sys_btn` VALUES (101, 'General@Button#6', '导出', '/', 72, '导出');
-INSERT INTO `sys_btn` VALUES (102, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
-INSERT INTO `sys_btn` VALUES (103, 'General@Button#7', '生成报表', '/', 72, '生成报表');
-INSERT INTO `sys_btn` VALUES (104, 'General@Button#4', '查询', '/', 72, '查询');
-INSERT INTO `sys_btn` VALUES (105, 'General@Button#1', '新增', '/', 72, '新增');
-INSERT INTO `sys_btn` VALUES (106, 'General@Button#2', '修改', '/', 72, '修改');
-INSERT INTO `sys_btn` VALUES (107, 'General@Button#3', '删除', '/', 72, '删除');
-INSERT INTO `sys_btn` VALUES (108, 'General@Button#6', '导出', '/', 72, '导出');
-INSERT INTO `sys_btn` VALUES (109, 'General@Button#5', '导入', '/', 72, '导入');
-INSERT INTO `sys_btn` VALUES (110, 'General@Button#7', '生成报表', '/', 72, '生成报表');
-INSERT INTO `sys_btn` VALUES (111, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
-INSERT INTO `sys_btn` VALUES (112, 'General@Button#1', '新增', '/', 72, '新增');
-INSERT INTO `sys_btn` VALUES (113, 'General@Button#3', '删除', '/', 72, '删除');
-INSERT INTO `sys_btn` VALUES (114, 'General@Button#4', '查询', '/', 72, '查询');
-INSERT INTO `sys_btn` VALUES (115, 'General@Button#2', '修改', '/', 72, '修改');
-INSERT INTO `sys_btn` VALUES (116, 'General@Button#6', '导出', '/', 72, '导出');
-INSERT INTO `sys_btn` VALUES (117, 'General@Button#5', '导入', '/', 72, '导入');
-INSERT INTO `sys_btn` VALUES (118, 'General@Button#7', '生成报表', '/', 72, '生成报表');
-INSERT INTO `sys_btn` VALUES (119, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
-INSERT INTO `sys_btn` VALUES (120, 'General@Button#2', '修改', '/', 72, '修改');
-INSERT INTO `sys_btn` VALUES (121, 'General@Button#1', '新增', '/', 72, '新增');
-INSERT INTO `sys_btn` VALUES (122, 'General@Button#5', '导入', '/', 72, '导入');
-INSERT INTO `sys_btn` VALUES (123, 'General@Button#4', '查询', '/', 72, '查询');
-INSERT INTO `sys_btn` VALUES (124, 'General@Button#3', '删除', '/', 72, '删除');
-INSERT INTO `sys_btn` VALUES (125, 'General@Button#6', '导出', '/', 72, '导出');
-INSERT INTO `sys_btn` VALUES (126, 'General@Button#7', '生成报表', '/', 72, '生成报表');
-INSERT INTO `sys_btn` VALUES (127, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
-INSERT INTO `sys_btn` VALUES (128, 'General@Button#2', '修改', '/', 72, '修改');
-INSERT INTO `sys_btn` VALUES (129, 'General@Button#1', '新增', '/', 72, '新增');
-INSERT INTO `sys_btn` VALUES (130, 'General@Button#3', '删除', '/', 72, '删除');
-INSERT INTO `sys_btn` VALUES (131, 'General@Button#4', '查询', '/', 72, '查询');
-INSERT INTO `sys_btn` VALUES (132, 'General@Button#5', '导入', '/', 72, '导入');
-INSERT INTO `sys_btn` VALUES (133, 'General@Button#6', '导出', '/', 72, '导出');
-INSERT INTO `sys_btn` VALUES (134, 'General@Button#7', '生成报表', '/', 72, '生成报表');
-INSERT INTO `sys_btn` VALUES (135, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
-INSERT INTO `sys_btn` VALUES (136, 'General@Button#4', '查询', '/', 78, '查询');
-INSERT INTO `sys_btn` VALUES (137, 'General@Button#2', '修改', '/', 78, '修改');
-INSERT INTO `sys_btn` VALUES (138, 'General@Button#1', '新增', '/', 78, '新增');
-INSERT INTO `sys_btn` VALUES (139, 'General@Button#3', '删除', '/', 78, '删除');
-INSERT INTO `sys_btn` VALUES (140, 'General@Button#6', '导出', '/', 78, '导出');
-INSERT INTO `sys_btn` VALUES (141, 'General@Button#5', '导入', '/', 78, '导入');
-INSERT INTO `sys_btn` VALUES (142, 'General@Button#7', '生成报表', '/', 78, '生成报表');
-INSERT INTO `sys_btn` VALUES (143, 'General@Button#8', '生成WORD', '/', 78, '生成WORD');
-INSERT INTO `sys_btn` VALUES (144, 'General@Button#1', '新增', '/', 39, '新增');
-INSERT INTO `sys_btn` VALUES (145, 'General@Button#2', '修改', '/', 39, '修改');
-INSERT INTO `sys_btn` VALUES (146, 'General@Button#3', '删除', '/', 39, '删除');
-INSERT INTO `sys_btn` VALUES (147, 'General@Button#5', '导入', '/', 39, '导入');
-INSERT INTO `sys_btn` VALUES (148, 'General@Button#4', '查询', '/', 39, '查询');
-INSERT INTO `sys_btn` VALUES (149, 'General@Button#6', '导出', '/', 39, '导出');
-INSERT INTO `sys_btn` VALUES (150, 'General@Button#7', '生成报表', '/', 39, '生成报表');
-INSERT INTO `sys_btn` VALUES (151, 'General@Button#8', '生成WORD', '/', 39, '生成WORD');
-INSERT INTO `sys_btn` VALUES (152, 'General@Button#3', '删除', '/', 24, '删除');
-INSERT INTO `sys_btn` VALUES (153, 'General@Button#2', '修改', '/', 24, '修改');
-INSERT INTO `sys_btn` VALUES (154, 'General@Button#1', '新增', '/', 24, '新增');
-INSERT INTO `sys_btn` VALUES (155, 'General@Button#4', '查询', '/', 24, '查询');
-INSERT INTO `sys_btn` VALUES (156, 'General@Button#5', '导入', '/', 24, '导入');
-INSERT INTO `sys_btn` VALUES (157, 'General@Button#6', '导出', '/', 24, '导出');
-INSERT INTO `sys_btn` VALUES (158, 'General@Button#7', '生成报表', '/', 24, '生成报表');
-INSERT INTO `sys_btn` VALUES (159, 'General@Button#8', '生成WORD', '/', 24, '生成WORD');
-INSERT INTO `sys_btn` VALUES (160, 'General@Button#3', '删除', '/', 24, '删除');
-INSERT INTO `sys_btn` VALUES (161, 'General@Button#1', '新增', '/', 24, '新增');
-INSERT INTO `sys_btn` VALUES (162, 'General@Button#4', '查询', '/', 24, '查询');
-INSERT INTO `sys_btn` VALUES (163, 'General@Button#5', '导入', '/', 24, '导入');
-INSERT INTO `sys_btn` VALUES (164, 'General@Button#2', '修改', '/', 24, '修改');
-INSERT INTO `sys_btn` VALUES (165, 'General@Button#6', '导出', '/', 24, '导出');
-INSERT INTO `sys_btn` VALUES (166, 'General@Button#7', '生成报表', '/', 24, '生成报表');
-INSERT INTO `sys_btn` VALUES (167, 'General@Button#8', '生成WORD', '/', 24, '生成WORD');
-INSERT INTO `sys_btn` VALUES (168, 'General@Button#1', '新增', '/', 78, '新增');
-INSERT INTO `sys_btn` VALUES (169, 'General@Button#2', '修改', '/', 78, '修改');
-INSERT INTO `sys_btn` VALUES (170, 'General@Button#4', '查询', '/', 78, '查询');
-INSERT INTO `sys_btn` VALUES (171, 'General@Button#3', '删除', '/', 78, '删除');
-INSERT INTO `sys_btn` VALUES (172, 'General@Button#5', '导入', '/', 78, '导入');
-INSERT INTO `sys_btn` VALUES (173, 'General@Button#6', '导出', '/', 78, '导出');
-INSERT INTO `sys_btn` VALUES (174, 'General@Button#7', '生成报表', '/', 78, '生成报表');
-INSERT INTO `sys_btn` VALUES (175, 'General@Button#8', '生成WORD', '/', 78, '生成WORD');
-INSERT INTO `sys_btn` VALUES (176, 'General@Button#5', '导入', '/', 41, '导入');
-INSERT INTO `sys_btn` VALUES (177, 'General@Button#3', '删除', '/', 41, '删除');
-INSERT INTO `sys_btn` VALUES (178, 'General@Button#2', '修改', '/', 41, '修改');
-INSERT INTO `sys_btn` VALUES (179, 'General@Button#6', '导出', '/', 41, '导出');
-INSERT INTO `sys_btn` VALUES (180, 'General@Button#1', '新增', '/', 41, '新增');
-INSERT INTO `sys_btn` VALUES (181, 'General@Button#4', '查询', '/', 41, '查询');
-INSERT INTO `sys_btn` VALUES (182, 'General@Button#8', '生成WORD', '/', 41, '生成WORD');
-INSERT INTO `sys_btn` VALUES (183, 'General@Button#7', '生成报表', '/', 41, '生成报表');
-INSERT INTO `sys_btn` VALUES (184, 'General@Button#3', '删除', '/', 25, '删除');
-INSERT INTO `sys_btn` VALUES (185, 'General@Button#2', '修改', '/', 25, '修改');
-INSERT INTO `sys_btn` VALUES (186, 'General@Button#1', '新增', '/', 25, '新增');
-INSERT INTO `sys_btn` VALUES (187, 'General@Button#4', '查询', '/', 25, '查询');
-INSERT INTO `sys_btn` VALUES (188, 'General@Button#6', '导出', '/', 25, '导出');
-INSERT INTO `sys_btn` VALUES (189, 'General@Button#5', '导入', '/', 25, '导入');
-INSERT INTO `sys_btn` VALUES (190, 'General@Button#7', '生成报表', '/', 25, '生成报表');
-INSERT INTO `sys_btn` VALUES (191, 'General@Button#8', '生成WORD', '/', 25, '生成WORD');
-INSERT INTO `sys_btn` VALUES (192, 'General@Button#3', '删除', '/', 28, '删除');
-INSERT INTO `sys_btn` VALUES (193, 'General@Button#2', '修改', '/', 28, '修改');
-INSERT INTO `sys_btn` VALUES (194, 'General@Button#1', '新增', '/', 28, '新增');
-INSERT INTO `sys_btn` VALUES (195, 'General@Button#4', '查询', '/', 28, '查询');
-INSERT INTO `sys_btn` VALUES (196, 'General@Button#6', '导出', '/', 28, '导出');
-INSERT INTO `sys_btn` VALUES (197, 'General@Button#5', '导入', '/', 28, '导入');
-INSERT INTO `sys_btn` VALUES (198, 'General@Button#7', '生成报表', '/', 28, '生成报表');
-INSERT INTO `sys_btn` VALUES (199, 'General@Button#8', '生成WORD', '/', 28, '生成WORD');
-INSERT INTO `sys_btn` VALUES (200, 'General@Button#2', '修改', '/', 37, '修改');
-INSERT INTO `sys_btn` VALUES (201, 'General@Button#6', '导出', '/', 37, '导出');
-INSERT INTO `sys_btn` VALUES (202, 'General@Button#4', '查询', '/', 37, '查询');
-INSERT INTO `sys_btn` VALUES (203, 'General@Button#5', '导入', '/', 37, '导入');
-INSERT INTO `sys_btn` VALUES (204, 'General@Button#3', '删除', '/', 37, '删除');
-INSERT INTO `sys_btn` VALUES (205, 'General@Button#1', '新增', '/', 37, '新增');
-INSERT INTO `sys_btn` VALUES (206, 'General@Button#7', '生成报表', '/', 37, '生成报表');
-INSERT INTO `sys_btn` VALUES (207, 'General@Button#8', '生成WORD', '/', 37, '生成WORD');
-INSERT INTO `sys_btn` VALUES (208, 'General@Button#1', '新增', '/', 79, '新增');
-INSERT INTO `sys_btn` VALUES (209, 'General@Button#3', '删除', '/', 79, '删除');
-INSERT INTO `sys_btn` VALUES (210, 'General@Button#5', '导入', '/', 79, '导入');
-INSERT INTO `sys_btn` VALUES (211, 'General@Button#4', '查询', '/', 79, '查询');
-INSERT INTO `sys_btn` VALUES (212, 'General@Button#6', '导出', '/', 79, '导出');
-INSERT INTO `sys_btn` VALUES (213, 'General@Button#8', '生成WORD', '/', 79, '生成WORD');
-INSERT INTO `sys_btn` VALUES (214, 'General@Button#2', '修改', '/', 79, '修改');
-INSERT INTO `sys_btn` VALUES (215, 'General@Button#7', '生成报表', '/', 79, '生成报表');
-INSERT INTO `sys_btn` VALUES (216, 'General@Button#1', '新增', '/', 93, '新增');
-INSERT INTO `sys_btn` VALUES (217, 'General@Button#2', '修改', '/', 93, '修改');
-INSERT INTO `sys_btn` VALUES (218, 'General@Button#4', '查询', '/', 93, '查询');
-INSERT INTO `sys_btn` VALUES (219, 'General@Button#5', '导入', '/', 93, '导入');
-INSERT INTO `sys_btn` VALUES (220, 'General@Button#3', '删除', '/', 93, '删除');
-INSERT INTO `sys_btn` VALUES (221, 'General@Button#6', '导出', '/', 93, '导出');
-INSERT INTO `sys_btn` VALUES (222, 'General@Button#7', '生成报表', '/', 93, '生成报表');
-INSERT INTO `sys_btn` VALUES (223, 'General@Button#8', '生成WORD', '/', 93, '生成WORD');
-INSERT INTO `sys_btn` VALUES (224, 'General@Button#3', '删除', '/', 67, '删除');
-INSERT INTO `sys_btn` VALUES (225, 'General@Button#5', '导入', '/', 67, '导入');
-INSERT INTO `sys_btn` VALUES (226, 'General@Button#2', '修改', '/', 67, '修改');
-INSERT INTO `sys_btn` VALUES (227, 'General@Button#4', '查询', '/', 67, '查询');
-INSERT INTO `sys_btn` VALUES (228, 'General@Button#1', '新增', '/', 67, '新增');
-INSERT INTO `sys_btn` VALUES (229, 'General@Button#6', '导出', '/', 67, '导出');
-INSERT INTO `sys_btn` VALUES (230, 'General@Button#8', '生成WORD', '/', 67, '生成WORD');
-INSERT INTO `sys_btn` VALUES (231, 'General@Button#7', '生成报表', '/', 67, '生成报表');
-INSERT INTO `sys_btn` VALUES (232, 'General@Button#1', '新增', '/', 48, '新增');
-INSERT INTO `sys_btn` VALUES (233, 'General@Button#4', '查询', '/', 48, '查询');
-INSERT INTO `sys_btn` VALUES (234, 'General@Button#2', '修改', '/', 48, '修改');
-INSERT INTO `sys_btn` VALUES (235, 'General@Button#6', '导出', '/', 48, '导出');
-INSERT INTO `sys_btn` VALUES (236, 'General@Button#5', '导入', '/', 48, '导入');
-INSERT INTO `sys_btn` VALUES (237, 'General@Button#3', '删除', '/', 48, '删除');
-INSERT INTO `sys_btn` VALUES (238, 'General@Button#7', '生成报表', '/', 48, '生成报表');
-INSERT INTO `sys_btn` VALUES (239, 'General@Button#8', '生成WORD', '/', 48, '生成WORD');
-INSERT INTO `sys_btn` VALUES (240, 'General@Button#6', '导出', '/', 39, '导出');
-INSERT INTO `sys_btn` VALUES (241, 'General@Button#4', '查询', '/', 39, '查询');
-INSERT INTO `sys_btn` VALUES (242, 'General@Button#1', '新增', '/', 39, '新增');
-INSERT INTO `sys_btn` VALUES (243, 'General@Button#5', '导入', '/', 39, '导入');
-INSERT INTO `sys_btn` VALUES (244, 'General@Button#3', '删除', '/', 39, '删除');
-INSERT INTO `sys_btn` VALUES (245, 'General@Button#2', '修改', '/', 39, '修改');
-INSERT INTO `sys_btn` VALUES (246, 'General@Button#7', '生成报表', '/', 39, '生成报表');
-INSERT INTO `sys_btn` VALUES (247, 'General@Button#8', '生成WORD', '/', 39, '生成WORD');
-INSERT INTO `sys_btn` VALUES (248, 'General@Button#2', '修改', '/', 35, '修改');
-INSERT INTO `sys_btn` VALUES (249, 'General@Button#3', '删除', '/', 35, '删除');
-INSERT INTO `sys_btn` VALUES (250, 'General@Button#1', '新增', '/', 35, '新增');
-INSERT INTO `sys_btn` VALUES (251, 'General@Button#4', '查询', '/', 35, '查询');
-INSERT INTO `sys_btn` VALUES (252, 'General@Button#5', '导入', '/', 35, '导入');
-INSERT INTO `sys_btn` VALUES (253, 'General@Button#6', '导出', '/', 35, '导出');
-INSERT INTO `sys_btn` VALUES (254, 'General@Button#7', '生成报表', '/', 35, '生成报表');
-INSERT INTO `sys_btn` VALUES (255, 'General@Button#8', '生成WORD', '/', 35, '生成WORD');
-INSERT INTO `sys_btn` VALUES (256, 'General@Button#1', '新增', '/', 49, '新增');
-INSERT INTO `sys_btn` VALUES (257, 'General@Button#2', '修改', '/', 49, '修改');
-INSERT INTO `sys_btn` VALUES (258, 'General@Button#6', '导出', '/', 49, '导出');
-INSERT INTO `sys_btn` VALUES (259, 'General@Button#5', '导入', '/', 49, '导入');
-INSERT INTO `sys_btn` VALUES (260, 'General@Button#3', '删除', '/', 49, '删除');
-INSERT INTO `sys_btn` VALUES (261, 'General@Button#4', '查询', '/', 49, '查询');
-INSERT INTO `sys_btn` VALUES (262, 'General@Button#7', '生成报表', '/', 49, '生成报表');
-INSERT INTO `sys_btn` VALUES (263, 'General@Button#8', '生成WORD', '/', 49, '生成WORD');
-INSERT INTO `sys_btn` VALUES (264, 'General@Button#1', '新增', '/', 37, '新增');
-INSERT INTO `sys_btn` VALUES (265, 'General@Button#2', '修改', '/', 37, '修改');
-INSERT INTO `sys_btn` VALUES (266, 'General@Button#6', '导出', '/', 37, '导出');
-INSERT INTO `sys_btn` VALUES (267, 'General@Button#4', '查询', '/', 37, '查询');
-INSERT INTO `sys_btn` VALUES (268, 'General@Button#3', '删除', '/', 37, '删除');
-INSERT INTO `sys_btn` VALUES (269, 'General@Button#5', '导入', '/', 37, '导入');
-INSERT INTO `sys_btn` VALUES (270, 'General@Button#7', '生成报表', '/', 37, '生成报表');
-INSERT INTO `sys_btn` VALUES (271, 'General@Button#8', '生成WORD', '/', 37, '生成WORD');
-INSERT INTO `sys_btn` VALUES (272, 'General@Button#2', '修改', '/', 75, '修改');
-INSERT INTO `sys_btn` VALUES (273, 'General@Button#4', '查询', '/', 75, '查询');
-INSERT INTO `sys_btn` VALUES (274, 'General@Button#3', '删除', '/', 75, '删除');
-INSERT INTO `sys_btn` VALUES (275, 'General@Button#5', '导入', '/', 75, '导入');
-INSERT INTO `sys_btn` VALUES (277, 'General@Button#8', '生成WORD', '/', 75, '生成WORD');
-INSERT INTO `sys_btn` VALUES (278, 'General@Button#7', '生成报表', '/', 75, '生成报表');
-INSERT INTO `sys_btn` VALUES (280, 'General@Button#4', '查询', '/', 75, '查询');
-INSERT INTO `sys_btn` VALUES (281, 'General@Button#2', '修改', '/', 75, '修改');
-INSERT INTO `sys_btn` VALUES (282, 'General@Button#3', '删除', '/', 75, '删除');
-INSERT INTO `sys_btn` VALUES (283, 'General@Button#1', '新增', '/', 75, '新增');
-INSERT INTO `sys_btn` VALUES (284, 'General@Button#5', '导入', '/', 75, '导入');
-INSERT INTO `sys_btn` VALUES (286, 'General@Button#7', '生成报表', '/', 75, '生成报表');
-INSERT INTO `sys_btn` VALUES (287, 'General@Button#8', '生成WORD', '/', 75, '生成WORD');
-INSERT INTO `sys_btn` VALUES (288, 'General@Button#4', '查询', '/', 39, '查询');
-INSERT INTO `sys_btn` VALUES (289, 'General@Button#1', '新增', '/', 39, '新增');
-INSERT INTO `sys_btn` VALUES (290, 'General@Button#2', '修改', '/', 39, '修改');
-INSERT INTO `sys_btn` VALUES (291, 'General@Button#5', '导入', '/', 39, '导入');
-INSERT INTO `sys_btn` VALUES (292, 'General@Button#3', '删除', '/', 39, '删除');
-INSERT INTO `sys_btn` VALUES (293, 'General@Button#6', '导出', '/', 39, '导出');
-INSERT INTO `sys_btn` VALUES (294, 'General@Button#7', '生成报表', '/', 39, '生成报表');
-INSERT INTO `sys_btn` VALUES (295, 'General@Button#8', '生成WORD', '/', 39, '生成WORD');
-INSERT INTO `sys_btn` VALUES (296, 'General@Button#4', '查询', '/', 78, '查询');
-INSERT INTO `sys_btn` VALUES (297, 'General@Button#3', '删除', '/', 78, '删除');
-INSERT INTO `sys_btn` VALUES (298, 'General@Button#1', '新增', '/', 78, '新增');
-INSERT INTO `sys_btn` VALUES (299, 'General@Button#5', '导入', '/', 78, '导入');
-INSERT INTO `sys_btn` VALUES (300, 'General@Button#6', '导出', '/', 78, '导出');
-INSERT INTO `sys_btn` VALUES (301, 'General@Button#2', '修改', '/', 78, '修改');
-INSERT INTO `sys_btn` VALUES (302, 'General@Button#8', '生成WORD', '/', 78, '生成WORD');
-INSERT INTO `sys_btn` VALUES (303, 'General@Button#7', '生成报表', '/', 78, '生成报表');
-INSERT INTO `sys_btn` VALUES (304, 'General@Button#2', '修改', '/', 86, '修改');
-INSERT INTO `sys_btn` VALUES (305, 'General@Button#1', '新增', '/', 86, '新增');
-INSERT INTO `sys_btn` VALUES (306, 'General@Button#6', '导出', '/', 86, '导出');
-INSERT INTO `sys_btn` VALUES (307, 'General@Button#5', '导入', '/', 86, '导入');
-INSERT INTO `sys_btn` VALUES (308, 'General@Button#3', '删除', '/', 86, '删除');
-INSERT INTO `sys_btn` VALUES (309, 'General@Button#4', '查询', '/', 86, '查询');
-INSERT INTO `sys_btn` VALUES (310, 'General@Button#7', '生成报表', '/', 86, '生成报表');
-INSERT INTO `sys_btn` VALUES (311, 'General@Button#8', '生成WORD', '/', 86, '生成WORD');
-INSERT INTO `sys_btn` VALUES (312, 'General@Button#1', '新增', '/', 86, '新增');
-INSERT INTO `sys_btn` VALUES (313, 'General@Button#3', '删除', '/', 86, '删除');
-INSERT INTO `sys_btn` VALUES (314, 'General@Button#4', '查询', '/', 86, '查询');
-INSERT INTO `sys_btn` VALUES (315, 'General@Button#2', '修改', '/', 86, '修改');
-INSERT INTO `sys_btn` VALUES (316, 'General@Button#5', '导入', '/', 86, '导入');
-INSERT INTO `sys_btn` VALUES (317, 'General@Button#6', '导出', '/', 86, '导出');
-INSERT INTO `sys_btn` VALUES (318, 'General@Button#7', '生成报表', '/', 86, '生成报表');
-INSERT INTO `sys_btn` VALUES (319, 'General@Button#8', '生成WORD', '/', 86, '生成WORD');
-INSERT INTO `sys_btn` VALUES (320, 'General@Button#1', '新增', '/', 35, '新增');
-INSERT INTO `sys_btn` VALUES (321, 'General@Button#6', '导出', '/', 35, '导出');
-INSERT INTO `sys_btn` VALUES (322, 'General@Button#4', '查询', '/', 35, '查询');
-INSERT INTO `sys_btn` VALUES (323, 'General@Button#5', '导入', '/', 35, '导入');
-INSERT INTO `sys_btn` VALUES (324, 'General@Button#3', '删除', '/', 35, '删除');
-INSERT INTO `sys_btn` VALUES (325, 'General@Button#2', '修改', '/', 35, '修改');
-INSERT INTO `sys_btn` VALUES (326, 'General@Button#7', '生成报表', '/', 35, '生成报表');
-INSERT INTO `sys_btn` VALUES (327, 'General@Button#8', '生成WORD', '/', 35, '生成WORD');
-INSERT INTO `sys_btn` VALUES (328, 'General@Button#1', '新增', '/', 39, '新增');
-INSERT INTO `sys_btn` VALUES (329, 'General@Button#2', '修改', '/', 39, '修改');
-INSERT INTO `sys_btn` VALUES (330, 'General@Button#3', '删除', '/', 39, '删除');
-INSERT INTO `sys_btn` VALUES (331, 'General@Button#4', '查询', '/', 39, '查询');
-INSERT INTO `sys_btn` VALUES (332, 'General@Button#6', '导出', '/', 39, '导出');
-INSERT INTO `sys_btn` VALUES (333, 'General@Button#5', '导入', '/', 39, '导入');
-INSERT INTO `sys_btn` VALUES (334, 'General@Button#7', '生成报表', '/', 39, '生成报表');
-INSERT INTO `sys_btn` VALUES (335, 'General@Button#8', '生成WORD', '/', 39, '生成WORD');
-INSERT INTO `sys_btn` VALUES (336, 'General@Button#1', '新增', '/', 71, '新增');
-INSERT INTO `sys_btn` VALUES (337, 'General@Button#5', '导入', '/', 71, '导入');
-INSERT INTO `sys_btn` VALUES (338, 'General@Button#3', '删除', '/', 71, '删除');
-INSERT INTO `sys_btn` VALUES (339, 'General@Button#2', '修改', '/', 71, '修改');
-INSERT INTO `sys_btn` VALUES (340, 'General@Button#4', '查询', '/', 71, '查询');
-INSERT INTO `sys_btn` VALUES (341, 'General@Button#7', '生成报表', '/', 71, '生成报表');
-INSERT INTO `sys_btn` VALUES (342, 'General@Button#6', '导出', '/', 71, '导出');
-INSERT INTO `sys_btn` VALUES (343, 'General@Button#8', '生成WORD', '/', 71, '生成WORD');
-INSERT INTO `sys_btn` VALUES (344, 'General@Button#2', '修改', '/', 42, '修改');
-INSERT INTO `sys_btn` VALUES (345, 'General@Button#3', '删除', '/', 42, '删除');
-INSERT INTO `sys_btn` VALUES (346, 'General@Button#4', '查询', '/', 42, '查询');
-INSERT INTO `sys_btn` VALUES (347, 'General@Button#1', '新增', '/', 42, '新增');
-INSERT INTO `sys_btn` VALUES (348, 'General@Button#5', '导入', '/', 42, '导入');
-INSERT INTO `sys_btn` VALUES (349, 'General@Button#8', '生成WORD', '/', 42, '生成WORD');
-INSERT INTO `sys_btn` VALUES (350, 'General@Button#6', '导出', '/', 42, '导出');
-INSERT INTO `sys_btn` VALUES (351, 'General@Button#7', '生成报表', '/', 42, '生成报表');
+INSERT INTO `cms_system_button` VALUES (1, 'RCRW@BUTTON#1', '新增', '/', 37, '新增');
+INSERT INTO `cms_system_button` VALUES (3, 'RCRW@BUTTON#3', '删除', '/', 37, '删除');
+INSERT INTO `cms_system_button` VALUES (4, 'RCRW@BUTTON#4', '批量删除', '/', 37, '批量删除');
+INSERT INTO `cms_system_button` VALUES (5, 'RCRW@BUTTON#5', '批量导入', '/', 37, '批量导入EXCEL');
+INSERT INTO `cms_system_button` VALUES (6, 'RCRW@BUTTON#6', '导出', '/', 37, '导出');
+INSERT INTO `cms_system_button` VALUES (7, 'RCRW@BUTTON#7', '导出WORD', '/', 37, '导出WORD文档');
+INSERT INTO `cms_system_button` VALUES (8, 'General@Button#1', '新增', '/', 37, '新增');
+INSERT INTO `cms_system_button` VALUES (9, 'General@Button#2', '修改', '/', 37, '修改');
+INSERT INTO `cms_system_button` VALUES (10, 'General@Button#4', '查询', '/', 37, '查询');
+INSERT INTO `cms_system_button` VALUES (11, 'General@Button#3', '删除', '/', 37, '删除');
+INSERT INTO `cms_system_button` VALUES (12, 'General@Button#6', '导出', '/', 37, '导出');
+INSERT INTO `cms_system_button` VALUES (13, 'General@Button#7', '生成报表', '/', 37, '生成报表');
+INSERT INTO `cms_system_button` VALUES (14, 'General@Button#5', '导入', '/', 37, '导入');
+INSERT INTO `cms_system_button` VALUES (15, 'General@Button#8', '生成WORD', '/', 37, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (16, 'General@Button#5', '导入', '/', 40, '导入');
+INSERT INTO `cms_system_button` VALUES (17, 'General@Button#1', '新增', '/', 40, '新增');
+INSERT INTO `cms_system_button` VALUES (18, 'General@Button#2', '修改', '/', 40, '修改');
+INSERT INTO `cms_system_button` VALUES (19, 'General@Button#4', '查询', '/', 40, '查询');
+INSERT INTO `cms_system_button` VALUES (20, 'General@Button#3', '删除', '/', 40, '删除');
+INSERT INTO `cms_system_button` VALUES (21, 'General@Button#6', '导出', '/', 40, '导出');
+INSERT INTO `cms_system_button` VALUES (22, 'General@Button#8', '生成WORD', '/', 40, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (23, 'General@Button#7', '生成报表', '/', 40, '生成报表');
+INSERT INTO `cms_system_button` VALUES (24, 'General@Button#2', '修改', '/', 34, '修改');
+INSERT INTO `cms_system_button` VALUES (25, 'General@Button#4', '查询', '/', 34, '查询');
+INSERT INTO `cms_system_button` VALUES (26, 'General@Button#1', '新增', '/', 34, '新增');
+INSERT INTO `cms_system_button` VALUES (27, 'General@Button#5', '导入', '/', 34, '导入');
+INSERT INTO `cms_system_button` VALUES (28, 'General@Button#3', '删除', '/', 34, '删除');
+INSERT INTO `cms_system_button` VALUES (29, 'General@Button#6', '导出', '/', 34, '导出');
+INSERT INTO `cms_system_button` VALUES (30, 'General@Button#8', '生成WORD', '/', 34, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (31, 'General@Button#7', '生成报表', '/', 34, '生成报表');
+INSERT INTO `cms_system_button` VALUES (32, 'General@Button#1', '新增', '/', 36, '新增');
+INSERT INTO `cms_system_button` VALUES (33, 'General@Button#2', '修改', '/', 36, '修改');
+INSERT INTO `cms_system_button` VALUES (34, 'General@Button#3', '删除', '/', 36, '删除');
+INSERT INTO `cms_system_button` VALUES (35, 'General@Button#4', '查询', '/', 36, '查询');
+INSERT INTO `cms_system_button` VALUES (36, 'General@Button#5', '导入', '/', 36, '导入');
+INSERT INTO `cms_system_button` VALUES (37, 'General@Button#6', '导出', '/', 36, '导出');
+INSERT INTO `cms_system_button` VALUES (38, 'General@Button#7', '生成报表', '/', 36, '生成报表');
+INSERT INTO `cms_system_button` VALUES (39, 'General@Button#8', '生成WORD', '/', 36, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (40, 'General@Button#1', '新增', '/', 69, '新增');
+INSERT INTO `cms_system_button` VALUES (41, 'General@Button#3', '删除', '/', 69, '删除');
+INSERT INTO `cms_system_button` VALUES (42, 'General@Button#2', '修改', '/', 69, '修改');
+INSERT INTO `cms_system_button` VALUES (43, 'General@Button#4', '查询', '/', 69, '查询');
+INSERT INTO `cms_system_button` VALUES (44, 'General@Button#5', '导入', '/', 69, '导入');
+INSERT INTO `cms_system_button` VALUES (45, 'General@Button#6', '导出', '/', 69, '导出');
+INSERT INTO `cms_system_button` VALUES (46, 'General@Button#7', '生成报表', '/', 69, '生成报表');
+INSERT INTO `cms_system_button` VALUES (47, 'General@Button#8', '生成WORD', '/', 69, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (48, 'General@Button#3', '删除', '/', 73, '删除');
+INSERT INTO `cms_system_button` VALUES (49, 'General@Button#4', '查询', '/', 73, '查询');
+INSERT INTO `cms_system_button` VALUES (50, 'General@Button#5', '导入', '/', 73, '导入');
+INSERT INTO `cms_system_button` VALUES (51, 'General@Button#2', '修改', '/', 73, '修改');
+INSERT INTO `cms_system_button` VALUES (52, 'General@Button#1', '新增', '/', 73, '新增');
+INSERT INTO `cms_system_button` VALUES (53, 'General@Button#6', '导出', '/', 73, '导出');
+INSERT INTO `cms_system_button` VALUES (54, 'General@Button#8', '生成WORD', '/', 73, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (55, 'General@Button#7', '生成报表', '/', 73, '生成报表');
+INSERT INTO `cms_system_button` VALUES (56, 'General@Button#3', '删除', '/', 71, '删除');
+INSERT INTO `cms_system_button` VALUES (57, 'General@Button#2', '修改', '/', 71, '修改');
+INSERT INTO `cms_system_button` VALUES (58, 'General@Button#1', '新增', '/', 71, '新增');
+INSERT INTO `cms_system_button` VALUES (59, 'General@Button#4', '查询', '/', 71, '查询');
+INSERT INTO `cms_system_button` VALUES (60, 'General@Button#5', '导入', '/', 71, '导入');
+INSERT INTO `cms_system_button` VALUES (61, 'General@Button#6', '导出', '/', 71, '导出');
+INSERT INTO `cms_system_button` VALUES (62, 'General@Button#7', '生成报表', '/', 71, '生成报表');
+INSERT INTO `cms_system_button` VALUES (63, 'General@Button#8', '生成WORD', '/', 71, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (64, 'General@Button#1', '新增', '/', 70, '新增');
+INSERT INTO `cms_system_button` VALUES (65, 'General@Button#4', '查询', '/', 70, '查询');
+INSERT INTO `cms_system_button` VALUES (66, 'General@Button#3', '删除', '/', 70, '删除');
+INSERT INTO `cms_system_button` VALUES (67, 'General@Button#2', '修改', '/', 70, '修改');
+INSERT INTO `cms_system_button` VALUES (68, 'General@Button#6', '导出', '/', 70, '导出');
+INSERT INTO `cms_system_button` VALUES (69, 'General@Button#5', '导入', '/', 70, '导入');
+INSERT INTO `cms_system_button` VALUES (70, 'General@Button#7', '生成报表', '/', 70, '生成报表');
+INSERT INTO `cms_system_button` VALUES (71, 'General@Button#8', '生成WORD', '/', 70, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (72, 'General@Button#2', '修改', '/', 72, '修改');
+INSERT INTO `cms_system_button` VALUES (73, 'General@Button#3', '删除', '/', 72, '删除');
+INSERT INTO `cms_system_button` VALUES (74, 'General@Button#1', '新增', '/', 72, '新增');
+INSERT INTO `cms_system_button` VALUES (75, 'General@Button#5', '导入', '/', 72, '导入');
+INSERT INTO `cms_system_button` VALUES (76, 'General@Button#4', '查询', '/', 72, '查询');
+INSERT INTO `cms_system_button` VALUES (77, 'General@Button#6', '导出', '/', 72, '导出');
+INSERT INTO `cms_system_button` VALUES (78, 'General@Button#7', '生成报表', '/', 72, '生成报表');
+INSERT INTO `cms_system_button` VALUES (79, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (80, 'General@Button#2', '修改', '/', 72, '修改');
+INSERT INTO `cms_system_button` VALUES (81, 'General@Button#1', '新增', '/', 72, '新增');
+INSERT INTO `cms_system_button` VALUES (82, 'General@Button#3', '删除', '/', 72, '删除');
+INSERT INTO `cms_system_button` VALUES (83, 'General@Button#4', '查询', '/', 72, '查询');
+INSERT INTO `cms_system_button` VALUES (84, 'General@Button#5', '导入', '/', 72, '导入');
+INSERT INTO `cms_system_button` VALUES (85, 'General@Button#6', '导出', '/', 72, '导出');
+INSERT INTO `cms_system_button` VALUES (86, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (87, 'General@Button#7', '生成报表', '/', 72, '生成报表');
+INSERT INTO `cms_system_button` VALUES (88, 'General@Button#2', '修改', '/', 72, '修改');
+INSERT INTO `cms_system_button` VALUES (89, 'General@Button#4', '查询', '/', 72, '查询');
+INSERT INTO `cms_system_button` VALUES (90, 'General@Button#1', '新增', '/', 72, '新增');
+INSERT INTO `cms_system_button` VALUES (91, 'General@Button#3', '删除', '/', 72, '删除');
+INSERT INTO `cms_system_button` VALUES (92, 'General@Button#6', '导出', '/', 72, '导出');
+INSERT INTO `cms_system_button` VALUES (93, 'General@Button#5', '导入', '/', 72, '导入');
+INSERT INTO `cms_system_button` VALUES (94, 'General@Button#7', '生成报表', '/', 72, '生成报表');
+INSERT INTO `cms_system_button` VALUES (95, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (96, 'General@Button#1', '新增', '/', 72, '新增');
+INSERT INTO `cms_system_button` VALUES (97, 'General@Button#4', '查询', '/', 72, '查询');
+INSERT INTO `cms_system_button` VALUES (98, 'General@Button#2', '修改', '/', 72, '修改');
+INSERT INTO `cms_system_button` VALUES (99, 'General@Button#3', '删除', '/', 72, '删除');
+INSERT INTO `cms_system_button` VALUES (100, 'General@Button#5', '导入', '/', 72, '导入');
+INSERT INTO `cms_system_button` VALUES (101, 'General@Button#6', '导出', '/', 72, '导出');
+INSERT INTO `cms_system_button` VALUES (102, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (103, 'General@Button#7', '生成报表', '/', 72, '生成报表');
+INSERT INTO `cms_system_button` VALUES (104, 'General@Button#4', '查询', '/', 72, '查询');
+INSERT INTO `cms_system_button` VALUES (105, 'General@Button#1', '新增', '/', 72, '新增');
+INSERT INTO `cms_system_button` VALUES (106, 'General@Button#2', '修改', '/', 72, '修改');
+INSERT INTO `cms_system_button` VALUES (107, 'General@Button#3', '删除', '/', 72, '删除');
+INSERT INTO `cms_system_button` VALUES (108, 'General@Button#6', '导出', '/', 72, '导出');
+INSERT INTO `cms_system_button` VALUES (109, 'General@Button#5', '导入', '/', 72, '导入');
+INSERT INTO `cms_system_button` VALUES (110, 'General@Button#7', '生成报表', '/', 72, '生成报表');
+INSERT INTO `cms_system_button` VALUES (111, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (112, 'General@Button#1', '新增', '/', 72, '新增');
+INSERT INTO `cms_system_button` VALUES (113, 'General@Button#3', '删除', '/', 72, '删除');
+INSERT INTO `cms_system_button` VALUES (114, 'General@Button#4', '查询', '/', 72, '查询');
+INSERT INTO `cms_system_button` VALUES (115, 'General@Button#2', '修改', '/', 72, '修改');
+INSERT INTO `cms_system_button` VALUES (116, 'General@Button#6', '导出', '/', 72, '导出');
+INSERT INTO `cms_system_button` VALUES (117, 'General@Button#5', '导入', '/', 72, '导入');
+INSERT INTO `cms_system_button` VALUES (118, 'General@Button#7', '生成报表', '/', 72, '生成报表');
+INSERT INTO `cms_system_button` VALUES (119, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (120, 'General@Button#2', '修改', '/', 72, '修改');
+INSERT INTO `cms_system_button` VALUES (121, 'General@Button#1', '新增', '/', 72, '新增');
+INSERT INTO `cms_system_button` VALUES (122, 'General@Button#5', '导入', '/', 72, '导入');
+INSERT INTO `cms_system_button` VALUES (123, 'General@Button#4', '查询', '/', 72, '查询');
+INSERT INTO `cms_system_button` VALUES (124, 'General@Button#3', '删除', '/', 72, '删除');
+INSERT INTO `cms_system_button` VALUES (125, 'General@Button#6', '导出', '/', 72, '导出');
+INSERT INTO `cms_system_button` VALUES (126, 'General@Button#7', '生成报表', '/', 72, '生成报表');
+INSERT INTO `cms_system_button` VALUES (127, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (128, 'General@Button#2', '修改', '/', 72, '修改');
+INSERT INTO `cms_system_button` VALUES (129, 'General@Button#1', '新增', '/', 72, '新增');
+INSERT INTO `cms_system_button` VALUES (130, 'General@Button#3', '删除', '/', 72, '删除');
+INSERT INTO `cms_system_button` VALUES (131, 'General@Button#4', '查询', '/', 72, '查询');
+INSERT INTO `cms_system_button` VALUES (132, 'General@Button#5', '导入', '/', 72, '导入');
+INSERT INTO `cms_system_button` VALUES (133, 'General@Button#6', '导出', '/', 72, '导出');
+INSERT INTO `cms_system_button` VALUES (134, 'General@Button#7', '生成报表', '/', 72, '生成报表');
+INSERT INTO `cms_system_button` VALUES (135, 'General@Button#8', '生成WORD', '/', 72, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (136, 'General@Button#4', '查询', '/', 78, '查询');
+INSERT INTO `cms_system_button` VALUES (137, 'General@Button#2', '修改', '/', 78, '修改');
+INSERT INTO `cms_system_button` VALUES (138, 'General@Button#1', '新增', '/', 78, '新增');
+INSERT INTO `cms_system_button` VALUES (139, 'General@Button#3', '删除', '/', 78, '删除');
+INSERT INTO `cms_system_button` VALUES (140, 'General@Button#6', '导出', '/', 78, '导出');
+INSERT INTO `cms_system_button` VALUES (141, 'General@Button#5', '导入', '/', 78, '导入');
+INSERT INTO `cms_system_button` VALUES (142, 'General@Button#7', '生成报表', '/', 78, '生成报表');
+INSERT INTO `cms_system_button` VALUES (143, 'General@Button#8', '生成WORD', '/', 78, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (144, 'General@Button#1', '新增', '/', 39, '新增');
+INSERT INTO `cms_system_button` VALUES (145, 'General@Button#2', '修改', '/', 39, '修改');
+INSERT INTO `cms_system_button` VALUES (146, 'General@Button#3', '删除', '/', 39, '删除');
+INSERT INTO `cms_system_button` VALUES (147, 'General@Button#5', '导入', '/', 39, '导入');
+INSERT INTO `cms_system_button` VALUES (148, 'General@Button#4', '查询', '/', 39, '查询');
+INSERT INTO `cms_system_button` VALUES (149, 'General@Button#6', '导出', '/', 39, '导出');
+INSERT INTO `cms_system_button` VALUES (150, 'General@Button#7', '生成报表', '/', 39, '生成报表');
+INSERT INTO `cms_system_button` VALUES (151, 'General@Button#8', '生成WORD', '/', 39, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (152, 'General@Button#3', '删除', '/', 24, '删除');
+INSERT INTO `cms_system_button` VALUES (153, 'General@Button#2', '修改', '/', 24, '修改');
+INSERT INTO `cms_system_button` VALUES (154, 'General@Button#1', '新增', '/', 24, '新增');
+INSERT INTO `cms_system_button` VALUES (155, 'General@Button#4', '查询', '/', 24, '查询');
+INSERT INTO `cms_system_button` VALUES (156, 'General@Button#5', '导入', '/', 24, '导入');
+INSERT INTO `cms_system_button` VALUES (157, 'General@Button#6', '导出', '/', 24, '导出');
+INSERT INTO `cms_system_button` VALUES (158, 'General@Button#7', '生成报表', '/', 24, '生成报表');
+INSERT INTO `cms_system_button` VALUES (159, 'General@Button#8', '生成WORD', '/', 24, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (160, 'General@Button#3', '删除', '/', 24, '删除');
+INSERT INTO `cms_system_button` VALUES (161, 'General@Button#1', '新增', '/', 24, '新增');
+INSERT INTO `cms_system_button` VALUES (162, 'General@Button#4', '查询', '/', 24, '查询');
+INSERT INTO `cms_system_button` VALUES (163, 'General@Button#5', '导入', '/', 24, '导入');
+INSERT INTO `cms_system_button` VALUES (164, 'General@Button#2', '修改', '/', 24, '修改');
+INSERT INTO `cms_system_button` VALUES (165, 'General@Button#6', '导出', '/', 24, '导出');
+INSERT INTO `cms_system_button` VALUES (166, 'General@Button#7', '生成报表', '/', 24, '生成报表');
+INSERT INTO `cms_system_button` VALUES (167, 'General@Button#8', '生成WORD', '/', 24, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (168, 'General@Button#1', '新增', '/', 78, '新增');
+INSERT INTO `cms_system_button` VALUES (169, 'General@Button#2', '修改', '/', 78, '修改');
+INSERT INTO `cms_system_button` VALUES (170, 'General@Button#4', '查询', '/', 78, '查询');
+INSERT INTO `cms_system_button` VALUES (171, 'General@Button#3', '删除', '/', 78, '删除');
+INSERT INTO `cms_system_button` VALUES (172, 'General@Button#5', '导入', '/', 78, '导入');
+INSERT INTO `cms_system_button` VALUES (173, 'General@Button#6', '导出', '/', 78, '导出');
+INSERT INTO `cms_system_button` VALUES (174, 'General@Button#7', '生成报表', '/', 78, '生成报表');
+INSERT INTO `cms_system_button` VALUES (175, 'General@Button#8', '生成WORD', '/', 78, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (176, 'General@Button#5', '导入', '/', 41, '导入');
+INSERT INTO `cms_system_button` VALUES (177, 'General@Button#3', '删除', '/', 41, '删除');
+INSERT INTO `cms_system_button` VALUES (178, 'General@Button#2', '修改', '/', 41, '修改');
+INSERT INTO `cms_system_button` VALUES (179, 'General@Button#6', '导出', '/', 41, '导出');
+INSERT INTO `cms_system_button` VALUES (180, 'General@Button#1', '新增', '/', 41, '新增');
+INSERT INTO `cms_system_button` VALUES (181, 'General@Button#4', '查询', '/', 41, '查询');
+INSERT INTO `cms_system_button` VALUES (182, 'General@Button#8', '生成WORD', '/', 41, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (183, 'General@Button#7', '生成报表', '/', 41, '生成报表');
+INSERT INTO `cms_system_button` VALUES (184, 'General@Button#3', '删除', '/', 25, '删除');
+INSERT INTO `cms_system_button` VALUES (185, 'General@Button#2', '修改', '/', 25, '修改');
+INSERT INTO `cms_system_button` VALUES (186, 'General@Button#1', '新增', '/', 25, '新增');
+INSERT INTO `cms_system_button` VALUES (187, 'General@Button#4', '查询', '/', 25, '查询');
+INSERT INTO `cms_system_button` VALUES (188, 'General@Button#6', '导出', '/', 25, '导出');
+INSERT INTO `cms_system_button` VALUES (189, 'General@Button#5', '导入', '/', 25, '导入');
+INSERT INTO `cms_system_button` VALUES (190, 'General@Button#7', '生成报表', '/', 25, '生成报表');
+INSERT INTO `cms_system_button` VALUES (191, 'General@Button#8', '生成WORD', '/', 25, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (192, 'General@Button#3', '删除', '/', 28, '删除');
+INSERT INTO `cms_system_button` VALUES (193, 'General@Button#2', '修改', '/', 28, '修改');
+INSERT INTO `cms_system_button` VALUES (194, 'General@Button#1', '新增', '/', 28, '新增');
+INSERT INTO `cms_system_button` VALUES (195, 'General@Button#4', '查询', '/', 28, '查询');
+INSERT INTO `cms_system_button` VALUES (196, 'General@Button#6', '导出', '/', 28, '导出');
+INSERT INTO `cms_system_button` VALUES (197, 'General@Button#5', '导入', '/', 28, '导入');
+INSERT INTO `cms_system_button` VALUES (198, 'General@Button#7', '生成报表', '/', 28, '生成报表');
+INSERT INTO `cms_system_button` VALUES (199, 'General@Button#8', '生成WORD', '/', 28, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (200, 'General@Button#2', '修改', '/', 37, '修改');
+INSERT INTO `cms_system_button` VALUES (201, 'General@Button#6', '导出', '/', 37, '导出');
+INSERT INTO `cms_system_button` VALUES (202, 'General@Button#4', '查询', '/', 37, '查询');
+INSERT INTO `cms_system_button` VALUES (203, 'General@Button#5', '导入', '/', 37, '导入');
+INSERT INTO `cms_system_button` VALUES (204, 'General@Button#3', '删除', '/', 37, '删除');
+INSERT INTO `cms_system_button` VALUES (205, 'General@Button#1', '新增', '/', 37, '新增');
+INSERT INTO `cms_system_button` VALUES (206, 'General@Button#7', '生成报表', '/', 37, '生成报表');
+INSERT INTO `cms_system_button` VALUES (207, 'General@Button#8', '生成WORD', '/', 37, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (208, 'General@Button#1', '新增', '/', 79, '新增');
+INSERT INTO `cms_system_button` VALUES (209, 'General@Button#3', '删除', '/', 79, '删除');
+INSERT INTO `cms_system_button` VALUES (210, 'General@Button#5', '导入', '/', 79, '导入');
+INSERT INTO `cms_system_button` VALUES (211, 'General@Button#4', '查询', '/', 79, '查询');
+INSERT INTO `cms_system_button` VALUES (212, 'General@Button#6', '导出', '/', 79, '导出');
+INSERT INTO `cms_system_button` VALUES (213, 'General@Button#8', '生成WORD', '/', 79, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (214, 'General@Button#2', '修改', '/', 79, '修改');
+INSERT INTO `cms_system_button` VALUES (215, 'General@Button#7', '生成报表', '/', 79, '生成报表');
+INSERT INTO `cms_system_button` VALUES (216, 'General@Button#1', '新增', '/', 93, '新增');
+INSERT INTO `cms_system_button` VALUES (217, 'General@Button#2', '修改', '/', 93, '修改');
+INSERT INTO `cms_system_button` VALUES (218, 'General@Button#4', '查询', '/', 93, '查询');
+INSERT INTO `cms_system_button` VALUES (219, 'General@Button#5', '导入', '/', 93, '导入');
+INSERT INTO `cms_system_button` VALUES (220, 'General@Button#3', '删除', '/', 93, '删除');
+INSERT INTO `cms_system_button` VALUES (221, 'General@Button#6', '导出', '/', 93, '导出');
+INSERT INTO `cms_system_button` VALUES (222, 'General@Button#7', '生成报表', '/', 93, '生成报表');
+INSERT INTO `cms_system_button` VALUES (223, 'General@Button#8', '生成WORD', '/', 93, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (224, 'General@Button#3', '删除', '/', 67, '删除');
+INSERT INTO `cms_system_button` VALUES (225, 'General@Button#5', '导入', '/', 67, '导入');
+INSERT INTO `cms_system_button` VALUES (226, 'General@Button#2', '修改', '/', 67, '修改');
+INSERT INTO `cms_system_button` VALUES (227, 'General@Button#4', '查询', '/', 67, '查询');
+INSERT INTO `cms_system_button` VALUES (228, 'General@Button#1', '新增', '/', 67, '新增');
+INSERT INTO `cms_system_button` VALUES (229, 'General@Button#6', '导出', '/', 67, '导出');
+INSERT INTO `cms_system_button` VALUES (230, 'General@Button#8', '生成WORD', '/', 67, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (231, 'General@Button#7', '生成报表', '/', 67, '生成报表');
+INSERT INTO `cms_system_button` VALUES (232, 'General@Button#1', '新增', '/', 48, '新增');
+INSERT INTO `cms_system_button` VALUES (233, 'General@Button#4', '查询', '/', 48, '查询');
+INSERT INTO `cms_system_button` VALUES (234, 'General@Button#2', '修改', '/', 48, '修改');
+INSERT INTO `cms_system_button` VALUES (235, 'General@Button#6', '导出', '/', 48, '导出');
+INSERT INTO `cms_system_button` VALUES (236, 'General@Button#5', '导入', '/', 48, '导入');
+INSERT INTO `cms_system_button` VALUES (237, 'General@Button#3', '删除', '/', 48, '删除');
+INSERT INTO `cms_system_button` VALUES (238, 'General@Button#7', '生成报表', '/', 48, '生成报表');
+INSERT INTO `cms_system_button` VALUES (239, 'General@Button#8', '生成WORD', '/', 48, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (240, 'General@Button#6', '导出', '/', 39, '导出');
+INSERT INTO `cms_system_button` VALUES (241, 'General@Button#4', '查询', '/', 39, '查询');
+INSERT INTO `cms_system_button` VALUES (242, 'General@Button#1', '新增', '/', 39, '新增');
+INSERT INTO `cms_system_button` VALUES (243, 'General@Button#5', '导入', '/', 39, '导入');
+INSERT INTO `cms_system_button` VALUES (244, 'General@Button#3', '删除', '/', 39, '删除');
+INSERT INTO `cms_system_button` VALUES (245, 'General@Button#2', '修改', '/', 39, '修改');
+INSERT INTO `cms_system_button` VALUES (246, 'General@Button#7', '生成报表', '/', 39, '生成报表');
+INSERT INTO `cms_system_button` VALUES (247, 'General@Button#8', '生成WORD', '/', 39, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (248, 'General@Button#2', '修改', '/', 35, '修改');
+INSERT INTO `cms_system_button` VALUES (249, 'General@Button#3', '删除', '/', 35, '删除');
+INSERT INTO `cms_system_button` VALUES (250, 'General@Button#1', '新增', '/', 35, '新增');
+INSERT INTO `cms_system_button` VALUES (251, 'General@Button#4', '查询', '/', 35, '查询');
+INSERT INTO `cms_system_button` VALUES (252, 'General@Button#5', '导入', '/', 35, '导入');
+INSERT INTO `cms_system_button` VALUES (253, 'General@Button#6', '导出', '/', 35, '导出');
+INSERT INTO `cms_system_button` VALUES (254, 'General@Button#7', '生成报表', '/', 35, '生成报表');
+INSERT INTO `cms_system_button` VALUES (255, 'General@Button#8', '生成WORD', '/', 35, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (256, 'General@Button#1', '新增', '/', 49, '新增');
+INSERT INTO `cms_system_button` VALUES (257, 'General@Button#2', '修改', '/', 49, '修改');
+INSERT INTO `cms_system_button` VALUES (258, 'General@Button#6', '导出', '/', 49, '导出');
+INSERT INTO `cms_system_button` VALUES (259, 'General@Button#5', '导入', '/', 49, '导入');
+INSERT INTO `cms_system_button` VALUES (260, 'General@Button#3', '删除', '/', 49, '删除');
+INSERT INTO `cms_system_button` VALUES (261, 'General@Button#4', '查询', '/', 49, '查询');
+INSERT INTO `cms_system_button` VALUES (262, 'General@Button#7', '生成报表', '/', 49, '生成报表');
+INSERT INTO `cms_system_button` VALUES (263, 'General@Button#8', '生成WORD', '/', 49, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (264, 'General@Button#1', '新增', '/', 37, '新增');
+INSERT INTO `cms_system_button` VALUES (265, 'General@Button#2', '修改', '/', 37, '修改');
+INSERT INTO `cms_system_button` VALUES (266, 'General@Button#6', '导出', '/', 37, '导出');
+INSERT INTO `cms_system_button` VALUES (267, 'General@Button#4', '查询', '/', 37, '查询');
+INSERT INTO `cms_system_button` VALUES (268, 'General@Button#3', '删除', '/', 37, '删除');
+INSERT INTO `cms_system_button` VALUES (269, 'General@Button#5', '导入', '/', 37, '导入');
+INSERT INTO `cms_system_button` VALUES (270, 'General@Button#7', '生成报表', '/', 37, '生成报表');
+INSERT INTO `cms_system_button` VALUES (271, 'General@Button#8', '生成WORD', '/', 37, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (272, 'General@Button#2', '修改', '/', 75, '修改');
+INSERT INTO `cms_system_button` VALUES (273, 'General@Button#4', '查询', '/', 75, '查询');
+INSERT INTO `cms_system_button` VALUES (274, 'General@Button#3', '删除', '/', 75, '删除');
+INSERT INTO `cms_system_button` VALUES (275, 'General@Button#5', '导入', '/', 75, '导入');
+INSERT INTO `cms_system_button` VALUES (277, 'General@Button#8', '生成WORD', '/', 75, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (278, 'General@Button#7', '生成报表', '/', 75, '生成报表');
+INSERT INTO `cms_system_button` VALUES (280, 'General@Button#4', '查询', '/', 75, '查询');
+INSERT INTO `cms_system_button` VALUES (281, 'General@Button#2', '修改', '/', 75, '修改');
+INSERT INTO `cms_system_button` VALUES (282, 'General@Button#3', '删除', '/', 75, '删除');
+INSERT INTO `cms_system_button` VALUES (283, 'General@Button#1', '新增', '/', 75, '新增');
+INSERT INTO `cms_system_button` VALUES (284, 'General@Button#5', '导入', '/', 75, '导入');
+INSERT INTO `cms_system_button` VALUES (286, 'General@Button#7', '生成报表', '/', 75, '生成报表');
+INSERT INTO `cms_system_button` VALUES (287, 'General@Button#8', '生成WORD', '/', 75, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (288, 'General@Button#4', '查询', '/', 39, '查询');
+INSERT INTO `cms_system_button` VALUES (289, 'General@Button#1', '新增', '/', 39, '新增');
+INSERT INTO `cms_system_button` VALUES (290, 'General@Button#2', '修改', '/', 39, '修改');
+INSERT INTO `cms_system_button` VALUES (291, 'General@Button#5', '导入', '/', 39, '导入');
+INSERT INTO `cms_system_button` VALUES (292, 'General@Button#3', '删除', '/', 39, '删除');
+INSERT INTO `cms_system_button` VALUES (293, 'General@Button#6', '导出', '/', 39, '导出');
+INSERT INTO `cms_system_button` VALUES (294, 'General@Button#7', '生成报表', '/', 39, '生成报表');
+INSERT INTO `cms_system_button` VALUES (295, 'General@Button#8', '生成WORD', '/', 39, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (296, 'General@Button#4', '查询', '/', 78, '查询');
+INSERT INTO `cms_system_button` VALUES (297, 'General@Button#3', '删除', '/', 78, '删除');
+INSERT INTO `cms_system_button` VALUES (298, 'General@Button#1', '新增', '/', 78, '新增');
+INSERT INTO `cms_system_button` VALUES (299, 'General@Button#5', '导入', '/', 78, '导入');
+INSERT INTO `cms_system_button` VALUES (300, 'General@Button#6', '导出', '/', 78, '导出');
+INSERT INTO `cms_system_button` VALUES (301, 'General@Button#2', '修改', '/', 78, '修改');
+INSERT INTO `cms_system_button` VALUES (302, 'General@Button#8', '生成WORD', '/', 78, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (303, 'General@Button#7', '生成报表', '/', 78, '生成报表');
+INSERT INTO `cms_system_button` VALUES (304, 'General@Button#2', '修改', '/', 86, '修改');
+INSERT INTO `cms_system_button` VALUES (305, 'General@Button#1', '新增', '/', 86, '新增');
+INSERT INTO `cms_system_button` VALUES (306, 'General@Button#6', '导出', '/', 86, '导出');
+INSERT INTO `cms_system_button` VALUES (307, 'General@Button#5', '导入', '/', 86, '导入');
+INSERT INTO `cms_system_button` VALUES (308, 'General@Button#3', '删除', '/', 86, '删除');
+INSERT INTO `cms_system_button` VALUES (309, 'General@Button#4', '查询', '/', 86, '查询');
+INSERT INTO `cms_system_button` VALUES (310, 'General@Button#7', '生成报表', '/', 86, '生成报表');
+INSERT INTO `cms_system_button` VALUES (311, 'General@Button#8', '生成WORD', '/', 86, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (312, 'General@Button#1', '新增', '/', 86, '新增');
+INSERT INTO `cms_system_button` VALUES (313, 'General@Button#3', '删除', '/', 86, '删除');
+INSERT INTO `cms_system_button` VALUES (314, 'General@Button#4', '查询', '/', 86, '查询');
+INSERT INTO `cms_system_button` VALUES (315, 'General@Button#2', '修改', '/', 86, '修改');
+INSERT INTO `cms_system_button` VALUES (316, 'General@Button#5', '导入', '/', 86, '导入');
+INSERT INTO `cms_system_button` VALUES (317, 'General@Button#6', '导出', '/', 86, '导出');
+INSERT INTO `cms_system_button` VALUES (318, 'General@Button#7', '生成报表', '/', 86, '生成报表');
+INSERT INTO `cms_system_button` VALUES (319, 'General@Button#8', '生成WORD', '/', 86, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (320, 'General@Button#1', '新增', '/', 35, '新增');
+INSERT INTO `cms_system_button` VALUES (321, 'General@Button#6', '导出', '/', 35, '导出');
+INSERT INTO `cms_system_button` VALUES (322, 'General@Button#4', '查询', '/', 35, '查询');
+INSERT INTO `cms_system_button` VALUES (323, 'General@Button#5', '导入', '/', 35, '导入');
+INSERT INTO `cms_system_button` VALUES (324, 'General@Button#3', '删除', '/', 35, '删除');
+INSERT INTO `cms_system_button` VALUES (325, 'General@Button#2', '修改', '/', 35, '修改');
+INSERT INTO `cms_system_button` VALUES (326, 'General@Button#7', '生成报表', '/', 35, '生成报表');
+INSERT INTO `cms_system_button` VALUES (327, 'General@Button#8', '生成WORD', '/', 35, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (328, 'General@Button#1', '新增', '/', 39, '新增');
+INSERT INTO `cms_system_button` VALUES (329, 'General@Button#2', '修改', '/', 39, '修改');
+INSERT INTO `cms_system_button` VALUES (330, 'General@Button#3', '删除', '/', 39, '删除');
+INSERT INTO `cms_system_button` VALUES (331, 'General@Button#4', '查询', '/', 39, '查询');
+INSERT INTO `cms_system_button` VALUES (332, 'General@Button#6', '导出', '/', 39, '导出');
+INSERT INTO `cms_system_button` VALUES (333, 'General@Button#5', '导入', '/', 39, '导入');
+INSERT INTO `cms_system_button` VALUES (334, 'General@Button#7', '生成报表', '/', 39, '生成报表');
+INSERT INTO `cms_system_button` VALUES (335, 'General@Button#8', '生成WORD', '/', 39, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (336, 'General@Button#1', '新增', '/', 71, '新增');
+INSERT INTO `cms_system_button` VALUES (337, 'General@Button#5', '导入', '/', 71, '导入');
+INSERT INTO `cms_system_button` VALUES (338, 'General@Button#3', '删除', '/', 71, '删除');
+INSERT INTO `cms_system_button` VALUES (339, 'General@Button#2', '修改', '/', 71, '修改');
+INSERT INTO `cms_system_button` VALUES (340, 'General@Button#4', '查询', '/', 71, '查询');
+INSERT INTO `cms_system_button` VALUES (341, 'General@Button#7', '生成报表', '/', 71, '生成报表');
+INSERT INTO `cms_system_button` VALUES (342, 'General@Button#6', '导出', '/', 71, '导出');
+INSERT INTO `cms_system_button` VALUES (343, 'General@Button#8', '生成WORD', '/', 71, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (344, 'General@Button#2', '修改', '/', 42, '修改');
+INSERT INTO `cms_system_button` VALUES (345, 'General@Button#3', '删除', '/', 42, '删除');
+INSERT INTO `cms_system_button` VALUES (346, 'General@Button#4', '查询', '/', 42, '查询');
+INSERT INTO `cms_system_button` VALUES (347, 'General@Button#1', '新增', '/', 42, '新增');
+INSERT INTO `cms_system_button` VALUES (348, 'General@Button#5', '导入', '/', 42, '导入');
+INSERT INTO `cms_system_button` VALUES (349, 'General@Button#8', '生成WORD', '/', 42, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (350, 'General@Button#6', '导出', '/', 42, '导出');
+INSERT INTO `cms_system_button` VALUES (351, 'General@Button#7', '生成报表', '/', 42, '生成报表');
 
 -- ----------------------------
--- Table structure for sys_constants
+-- Table structure for cms_system_constants
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_constants`;
-CREATE TABLE `sys_constants`  (
+DROP TABLE IF EXISTS `cms_system_constants`;
+CREATE TABLE `cms_system_constants`  (
   `RID` int(11) NOT NULL AUTO_INCREMENT,
   `NAME` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `CODE` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -6078,36 +6078,36 @@ CREATE TABLE `sys_constants`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_constants
+-- Records of cms_system_constants
 -- ----------------------------
-INSERT INTO `sys_constants` VALUES (1, '是', 'Y', 'SYS_USER', 'STATUS');
-INSERT INTO `sys_constants` VALUES (2, '否', 'N', 'SYS_USER', 'STATUS');
-INSERT INTO `sys_constants` VALUES (3, '男', 'MAN', 'UR_USER_INFO', 'GENDER');
-INSERT INTO `sys_constants` VALUES (4, '女', 'WOMAN', 'UR_USER_INFO', 'GENDER');
-INSERT INTO `sys_constants` VALUES (5, '有效', '10', 'SYS_ROLE', 'STATUS');
-INSERT INTO `sys_constants` VALUES (6, '无效', '11', 'SYS_ROLE', 'STATUS');
-INSERT INTO `sys_constants` VALUES (7, '静态页面', 'STATIC', 'SYS_MENU', 'MENU_TYPE');
-INSERT INTO `sys_constants` VALUES (8, '动态页面', 'URL', 'SYS_MENU', 'MENU_TYPE');
-INSERT INTO `sys_constants` VALUES (9, '模块', 'CATAGORY', 'SYS_MENU', 'MENU_TYPE');
-INSERT INTO `sys_constants` VALUES (10, '正常', 'Normal', 'SYS_MENU', 'STATUS');
-INSERT INTO `sys_constants` VALUES (16, '逻辑删除', 'Removed', 'SYS_MENU', 'STATUS');
-INSERT INTO `sys_constants` VALUES (17, '分类', 'CLASS', 'SYS_MENU', 'MENU_TYPE');
-INSERT INTO `sys_constants` VALUES (18, '引导分类', 'INDICATOR', 'SYS_MENU', 'MENU_TYPE');
-INSERT INTO `sys_constants` VALUES (19, '业务类', 'BUSI_TYPE', 'SYS_MENU', 'MENU_TYPE');
-INSERT INTO `sys_constants` VALUES (20, '机构目录', 'directory', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (21, '机构', 'organ', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (22, '单位', 'unit', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (23, '部门', 'dept', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (24, '个体经营者', 'person', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (25, '学校', 'school', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (26, '社团', 'group', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (27, '领导', 'leader', 'SYS_ORGAN', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (1, '是', 'Y', 'cms_system_user', 'STATUS');
+INSERT INTO `cms_system_constants` VALUES (2, '否', 'N', 'cms_system_user', 'STATUS');
+INSERT INTO `cms_system_constants` VALUES (3, '男', 'MAN', 'UR_USER_INFO', 'GENDER');
+INSERT INTO `cms_system_constants` VALUES (4, '女', 'WOMAN', 'UR_USER_INFO', 'GENDER');
+INSERT INTO `cms_system_constants` VALUES (5, '有效', '10', 'SYS_ROLE', 'STATUS');
+INSERT INTO `cms_system_constants` VALUES (6, '无效', '11', 'SYS_ROLE', 'STATUS');
+INSERT INTO `cms_system_constants` VALUES (7, '静态页面', 'STATIC', 'cms_system_menu', 'MENU_TYPE');
+INSERT INTO `cms_system_constants` VALUES (8, '动态页面', 'URL', 'cms_system_menu', 'MENU_TYPE');
+INSERT INTO `cms_system_constants` VALUES (9, '模块', 'CATAGORY', 'cms_system_menu', 'MENU_TYPE');
+INSERT INTO `cms_system_constants` VALUES (10, '正常', 'Normal', 'cms_system_menu', 'STATUS');
+INSERT INTO `cms_system_constants` VALUES (16, '逻辑删除', 'Removed', 'cms_system_menu', 'STATUS');
+INSERT INTO `cms_system_constants` VALUES (17, '分类', 'CLASS', 'cms_system_menu', 'MENU_TYPE');
+INSERT INTO `cms_system_constants` VALUES (18, '引导分类', 'INDICATOR', 'cms_system_menu', 'MENU_TYPE');
+INSERT INTO `cms_system_constants` VALUES (19, '业务类', 'BUSI_TYPE', 'cms_system_menu', 'MENU_TYPE');
+INSERT INTO `cms_system_constants` VALUES (20, '机构目录', 'directory', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (21, '机构', 'organ', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (22, '单位', 'unit', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (23, '部门', 'dept', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (24, '个体经营者', 'person', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (25, '学校', 'school', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (26, '社团', 'group', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (27, '领导', 'leader', 'cms_system_organ', 'ORGAN_TYPE');
 
 -- ----------------------------
--- Table structure for sys_label
+-- Table structure for cms_system_label
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_label`;
-CREATE TABLE `sys_label`  (
+DROP TABLE IF EXISTS `cms_system_label`;
+CREATE TABLE `cms_system_label`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `create_date` datetime(0) NULL DEFAULT NULL,
   `create_organ_id` bigint(20) NULL DEFAULT NULL,
@@ -6120,15 +6120,15 @@ CREATE TABLE `sys_label`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_label
+-- Records of cms_system_label
 -- ----------------------------
-INSERT INTO `sys_label` VALUES (1, '2018-09-28 21:27:57', NULL, NULL, '2018-09-28 21:28:01', NULL, NULL, 'demo');
+INSERT INTO `cms_system_label` VALUES (1, '2018-09-28 21:27:57', NULL, NULL, '2018-09-28 21:28:01', NULL, NULL, 'demo');
 
 -- ----------------------------
--- Table structure for sys_menu
+-- Table structure for cms_system_menu
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_menu`;
-CREATE TABLE `sys_menu`  (
+DROP TABLE IF EXISTS `cms_system_menu`;
+CREATE TABLE `cms_system_menu`  (
   `RID` int(12) NOT NULL AUTO_INCREMENT,
   `URL` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `PID` int(12) NULL DEFAULT NULL,
@@ -6146,71 +6146,71 @@ CREATE TABLE `sys_menu`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 96 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_menu
+-- Records of cms_system_menu
 -- ----------------------------
-INSERT INTO `sys_menu` VALUES (24, '', 0, 'PM01', '系统管理', 9, 'CATAGORY', '2018-08-06 22:13:15', '2018-08-09 22:49:59', 1, 'Normal', 1, 'icon-xitongguanli');
-INSERT INTO `sys_menu` VALUES (25, '/menu/menu_list', 82, 'CH01', '菜单管理', 11, 'URL', '2018-08-06 22:13:59', '2018-08-09 23:07:47', 1, 'Normal', 1, 'icon-caidanguanli');
-INSERT INTO `sys_menu` VALUES (26, '', 82, 'CH02', '权限管理', 12, 'URL', '2018-08-06 22:14:52', '2018-08-09 23:08:06', 1, 'Normal', 1, 'icon-quanxianguanli');
-INSERT INTO `sys_menu` VALUES (27, '/role/index', 82, 'CH03', '角色管理', 13, 'URL', '2018-08-06 22:15:16', '2018-09-19 21:25:50', 1, 'Normal', 1, 'icon-role');
-INSERT INTO `sys_menu` VALUES (28, '', 82, 'CH04', '用户管理', 14, 'URL', '2018-08-06 22:15:32', '2018-08-09 23:08:28', 1, 'Normal', 1, 'icon-yonghuguanli');
-INSERT INTO `sys_menu` VALUES (29, '', 83, 'CH05', '操作日志', 15, 'URL', '2018-08-06 22:16:10', '2018-08-09 23:08:54', 1, 'Normal', 1, 'icon-caozuorizhi-copy');
-INSERT INTO `sys_menu` VALUES (30, '', 83, 'CH06', '登陆日志', 16, 'URL', '2018-08-06 22:16:32', '2018-08-09 23:09:11', 1, 'Normal', 1, 'icon-denglurizhi');
-INSERT INTO `sys_menu` VALUES (31, '', 82, 'CH07', '图标管理', 17, 'URL', '2018-08-06 22:17:35', '2018-08-09 23:09:51', 1, 'Normal', 1, 'icon-msnui-rightmini');
-INSERT INTO `sys_menu` VALUES (32, '/constant/constant', 82, 'CH08', '常量管理', 18, 'URL', '2018-08-06 22:18:40', '2018-08-09 23:09:59', 1, 'Normal', 1, 'icon-shuju');
-INSERT INTO `sys_menu` VALUES (34, '', 0, 'PM02', '信息管理', 3, 'CATAGORY', '2018-08-06 22:34:00', '2018-08-09 23:02:04', 1, 'Normal', 1, 'icon-xinxi');
-INSERT INTO `sys_menu` VALUES (35, '', 0, 'CH10101', '微信管理', 7, 'CATAGORY', '2018-08-06 22:34:50', '2018-08-09 23:01:05', 1, 'Normal', 1, 'icon-weixin');
-INSERT INTO `sys_menu` VALUES (36, '', 0, 'NRGL', '内容管理', 4, 'CATAGORY', '2018-08-06 22:38:48', '2018-08-12 11:28:22', 1, 'Normal', 1, 'icon-lanmujineirong');
-INSERT INTO `sys_menu` VALUES (37, '', 0, 'RCRW', '日常任务', 1, 'CATAGORY', '2018-08-06 22:39:11', '2018-08-09 23:02:51', 1, 'Normal', 1, 'icon-richangrenwu');
-INSERT INTO `sys_menu` VALUES (38, '', 0, 'DDGL', '调度管理', 6, 'CATAGORY', '2018-08-06 22:40:04', '2018-08-18 10:05:16', 1, 'Normal', 1, 'icon-tiaoduguanli');
-INSERT INTO `sys_menu` VALUES (39, '', 0, 'SJCJ', '数据采集', 5, 'CATAGORY', '2018-08-06 22:40:38', '2018-08-09 23:01:40', 1, 'Normal', 1, 'icon-shujucaiji');
-INSERT INTO `sys_menu` VALUES (40, '', 0, 'ZHFW', '综合服务', 2, 'CATAGORY', '2018-08-06 22:41:26', '2018-08-09 23:02:34', 1, 'Normal', 1, 'icon-zonghe');
-INSERT INTO `sys_menu` VALUES (41, '', 0, 'XTJC', '系统监测', 8, 'CATAGORY', '2018-08-07 23:06:16', '2018-08-09 23:00:52', 1, 'Normal', 1, 'icon-neirongjiance');
-INSERT INTO `sys_menu` VALUES (42, '', 41, 'JCLB', '监测类别', 1, 'INDICATOR', '2018-08-07 23:11:00', NULL, 1, 'Normal', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (43, '', 42, 'XTBB', '系统报表', 1, 'CLASS', '2018-08-07 23:11:43', '2018-08-09 23:17:51', 1, 'Normal', 1, 'icon-baobiao');
-INSERT INTO `sys_menu` VALUES (44, '', 43, 'RCBB', '日常报表', 1, 'URL', '2018-08-07 23:12:02', '2018-08-22 20:02:53', 1, 'Normal', 1, 'icon-baobiao');
-INSERT INTO `sys_menu` VALUES (45, '', 43, 'WDBB', 'word报表', 2, 'URL', '2018-08-07 23:12:46', '2018-08-22 20:02:59', 1, 'Normal', 1, 'icon-word');
-INSERT INTO `sys_menu` VALUES (46, '', 42, 'YJTX', '邮件提醒', 2, 'CLASS', '2018-08-07 23:13:41', '2018-08-09 23:18:06', 1, 'Normal', 1, 'icon-youxiang');
-INSERT INTO `sys_menu` VALUES (47, '', 46, 'ZYYJ', '重要邮件', 1, 'URL', '2018-08-07 23:14:14', '2018-08-12 12:30:04', 1, 'Normal', 1, 'icon-youjian1');
-INSERT INTO `sys_menu` VALUES (48, '', 46, 'YBYJ', '一般邮件', 2, 'URL', '2018-08-07 23:14:34', '2018-08-12 12:30:15', 1, 'Normal', 1, 'icon-youjian');
-INSERT INTO `sys_menu` VALUES (49, '', 41, 'JCTJ', '监测统计', 2, 'INDICATOR', '2018-08-07 23:15:24', '2018-08-15 22:46:31', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (50, '', 49, 'TABLE', '数据查询', 1, 'URL', '2018-08-07 23:16:00', '2018-08-09 23:19:51', 1, 'Normal', 1, 'icon-plus-datasearch');
-INSERT INTO `sys_menu` VALUES (51, '', 49, 'CHART', '图表概况', 2, 'URL', '2018-08-07 23:17:01', '2018-08-09 23:20:06', 1, 'Normal', 1, 'icon-kaohebaobiao');
-INSERT INTO `sys_menu` VALUES (52, '', 42, 'MESSAGE', '短信提醒', 3, 'CLASS', '2018-08-07 23:33:30', '2018-08-09 23:18:22', 1, 'Normal', 1, 'icon-duanxin');
-INSERT INTO `sys_menu` VALUES (53, '', 52, 'BUSI_TYPE', '业务办理类', 1, 'URL', '2018-08-07 23:34:02', '2018-08-09 23:19:26', 1, 'Normal', 1, 'icon-yewubanli');
-INSERT INTO `sys_menu` VALUES (54, '', 52, 'FEETX', '收费提醒', 2, 'URL', '2018-08-07 23:35:10', '2018-08-09 23:19:38', 1, 'Normal', 1, 'icon-shoufeibiaozhun');
-INSERT INTO `sys_menu` VALUES (67, '/organ/index', 24, 'CH09', '组织机构', 19, 'URL', '2018-08-08 22:50:05', '2018-08-20 21:09:13', 1, 'Normal', 1, 'icon-zzjg');
-INSERT INTO `sys_menu` VALUES (68, '', 24, 'CONF', '系统配置', 20, 'URL', '2018-08-13 19:55:14', '2018-08-13 19:56:03', 1, 'Normal', 1, 'icon-xitongguanli');
-INSERT INTO `sys_menu` VALUES (69, '', 37, 'MY_TASK', '我的工作台', 1, 'INDICATOR', '2018-08-13 21:24:13', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (70, '/pages/common/dashborad.html', 69, 'DAIBAN', '我的待办', 1, 'URL', '2018-08-13 21:24:55', '2018-08-13 21:46:26', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (71, '', 69, 'MESSAGE', '我的消息', 2, 'URL', '2018-08-13 21:25:37', '2018-09-21 22:57:50', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (72, '', 69, 'EMAIL', '我的邮件', 3, 'URL', '2018-08-13 21:26:21', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (73, '', 69, 'TOOLS', '常用工具', 4, 'URL', '2018-08-13 21:27:08', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (75, '', 34, 'ACCESS', '接入信息', 1, 'INDICATOR', '2018-08-16 21:16:25', '2018-08-17 23:39:46', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (76, '', 36, 'TPL', '模板管理', 1, 'INDICATOR', '2018-08-16 21:16:46', '2018-08-17 23:41:03', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (77, '', 39, 'WORD', 'WORD导入', 1, 'URL', '2018-08-16 21:17:12', '2018-09-08 16:22:59', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (78, '', 38, 'TASKZP', '任务指派', 1, 'URL', '2018-08-16 21:17:40', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (79, '/', 35, 'SUCAI', '素材管理', 1, 'INDICATOR', '2018-08-16 21:18:06', '2018-08-20 22:18:24', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (81, '', 36, 'CONTENT_MODEL', '内容模型', 2, 'INDICATOR', '2018-08-17 20:19:05', '2018-08-17 23:41:08', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (82, '', 24, 'ADMIN', '管理员', 1, 'INDICATOR', '2018-08-17 23:30:18', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (83, '', 24, 'VIEW_USER', '用户数据', 2, 'INDICATOR', '2018-08-17 23:31:51', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (84, '', 40, 'MYSERVICE', '我的服务', 1, 'INDICATOR', '2018-08-17 23:37:12', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (85, '', 84, 'KAITONG', '已开通', 1, 'URL', '2018-08-17 23:37:35', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (86, '', 84, 'WEIKAITONG', '未开通', 2, 'URL', '2018-08-17 23:37:58', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (87, '', 40, 'ALL_SERVICE', '全部服务', 2, 'INDICATOR', '2018-08-17 23:38:34', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (88, '', 87, 'SYSTEM', '系统服务', 1, 'URL', '2018-08-17 23:39:01', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (89, '', 87, 'WEBSERVICE', '外部服务', 2, 'URL', '2018-08-17 23:39:22', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (90, '', 75, 'PERSON', '个人信息', 1, 'URL', '2018-08-17 23:40:06', '2018-08-22 20:04:29', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (91, '', 75, 'ORGAN', '组织机构', 2, 'URL', '2018-08-17 23:40:31', '2018-08-22 20:05:01', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (92, '', 76, 'HTML', '静态模板', 1, 'URL', '2018-08-17 23:41:41', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (93, '', 81, 'HTML', '静态内容', 1, 'URL', '2018-08-17 23:42:02', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (94, '', 79, 'PIC_TEXT', '图文素材', 1, 'URL', '2018-08-20 22:15:52', '2018-08-22 20:06:50', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (95, '', 79, 'TEXT', '文本素材', 1, 'URL', '2018-08-20 22:16:13', '2018-08-22 20:03:36', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (24, '', 0, 'PM01', '系统管理', 9, 'CATAGORY', '2018-08-06 22:13:15', '2018-08-09 22:49:59', 1, 'Normal', 1, 'icon-xitongguanli');
+INSERT INTO `cms_system_menu` VALUES (25, '/menu/menu_list', 82, 'CH01', '菜单管理', 11, 'URL', '2018-08-06 22:13:59', '2018-08-09 23:07:47', 1, 'Normal', 1, 'icon-caidanguanli');
+INSERT INTO `cms_system_menu` VALUES (26, '', 82, 'CH02', '权限管理', 12, 'URL', '2018-08-06 22:14:52', '2018-08-09 23:08:06', 1, 'Normal', 1, 'icon-quanxianguanli');
+INSERT INTO `cms_system_menu` VALUES (27, '/role/index', 82, 'CH03', '角色管理', 13, 'URL', '2018-08-06 22:15:16', '2018-09-19 21:25:50', 1, 'Normal', 1, 'icon-role');
+INSERT INTO `cms_system_menu` VALUES (28, '', 82, 'CH04', '用户管理', 14, 'URL', '2018-08-06 22:15:32', '2018-08-09 23:08:28', 1, 'Normal', 1, 'icon-yonghuguanli');
+INSERT INTO `cms_system_menu` VALUES (29, '', 83, 'CH05', '操作日志', 15, 'URL', '2018-08-06 22:16:10', '2018-08-09 23:08:54', 1, 'Normal', 1, 'icon-caozuorizhi-copy');
+INSERT INTO `cms_system_menu` VALUES (30, '', 83, 'CH06', '登陆日志', 16, 'URL', '2018-08-06 22:16:32', '2018-08-09 23:09:11', 1, 'Normal', 1, 'icon-denglurizhi');
+INSERT INTO `cms_system_menu` VALUES (31, '', 82, 'CH07', '图标管理', 17, 'URL', '2018-08-06 22:17:35', '2018-08-09 23:09:51', 1, 'Normal', 1, 'icon-msnui-rightmini');
+INSERT INTO `cms_system_menu` VALUES (32, '/constant/constant', 82, 'CH08', '常量管理', 18, 'URL', '2018-08-06 22:18:40', '2018-08-09 23:09:59', 1, 'Normal', 1, 'icon-shuju');
+INSERT INTO `cms_system_menu` VALUES (34, '', 0, 'PM02', '信息管理', 3, 'CATAGORY', '2018-08-06 22:34:00', '2018-08-09 23:02:04', 1, 'Normal', 1, 'icon-xinxi');
+INSERT INTO `cms_system_menu` VALUES (35, '', 0, 'CH10101', '微信管理', 7, 'CATAGORY', '2018-08-06 22:34:50', '2018-08-09 23:01:05', 1, 'Normal', 1, 'icon-weixin');
+INSERT INTO `cms_system_menu` VALUES (36, '', 0, 'NRGL', '内容管理', 4, 'CATAGORY', '2018-08-06 22:38:48', '2018-08-12 11:28:22', 1, 'Normal', 1, 'icon-lanmujineirong');
+INSERT INTO `cms_system_menu` VALUES (37, '', 0, 'RCRW', '日常任务', 1, 'CATAGORY', '2018-08-06 22:39:11', '2018-08-09 23:02:51', 1, 'Normal', 1, 'icon-richangrenwu');
+INSERT INTO `cms_system_menu` VALUES (38, '', 0, 'DDGL', '调度管理', 6, 'CATAGORY', '2018-08-06 22:40:04', '2018-08-18 10:05:16', 1, 'Normal', 1, 'icon-tiaoduguanli');
+INSERT INTO `cms_system_menu` VALUES (39, '', 0, 'SJCJ', '数据采集', 5, 'CATAGORY', '2018-08-06 22:40:38', '2018-08-09 23:01:40', 1, 'Normal', 1, 'icon-shujucaiji');
+INSERT INTO `cms_system_menu` VALUES (40, '', 0, 'ZHFW', '综合服务', 2, 'CATAGORY', '2018-08-06 22:41:26', '2018-08-09 23:02:34', 1, 'Normal', 1, 'icon-zonghe');
+INSERT INTO `cms_system_menu` VALUES (41, '', 0, 'XTJC', '系统监测', 8, 'CATAGORY', '2018-08-07 23:06:16', '2018-08-09 23:00:52', 1, 'Normal', 1, 'icon-neirongjiance');
+INSERT INTO `cms_system_menu` VALUES (42, '', 41, 'JCLB', '监测类别', 1, 'INDICATOR', '2018-08-07 23:11:00', NULL, 1, 'Normal', NULL, NULL);
+INSERT INTO `cms_system_menu` VALUES (43, '', 42, 'XTBB', '系统报表', 1, 'CLASS', '2018-08-07 23:11:43', '2018-08-09 23:17:51', 1, 'Normal', 1, 'icon-baobiao');
+INSERT INTO `cms_system_menu` VALUES (44, '', 43, 'RCBB', '日常报表', 1, 'URL', '2018-08-07 23:12:02', '2018-08-22 20:02:53', 1, 'Normal', 1, 'icon-baobiao');
+INSERT INTO `cms_system_menu` VALUES (45, '', 43, 'WDBB', 'word报表', 2, 'URL', '2018-08-07 23:12:46', '2018-08-22 20:02:59', 1, 'Normal', 1, 'icon-word');
+INSERT INTO `cms_system_menu` VALUES (46, '', 42, 'YJTX', '邮件提醒', 2, 'CLASS', '2018-08-07 23:13:41', '2018-08-09 23:18:06', 1, 'Normal', 1, 'icon-youxiang');
+INSERT INTO `cms_system_menu` VALUES (47, '', 46, 'ZYYJ', '重要邮件', 1, 'URL', '2018-08-07 23:14:14', '2018-08-12 12:30:04', 1, 'Normal', 1, 'icon-youjian1');
+INSERT INTO `cms_system_menu` VALUES (48, '', 46, 'YBYJ', '一般邮件', 2, 'URL', '2018-08-07 23:14:34', '2018-08-12 12:30:15', 1, 'Normal', 1, 'icon-youjian');
+INSERT INTO `cms_system_menu` VALUES (49, '', 41, 'JCTJ', '监测统计', 2, 'INDICATOR', '2018-08-07 23:15:24', '2018-08-15 22:46:31', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (50, '', 49, 'TABLE', '数据查询', 1, 'URL', '2018-08-07 23:16:00', '2018-08-09 23:19:51', 1, 'Normal', 1, 'icon-plus-datasearch');
+INSERT INTO `cms_system_menu` VALUES (51, '', 49, 'CHART', '图表概况', 2, 'URL', '2018-08-07 23:17:01', '2018-08-09 23:20:06', 1, 'Normal', 1, 'icon-kaohebaobiao');
+INSERT INTO `cms_system_menu` VALUES (52, '', 42, 'MESSAGE', '短信提醒', 3, 'CLASS', '2018-08-07 23:33:30', '2018-08-09 23:18:22', 1, 'Normal', 1, 'icon-duanxin');
+INSERT INTO `cms_system_menu` VALUES (53, '', 52, 'BUSI_TYPE', '业务办理类', 1, 'URL', '2018-08-07 23:34:02', '2018-08-09 23:19:26', 1, 'Normal', 1, 'icon-yewubanli');
+INSERT INTO `cms_system_menu` VALUES (54, '', 52, 'FEETX', '收费提醒', 2, 'URL', '2018-08-07 23:35:10', '2018-08-09 23:19:38', 1, 'Normal', 1, 'icon-shoufeibiaozhun');
+INSERT INTO `cms_system_menu` VALUES (67, '/organ/index', 24, 'CH09', '组织机构', 19, 'URL', '2018-08-08 22:50:05', '2018-08-20 21:09:13', 1, 'Normal', 1, 'icon-zzjg');
+INSERT INTO `cms_system_menu` VALUES (68, '', 24, 'CONF', '系统配置', 20, 'URL', '2018-08-13 19:55:14', '2018-08-13 19:56:03', 1, 'Normal', 1, 'icon-xitongguanli');
+INSERT INTO `cms_system_menu` VALUES (69, '', 37, 'MY_TASK', '我的工作台', 1, 'INDICATOR', '2018-08-13 21:24:13', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (70, '/pages/common/dashborad.html', 69, 'DAIBAN', '我的待办', 1, 'URL', '2018-08-13 21:24:55', '2018-08-13 21:46:26', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (71, '', 69, 'MESSAGE', '我的消息', 2, 'URL', '2018-08-13 21:25:37', '2018-09-21 22:57:50', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (72, '', 69, 'EMAIL', '我的邮件', 3, 'URL', '2018-08-13 21:26:21', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (73, '', 69, 'TOOLS', '常用工具', 4, 'URL', '2018-08-13 21:27:08', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (75, '', 34, 'ACCESS', '接入信息', 1, 'INDICATOR', '2018-08-16 21:16:25', '2018-08-17 23:39:46', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (76, '', 36, 'TPL', '模板管理', 1, 'INDICATOR', '2018-08-16 21:16:46', '2018-08-17 23:41:03', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (77, '', 39, 'WORD', 'WORD导入', 1, 'URL', '2018-08-16 21:17:12', '2018-09-08 16:22:59', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (78, '', 38, 'TASKZP', '任务指派', 1, 'URL', '2018-08-16 21:17:40', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (79, '/', 35, 'SUCAI', '素材管理', 1, 'INDICATOR', '2018-08-16 21:18:06', '2018-08-20 22:18:24', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (81, '', 36, 'CONTENT_MODEL', '内容模型', 2, 'INDICATOR', '2018-08-17 20:19:05', '2018-08-17 23:41:08', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (82, '', 24, 'ADMIN', '管理员', 1, 'INDICATOR', '2018-08-17 23:30:18', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (83, '', 24, 'VIEW_USER', '用户数据', 2, 'INDICATOR', '2018-08-17 23:31:51', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (84, '', 40, 'MYSERVICE', '我的服务', 1, 'INDICATOR', '2018-08-17 23:37:12', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (85, '', 84, 'KAITONG', '已开通', 1, 'URL', '2018-08-17 23:37:35', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (86, '', 84, 'WEIKAITONG', '未开通', 2, 'URL', '2018-08-17 23:37:58', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (87, '', 40, 'ALL_SERVICE', '全部服务', 2, 'INDICATOR', '2018-08-17 23:38:34', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (88, '', 87, 'SYSTEM', '系统服务', 1, 'URL', '2018-08-17 23:39:01', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (89, '', 87, 'WEBSERVICE', '外部服务', 2, 'URL', '2018-08-17 23:39:22', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (90, '', 75, 'PERSON', '个人信息', 1, 'URL', '2018-08-17 23:40:06', '2018-08-22 20:04:29', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (91, '', 75, 'ORGAN', '组织机构', 2, 'URL', '2018-08-17 23:40:31', '2018-08-22 20:05:01', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (92, '', 76, 'HTML', '静态模板', 1, 'URL', '2018-08-17 23:41:41', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (93, '', 81, 'HTML', '静态内容', 1, 'URL', '2018-08-17 23:42:02', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (94, '', 79, 'PIC_TEXT', '图文素材', 1, 'URL', '2018-08-20 22:15:52', '2018-08-22 20:06:50', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (95, '', 79, 'TEXT', '文本素材', 1, 'URL', '2018-08-20 22:16:13', '2018-08-22 20:03:36', 1, 'Normal', 1, '');
 
 -- ----------------------------
--- Table structure for sys_organ
+-- Table structure for cms_system_organ
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_organ`;
-CREATE TABLE `sys_organ`  (
+DROP TABLE IF EXISTS `cms_system_organ`;
+CREATE TABLE `cms_system_organ`  (
   `id` int(12) NOT NULL AUTO_INCREMENT,
   `organ_id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `organ_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -6233,70 +6233,70 @@ CREATE TABLE `sys_organ`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 58 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_organ
+-- Records of cms_system_organ
 -- ----------------------------
-INSERT INTO `sys_organ` VALUES (2, '100200300', '安徽省市政府', 'directory', '', '', '', '', '', 0, '2018-08-23 22:26:00', '2018-08-23 22:26:00', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (3, '100200301', '市发展改革委', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (4, '100200302', '市教体局', 'organ', '王', '安徽省合肥市政务区', '05510699698', '', '17855107850', 2, '2018-08-23 23:22:44', '2018-08-23 23:22:52', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (5, '100200303', '市民委', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (6, '100200304', '市民政局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (7, '100200305', '市财政局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (8, '100200306', '市国土资源局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (9, '100200307', '市交通运输局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (10, '100200308', '市水利局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (11, '100200309', '市商务局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (12, '100200310', '市统计局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (13, '100200311', '市卫生计生委', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (14, '100200312', '市质监局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (15, '100200313', '国家税务局合肥市税务局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (16, '100200314', '市安全监管局（安委办）', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (17, '100200315', '市直机关事务管理局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (18, '100200316', '市人防办', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (19, '100200317', '市信访局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (20, '100200318', '市公管局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (21, '100200319', '市地震局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (22, '100200320', '合肥市科技农商行', 'organ', '', '', '', '', '', 2, '2018-08-26 09:17:47', '2018-08-26 09:17:47', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (23, '100200321', '市残联', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (24, '100200322', '市招商局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (25, '100200323', '合肥经开区管委会', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (26, '100200324', '市房管局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (27, '100200325', '市公积金中心', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (28, '100200326', '市扶贫局', 'organ', '', '', '', '', '', 2, '2018-08-26 09:18:30', '2018-08-26 09:18:30', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (29, '200100100', '市属公共企事业单位', 'directory', '', '', '', '', '', NULL, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (30, '200100101', '市交警支队', 'unit', '', '', '', '', '', 29, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (31, '200100102', '市职工养老保险管理中心', 'unit', '', '', '', '', '', 29, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (32, '200100103', '市运管处', 'unit', '', '', '', '', '', 29, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (33, '200100104', '市政管理处', 'unit', '', '', '', '', '', 29, '2018-08-23 23:50:52', '2018-08-23 23:50:52', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (34, '300100100', '个体经营者', 'person', '', '', '', '', '', NULL, '2018-08-23 23:51:18', '2018-08-23 23:51:18', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (35, '400100100', '教育单位', 'school', '', '', '', '', '', NULL, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (36, '500100100', '社会团体', 'group', '', '', '', '', '', NULL, '2018-09-11 22:48:16', '2018-09-11 22:48:16', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (37, '600100100', '市管理办部（蜀山区分部）', 'dept', '', '', '', '', '', NULL, '2018-08-23 23:56:07', '2018-08-23 23:56:07', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (38, '700100100', '市管理办部（高新区分部）', 'dept', '', '', '', '', '', NULL, '2018-08-23 23:57:05', '2018-08-23 23:57:05', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (39, '800100100', '市管理办部（庐阳区分部）', 'dept', '', '', '', '', '', NULL, '2018-08-23 23:57:22', '2018-08-23 23:57:22', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (40, '900100100', '市管理办部（瑶海区分部）', 'dept', '', '', '', '', '', NULL, '2018-08-23 23:57:46', '2018-08-23 23:57:46', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (41, '900200100', '宿县代表委', 'unit', '', '', '', '', '', NULL, '2018-08-23 23:58:54', '2018-08-23 23:58:54', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (42, '900300100', '巢湖代管办（合肥市）', 'unit', '', '', '', '', '', NULL, '2018-08-23 23:59:54', '2018-08-23 23:59:54', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (43, '900400100', '市公交公司', 'unit', '', '', '', '', '', NULL, '2018-08-24 00:01:28', '2018-08-24 00:01:28', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (44, '900500100', '市供电公司', 'unit', '', '', '', '', '', NULL, '2018-09-11 22:47:44', '2018-09-11 22:47:44', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (45, '900600100', '政府领导', 'directory', '', '', '', '', '', NULL, '2018-08-25 07:29:26', '2018-08-25 07:29:26', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (46, '900600101', '政府领导', 'leader', '', '', '', '', '', 45, '2018-08-25 07:37:38', '2018-08-25 07:37:38', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (47, '900600102', '书记办', 'leader', '', '', '', '', '', 45, '2018-08-25 07:38:38', '2018-08-25 07:38:38', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (48, '900600103', '秘书办', 'leader', '王建', '合肥市政务新区', '05515690866', '秘书办协助领导完成日常事务', '17855107850', 45, '2018-08-26 08:39:53', '2018-08-26 08:39:53', 1, 1, 1, 'Normal', 'http://hf.gov.cn/', '/images/leader.png');
-INSERT INTO `sys_organ` VALUES (49, '400100101', '安徽省教育局', 'organ', '', '', '', '', '', 35, '2018-08-25 07:39:59', '2018-08-25 07:39:59', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (50, '400100102', '安徽中医药大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:40:51', '2018-08-25 07:40:51', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (51, '400100103', '中国科学技术大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:41:04', '2018-08-25 07:41:04', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (52, '400100104', '合肥工业大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:41:31', '2018-08-25 07:41:31', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (53, '400100105', '安徽大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:43:02', '2018-08-25 07:43:02', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (54, '400100106', '安徽农业大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:43:39', '2018-08-25 07:43:39', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (55, '400100107', '合肥职业技术学校', 'school', '', '', '', '', '', 35, '2018-08-29 19:43:17', '2018-08-29 19:43:17', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (56, '400100108', '安徽建筑大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:44:21', '2018-08-25 07:44:21', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (57, '400100109', '安徽工业大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:45:15', '2018-08-25 07:45:15', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (2, '100200300', '安徽省市政府', 'directory', '', '', '', '', '', 0, '2018-08-23 22:26:00', '2018-08-23 22:26:00', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (3, '100200301', '市发展改革委', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (4, '100200302', '市教体局', 'organ', '王', '安徽省合肥市政务区', '05510699698', '', '17855107850', 2, '2018-08-23 23:22:44', '2018-08-23 23:22:52', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (5, '100200303', '市民委', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (6, '100200304', '市民政局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (7, '100200305', '市财政局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (8, '100200306', '市国土资源局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (9, '100200307', '市交通运输局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (10, '100200308', '市水利局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (11, '100200309', '市商务局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (12, '100200310', '市统计局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (13, '100200311', '市卫生计生委', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (14, '100200312', '市质监局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (15, '100200313', '国家税务局合肥市税务局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (16, '100200314', '市安全监管局（安委办）', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (17, '100200315', '市直机关事务管理局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (18, '100200316', '市人防办', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (19, '100200317', '市信访局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (20, '100200318', '市公管局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (21, '100200319', '市地震局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (22, '100200320', '合肥市科技农商行', 'organ', '', '', '', '', '', 2, '2018-08-26 09:17:47', '2018-08-26 09:17:47', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (23, '100200321', '市残联', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (24, '100200322', '市招商局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (25, '100200323', '合肥经开区管委会', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (26, '100200324', '市房管局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (27, '100200325', '市公积金中心', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (28, '100200326', '市扶贫局', 'organ', '', '', '', '', '', 2, '2018-08-26 09:18:30', '2018-08-26 09:18:30', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (29, '200100100', '市属公共企事业单位', 'directory', '', '', '', '', '', NULL, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (30, '200100101', '市交警支队', 'unit', '', '', '', '', '', 29, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (31, '200100102', '市职工养老保险管理中心', 'unit', '', '', '', '', '', 29, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (32, '200100103', '市运管处', 'unit', '', '', '', '', '', 29, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (33, '200100104', '市政管理处', 'unit', '', '', '', '', '', 29, '2018-08-23 23:50:52', '2018-08-23 23:50:52', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (34, '300100100', '个体经营者', 'person', '', '', '', '', '', NULL, '2018-08-23 23:51:18', '2018-08-23 23:51:18', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (35, '400100100', '教育单位', 'school', '', '', '', '', '', NULL, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (36, '500100100', '社会团体', 'group', '', '', '', '', '', NULL, '2018-09-11 22:48:16', '2018-09-11 22:48:16', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (37, '600100100', '市管理办部（蜀山区分部）', 'dept', '', '', '', '', '', NULL, '2018-08-23 23:56:07', '2018-08-23 23:56:07', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (38, '700100100', '市管理办部（高新区分部）', 'dept', '', '', '', '', '', NULL, '2018-08-23 23:57:05', '2018-08-23 23:57:05', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (39, '800100100', '市管理办部（庐阳区分部）', 'dept', '', '', '', '', '', NULL, '2018-08-23 23:57:22', '2018-08-23 23:57:22', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (40, '900100100', '市管理办部（瑶海区分部）', 'dept', '', '', '', '', '', NULL, '2018-08-23 23:57:46', '2018-08-23 23:57:46', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (41, '900200100', '宿县代表委', 'unit', '', '', '', '', '', NULL, '2018-08-23 23:58:54', '2018-08-23 23:58:54', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (42, '900300100', '巢湖代管办（合肥市）', 'unit', '', '', '', '', '', NULL, '2018-08-23 23:59:54', '2018-08-23 23:59:54', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (43, '900400100', '市公交公司', 'unit', '', '', '', '', '', NULL, '2018-08-24 00:01:28', '2018-08-24 00:01:28', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (44, '900500100', '市供电公司', 'unit', '', '', '', '', '', NULL, '2018-09-11 22:47:44', '2018-09-11 22:47:44', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (45, '900600100', '政府领导', 'directory', '', '', '', '', '', NULL, '2018-08-25 07:29:26', '2018-08-25 07:29:26', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (46, '900600101', '政府领导', 'leader', '', '', '', '', '', 45, '2018-08-25 07:37:38', '2018-08-25 07:37:38', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (47, '900600102', '书记办', 'leader', '', '', '', '', '', 45, '2018-08-25 07:38:38', '2018-08-25 07:38:38', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (48, '900600103', '秘书办', 'leader', '王建', '合肥市政务新区', '05515690866', '秘书办协助领导完成日常事务', '17855107850', 45, '2018-08-26 08:39:53', '2018-08-26 08:39:53', 1, 1, 1, 'Normal', 'http://hf.gov.cn/', '/images/leader.png');
+INSERT INTO `cms_system_organ` VALUES (49, '400100101', '安徽省教育局', 'organ', '', '', '', '', '', 35, '2018-08-25 07:39:59', '2018-08-25 07:39:59', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (50, '400100102', '安徽中医药大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:40:51', '2018-08-25 07:40:51', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (51, '400100103', '中国科学技术大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:41:04', '2018-08-25 07:41:04', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (52, '400100104', '合肥工业大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:41:31', '2018-08-25 07:41:31', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (53, '400100105', '安徽大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:43:02', '2018-08-25 07:43:02', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (54, '400100106', '安徽农业大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:43:39', '2018-08-25 07:43:39', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (55, '400100107', '合肥职业技术学校', 'school', '', '', '', '', '', 35, '2018-08-29 19:43:17', '2018-08-29 19:43:17', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (56, '400100108', '安徽建筑大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:44:21', '2018-08-25 07:44:21', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (57, '400100109', '安徽工业大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:45:15', '2018-08-25 07:45:15', 1, 1, 1, 'Normal', '', '');
 
 -- ----------------------------
--- Table structure for sys_role_info
+-- Table structure for cms_system_roleInfo
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_role_info`;
-CREATE TABLE `sys_role_info`  (
+DROP TABLE IF EXISTS `cms_system_roleInfo`;
+CREATE TABLE `cms_system_roleInfo`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `create_date` datetime(0) NULL DEFAULT NULL,
   `create_organ_id` bigint(20) NULL DEFAULT NULL,
@@ -6311,20 +6311,20 @@ CREATE TABLE `sys_role_info`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_role_info
+-- Records of cms_system_roleInfo
 -- ----------------------------
-INSERT INTO `sys_role_info` VALUES (22, '2018-09-18 23:28:03', 36, NULL, 'Normal', '2018-10-02 16:06:20', NULL, 'tzadmin', '团管理员', '团管理员');
-INSERT INTO `sys_role_info` VALUES (23, '2018-09-18 23:28:19', 36, NULL, 'Removed', '2018-09-18 23:34:51', NULL, '11211221', '121212', '1212');
-INSERT INTO `sys_role_info` VALUES (24, '2018-09-18 23:30:35', 2, NULL, 'Normal', '2018-10-02 16:07:07', NULL, 'sysadmin', '超级管理员拥有所有功能权限', '超级管理员');
-INSERT INTO `sys_role_info` VALUES (25, '2018-09-18 23:42:41', 36, NULL, 'Normal', '2018-10-01 10:25:05', NULL, 'user01', '团员张姗姗', 'zhangss');
-INSERT INTO `sys_role_info` VALUES (26, '2018-09-21 22:55:41', 36, NULL, 'Normal', '2018-10-04 10:31:36', NULL, 'user02', '怎么了', 'wangsb');
-INSERT INTO `sys_role_info` VALUES (27, '2018-09-21 23:02:21', 8, NULL, 'Normal', '2018-09-21 23:02:21', NULL, 'admin', '', '管理员');
+INSERT INTO `cms_system_roleInfo` VALUES (22, '2018-09-18 23:28:03', 36, NULL, 'Normal', '2018-10-02 16:06:20', NULL, 'tzadmin', '团管理员', '团管理员');
+INSERT INTO `cms_system_roleInfo` VALUES (23, '2018-09-18 23:28:19', 36, NULL, 'Removed', '2018-09-18 23:34:51', NULL, '11211221', '121212', '1212');
+INSERT INTO `cms_system_roleInfo` VALUES (24, '2018-09-18 23:30:35', 2, NULL, 'Normal', '2018-10-02 16:07:07', NULL, 'sysadmin', '超级管理员拥有所有功能权限', '超级管理员');
+INSERT INTO `cms_system_roleInfo` VALUES (25, '2018-09-18 23:42:41', 36, NULL, 'Normal', '2018-10-01 10:25:05', NULL, 'user01', '团员张姗姗', 'zhangss');
+INSERT INTO `cms_system_roleInfo` VALUES (26, '2018-09-21 22:55:41', 36, NULL, 'Normal', '2018-10-04 10:31:36', NULL, 'user02', '怎么了', 'wangsb');
+INSERT INTO `cms_system_roleInfo` VALUES (27, '2018-09-21 23:02:21', 8, NULL, 'Normal', '2018-09-21 23:02:21', NULL, 'admin', '', '管理员');
 
 -- ----------------------------
--- Table structure for sys_user
+-- Table structure for cms_system_user
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_user`;
-CREATE TABLE `sys_user`  (
+DROP TABLE IF EXISTS `cms_system_user`;
+CREATE TABLE `cms_system_user`  (
   `RID` int(12) NOT NULL AUTO_INCREMENT,
   `USERID` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `USERNAME` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -6336,8 +6336,8 @@ CREATE TABLE `sys_user`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_user
+-- Records of cms_system_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, 'sysadmin', '超级管理员', '1551e2d97bae39b7f75da0d2fc437f2c', 'Normal', '2018-08-15 21:01:15', '2018-08-15 21:01:17');
+INSERT INTO `cms_system_user` VALUES (1, 'sysadmin', '超级管理员', '1551e2d97bae39b7f75da0d2fc437f2c', 'Normal', '2018-08-15 21:01:15', '2018-08-15 21:01:17');
 
 SET FOREIGN_KEY_CHECKS = 1;

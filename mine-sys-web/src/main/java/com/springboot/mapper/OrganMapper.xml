@@ -8,7 +8,7 @@
         organ_desc organDesc,phone,parent_id parentId,create_time createTime,update_time updateTime,
         update_user updateUser,create_user createUser,is_effect isEffect,record_state recordState,
         link_url linkUrl ,organ_icon organIcon
-        from sys_organ where is_effect = 1 and record_state = 'Normal'
+        from cms_system_organ where is_effect = 1 and record_state = 'Normal'
         <if test="id !=null and id != ''">
             and id = #{id}
         </if>
@@ -26,10 +26,10 @@
         organ_desc organDesc,phone,parent_id parentId,create_time createTime,update_time updateTime,
         update_user updateUser,create_user createUser,is_effect isEffect,record_state recordState,
         link_url linkUrl ,organ_icon organIcon
-        from sys_organ where is_effect = 1 and record_state = 'Normal' and id = #{organId}
+        from cms_system_organ where is_effect = 1 and record_state = 'Normal' and id = #{organId}
     </select>
     <insert id="saveOrganInfo" useGeneratedKeys="true" keyProperty="id" parameterType="OrganEO">
-		insert into sys_organ(
+		insert into cms_system_organ(
 			organ_type, organ_id,organ_name,leader,address,address_phone,
 			organ_desc,phone,parent_id,create_time,update_time,
 			update_user,create_user,is_effect,record_state,link_url,organ_icon
@@ -40,7 +40,7 @@
 	</insert>
 
     <update id="updateOrganInfo" parameterType="OrganEO">
-		update sys_organ set
+		update cms_system_organ set
 			organ_type = #{organType}, organ_id = #{organId},organ_name = #{organName},
 			leader = #{leader},address = #{address},address_phone = #{addressPhone},organ_desc = #{organDesc},
 			phone = #{phone},parent_id = #{parentId},create_time = #{createTime},update_time = #{updateTime},
@@ -50,6 +50,6 @@
 	</update>
 
     <delete id="del" parameterType="OrganEO">
-		delete from sys_organ where id = #{id}
+		delete from cms_system_organ where id = #{id}
 	</delete>
 </mapper>

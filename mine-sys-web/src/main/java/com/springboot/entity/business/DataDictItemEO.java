@@ -1,4 +1,4 @@
-package com.springboot.entity.business.datadictionary;
+package com.springboot.entity.business;
 
 import com.springboot.entity.hibernate.impl.ABaseEntity;
 

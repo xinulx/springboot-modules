@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "sys_label")
+@Table(name = "cms_system_label")
 public class LabelEO extends AMockEntity {
     //主键ID
     @Id

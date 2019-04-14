@@ -1,4 +1,4 @@
-package com.springboot.entity.business;
+package com.springboot.entity.hibernate;
 
 
 import com.springboot.entity.vo.MapVO;

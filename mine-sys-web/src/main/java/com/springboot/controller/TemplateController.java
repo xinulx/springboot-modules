@@ -3,7 +3,7 @@ package com.springboot.controller;
 import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.SysLog;
 import com.springboot.entity.business.CmsLogEO;
-import com.springboot.entity.business.ParamDto;
+import com.springboot.entity.hibernate.ParamDto;
 import com.springboot.entity.business.TemplateConfEO;
 import com.springboot.entity.business.TemplateHistoryEO;
 import com.springboot.entity.mongo.ContentMongoEO;

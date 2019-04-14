@@ -1,7 +1,7 @@
 package com.springboot.service.hibernate.impl;
 
 import com.springboot.dao.business.ITplHistoryDao;
-import com.springboot.entity.business.ParamDto;
+import com.springboot.entity.hibernate.ParamDto;
 import com.springboot.entity.business.TemplateHistoryEO;
 import com.springboot.entity.hibernate.Pagination;
 import com.springboot.entity.mongo.ContentMongoEO;

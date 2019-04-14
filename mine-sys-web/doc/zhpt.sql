@@ -7629,10 +7629,10 @@ CREATE TABLE `qrtz_triggers`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for sys_btn
+-- Table structure for cms_system_button
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_btn`;
-CREATE TABLE `sys_btn`  (
+DROP TABLE IF EXISTS `cms_system_button`;
+CREATE TABLE `cms_system_button`  (
   `RID` int(12) NOT NULL AUTO_INCREMENT,
   `CODE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `NAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -7643,37 +7643,37 @@ CREATE TABLE `sys_btn`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_btn
+-- Records of cms_system_button
 -- ----------------------------
-INSERT INTO `sys_btn` VALUES (2, 'General@Button#1', '新增', '/', 37, '新增');
-INSERT INTO `sys_btn` VALUES (3, 'General@Button#2', '修改', '/', 37, '修改');
-INSERT INTO `sys_btn` VALUES (4, 'General@Button#3', '删除', '/', 37, '删除');
-INSERT INTO `sys_btn` VALUES (5, 'General@Button#4', '查询', '/', 37, '查询');
-INSERT INTO `sys_btn` VALUES (6, 'General@Button#7', '生成报表', '/', 37, '生成报表');
-INSERT INTO `sys_btn` VALUES (7, 'General@Button#8', '生成WORD', '/', 37, '生成WORD');
-INSERT INTO `sys_btn` VALUES (8, 'General@Button#6', '导出', '/', 37, '导出');
-INSERT INTO `sys_btn` VALUES (10, 'General@Button#5', '导入', '/', 40, '导入');
-INSERT INTO `sys_btn` VALUES (11, 'General@Button#4', '查询', '/', 40, '查询');
-INSERT INTO `sys_btn` VALUES (12, 'General@Button#6', '导出', '/', 40, '导出');
-INSERT INTO `sys_btn` VALUES (13, 'General@Button#2', '修改', '/', 40, '修改');
-INSERT INTO `sys_btn` VALUES (14, 'General@Button#1', '新增', '/', 40, '新增');
-INSERT INTO `sys_btn` VALUES (15, 'General@Button#3', '删除', '/', 40, '删除');
-INSERT INTO `sys_btn` VALUES (16, 'General@Button#7', '生成报表', '/', 40, '生成报表');
-INSERT INTO `sys_btn` VALUES (17, 'General@Button#8', '生成WORD', '/', 40, '生成WORD');
-INSERT INTO `sys_btn` VALUES (18, 'General@Button#2', '修改', '/', 24, '修改');
-INSERT INTO `sys_btn` VALUES (19, 'General@Button#1', '新增', '/', 24, '新增');
-INSERT INTO `sys_btn` VALUES (20, 'General@Button#3', '删除', '/', 24, '删除');
-INSERT INTO `sys_btn` VALUES (21, 'General@Button#4', '查询', '/', 24, '查询');
-INSERT INTO `sys_btn` VALUES (22, 'General@Button#5', '导入', '/', 24, '导入');
-INSERT INTO `sys_btn` VALUES (23, 'General@Button#7', '生成报表', '/', 24, '生成报表');
-INSERT INTO `sys_btn` VALUES (24, 'General@Button#8', '生成WORD', '/', 24, '生成WORD');
-INSERT INTO `sys_btn` VALUES (25, 'General@Button#6', '导出', '/', 24, '导出');
+INSERT INTO `cms_system_button` VALUES (2, 'General@Button#1', '新增', '/', 37, '新增');
+INSERT INTO `cms_system_button` VALUES (3, 'General@Button#2', '修改', '/', 37, '修改');
+INSERT INTO `cms_system_button` VALUES (4, 'General@Button#3', '删除', '/', 37, '删除');
+INSERT INTO `cms_system_button` VALUES (5, 'General@Button#4', '查询', '/', 37, '查询');
+INSERT INTO `cms_system_button` VALUES (6, 'General@Button#7', '生成报表', '/', 37, '生成报表');
+INSERT INTO `cms_system_button` VALUES (7, 'General@Button#8', '生成WORD', '/', 37, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (8, 'General@Button#6', '导出', '/', 37, '导出');
+INSERT INTO `cms_system_button` VALUES (10, 'General@Button#5', '导入', '/', 40, '导入');
+INSERT INTO `cms_system_button` VALUES (11, 'General@Button#4', '查询', '/', 40, '查询');
+INSERT INTO `cms_system_button` VALUES (12, 'General@Button#6', '导出', '/', 40, '导出');
+INSERT INTO `cms_system_button` VALUES (13, 'General@Button#2', '修改', '/', 40, '修改');
+INSERT INTO `cms_system_button` VALUES (14, 'General@Button#1', '新增', '/', 40, '新增');
+INSERT INTO `cms_system_button` VALUES (15, 'General@Button#3', '删除', '/', 40, '删除');
+INSERT INTO `cms_system_button` VALUES (16, 'General@Button#7', '生成报表', '/', 40, '生成报表');
+INSERT INTO `cms_system_button` VALUES (17, 'General@Button#8', '生成WORD', '/', 40, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (18, 'General@Button#2', '修改', '/', 24, '修改');
+INSERT INTO `cms_system_button` VALUES (19, 'General@Button#1', '新增', '/', 24, '新增');
+INSERT INTO `cms_system_button` VALUES (20, 'General@Button#3', '删除', '/', 24, '删除');
+INSERT INTO `cms_system_button` VALUES (21, 'General@Button#4', '查询', '/', 24, '查询');
+INSERT INTO `cms_system_button` VALUES (22, 'General@Button#5', '导入', '/', 24, '导入');
+INSERT INTO `cms_system_button` VALUES (23, 'General@Button#7', '生成报表', '/', 24, '生成报表');
+INSERT INTO `cms_system_button` VALUES (24, 'General@Button#8', '生成WORD', '/', 24, '生成WORD');
+INSERT INTO `cms_system_button` VALUES (25, 'General@Button#6', '导出', '/', 24, '导出');
 
 -- ----------------------------
--- Table structure for sys_constants
+-- Table structure for cms_system_constants
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_constants`;
-CREATE TABLE `sys_constants`  (
+DROP TABLE IF EXISTS `cms_system_constants`;
+CREATE TABLE `cms_system_constants`  (
   `RID` int(11) NOT NULL AUTO_INCREMENT,
   `NAME` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `CODE` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -7683,34 +7683,34 @@ CREATE TABLE `sys_constants`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_constants
+-- Records of cms_system_constants
 -- ----------------------------
-INSERT INTO `sys_constants` VALUES (1, '是', 'Y', 'SYS_USER', 'STATUS');
-INSERT INTO `sys_constants` VALUES (2, '否', 'N', 'SYS_USER', 'STATUS');
-INSERT INTO `sys_constants` VALUES (3, '男', 'MAN', 'UR_USER_INFO', 'GENDER');
-INSERT INTO `sys_constants` VALUES (4, '女', 'WOMAN', 'UR_USER_INFO', 'GENDER');
-INSERT INTO `sys_constants` VALUES (5, '有效', '10', 'SYS_ROLE', 'STATUS');
-INSERT INTO `sys_constants` VALUES (6, '无效', '11', 'SYS_ROLE', 'STATUS');
-INSERT INTO `sys_constants` VALUES (8, '地址链接', 'URL', 'SYS_MENU', 'MENU_TYPE');
-INSERT INTO `sys_constants` VALUES (9, '模块', 'CATAGORY', 'SYS_MENU', 'MENU_TYPE');
-INSERT INTO `sys_constants` VALUES (10, '正常', 'Normal', 'SYS_MENU', 'STATUS');
-INSERT INTO `sys_constants` VALUES (16, '逻辑删除', 'Removed', 'SYS_MENU', 'STATUS');
-INSERT INTO `sys_constants` VALUES (17, '分类', 'CLASS', 'SYS_MENU', 'MENU_TYPE');
-INSERT INTO `sys_constants` VALUES (18, '引导分类', 'INDICATOR', 'SYS_MENU', 'MENU_TYPE');
-INSERT INTO `sys_constants` VALUES (20, '机构目录', 'directory', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (21, '机构', 'organ', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (22, '单位', 'unit', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (23, '部门', 'dept', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (24, '个体经营者', 'person', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (25, '学校', 'school', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (26, '社团', 'group', 'SYS_ORGAN', 'ORGAN_TYPE');
-INSERT INTO `sys_constants` VALUES (27, '领导', 'leader', 'SYS_ORGAN', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (1, '是', 'Y', 'cms_system_user', 'STATUS');
+INSERT INTO `cms_system_constants` VALUES (2, '否', 'N', 'cms_system_user', 'STATUS');
+INSERT INTO `cms_system_constants` VALUES (3, '男', 'MAN', 'UR_USER_INFO', 'GENDER');
+INSERT INTO `cms_system_constants` VALUES (4, '女', 'WOMAN', 'UR_USER_INFO', 'GENDER');
+INSERT INTO `cms_system_constants` VALUES (5, '有效', '10', 'SYS_ROLE', 'STATUS');
+INSERT INTO `cms_system_constants` VALUES (6, '无效', '11', 'SYS_ROLE', 'STATUS');
+INSERT INTO `cms_system_constants` VALUES (8, '地址链接', 'URL', 'cms_system_menu', 'MENU_TYPE');
+INSERT INTO `cms_system_constants` VALUES (9, '模块', 'CATAGORY', 'cms_system_menu', 'MENU_TYPE');
+INSERT INTO `cms_system_constants` VALUES (10, '正常', 'Normal', 'cms_system_menu', 'STATUS');
+INSERT INTO `cms_system_constants` VALUES (16, '逻辑删除', 'Removed', 'cms_system_menu', 'STATUS');
+INSERT INTO `cms_system_constants` VALUES (17, '分类', 'CLASS', 'cms_system_menu', 'MENU_TYPE');
+INSERT INTO `cms_system_constants` VALUES (18, '引导分类', 'INDICATOR', 'cms_system_menu', 'MENU_TYPE');
+INSERT INTO `cms_system_constants` VALUES (20, '机构目录', 'directory', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (21, '机构', 'organ', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (22, '单位', 'unit', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (23, '部门', 'dept', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (24, '个体经营者', 'person', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (25, '学校', 'school', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (26, '社团', 'group', 'cms_system_organ', 'ORGAN_TYPE');
+INSERT INTO `cms_system_constants` VALUES (27, '领导', 'leader', 'cms_system_organ', 'ORGAN_TYPE');
 
 -- ----------------------------
--- Table structure for sys_label
+-- Table structure for cms_system_label
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_label`;
-CREATE TABLE `sys_label`  (
+DROP TABLE IF EXISTS `cms_system_label`;
+CREATE TABLE `cms_system_label`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `create_date` datetime(0) NULL DEFAULT NULL,
   `create_organ_id` bigint(20) NULL DEFAULT NULL,
@@ -7728,27 +7728,27 @@ CREATE TABLE `sys_label`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_label
+-- Records of cms_system_label
 -- ----------------------------
-INSERT INTO `sys_label` VALUES (1, '2018-11-28 18:07:43', 1, 1, 'Normal', '2018-11-28 18:07:49', 1, 0, '[{\"fieldname\":\"param\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"}]', 'demoLabel', '<@demoLabel></@demoLabel>', 1, 2);
-INSERT INTO `sys_label` VALUES (2, '2018-11-28 18:50:46', 2, 1, 'Normal', '2018-11-28 18:50:46', 1, 1, '[]', '演示标签', '演示标签', 0, 0);
-INSERT INTO `sys_label` VALUES (10, '2018-11-29 12:47:45', 2, 1, 'Normal', '2018-11-29 12:47:45', 1, 1, '[]', '测试目录', '测试目录', 0, 0);
-INSERT INTO `sys_label` VALUES (11, '2018-11-29 18:11:41', 2, 1, 'Normal', '2018-11-29 18:11:41', 1, 1, '[]', '信息公开', '信息公开', 0, 0);
-INSERT INTO `sys_label` VALUES (12, '2018-11-29 18:15:24', 2, 1, 'Normal', '2018-11-29 18:15:24', 1, 1, '[]', '内容协同', '内容协同', 0, 0);
-INSERT INTO `sys_label` VALUES (19, '2018-11-30 10:55:25', 2, 1, 'Removed', '2018-12-07 16:12:17', 1, 0, '[{\"fieldname\":\"num\",\"datatype\":\"integer\",\"allowval\":\"integer\",\"defaultval\":\"\",\"description\":\"\"}]', 'fm_test', '<@fm_test></@fm_test>', 1, 2);
-INSERT INTO `sys_label` VALUES (22, '2018-12-06 15:09:10', 2, 1, 'Normal', '2018-12-06 15:09:10', 1, 1, '[]', '数据发布', '', 0, 0);
-INSERT INTO `sys_label` VALUES (23, '2018-12-06 15:09:29', 2, 1, 'Normal', '2018-12-06 15:09:29', 1, 0, '[{\"fieldname\":\"type\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"},{\"fieldname\":\"improtName\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"},{\"fieldname\":\"name\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"},{\"fieldname\":\"seriesCount\",\"datatype\":\"integer\",\"allowval\":\"integer\",\"defaultval\":\"\",\"description\":\"\"}]', 'dataItemChart', '', 2, 22);
-INSERT INTO `sys_label` VALUES (24, '2018-12-06 15:09:54', 2, 1, 'Normal', '2018-12-06 15:09:54', 1, 0, '[{\"fieldname\":\"type\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"}]', 'dataItemList', '', 2, 22);
-INSERT INTO `sys_label` VALUES (25, '2018-12-07 14:18:58', 2, 1, 'Normal', '2018-12-07 14:18:58', 1, 0, '[{\"fieldname\":\"desc\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"},{\"fieldname\":\"num\",\"datatype\":\"integer\",\"allowval\":\"integer\",\"defaultval\":\"\",\"description\":\"\"}]', 'demo', '{mine:demo}{/mine:demo}', 2, 10);
-INSERT INTO `sys_label` VALUES (26, '2018-12-07 16:17:22', 2, 1, 'Normal', '2018-12-07 16:17:22', 1, 0, '[{\"fieldname\":\"param\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"}]', 'showChance', '', 1, 2);
-INSERT INTO `sys_label` VALUES (27, '2018-12-10 11:50:38', 2, 1, 'Normal', '2018-12-10 11:50:38', 1, 1, '[]', '公共标签', '', 0, 0);
-INSERT INTO `sys_label` VALUES (28, '2018-12-10 11:51:29', 2, 1, 'Normal', '2018-12-10 11:51:29', 1, 0, '[{\"fieldname\":\"id\",\"datatype\":\"integer\",\"allowval\":\"integer\",\"defaultval\":\"\",\"description\":\"\"}]', 'includeX', '', 1, 27);
+INSERT INTO `cms_system_label` VALUES (1, '2018-11-28 18:07:43', 1, 1, 'Normal', '2018-11-28 18:07:49', 1, 0, '[{\"fieldname\":\"param\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"}]', 'demoLabel', '<@demoLabel></@demoLabel>', 1, 2);
+INSERT INTO `cms_system_label` VALUES (2, '2018-11-28 18:50:46', 2, 1, 'Normal', '2018-11-28 18:50:46', 1, 1, '[]', '演示标签', '演示标签', 0, 0);
+INSERT INTO `cms_system_label` VALUES (10, '2018-11-29 12:47:45', 2, 1, 'Normal', '2018-11-29 12:47:45', 1, 1, '[]', '测试目录', '测试目录', 0, 0);
+INSERT INTO `cms_system_label` VALUES (11, '2018-11-29 18:11:41', 2, 1, 'Normal', '2018-11-29 18:11:41', 1, 1, '[]', '信息公开', '信息公开', 0, 0);
+INSERT INTO `cms_system_label` VALUES (12, '2018-11-29 18:15:24', 2, 1, 'Normal', '2018-11-29 18:15:24', 1, 1, '[]', '内容协同', '内容协同', 0, 0);
+INSERT INTO `cms_system_label` VALUES (19, '2018-11-30 10:55:25', 2, 1, 'Removed', '2018-12-07 16:12:17', 1, 0, '[{\"fieldname\":\"num\",\"datatype\":\"integer\",\"allowval\":\"integer\",\"defaultval\":\"\",\"description\":\"\"}]', 'fm_test', '<@fm_test></@fm_test>', 1, 2);
+INSERT INTO `cms_system_label` VALUES (22, '2018-12-06 15:09:10', 2, 1, 'Normal', '2018-12-06 15:09:10', 1, 1, '[]', '数据发布', '', 0, 0);
+INSERT INTO `cms_system_label` VALUES (23, '2018-12-06 15:09:29', 2, 1, 'Normal', '2018-12-06 15:09:29', 1, 0, '[{\"fieldname\":\"type\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"},{\"fieldname\":\"improtName\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"},{\"fieldname\":\"name\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"},{\"fieldname\":\"seriesCount\",\"datatype\":\"integer\",\"allowval\":\"integer\",\"defaultval\":\"\",\"description\":\"\"}]', 'dataItemChart', '', 2, 22);
+INSERT INTO `cms_system_label` VALUES (24, '2018-12-06 15:09:54', 2, 1, 'Normal', '2018-12-06 15:09:54', 1, 0, '[{\"fieldname\":\"type\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"}]', 'dataItemList', '', 2, 22);
+INSERT INTO `cms_system_label` VALUES (25, '2018-12-07 14:18:58', 2, 1, 'Normal', '2018-12-07 14:18:58', 1, 0, '[{\"fieldname\":\"desc\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"},{\"fieldname\":\"num\",\"datatype\":\"integer\",\"allowval\":\"integer\",\"defaultval\":\"\",\"description\":\"\"}]', 'demo', '{mine:demo}{/mine:demo}', 2, 10);
+INSERT INTO `cms_system_label` VALUES (26, '2018-12-07 16:17:22', 2, 1, 'Normal', '2018-12-07 16:17:22', 1, 0, '[{\"fieldname\":\"param\",\"datatype\":\"string\",\"allowval\":\"string\",\"defaultval\":\"\",\"description\":\"\"}]', 'showChance', '', 1, 2);
+INSERT INTO `cms_system_label` VALUES (27, '2018-12-10 11:50:38', 2, 1, 'Normal', '2018-12-10 11:50:38', 1, 1, '[]', '公共标签', '', 0, 0);
+INSERT INTO `cms_system_label` VALUES (28, '2018-12-10 11:51:29', 2, 1, 'Normal', '2018-12-10 11:51:29', 1, 0, '[{\"fieldname\":\"id\",\"datatype\":\"integer\",\"allowval\":\"integer\",\"defaultval\":\"\",\"description\":\"\"}]', 'includeX', '', 1, 27);
 
 -- ----------------------------
--- Table structure for sys_menu
+-- Table structure for cms_system_menu
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_menu`;
-CREATE TABLE `sys_menu`  (
+DROP TABLE IF EXISTS `cms_system_menu`;
+CREATE TABLE `cms_system_menu`  (
   `RID` int(12) NOT NULL AUTO_INCREMENT,
   `URL` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `PID` int(12) NULL DEFAULT NULL,
@@ -7766,69 +7766,69 @@ CREATE TABLE `sys_menu`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 119 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_menu
+-- Records of cms_system_menu
 -- ----------------------------
-INSERT INTO `sys_menu` VALUES (24, '', 0, 'PM01', '系统管理', 9, 'CATAGORY', '2018-08-06 22:13:15', '2018-08-09 22:49:59', 1, 'Normal', 1, 'icon-xitongguanli');
-INSERT INTO `sys_menu` VALUES (25, '/menu/menu_list', 82, 'CH01', '菜单管理', 11, 'URL', '2018-08-06 22:13:59', '2018-11-27 11:31:25', 1, 'Normal', 1, 'icon-caidanguanli');
-INSERT INTO `sys_menu` VALUES (27, '/role/index', 82, 'CH03', '角色管理', 13, 'URL', '2018-08-06 22:15:16', '2018-09-19 21:25:50', 1, 'Normal', 1, 'icon-role');
-INSERT INTO `sys_menu` VALUES (28, '/user/index', 82, 'CH04', '用户管理', 14, 'URL', '2018-08-06 22:15:32', '2018-11-23 09:52:21', 1, 'Normal', 1, 'icon-yonghuguanli');
-INSERT INTO `sys_menu` VALUES (29, '/sysLog/mgrLogPage', 83, 'CH05', '操作日志', 15, 'URL', '2018-08-06 22:16:10', '2018-11-26 16:08:34', 1, 'Normal', 1, 'icon-caozuorizhi-copy');
-INSERT INTO `sys_menu` VALUES (30, '/sysLog/loginLogPage', 83, 'CH06', '登陆日志', 16, 'URL', '2018-08-06 22:16:32', '2018-11-26 16:07:17', 1, 'Normal', 1, 'icon-denglurizhi');
-INSERT INTO `sys_menu` VALUES (31, '\\css\\icon\\demo_fontclass.html', 82, 'CH07', '图标管理', 17, 'URL', '2018-08-06 22:17:35', '2018-11-23 08:53:42', 1, 'Normal', 1, 'icon-msnui-rightmini');
-INSERT INTO `sys_menu` VALUES (32, '/constant/constant', 82, 'CH08', '常量管理', 18, 'URL', '2018-08-06 22:18:40', '2018-08-09 23:09:59', 1, 'Normal', 1, 'icon-shuju');
-INSERT INTO `sys_menu` VALUES (34, '', 0, 'PM02', '站点管理', 3, 'CATAGORY', '2018-08-06 22:34:00', '2018-11-26 17:36:21', 1, 'Normal', 1, 'icon-xinxi');
-INSERT INTO `sys_menu` VALUES (35, '', 0, 'CH10101', '微信管理', 7, 'CATAGORY', '2018-08-06 22:34:50', '2018-08-09 23:01:05', 1, 'Normal', 1, 'icon-weixin');
-INSERT INTO `sys_menu` VALUES (36, '', 0, 'NRGL', '内容管理', 4, 'CATAGORY', '2018-08-06 22:38:48', '2018-11-26 16:55:23', 1, 'Normal', 1, 'icon-lanmujineirong');
-INSERT INTO `sys_menu` VALUES (37, '', 0, 'RCRW', '日常任务', 1, 'CATAGORY', '2018-08-06 22:39:11', '2018-12-03 17:11:13', 1, 'Normal', 1, 'icon-richangrenwu');
-INSERT INTO `sys_menu` VALUES (38, '', 0, 'DDGL', '调度管理', 6, 'CATAGORY', '2018-08-06 22:40:04', '2018-11-26 17:01:56', 1, 'Normal', 1, 'icon-tiaoduguanli');
-INSERT INTO `sys_menu` VALUES (39, '', 0, 'SJCJ', '数据采集', 5, 'CATAGORY', '2018-08-06 22:40:38', '2018-08-09 23:01:40', 1, 'Normal', 1, 'icon-shujucaiji');
-INSERT INTO `sys_menu` VALUES (40, '', 0, 'ZHFW', '综合服务', 2, 'CATAGORY', '2018-08-06 22:41:26', '2018-11-26 17:14:22', 1, 'Normal', 1, 'icon-zonghe');
-INSERT INTO `sys_menu` VALUES (41, '', 0, 'XTJC', '系统监测', 8, 'CATAGORY', '2018-08-07 23:06:16', '2018-08-09 23:00:52', 1, 'Normal', 1, 'icon-neirongjiance');
-INSERT INTO `sys_menu` VALUES (49, '', 41, 'JCTJ', '监测统计', 2, 'INDICATOR', '2018-08-07 23:15:24', '2018-08-15 22:46:31', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (50, '/pages/system/log/index.html', 49, 'TABLE', '系统日志', 1, 'URL', '2018-08-07 23:16:00', '2018-12-04 14:50:07', 1, 'Normal', 1, 'icon-plus-datasearch');
-INSERT INTO `sys_menu` VALUES (51, '/test/chart/release_data', 49, 'CHART', '统计分析', 2, 'URL', '2018-08-07 23:17:01', '2018-12-04 14:51:39', 1, 'Normal', 1, 'icon-kaohebaobiao');
-INSERT INTO `sys_menu` VALUES (67, '/organ/index', 24, 'CH09', '组织机构', 19, 'URL', '2018-08-08 22:50:05', '2018-08-20 21:09:13', 1, 'Normal', 1, 'icon-zzjg');
-INSERT INTO `sys_menu` VALUES (69, '', 37, 'MY_TASK', '我的工作台', 1, 'INDICATOR', '2018-08-13 21:24:13', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (70, '', 69, 'DAIBAN', '我的待办', 1, 'URL', '2018-08-13 21:24:55', '2018-10-22 16:57:30', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (71, '', 69, 'MESSAGE', '我的消息', 2, 'URL', '2018-08-13 21:25:37', '2018-09-21 22:57:50', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (72, '', 69, 'EMAIL', '我的邮件', 3, 'URL', '2018-08-13 21:26:21', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (73, '', 69, 'TOOLS', '常用工具', 4, 'URL', '2018-08-13 21:27:08', '2018-12-27 14:07:56', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (75, '', 34, 'ACCESS', '演示信息', 9, 'INDICATOR', '2018-08-16 21:16:25', '2018-12-17 14:15:43', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (78, '', 38, 'TASKZP', '任务指派', 1, 'URL', '2018-08-16 21:17:40', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (79, '/', 35, 'SUCAI', '素材管理', 1, 'INDICATOR', '2018-08-16 21:18:06', '2018-08-20 22:18:24', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (82, '', 24, 'ADMIN', '组织管理', 1, 'INDICATOR', '2018-08-17 23:30:18', '2018-10-22 09:18:55', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (83, '', 24, 'VIEW_USER', '用户数据', 2, 'INDICATOR', '2018-08-17 23:31:51', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (84, '', 40, 'MYSERVICE', '我的服务', 1, 'INDICATOR', '2018-08-17 23:37:12', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (85, '', 84, 'KAITONG', '已开通', 1, 'URL', '2018-08-17 23:37:35', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (86, '', 84, 'WEIKAITONG', '未开通', 2, 'URL', '2018-08-17 23:37:58', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (87, '', 40, 'ALL_SERVICE', '全部服务', 2, 'INDICATOR', '2018-08-17 23:38:34', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (88, '', 87, 'SYSTEM', '系统服务', 1, 'URL', '2018-08-17 23:39:01', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (89, '', 87, 'WEBSERVICE', '外部服务', 2, 'URL', '2018-08-17 23:39:22', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (90, '/test/chart/release_data', 75, 'PERSON', '图表演示', 1, 'URL', '2018-08-17 23:40:06', '2018-12-04 14:51:31', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (91, '/info/menuTpl', 75, 'ORGAN', '菜单模板', 2, 'URL', '2018-08-17 23:40:31', '2018-10-23 15:09:42', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (94, '', 79, 'PIC_TEXT', '图文素材', 1, 'URL', '2018-08-20 22:15:52', '2018-08-22 20:06:50', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (95, '', 79, 'TEXT', '文本素材', 1, 'URL', '2018-08-20 22:16:13', '2018-08-22 20:03:36', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (100, '/dataPublish/dataItem/index', 39, 'SJXGL', '数据项', 1, 'URL', '2018-10-31 15:58:32', '2018-10-31 16:08:02', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (101, '/dataPublish/dataImport/index', 39, 'SJXSJDR', '数据导入', 2, 'URL', '2018-10-31 15:59:03', '2018-10-31 15:59:58', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (102, '/pages/site/site_conf.html', 115, 'ZDXX', '站点信息', 1, 'URL', '2018-11-15 17:34:43', '2018-12-17 14:29:15', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (103, '/tpl/index', 115, 'mbgl', '模板管理', 6, 'URL', '2018-11-15 17:44:14', '2018-12-17 14:17:39', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (104, '/cache/index', 83, 'cacheKey', '缓存管理', 3, 'URL', '2018-11-27 11:29:13', '2018-11-27 19:49:10', 1, 'Normal', 1, 'icon-lanmujineirong');
-INSERT INTO `sys_menu` VALUES (106, '/dataDict/datadict_list', 24, 'SJZD', '数据字典', 5, 'URL', '2018-11-28 17:21:45', '2018-12-05 11:21:29', 1, 'Normal', 1, 'word icon-word');
-INSERT INTO `sys_menu` VALUES (107, '/label/index', 115, 'LABEL_GL', '模板标签', 5, 'URL', '2018-11-28 18:10:57', '2018-12-17 14:17:28', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (108, '', 36, '3601', '综合信息', 1, 'URL', '2018-12-04 14:53:38', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (109, '', 38, '3801', '执行计划', 2, 'URL', '2018-12-04 14:56:52', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (110, '', 38, '3802', '设计计划', 3, 'URL', '2018-12-04 14:57:26', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (111, '', 38, '3803', '计划模板', 4, 'URL', '2018-12-04 14:57:47', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (112, '', 115, 'nrmx', '内容模型', 2, 'URL', '2018-12-17 14:08:56', '2018-12-17 14:14:44', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (113, '', 115, 'COLUMN', '栏目管理', 4, 'URL', '2018-12-17 14:15:28', '2018-12-17 14:17:50', 1, 'Normal', 1, '');
-INSERT INTO `sys_menu` VALUES (114, '', 115, 'LMLX', '栏目类型', 3, 'URL', '2018-12-17 14:16:19', NULL, 1, 'Normal', NULL, '');
-INSERT INTO `sys_menu` VALUES (115, '', 34, 'ZDPZ', '站点配置', 0, 'INDICATOR', '2018-12-17 14:19:38', '2018-12-17 14:22:38', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (24, '', 0, 'PM01', '系统管理', 9, 'CATAGORY', '2018-08-06 22:13:15', '2018-08-09 22:49:59', 1, 'Normal', 1, 'icon-xitongguanli');
+INSERT INTO `cms_system_menu` VALUES (25, '/menu/menu_list', 82, 'CH01', '菜单管理', 11, 'URL', '2018-08-06 22:13:59', '2018-11-27 11:31:25', 1, 'Normal', 1, 'icon-caidanguanli');
+INSERT INTO `cms_system_menu` VALUES (27, '/role/index', 82, 'CH03', '角色管理', 13, 'URL', '2018-08-06 22:15:16', '2018-09-19 21:25:50', 1, 'Normal', 1, 'icon-role');
+INSERT INTO `cms_system_menu` VALUES (28, '/user/index', 82, 'CH04', '用户管理', 14, 'URL', '2018-08-06 22:15:32', '2018-11-23 09:52:21', 1, 'Normal', 1, 'icon-yonghuguanli');
+INSERT INTO `cms_system_menu` VALUES (29, '/sysLog/mgrLogPage', 83, 'CH05', '操作日志', 15, 'URL', '2018-08-06 22:16:10', '2018-11-26 16:08:34', 1, 'Normal', 1, 'icon-caozuorizhi-copy');
+INSERT INTO `cms_system_menu` VALUES (30, '/sysLog/loginLogPage', 83, 'CH06', '登陆日志', 16, 'URL', '2018-08-06 22:16:32', '2018-11-26 16:07:17', 1, 'Normal', 1, 'icon-denglurizhi');
+INSERT INTO `cms_system_menu` VALUES (31, '\\css\\icon\\demo_fontclass.html', 82, 'CH07', '图标管理', 17, 'URL', '2018-08-06 22:17:35', '2018-11-23 08:53:42', 1, 'Normal', 1, 'icon-msnui-rightmini');
+INSERT INTO `cms_system_menu` VALUES (32, '/constant/constant', 82, 'CH08', '常量管理', 18, 'URL', '2018-08-06 22:18:40', '2018-08-09 23:09:59', 1, 'Normal', 1, 'icon-shuju');
+INSERT INTO `cms_system_menu` VALUES (34, '', 0, 'PM02', '站点管理', 3, 'CATAGORY', '2018-08-06 22:34:00', '2018-11-26 17:36:21', 1, 'Normal', 1, 'icon-xinxi');
+INSERT INTO `cms_system_menu` VALUES (35, '', 0, 'CH10101', '微信管理', 7, 'CATAGORY', '2018-08-06 22:34:50', '2018-08-09 23:01:05', 1, 'Normal', 1, 'icon-weixin');
+INSERT INTO `cms_system_menu` VALUES (36, '', 0, 'NRGL', '内容管理', 4, 'CATAGORY', '2018-08-06 22:38:48', '2018-11-26 16:55:23', 1, 'Normal', 1, 'icon-lanmujineirong');
+INSERT INTO `cms_system_menu` VALUES (37, '', 0, 'RCRW', '日常任务', 1, 'CATAGORY', '2018-08-06 22:39:11', '2018-12-03 17:11:13', 1, 'Normal', 1, 'icon-richangrenwu');
+INSERT INTO `cms_system_menu` VALUES (38, '', 0, 'DDGL', '调度管理', 6, 'CATAGORY', '2018-08-06 22:40:04', '2018-11-26 17:01:56', 1, 'Normal', 1, 'icon-tiaoduguanli');
+INSERT INTO `cms_system_menu` VALUES (39, '', 0, 'SJCJ', '数据采集', 5, 'CATAGORY', '2018-08-06 22:40:38', '2018-08-09 23:01:40', 1, 'Normal', 1, 'icon-shujucaiji');
+INSERT INTO `cms_system_menu` VALUES (40, '', 0, 'ZHFW', '综合服务', 2, 'CATAGORY', '2018-08-06 22:41:26', '2018-11-26 17:14:22', 1, 'Normal', 1, 'icon-zonghe');
+INSERT INTO `cms_system_menu` VALUES (41, '', 0, 'XTJC', '系统监测', 8, 'CATAGORY', '2018-08-07 23:06:16', '2018-08-09 23:00:52', 1, 'Normal', 1, 'icon-neirongjiance');
+INSERT INTO `cms_system_menu` VALUES (49, '', 41, 'JCTJ', '监测统计', 2, 'INDICATOR', '2018-08-07 23:15:24', '2018-08-15 22:46:31', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (50, '/pages/system/log/index.html', 49, 'TABLE', '系统日志', 1, 'URL', '2018-08-07 23:16:00', '2018-12-04 14:50:07', 1, 'Normal', 1, 'icon-plus-datasearch');
+INSERT INTO `cms_system_menu` VALUES (51, '/test/chart/release_data', 49, 'CHART', '统计分析', 2, 'URL', '2018-08-07 23:17:01', '2018-12-04 14:51:39', 1, 'Normal', 1, 'icon-kaohebaobiao');
+INSERT INTO `cms_system_menu` VALUES (67, '/organ/index', 24, 'CH09', '组织机构', 19, 'URL', '2018-08-08 22:50:05', '2018-08-20 21:09:13', 1, 'Normal', 1, 'icon-zzjg');
+INSERT INTO `cms_system_menu` VALUES (69, '', 37, 'MY_TASK', '我的工作台', 1, 'INDICATOR', '2018-08-13 21:24:13', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (70, '', 69, 'DAIBAN', '我的待办', 1, 'URL', '2018-08-13 21:24:55', '2018-10-22 16:57:30', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (71, '', 69, 'MESSAGE', '我的消息', 2, 'URL', '2018-08-13 21:25:37', '2018-09-21 22:57:50', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (72, '', 69, 'EMAIL', '我的邮件', 3, 'URL', '2018-08-13 21:26:21', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (73, '', 69, 'TOOLS', '常用工具', 4, 'URL', '2018-08-13 21:27:08', '2018-12-27 14:07:56', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (75, '', 34, 'ACCESS', '演示信息', 9, 'INDICATOR', '2018-08-16 21:16:25', '2018-12-17 14:15:43', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (78, '', 38, 'TASKZP', '任务指派', 1, 'URL', '2018-08-16 21:17:40', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (79, '/', 35, 'SUCAI', '素材管理', 1, 'INDICATOR', '2018-08-16 21:18:06', '2018-08-20 22:18:24', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (82, '', 24, 'ADMIN', '组织管理', 1, 'INDICATOR', '2018-08-17 23:30:18', '2018-10-22 09:18:55', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (83, '', 24, 'VIEW_USER', '用户数据', 2, 'INDICATOR', '2018-08-17 23:31:51', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (84, '', 40, 'MYSERVICE', '我的服务', 1, 'INDICATOR', '2018-08-17 23:37:12', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (85, '', 84, 'KAITONG', '已开通', 1, 'URL', '2018-08-17 23:37:35', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (86, '', 84, 'WEIKAITONG', '未开通', 2, 'URL', '2018-08-17 23:37:58', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (87, '', 40, 'ALL_SERVICE', '全部服务', 2, 'INDICATOR', '2018-08-17 23:38:34', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (88, '', 87, 'SYSTEM', '系统服务', 1, 'URL', '2018-08-17 23:39:01', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (89, '', 87, 'WEBSERVICE', '外部服务', 2, 'URL', '2018-08-17 23:39:22', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (90, '/test/chart/release_data', 75, 'PERSON', '图表演示', 1, 'URL', '2018-08-17 23:40:06', '2018-12-04 14:51:31', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (91, '/info/menuTpl', 75, 'ORGAN', '菜单模板', 2, 'URL', '2018-08-17 23:40:31', '2018-10-23 15:09:42', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (94, '', 79, 'PIC_TEXT', '图文素材', 1, 'URL', '2018-08-20 22:15:52', '2018-08-22 20:06:50', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (95, '', 79, 'TEXT', '文本素材', 1, 'URL', '2018-08-20 22:16:13', '2018-08-22 20:03:36', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (100, '/dataPublish/dataItem/index', 39, 'SJXGL', '数据项', 1, 'URL', '2018-10-31 15:58:32', '2018-10-31 16:08:02', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (101, '/dataPublish/dataImport/index', 39, 'SJXSJDR', '数据导入', 2, 'URL', '2018-10-31 15:59:03', '2018-10-31 15:59:58', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (102, '/pages/site/site_conf.html', 115, 'ZDXX', '站点信息', 1, 'URL', '2018-11-15 17:34:43', '2018-12-17 14:29:15', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (103, '/tpl/index', 115, 'mbgl', '模板管理', 6, 'URL', '2018-11-15 17:44:14', '2018-12-17 14:17:39', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (104, '/cache/index', 83, 'cacheKey', '缓存管理', 3, 'URL', '2018-11-27 11:29:13', '2018-11-27 19:49:10', 1, 'Normal', 1, 'icon-lanmujineirong');
+INSERT INTO `cms_system_menu` VALUES (106, '/dataDict/datadict_list', 24, 'SJZD', '数据字典', 5, 'URL', '2018-11-28 17:21:45', '2018-12-05 11:21:29', 1, 'Normal', 1, 'word icon-word');
+INSERT INTO `cms_system_menu` VALUES (107, '/label/index', 115, 'LABEL_GL', '模板标签', 5, 'URL', '2018-11-28 18:10:57', '2018-12-17 14:17:28', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (108, '', 36, '3601', '综合信息', 1, 'URL', '2018-12-04 14:53:38', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (109, '', 38, '3801', '执行计划', 2, 'URL', '2018-12-04 14:56:52', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (110, '', 38, '3802', '设计计划', 3, 'URL', '2018-12-04 14:57:26', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (111, '', 38, '3803', '计划模板', 4, 'URL', '2018-12-04 14:57:47', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (112, '', 115, 'nrmx', '内容模型', 2, 'URL', '2018-12-17 14:08:56', '2018-12-17 14:14:44', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (113, '', 115, 'COLUMN', '栏目管理', 4, 'URL', '2018-12-17 14:15:28', '2018-12-17 14:17:50', 1, 'Normal', 1, '');
+INSERT INTO `cms_system_menu` VALUES (114, '', 115, 'LMLX', '栏目类型', 3, 'URL', '2018-12-17 14:16:19', NULL, 1, 'Normal', NULL, '');
+INSERT INTO `cms_system_menu` VALUES (115, '', 34, 'ZDPZ', '站点配置', 0, 'INDICATOR', '2018-12-17 14:19:38', '2018-12-17 14:22:38', 1, 'Normal', 1, '');
 
 -- ----------------------------
--- Table structure for sys_organ
+-- Table structure for cms_system_organ
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_organ`;
-CREATE TABLE `sys_organ`  (
+DROP TABLE IF EXISTS `cms_system_organ`;
+CREATE TABLE `cms_system_organ`  (
   `id` int(12) NOT NULL AUTO_INCREMENT,
   `organ_id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `organ_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -7851,69 +7851,69 @@ CREATE TABLE `sys_organ`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 60 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_organ
+-- Records of cms_system_organ
 -- ----------------------------
-INSERT INTO `sys_organ` VALUES (2, '100200300', '安徽省市政府', 'directory', '', '', '', '', '', 0, '2018-08-23 22:26:00', '2018-08-23 22:26:00', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (3, '100200301', '市发展改革委', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (4, '100200302', '市教体局', 'organ', '王', '安徽省合肥市政务区', '05510699698', '', '17855107850', 2, '2018-08-23 23:22:44', '2018-08-23 23:22:52', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (5, '100200303', '市民委', 'organ', '', '', '', '', '', 2, '2018-11-26 17:48:57', '2018-11-26 17:48:57', NULL, NULL, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (6, '100200304', '市民政局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (7, '100200305', '市财政局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (8, '100200306', '市国土资源局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (9, '100200307', '市交通运输局', 'organ', '', '', '', '', '', 2, '2018-12-04 17:03:26', '2018-12-04 17:03:26', NULL, NULL, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (10, '100200308', '市水利局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (11, '100200309', '市商务局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (12, '100200310', '市统计局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (13, '100200311', '市卫生计生委', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (14, '100200312', '市质监局', 'organ', '', '', '', '', '', 2, '2018-12-04 17:11:41', '2018-12-04 17:11:41', NULL, NULL, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (15, '100200313', '国家税务局合肥市税务局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (16, '100200314', '市安全监管局（安委办）', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (17, '100200315', '市直机关事务管理局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (18, '100200316', '市人防办', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (19, '100200317', '市信访局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (20, '100200318', '市公管局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (21, '100200319', '市地震局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (22, '100200320', '合肥市科技农商行', 'organ', '', '', '', '', '', 2, '2018-08-26 09:17:47', '2018-08-26 09:17:47', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (23, '100200321', '市残联', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (24, '100200322', '市招商局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (25, '100200323', '合肥经开区管委会', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (26, '100200324', '市房管局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (27, '100200325', '市公积金中心', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (28, '100200326', '市扶贫局', 'organ', '', '', '', '', '', 2, '2018-08-26 09:18:30', '2018-08-26 09:18:30', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (29, '200100100', '市属公共企事业单位', 'directory', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (30, '200100101', '市交警支队', 'unit', '', '', '', '', '', 29, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (31, '200100102', '市职工养老保险管理中心', 'unit', '', '', '', '', '', 29, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (32, '200100103', '市运管处', 'unit', '', '', '', '', '', 29, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (33, '200100104', '市政管理处', 'unit', '', '', '', '', '', 29, '2018-08-23 23:50:52', '2018-08-23 23:50:52', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (34, '300100100', '个体经营者', 'person', '', '', '', '', '', 2, '2018-08-23 23:51:18', '2018-08-23 23:51:18', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (35, '400100100', '教育单位', 'school', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (36, '500100100', '社会团体', 'group', '', '', '', '', '', 2, '2018-10-22 13:40:04', '2018-10-22 13:40:04', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (40, '900100100', '市管理办部', 'dept', '', '', '', '', '', 2, '2018-10-22 13:39:32', '2018-10-22 13:39:32', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (41, '900200100', '宿县代表委', 'unit', '', '', '', '', '', 2, '2018-08-23 23:58:54', '2018-08-23 23:58:54', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (42, '900300100', '巢湖代管办', 'unit', '', '', '', '', '', 2, '2018-10-22 13:39:50', '2018-10-22 13:39:50', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (43, '900400100', '市公交公司', 'unit', '', '', '', '', '', 2, '2018-08-24 00:01:28', '2018-08-24 00:01:28', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (44, '900500100', '市供电公司', 'unit', '', '', '', '', '', 2, '2018-09-11 22:47:44', '2018-09-11 22:47:44', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (45, '900600100', '政府领导', 'directory', '', '', '', '', '', 2, '2018-08-25 07:29:26', '2018-08-25 07:29:26', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (46, '900600101', '政府领导', 'leader', '', '', '', '', '', 45, '2018-08-25 07:37:38', '2018-08-25 07:37:38', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (47, '900600102', '书记办', 'leader', '', '', '', '', '', 45, '2018-08-25 07:38:38', '2018-08-25 07:38:38', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (48, '900600103', '秘书办', 'leader', '王建', '合肥市政务新区', '05515690866', '秘书办协助领导完成日常事务', '17855107850', 45, '2018-08-26 08:39:53', '2018-08-26 08:39:53', 1, 1, 1, 'Normal', 'http://hf.gov.cn/', '/images/leader.png');
-INSERT INTO `sys_organ` VALUES (49, '400100101', '安徽省教育局', 'organ', '', '', '', '', '', 35, '2018-10-22 13:42:20', '2018-10-22 13:42:20', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (50, '400100102', '安徽中医药大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:40:51', '2018-08-25 07:40:51', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (51, '400100103', '中国科学技术大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:41:04', '2018-08-25 07:41:04', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (52, '400100104', '合肥工业大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:41:31', '2018-08-25 07:41:31', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (53, '400100105', '安徽大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:43:02', '2018-08-25 07:43:02', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (54, '400100106', '安徽农业大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:43:39', '2018-08-25 07:43:39', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (55, '400100107', '合肥职业技术学校', 'school', '', '', '', '', '', 35, '2018-08-29 19:43:17', '2018-08-29 19:43:17', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (56, '400100108', '安徽建筑大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:44:21', '2018-08-25 07:44:21', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (57, '400100109', '安徽工业大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:45:15', '2018-08-25 07:45:15', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (58, '999999', '其他机构', 'directory', '', '', '', '', '', NULL, '2018-11-23 08:41:00', '2018-11-23 08:41:00', 1, 1, 1, 'Normal', '', '');
-INSERT INTO `sys_organ` VALUES (59, '99999901', '测试单位', 'organ', '', '', '', '', '', 58, '2018-11-23 08:43:38', '2018-11-23 08:43:38', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (2, '100200300', '安徽省市政府', 'directory', '', '', '', '', '', 0, '2018-08-23 22:26:00', '2018-08-23 22:26:00', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (3, '100200301', '市发展改革委', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (4, '100200302', '市教体局', 'organ', '王', '安徽省合肥市政务区', '05510699698', '', '17855107850', 2, '2018-08-23 23:22:44', '2018-08-23 23:22:52', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (5, '100200303', '市民委', 'organ', '', '', '', '', '', 2, '2018-11-26 17:48:57', '2018-11-26 17:48:57', NULL, NULL, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (6, '100200304', '市民政局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (7, '100200305', '市财政局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (8, '100200306', '市国土资源局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (9, '100200307', '市交通运输局', 'organ', '', '', '', '', '', 2, '2018-12-04 17:03:26', '2018-12-04 17:03:26', NULL, NULL, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (10, '100200308', '市水利局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (11, '100200309', '市商务局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (12, '100200310', '市统计局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (13, '100200311', '市卫生计生委', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (14, '100200312', '市质监局', 'organ', '', '', '', '', '', 2, '2018-12-04 17:11:41', '2018-12-04 17:11:41', NULL, NULL, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (15, '100200313', '国家税务局合肥市税务局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (16, '100200314', '市安全监管局（安委办）', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (17, '100200315', '市直机关事务管理局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (18, '100200316', '市人防办', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (19, '100200317', '市信访局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (20, '100200318', '市公管局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (21, '100200319', '市地震局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (22, '100200320', '合肥市科技农商行', 'organ', '', '', '', '', '', 2, '2018-08-26 09:17:47', '2018-08-26 09:17:47', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (23, '100200321', '市残联', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (24, '100200322', '市招商局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (25, '100200323', '合肥经开区管委会', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (26, '100200324', '市房管局', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (27, '100200325', '市公积金中心', 'organ', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (28, '100200326', '市扶贫局', 'organ', '', '', '', '', '', 2, '2018-08-26 09:18:30', '2018-08-26 09:18:30', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (29, '200100100', '市属公共企事业单位', 'directory', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (30, '200100101', '市交警支队', 'unit', '', '', '', '', '', 29, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (31, '200100102', '市职工养老保险管理中心', 'unit', '', '', '', '', '', 29, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (32, '200100103', '市运管处', 'unit', '', '', '', '', '', 29, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (33, '200100104', '市政管理处', 'unit', '', '', '', '', '', 29, '2018-08-23 23:50:52', '2018-08-23 23:50:52', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (34, '300100100', '个体经营者', 'person', '', '', '', '', '', 2, '2018-08-23 23:51:18', '2018-08-23 23:51:18', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (35, '400100100', '教育单位', 'school', '', '', '', '', '', 2, NULL, NULL, 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (36, '500100100', '社会团体', 'group', '', '', '', '', '', 2, '2018-10-22 13:40:04', '2018-10-22 13:40:04', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (40, '900100100', '市管理办部', 'dept', '', '', '', '', '', 2, '2018-10-22 13:39:32', '2018-10-22 13:39:32', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (41, '900200100', '宿县代表委', 'unit', '', '', '', '', '', 2, '2018-08-23 23:58:54', '2018-08-23 23:58:54', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (42, '900300100', '巢湖代管办', 'unit', '', '', '', '', '', 2, '2018-10-22 13:39:50', '2018-10-22 13:39:50', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (43, '900400100', '市公交公司', 'unit', '', '', '', '', '', 2, '2018-08-24 00:01:28', '2018-08-24 00:01:28', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (44, '900500100', '市供电公司', 'unit', '', '', '', '', '', 2, '2018-09-11 22:47:44', '2018-09-11 22:47:44', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (45, '900600100', '政府领导', 'directory', '', '', '', '', '', 2, '2018-08-25 07:29:26', '2018-08-25 07:29:26', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (46, '900600101', '政府领导', 'leader', '', '', '', '', '', 45, '2018-08-25 07:37:38', '2018-08-25 07:37:38', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (47, '900600102', '书记办', 'leader', '', '', '', '', '', 45, '2018-08-25 07:38:38', '2018-08-25 07:38:38', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (48, '900600103', '秘书办', 'leader', '王建', '合肥市政务新区', '05515690866', '秘书办协助领导完成日常事务', '17855107850', 45, '2018-08-26 08:39:53', '2018-08-26 08:39:53', 1, 1, 1, 'Normal', 'http://hf.gov.cn/', '/images/leader.png');
+INSERT INTO `cms_system_organ` VALUES (49, '400100101', '安徽省教育局', 'organ', '', '', '', '', '', 35, '2018-10-22 13:42:20', '2018-10-22 13:42:20', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (50, '400100102', '安徽中医药大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:40:51', '2018-08-25 07:40:51', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (51, '400100103', '中国科学技术大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:41:04', '2018-08-25 07:41:04', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (52, '400100104', '合肥工业大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:41:31', '2018-08-25 07:41:31', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (53, '400100105', '安徽大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:43:02', '2018-08-25 07:43:02', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (54, '400100106', '安徽农业大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:43:39', '2018-08-25 07:43:39', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (55, '400100107', '合肥职业技术学校', 'school', '', '', '', '', '', 35, '2018-08-29 19:43:17', '2018-08-29 19:43:17', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (56, '400100108', '安徽建筑大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:44:21', '2018-08-25 07:44:21', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (57, '400100109', '安徽工业大学', 'school', '', '', '', '', '', 35, '2018-08-25 07:45:15', '2018-08-25 07:45:15', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (58, '999999', '其他机构', 'directory', '', '', '', '', '', NULL, '2018-11-23 08:41:00', '2018-11-23 08:41:00', 1, 1, 1, 'Normal', '', '');
+INSERT INTO `cms_system_organ` VALUES (59, '99999901', '测试单位', 'organ', '', '', '', '', '', 58, '2018-11-23 08:43:38', '2018-11-23 08:43:38', 1, 1, 1, 'Normal', '', '');
 
 -- ----------------------------
--- Table structure for sys_role_info
+-- Table structure for cms_system_roleInfo
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_role_info`;
-CREATE TABLE `sys_role_info`  (
+DROP TABLE IF EXISTS `cms_system_roleInfo`;
+CREATE TABLE `cms_system_roleInfo`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `create_date` datetime(0) NULL DEFAULT NULL,
   `create_organ_id` bigint(20) NULL DEFAULT NULL,
@@ -7928,22 +7928,22 @@ CREATE TABLE `sys_role_info`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_role_info
+-- Records of cms_system_roleInfo
 -- ----------------------------
-INSERT INTO `sys_role_info` VALUES (22, '2018-09-18 23:28:03', 36, NULL, 'Removed', '2018-11-23 08:34:52', NULL, 'tzadmin', '团管理员', '团管理员');
-INSERT INTO `sys_role_info` VALUES (23, '2018-09-18 23:28:19', 36, NULL, 'Removed', '2018-09-18 23:34:51', NULL, '11211221', '121212', '1212');
-INSERT INTO `sys_role_info` VALUES (24, '2018-09-18 23:30:35', 2, NULL, 'Normal', '2018-12-27 11:32:08', 1, 'sysadmin', '超级管理员拥有所有功能权限', '超级管理员');
-INSERT INTO `sys_role_info` VALUES (25, '2018-09-18 23:42:41', 36, NULL, 'Removed', '2018-11-23 08:34:52', NULL, 'user01', '团员张姗姗', 'zhangss');
-INSERT INTO `sys_role_info` VALUES (26, '2018-09-21 22:55:41', 36, NULL, 'Removed', '2018-11-23 08:34:52', NULL, 'user02', '怎么了', 'wangsb');
-INSERT INTO `sys_role_info` VALUES (27, '2018-09-21 23:02:21', 8, NULL, 'Normal', '2018-11-23 12:09:38', 2, 'admin', '', '管理员');
-INSERT INTO `sys_role_info` VALUES (28, '2018-11-23 09:52:44', 10, NULL, 'Removed', '2018-11-23 09:53:10', NULL, '2121212121', '2121', '21');
-INSERT INTO `sys_role_info` VALUES (29, '2018-11-23 15:33:28', 3, 1, 'Normal', '2018-11-27 08:10:37', 1, 'sfgw', '', '发改委');
+INSERT INTO `cms_system_roleInfo` VALUES (22, '2018-09-18 23:28:03', 36, NULL, 'Removed', '2018-11-23 08:34:52', NULL, 'tzadmin', '团管理员', '团管理员');
+INSERT INTO `cms_system_roleInfo` VALUES (23, '2018-09-18 23:28:19', 36, NULL, 'Removed', '2018-09-18 23:34:51', NULL, '11211221', '121212', '1212');
+INSERT INTO `cms_system_roleInfo` VALUES (24, '2018-09-18 23:30:35', 2, NULL, 'Normal', '2018-12-27 11:32:08', 1, 'sysadmin', '超级管理员拥有所有功能权限', '超级管理员');
+INSERT INTO `cms_system_roleInfo` VALUES (25, '2018-09-18 23:42:41', 36, NULL, 'Removed', '2018-11-23 08:34:52', NULL, 'user01', '团员张姗姗', 'zhangss');
+INSERT INTO `cms_system_roleInfo` VALUES (26, '2018-09-21 22:55:41', 36, NULL, 'Removed', '2018-11-23 08:34:52', NULL, 'user02', '怎么了', 'wangsb');
+INSERT INTO `cms_system_roleInfo` VALUES (27, '2018-09-21 23:02:21', 8, NULL, 'Normal', '2018-11-23 12:09:38', 2, 'admin', '', '管理员');
+INSERT INTO `cms_system_roleInfo` VALUES (28, '2018-11-23 09:52:44', 10, NULL, 'Removed', '2018-11-23 09:53:10', NULL, '2121212121', '2121', '21');
+INSERT INTO `cms_system_roleInfo` VALUES (29, '2018-11-23 15:33:28', 3, 1, 'Normal', '2018-11-27 08:10:37', 1, 'sfgw', '', '发改委');
 
 -- ----------------------------
--- Table structure for sys_user
+-- Table structure for cms_system_user
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_user`;
-CREATE TABLE `sys_user`  (
+DROP TABLE IF EXISTS `cms_system_user`;
+CREATE TABLE `cms_system_user`  (
   `RID` int(12) NOT NULL AUTO_INCREMENT,
   `USERID` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `USERNAME` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -7970,10 +7970,10 @@ CREATE TABLE `sys_user`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sys_user
+-- Records of cms_system_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, 'wangshibao', '超级管理员', '33699b97b7605c32a2a8bd6f72c0f3cc', 'Normal', '2018-08-15 21:01:15', '2018-12-27 11:34:44', 2, 1, 'Normal', 1, '1184402050@qq.com', 'Male', '拓基广场', '17855107850', 1, 2, '17855107850', '开发', 24, NULL, '123');
-INSERT INTO `sys_user` VALUES (2, 'aaaaaa', 'sysadmin', '33699b97b7605c32a2a8bd6f72c0f3cc', 'Normal', '2018-11-23 10:08:42', '2018-11-23 15:33:45', 2, 1, 'Normal', 1, '', 'FeMale', '', '', 1, 3, '', '', 29, NULL, '123');
-INSERT INTO `sys_user` VALUES (3, 'testadmin', '测试账号', 'a6d1ea6592029a96454cf28d6512020d', 'Locked', '2018-11-23 14:02:49', '2018-11-23 14:02:49', 3, 2, 'Normal', 2, '', 'Male', '', '', 2, 2, '', '', 12, NULL, '111');
+INSERT INTO `cms_system_user` VALUES (1, 'wangshibao', '超级管理员', '33699b97b7605c32a2a8bd6f72c0f3cc', 'Normal', '2018-08-15 21:01:15', '2018-12-27 11:34:44', 2, 1, 'Normal', 1, '1184402050@qq.com', 'Male', '拓基广场', '17855107850', 1, 2, '17855107850', '开发', 24, NULL, '123');
+INSERT INTO `cms_system_user` VALUES (2, 'aaaaaa', 'sysadmin', '33699b97b7605c32a2a8bd6f72c0f3cc', 'Normal', '2018-11-23 10:08:42', '2018-11-23 15:33:45', 2, 1, 'Normal', 1, '', 'FeMale', '', '', 1, 3, '', '', 29, NULL, '123');
+INSERT INTO `cms_system_user` VALUES (3, 'testadmin', '测试账号', 'a6d1ea6592029a96454cf28d6512020d', 'Locked', '2018-11-23 14:02:49', '2018-11-23 14:02:49', 3, 2, 'Normal', 2, '', 'Male', '', '', 2, 2, '', '', 12, NULL, '111');
 
 SET FOREIGN_KEY_CHECKS = 1;

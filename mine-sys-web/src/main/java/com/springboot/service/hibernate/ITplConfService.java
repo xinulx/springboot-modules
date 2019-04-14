@@ -1,6 +1,6 @@
 package com.springboot.service.hibernate;
 
-import com.springboot.entity.business.ParamDto;
+import com.springboot.entity.hibernate.ParamDto;
 import com.springboot.entity.business.TemplateConfEO;
 import com.springboot.entity.hibernate.Pagination;
 import com.springboot.service.common.IBaseService;

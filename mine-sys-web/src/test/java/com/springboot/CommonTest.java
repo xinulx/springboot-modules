@@ -102,4 +102,11 @@ public class CommonTest {
     public static int get_lcm(int a, int b) {
         return a * b / get(a, b);
     }
+
+    @Test
+    public void test(){
+        Double a= 1.2;
+        Double b = 2.0;
+        System.out.println(a+b);
+    }
 }

@@ -31,7 +31,7 @@ public class MyFreeMarkerConfigurer extends FreeMarkerConfigurer {
         }
         List<Map<String, Object>> eos = util.getJdbcTemplate().queryForList(
                 "select id as labelId,label_name as labelName " +
-                        "from sys_label where record_status = 'Normal' and label_type = '1'");
+                        "from cms_system_label where record_status = 'Normal' and label_type = '1'");
         if (eos == null || eos.size() == 0) {
             log.error("注入标签失败，无法获取标签数据！");
         }

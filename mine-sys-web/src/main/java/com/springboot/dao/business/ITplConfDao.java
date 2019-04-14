@@ -2,7 +2,7 @@ package com.springboot.dao.business;
 
 
 import com.springboot.dao.hibernate.IBaseDao;
-import com.springboot.entity.business.ParamDto;
+import com.springboot.entity.hibernate.ParamDto;
 import com.springboot.entity.business.TemplateConfEO;
 import com.springboot.entity.hibernate.Pagination;
 

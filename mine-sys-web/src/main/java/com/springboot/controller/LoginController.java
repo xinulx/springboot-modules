@@ -116,7 +116,7 @@ public class LoginController {
 
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
     @ResponseBody
-    @LogParams(value=LoginController.class,type="login",method="userLogin",desc="用户登陆")
+    @LogParams(value = LoginController.class, type = "login", method = "userLogin", desc = "用户登陆")
     public Object userLogin(HttpServletRequest request, String username, String password, String validCode) {
         logger.info(username + " " + password + " " + validCode);
         Object code = request.getSession().getAttribute("/login/getGhCode");
@@ -140,22 +140,33 @@ public class LoginController {
         eo.setBrowser(BrowserUtils.checkBrowse(request) + "-" + BrowserUtils.getBrowserType(request).name());
         try {
             subject.login(token);
-            // 用户认证成功,获取当前用户
-            userEO = ShiroUtil.getCurrentUser();
-            initThreadLocal(userEO,request);
             eo.setLoginStatus(CmsLoginHistoryEO.LoginStatus.Success.name());
             eo.setDescription("登录成功");
-            eo.setUid(ThreadUtil.getString(ThreadUtil.LocalParamsKey.UserName));
-            eo.setCreateUser(ThreadUtil.getString(ThreadUtil.LocalParamsKey.PersonName));
-            eo.setOrganId(ThreadUtil.getLong(ThreadUtil.LocalParamsKey.OrganId));
-            eo.setOrganName(ThreadUtil.getString(ThreadUtil.LocalParamsKey.OrganName));
         } catch (Exception e) {
-            // 用户认证失败,删除当前用户
-            ShiroUtil.removeCurrentUser();
             eo.setLoginStatus(CmsLoginHistoryEO.LoginStatus.Failure.name());
-            eo.setDescription("登录失败");
+            eo.setDescription(e.getMessage());
             return ResponseData.fail(e.getMessage(), "登陆失败");
-        }finally {
+        } finally {
+            if (CmsLoginHistoryEO.LoginStatus.Success.name().equals(eo.getLoginStatus())) {
+                // 用户认证成功,获取当前用户
+                userEO = ShiroUtil.getCurrentUser();
+                initThreadLocal(userEO, request);
+                eo.setUid(ThreadUtil.getString(ThreadUtil.LocalParamsKey.UserName));
+                eo.setCreateUser(ThreadUtil.getString(ThreadUtil.LocalParamsKey.PersonName));
+                eo.setOrganId(ThreadUtil.getLong(ThreadUtil.LocalParamsKey.OrganId));
+                eo.setOrganName(ThreadUtil.getString(ThreadUtil.LocalParamsKey.OrganName));
+            } else {
+                // 用户认证失败,删除当前用户
+                ShiroUtil.removeCurrentUser();
+                eo.setUid(username);
+                Map map = new HashMap();
+                map.put("userId", username);
+                HbUserEO person = userDao.getEntity(HbUserEO.class, map);
+                eo.setCreateUser(person.getUserName());
+                OrganEO organEO = organService.getOrganById(person.getOrganId());
+                eo.setOrganId(person.getOrganId());
+                eo.setOrganName(organEO.getOrganName());
+            }
             cmsLoginHistoryService.saveEntity(eo);
         }
         //根据权限，指定返回数据
@@ -163,10 +174,9 @@ public class LoginController {
         if (role == null) {
             // 用户认证失败,删除当前用户
             ShiroUtil.removeCurrentUser();
-            return ResponseData.fail("当前用户没有配置角色","登陆失败");
+            return ResponseData.fail("当前用户没有配置角色", "登陆失败");
         }
         // 在此添加权限信息到用户
-        // TODO
         if ("sysadmin".equals(((UserEO) role.getData()).getUserName())) {
             return ResponseData.success("欢迎来到管理员页面");
         }
@@ -180,9 +190,10 @@ public class LoginController {
 
     /**
      * 初始化线程线程本地变量
+     *
      * @param eo
      */
-    private void initThreadLocal(UserEO eo,HttpServletRequest request) {
+    private void initThreadLocal(UserEO eo, HttpServletRequest request) {
         HbUserEO userEO = userDao.getEntity(HbUserEO.class, eo.getId());
         OrganEO organEO = organService.getOrganById(userEO.getOrganId());
         Map<String, Object> map = new HashMap<String, Object>();
@@ -196,13 +207,13 @@ public class LoginController {
         map.put(ThreadUtil.LocalParamsKey.Callback.toString(), "callback");
         map.put(ThreadUtil.LocalParamsKey.DataFlag.toString(), true);
         map.put(ThreadUtil.LocalParamsKey.IP.toString(), IpUtil.getIpAddr(request));
-        ShiroUtil.setAttribute("threadLocal",map);
+        ShiroUtil.setAttribute("threadLocal", map);
         ThreadUtil.set(map);
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     @ResponseBody
-    @LogParams(value=LoginController.class,type="logout",method="logout",desc="用户登出")
+    @LogParams(value = LoginController.class, type = "logout", method = "logout", desc = "用户登出")
     public ResponseData logout() {
         Subject subject = SecurityUtils.getSubject();
         //注销
@@ -211,8 +222,8 @@ public class LoginController {
     }
 
     @RequestMapping("mainSite")
-    public String goHome(Model model){
-        model.addAttribute("title","主站点后台管理系统");
+    public String goHome(Model model) {
+        model.addAttribute("title", "主站点后台管理系统");
         return "/site/index";
     }
 }

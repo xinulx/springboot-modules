@@ -4,7 +4,7 @@
 <mapper namespace="com.springboot.mapper.MenuMapper">
 	<select id="getMenuTree" parameterType="MenuEo" resultType="MenuEO">
 		select rid,rid id,url reqUrl,pid,code,name,ord,type,
-		create_user createUser,status,icon_class iconClass  from sys_menu
+		create_user createUser,status,icon_class iconClass  from cms_system_menu
 		<if test="roleId != 24">
 		inner join cms_menu_rel r on r.record_status = 'Normal'
 		and r.menu_id = rid and r.organ_id = #{organId} and r.role_id = #{roleId}
@@ -22,14 +22,14 @@
 		order by ord
 	</select>
 	<insert id="saveMenuInfo" useGeneratedKeys="true" keyProperty="rid" parameterType="MenuEO">
-		insert into sys_menu(
+		insert into cms_system_menu(
 			url,pid,code,name,ord,type,create_time,create_user,status,icon_class
 		)
 		values(#{reqUrl},#{pid},#{code},#{name},#{ord},#{type},(select now() from dual),#{createUser},#{status},#{iconClass})
 	</insert>
 
 	<update id="updateMenuInfo" parameterType="MenuEO">
-		update sys_menu set
+		update cms_system_menu set
 			url = #{reqUrl},pid = #{pid},code = #{code},name = #{name},ord = #{ord},
 			type = #{type},update_time = (select now() from dual),update_user = #{createUser},status = #{status}
 			,icon_class=#{iconClass}
@@ -37,18 +37,18 @@
 	</update>
 
 	<update id="del" parameterType="MenuEO">
-		delete from sys_menu where rid = #{id}
+		delete from cms_system_menu where rid = #{id}
 	</update>
 
 	<select id="getBtnPageCnt" parameterType="map" resultType="long">
-		select count(1) from sys_btn where menu_id = #{menuId}
+		select count(1) from cms_system_button where menu_id = #{menuId}
 		<if test="key != null and key != ''">
 			and code = #{key} or name like concat('%',concat(#{key},'%'))
 		</if>
 	</select>
 
 	<select id="getBtnPageList" parameterType="map" resultType="map">
-		select * from sys_btn where menu_id = #{menuId}
+		select * from cms_system_button where menu_id = #{menuId}
 		<if test="key != null and key != ''">
 			and code = #{key} or name like concat('%',concat(#{key},'%'))
 		</if>
@@ -57,17 +57,17 @@
 	</select>
 
 	<insert id="saveBtnInfo" parameterType="BtnInfoEO">
-		insert into sys_btn(code,name,btn_url,menu_id,remark)
+		insert into cms_system_button(code,name,btn_url,menu_id,remark)
 		values(#{code},#{name},#{btnUrl},#{menuId},#{remark})
 	</insert>
 
 	<select id="getOneById" parameterType="Integer" resultType="BtnInfoEO">
-		select rid id,code ,name,btn_url btnUrl,menu_id menuId,remark from sys_btn
+		select rid id,code ,name,btn_url btnUrl,menu_id menuId,remark from cms_system_button
 		where rid = #{id}
 	</select>
 
 	<update id="updateBtnInfo" parameterType="BtnInfoEO">
-		update sys_btn
+		update cms_system_button
 		set code = #{code},
 		name = #{name},
 		btn_url = #{btnUrl},
@@ -76,6 +76,6 @@
 	</update>
 
 	<delete id="delBtnById" parameterType="Integer">
-		delete from sys_btn where rid = #{id}
+		delete from cms_system_button where rid = #{id}
 	</delete>
 </mapper> 

@@ -1,7 +1,7 @@
 package com.springboot.service.hibernate;
 
 
-import com.springboot.entity.business.datadictionary.DataDictItemEO;
+import com.springboot.entity.business.DataDictItemEO;
 import com.springboot.entity.hibernate.Pagination;
 import com.springboot.service.common.IBaseService;
 

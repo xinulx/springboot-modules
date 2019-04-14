@@ -61,7 +61,7 @@ public class JdbcUtil {
     public static void main(String[] args){
         try {
             JdbcUtil util = new JdbcUtil("jdbc:mysql://localhost:3306/zhpt?useUnicode=true&characterEncoding=UTF-8&useSSL=false","root","root");
-            List<Map<String,Object>> obj = util.getJdbcTemplate().queryForList("select * from sys_label");
+            List<Map<String,Object>> obj = util.getJdbcTemplate().queryForList("select * from cms_system_label");
             System.out.println(obj);
         } catch (Exception e) {
             System.out.println("出错了:"+e.getMessage());

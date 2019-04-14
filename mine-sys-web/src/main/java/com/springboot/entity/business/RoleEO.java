@@ -5,7 +5,7 @@ import com.springboot.entity.hibernate.impl.AMockEntity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "sys_role_info")
+@Table(name = "cms_system_roleInfo")
 public class RoleEO extends AMockEntity {
 
     private static final long serialVersionUID = -9220256387258153881L;

@@ -3,7 +3,7 @@ package com.springboot.dao.business.impl;
 import com.springboot.common.util.LoginPersonUtil;
 import com.springboot.dao.business.IDataDictItemDao;
 import com.springboot.dao.hibernate.impl.BaseDao;
-import com.springboot.entity.business.datadictionary.DataDictItemEO;
+import com.springboot.entity.business.DataDictItemEO;
 import com.springboot.entity.hibernate.Pagination;
 import com.springboot.entity.vo.DataSortVO;
 import org.springframework.stereotype.Repository;

@@ -4,7 +4,7 @@ import com.springboot.common.busi.RightDictCache;
 import com.springboot.common.util.SysLog;
 import com.springboot.dao.business.IDataDictDao;
 import com.springboot.entity.business.CmsLogEO;
-import com.springboot.entity.business.datadictionary.DataDictEO;
+import com.springboot.entity.business.DataDictEO;
 import com.springboot.entity.hibernate.Pagination;
 import com.springboot.service.common.impl.BaseService;
 import com.springboot.service.hibernate.IDataDictItemService;

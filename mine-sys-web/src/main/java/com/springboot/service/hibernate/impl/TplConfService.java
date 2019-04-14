@@ -4,7 +4,7 @@ import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.DocFileManage;
 import com.springboot.common.util.LoginPersonUtil;
 import com.springboot.dao.business.ITplConfDao;
-import com.springboot.entity.business.ParamDto;
+import com.springboot.entity.hibernate.ParamDto;
 import com.springboot.entity.business.TemplateConfEO;
 import com.springboot.entity.hibernate.Pagination;
 import com.springboot.service.common.impl.BaseService;

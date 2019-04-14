@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "sys_user")
+@Table(name = "cms_system_user")
 public class HbUserEO extends AMockEntity {
 
     @Id

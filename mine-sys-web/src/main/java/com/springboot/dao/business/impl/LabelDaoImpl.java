@@ -75,7 +75,7 @@ public class LabelDaoImpl extends MockDao<LabelEO> implements ILabelDao {
     @Override
     public Object updateLabel(LabelEO eo) {
         //this.update(eo);
-        return this.executeUpdateBySql("UPDATE SYS_LABEL SET LABEL_NAME=?,LABEL_NOTES=?,LABEL_TYPE=? WHERE ID = ?", new Object[]{eo.getLabelName(), eo.getLabelNotes(),eo.getLabelType(), eo.getId()});
+        return this.executeUpdateBySql("UPDATE cms_system_label SET LABEL_NAME=?,LABEL_NOTES=?,LABEL_TYPE=? WHERE ID = ?", new Object[]{eo.getLabelName(), eo.getLabelNotes(),eo.getLabelType(), eo.getId()});
     }
 
     @Override
@@ -86,7 +86,7 @@ public class LabelDaoImpl extends MockDao<LabelEO> implements ILabelDao {
 
     @Override
     public Object updateLabelConfig(Long id, String config) {
-        return this.executeUpdateBySql("UPDATE SYS_LABEL SET LABEL_CONFIG=? WHERE ID = ?", new Object[]{config, id});
+        return this.executeUpdateBySql("UPDATE cms_system_label SET LABEL_CONFIG=? WHERE ID = ?", new Object[]{config, id});
     }
 
     @Override
@@ -100,6 +100,6 @@ public class LabelDaoImpl extends MockDao<LabelEO> implements ILabelDao {
 
     @Override
     public Object updateLabel(Long isParent, Long id) {
-        return this.executeUpdateBySql("UPDATE SYS_LABEL SET IS_PARENT=? WHERE ID = ?", new Object[]{isParent, id});
+        return this.executeUpdateBySql("UPDATE cms_system_label SET IS_PARENT=? WHERE ID = ?", new Object[]{isParent, id});
     }
 }

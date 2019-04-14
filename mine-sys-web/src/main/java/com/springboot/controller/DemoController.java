@@ -2,8 +2,6 @@ package com.springboot.controller;
 
 import com.springboot.entity.vo.ResponseData;
 import com.springboot.common.util.LabelUtils;
-import com.springboot.dao.business.IAdviceDao;
-import com.springboot.entity.business.AdviceEO;
 import com.springboot.entity.mybatis.UserEO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -139,16 +137,18 @@ public class DemoController {
         return "/test/fm_page";
     }
 
-    @Autowired
-    private IAdviceDao adviceDao;
+    /**
+     * 返回一个对象时页面直接使用key即可
+     * @param map
+     * @param model
+     * @return
+     */
     @RequestMapping("miniui_grid")
     public String miniui_grid(Map map, Model model){
         map.put("key","this is a miniui_grid page");
-        AdviceEO adviceEO = new AdviceEO();
-        adviceEO.setNum(System.currentTimeMillis());
-        adviceEO.setContent("测试数据");
-        adviceEO.setAddress("合肥市蜀山区和谐花园");
-        adviceDao.save(adviceEO);
+        map.put("num",System.currentTimeMillis());
+        map.put("content","测试数据");
+        map.put("address","合肥市蜀山区和谐花园");
         model.addAttribute("date",new Date());
         return "/test/fm_grid";
     }

@@ -2,7 +2,7 @@ package com.springboot.dao.business;
 
 
 import com.springboot.dao.hibernate.IBaseDao;
-import com.springboot.entity.business.datadictionary.DataDictItemEO;
+import com.springboot.entity.business.DataDictItemEO;
 import com.springboot.entity.hibernate.Pagination;
 import com.springboot.entity.vo.DataSortVO;
 

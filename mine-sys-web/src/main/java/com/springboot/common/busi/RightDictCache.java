@@ -1,7 +1,7 @@
 package com.springboot.common.busi;
 
-import com.springboot.entity.business.datadictionary.DataDictEO;
-import com.springboot.entity.business.datadictionary.DataDictItemEO;
+import com.springboot.entity.business.DataDictEO;
+import com.springboot.entity.business.DataDictItemEO;
 import com.springboot.service.hibernate.IDataDictItemService;
 import com.springboot.service.hibernate.IDataDictService;
 

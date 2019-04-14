@@ -2,8 +2,8 @@ package com.springboot.controller;
 
 import com.springboot.common.busi.RightDictCache;
 import com.springboot.common.util.LoginPersonUtil;
-import com.springboot.entity.business.datadictionary.DataDictEO;
-import com.springboot.entity.business.datadictionary.DataDictItemEO;
+import com.springboot.entity.business.DataDictEO;
+import com.springboot.entity.business.DataDictItemEO;
 import com.springboot.service.hibernate.IDataDictItemService;
 import com.springboot.service.hibernate.IDataDictService;
 import com.springboot.entity.vo.ResponseData;
