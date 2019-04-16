@@ -1,5 +1,5 @@
 <link href="/css/jsonviewer.css" type="text/css" rel="stylesheet" />
-<div class="col-md-12 tree-bg">
+<div class="col-md-12">
     <ul class="nav nav-tabs">
         <li role="presentation1" class="active"><a href="#">菜单模板</a></li>
         <li role="presentation2" class=""><a href="#">历史版本</a></li>
