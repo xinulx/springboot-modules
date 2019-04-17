@@ -4,7 +4,7 @@
         <button type="button" class="btn btn-success" onclick="openSocket()">开启日志</button>
         <button type="button" class="btn btn-danger" onclick="closeSocket()">关闭日志</button>
         <button type="button" class="btn btn-primary" onclick="sendSocket()">发送消息</button>
-        <button type="button" class="btn btn-primary" onclick="senJsonp()">测试JSONP</button>
+        <button type="button" class="btn btn-primary" onclick="senNoticeJsonpForContent()">测试JSONP</button>
         <button type="button" class="btn btn-primary" onclick="startSolr(1)">启动solr</button>
         <button type="button" class="btn btn-primary" onclick="startSolr(2)">启动solr（弹窗）</button>
         <button type="button" class="btn btn-danger" onclick="startSolr(0)">关闭solr</button>
@@ -71,6 +71,48 @@
                 timestamp:new Date().getTime(),
                 is_need_mean:1,
                 word:"shenfenzheng"
+            },
+            success: function(data, status, xhr){
+                console.log('状态为：' + status + ',状态是：' + xhr.statusText);
+                console.log(data);
+                sendSocket(JSON.stringify(data))
+            }
+        });
+    }
+
+    function senNoticeJsonp(){
+        $.ajax({
+            async : true,
+            url : "http://www.ahhfly.gov.cn/content/noticeList",
+            type : "POST",
+            dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
+            jsonp : 'callback', //指定参数名称来覆盖默认的jsonp回调参数名 callback
+            jsonpCallback: 'handleResponse',//设置回调函数名
+            data : {
+                siteId:4697420,
+                columnId:4701911,
+                pageIndex:0,
+                pageSize:10,
+                title:""
+            },
+            success: function(data, status, xhr){
+                console.log('状态为：' + status + ',状态是：' + xhr.statusText);
+                console.log(data);
+                sendSocket(JSON.stringify(data))
+            }
+        });
+    }
+
+    function senNoticeJsonpForContent(){
+        $.ajax({
+            async : true,
+            url : "http://www.ahhfly.gov.cn/content/noticeList",
+            type : "POST",
+            dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
+            jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+            jsonpCallback: 'handleResponse',
+            data : {
+                contentId:528541
             },
             success: function(data, status, xhr){
                 console.log('状态为：' + status + ',状态是：' + xhr.statusText);

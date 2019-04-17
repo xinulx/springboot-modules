@@ -31,8 +31,6 @@
     <script src="/js/juicer.js"></script>
     <script src="/js/art.template.js"></script>
     <script src="/plugins/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
-    <script src="/plugins/video/js/video.min.js" type="text/javascript"></script>
-    <script src="/plugins/video/js/zh-CN.js" type="text/javascript"></script>
     <script src="/plugins/jquery-toast/src/jquery.toast.js" type="text/javascript"></script>
     <script src="/js/boot.js" type="text/javascript"></script>
     <script src="/js/sock.min.js" type="text/javascript"></script>
