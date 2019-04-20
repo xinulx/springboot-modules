@@ -37,6 +37,7 @@ public class MainApplication extends SpringBootServletInitializer {
         producer.sendMessage("1-初始化模拟队列消息输送完成！");
         producer.sendMessage("2-初始化模拟队列消息输送完成！");
         producer.sendMessage("3-初始化模拟队列消息输送完成！","main-thread-queue");
+        producer.delaySend(Producer.DEFAULT_QUEUE_OBJECT,"向客戶端推送延时信息",5000L);
         return true;
     }
 
