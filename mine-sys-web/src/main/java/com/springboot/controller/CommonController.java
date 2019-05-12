@@ -22,6 +22,9 @@ public class CommonController {
     @Resource
     private ICommonService commonService;
 
+    @Autowired
+    private Producer producer;
+
     @RequestMapping("/getConstant")
     @ResponseBody
     public ResponseData getConstantList(String tableName, String columnName) {
@@ -37,8 +40,6 @@ public class CommonController {
         return "/pages/error/" + errorCode;
     }
 
-    @Autowired
-    private Producer producer;
     @RequestMapping(value = "/activeMQ/process")
     @ResponseBody
     public boolean generalStatic(String message) {

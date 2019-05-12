@@ -61,7 +61,11 @@ public class MainApplication extends SpringBootServletInitializer {
      * @param args
      */
     public static void main(String[] args) {
-        SpringApplication.run(MainApplication.class, args);
+        try {
+            SpringApplication.run(MainApplication.class, args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         openExploer();
     }
 

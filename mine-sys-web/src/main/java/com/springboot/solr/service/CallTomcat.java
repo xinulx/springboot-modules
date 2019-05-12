@@ -1,8 +1,10 @@
 package com.springboot.solr.service;
 
+import com.alibaba.fastjson.JSON;
 import com.springboot.common.util.PropertiesUtil;
 import com.springboot.entity.vo.ResponseData;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.codec.binary.Base64;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,7 +34,7 @@ public class CallTomcat {
         } catch (IOException e) {
             log.error("执行命令时出错：{}", e.getMessage());
         }
-        return ResponseData.success();
+        return new String(Base64.encodeBase64(JSON.toJSONBytes(ResponseData.success())));
     }
 
     /**

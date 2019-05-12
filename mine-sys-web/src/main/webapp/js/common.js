@@ -152,15 +152,129 @@ var Mine = {
     decode: function (content) {
         return decodeURIComponent(window.atob(content));
     },
-    getFormData:function(formId){
+    getFormData: function (formId) {
         return decodeURIComponent($('#' + formId).serialize(), true);
+    },
+    /**
+     * 定义 ztree 杖举
+     * @return   {String}
+     */
+    treeDataType: function () {
+        return {
+            "SITE": "SITE",
+            "UNIT": "UNIT",
+            "USER": "USER",
+            "ROLE": "ROLE",
+            "TPL": "TPL",
+            "MENU": "MENU",
+            "COLUMN": "COLUMN",
+            "LABEL": "LABEL",
+            "CATALOG": "CATALOG",
+            "GUIDE_ORGAN": "GUIDE_ORGAN",
+            "PUBLIC_CONTENT": "PUBLIC_CONTENT",
+            "SUBMITTED": "SUBMITTED",
+            "NET_WORK": "NET_WORK",
+            "TREE": "TREE"
+        }
+    }(),
+    /**
+     * ztree树的数据过滤器，用于统一处理各种的图标
+     * @treeDataFilter
+     * @param   {Object}       ztree 异步加载的 JSON 对象
+     * @param   {String}       树的类型，参与 treeDataType 方法
+     */
+    treeDataFilter: function (responseData, type) {
+        if (!responseData) {
+            return false
+        }
+        switch (type) {
+            case this.treeDataType.SITE:
+                for (var i = 0, l = responseData.length; i < l; i++) {
+                    var node = responseData[i];
+                    if (node.type == "CMS_Site" || node.type == "SUB_Site") {
+                        node.icon = GLOBAL_CONTEXTPATH + "/assets/images/" + node.type + ".png";
+                    } else {
+                        if ((node.columnTypeCode == "workGuide" || node.columnTypeCode == "sceneService") && !node.isParent) {
+                            node.icon = GLOBAL_CONTEXTPATH + "/assets/images/" + node.columnTypeCode + "2.png";
+                        } else {
+                            node.icon = GLOBAL_CONTEXTPATH + "/assets/images/" + node.columnTypeCode + ".png";
+                        }
+                    }
+                    if (node.columnTypeCode == "redirect") {
+                        node.tips = "跳转地址：" + node.transUrl;
+                    } else {
+                        node.tips = "ID:" + node.indicatorId;
+                    }
+                }
+                break;
+            case this.treeDataType.UNIT:
+            case this.treeDataType.USER:
+                for (var i = 0, l = responseData.length; i < l; i++) {
+                    var node = responseData[i];
+                    node.icon = GLOBAL_CONTEXTPATH + "/assets/images/" + (node.type || node.nodeType || "").toLowerCase() + ".gif";
+                    node.tips = "单位ID：" + node.id;
+                }
+                break;
+            case this.treeDataType.GUIDE_ORGAN:
+                for (var i = 0, l = responseData.length; i < l; i++) {
+                    var node = responseData[i];
+                    node.icon = GLOBAL_CONTEXTPATH + "/assets/images/organ.gif";
+                }
+                break;
+            case this.treeDataType.LABEL:
+                for (var i = 0, l = responseData.length; i < l; i++) {
+                    var node = responseData[i];
+                    node.tips = "标签ID：" + node.id + "\n标签描述：" + node.description;
+                    if (node.pId > 0) {
+                        node.icon = GLOBAL_CONTEXTPATH + "/assets/images/label01.png";
+                    }
+                    node.isParent = node.isParent == 1 ? true : false;
+                }
+                break;
+            case this.treeDataType.PUBLIC_CONTENT:
+                for (var i = 0, l = responseData.length; i < l; i++) {
+                    var node = responseData[i];
+                    if (node.data) {
+                        if (node.type == "Organ") {
+                            node.tips = "单位ID：" + node.organId;
+                        } else {
+                            node.tips = "目录ID：" + node.data.catId;
+                        }
+                    } else {
+                        node.tips = "目录ID：" + node.id;
+
+                    }
+                }
+                break;
+            case this.treeDataType.ROLE:
+                var icon = "";
+                for (var i = 0, l = responseData.length; i < l; i++) {
+                    var node = responseData[i];
+                    if (node.code == "super_admin" || node.code == "site_admin") {
+                        icon = node.code;
+                    } else {
+                        icon = "common_admin";
+                    }
+                    node.icon = GLOBAL_CONTEXTPATH + "/assets/images/" + icon + ".gif";
+                }
+                break;
+            case this.treeDataType.COLUMN:
+                for (var i = 0, l = responseData.length; i < l; i++) {
+                    var node = responseData[i];
+                    node.icon = GLOBAL_CONTEXTPATH + "/images/column/" + node.type + ".png";
+                }
+                break;
+            case this.treeDataType.TREE:
+                break;
+        }
+        return responseData
     }
 };
 
 window.alert = function (msg, callback) {
     layer.alert(msg, {icon: 7}, function (index) {
         layer.close(index);
-        if (typeof(callback) === "function") {
+        if (typeof (callback) === "function") {
             callback("ok");
         }
     });
@@ -183,12 +297,88 @@ function autoHeight(id, cuteHeight) {
 var stompClient = null;
 var tipsCount = 0;
 
+function timeTips(content) {
+    if (!content) {
+        return;
+    }
+    var time = new Date().getTime();
+    var msgDiv = '<div id="messageContent_' + time + '" class="hidden message-content"></div>';
+    $('body').append(msgDiv);
+    tipsCount++;
+    var msg = '';
+    msg += '<div style="font-size: 14px">';
+    if (content.status == 1) {
+        $("#messageContent_" + time).css('background-color',"#009688");
+        msg += '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;&nbsp;';
+    } else {
+        $("#messageContent_" + time).css('background-color',"#a94442");
+        msg += '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;&nbsp;';
+    }
+    msg += (content.title?'系统消息':content.title) + '</div>';
+    msg += '<div class="message-content-body">' + content.body + '</div>';
+    msg += '<div id="process_' + time + '" class="bg-warning" style="height: 5px;width: 100%"></div>';
+    $("#messageContent_" + time).html(msg).css({"cursor": "pointer"}).click(function () {
+        layer.close(index);
+        $("#messageContent_" + time).remove();
+        if (tipsCount > 0) {
+            tipsCount--;
+        }
+    }).attr("title", "点击立即关闭提醒");
+    var index = layer.open({
+        type: 1,
+        shade: false,
+        offset: [function () {
+            if (tipsCount == 1) {
+                return 75;
+            } else {
+                return 75 + (tipsCount - 1) * 110;
+            }
+        }, document.body.clientWidth - 380],
+        closeBtn: 0,//不显示关闭按钮
+        title: false, //不显示标题
+        content: $("#messageContent_" + time),
+        cancel: function () {
+            $("#messageContent_" + time).remove();
+            if (tipsCount > 0) {
+                tipsCount--;
+            }
+        }
+    });
+    var i = 0;
+    var id = setInterval(function () {
+        i++;
+        $("#process_" + time).css("width", (100 - (i * 0.1)) + "%");
+    }, 5);
+    setTimeout(function () {
+        clearInterval(id);
+        layer.close(index);
+        $("#messageContent_" + time).remove();
+        if (tipsCount > 0) {
+            tipsCount--;
+        }
+    }, 5000);
+}
+
+function getIcon(status){
+    if(status == null){
+        return "info";
+    }else if(status == 1){
+        return "success";
+    }else if(status == 2){
+        return "info";
+    }else if(status == 3){
+        return "warning";
+    }else if(status == 0){
+        return "error";
+    }
+}
+
 /**
  * 监听服务端系统消息
  */
 function initSocket() {
     if (stompClient == null) {
-        var socket = new SockJS('http://'+ location.host +'/websocket?token=mq');
+        var socket = new SockJS('http://' + location.host + '/websocket?token=mq');
         stompClient = Stomp.over(socket);
     }
     // var tipsCount = 0;
@@ -198,9 +388,10 @@ function initSocket() {
             $.toast({
                 text: content.body,
                 heading: 'success',
-                icon: content.status == 1 ? 'success' : 'error',
-                showHideTransition: 'fade',
+                icon: getIcon(content.status),
+                showHideTransition: 'slide',
                 allowToastClose: true,
+                allowClickClose: true,
                 hideAfter: 5000,
                 stack: 5,
                 position: {left: 'auto', right: '20px', top: '75px', bottom: 'auto'},
@@ -216,55 +407,6 @@ function initSocket() {
                 afterHidden: function () {
                 }
             });
-            // 捕获页
-            // if(!content){
-            //     return;
-            // }
-            // var time = new Date().getTime();
-            // var msgDiv = '<div id="messageContent_'+time+'" class="hidden message-content"></div>';
-            // $('body').append(msgDiv);
-            // tipsCount ++;
-            // var msg = '';
-            // if(content.status == 1){
-            //     msg = content.body;
-            // }else{
-            //     msg = '<span class=\'text-danger\'>'+content.body+'</span>';
-            // }
-            // msg +='<div id="process_'+time+'" class="bg-warning" style="height: 5px;width: 100%"></div>';
-            // $("#messageContent_"+time).html(msg).css({"cursor":"pointer"}).click(function(){
-            //     layer.close(index);
-            //     $("#messageContent_"+time).remove();
-            //     if(tipsCount>0){ tipsCount --}
-            // }).attr("title","点击立即关闭提醒");
-            // var index = layer.open({
-            //     type: 1,
-            //     shade: false,
-            //     offset:[function(){
-            //         if(tipsCount == 1){
-            //             return 75;
-            //         }else{
-            //             return 75 + (tipsCount-1)*130;
-            //         }
-            //     },document.body.clientWidth-380],
-            //     closeBtn:0,//不显示关闭按钮
-            //     title: false, //不显示标题
-            //     content: $("#messageContent_"+time),
-            //     cancel: function(){
-            //         $("#messageContent_"+time).remove();
-            //         if(tipsCount>0){ tipsCount --}
-            //     }
-            // });
-            // var i = 0;
-            // var id = setInterval(function(){
-            //     i ++;
-            //     $("#process_"+time).css("width",(100-(i*0.1))+"%");
-            // },30);
-            // setTimeout(function(){
-            //     clearInterval(id);
-            //     layer.close(index);
-            //     $("#messageContent_"+time).remove();
-            //     if(tipsCount>0){ tipsCount --}
-            // },30000);
         }, {
             token: "mq_message"
         });
@@ -272,11 +414,11 @@ function initSocket() {
     console.info("initSocket success");
 }
 
-function sendSocket(message){
-    if(!message){
-        message = "我是一条消息！时间-"+new Date().toLocaleTimeString();
+function sendSocket(message) {
+    if (!message) {
+        message = "我是一条消息！时间-" + new Date().toLocaleTimeString();
     }
-    $.post("/common/activeMQ/process",{message:message});
+    $.post("/common/activeMQ/process", {message: message});
 }
 
 function initTreeData(result, oldData, type) {
@@ -285,5 +427,114 @@ function initTreeData(result, oldData, type) {
             oldData[i]['my_title'] = oldData[i][type] + "ID：" + oldData[i].id;
             result.push(oldData[i]);
         }
+    }
+}
+
+function showPagination(id, url) {
+    $(".mask-loading").show();
+    setTimeout(function () {
+        $("#" + id).load(url, function () {
+            $(".mask-loading").hide();
+        });
+    }, 800);
+}
+
+function moveUp(_a) {
+    var _row = _a.parentNode.parentNode;
+    //如果不是第一行，则与上一行交换顺序
+    var _node = _row.previousSibling;
+    while (_node && _node.nodeType != 1) {
+        _node = _node.previousSibling;
+    }
+    if (_node) {
+        swapNode(_row, _node);
+    } else {
+        Mine.layer.tips("已经是第一行了", 0);
+    }
+}
+
+function moveDown(_a) {
+    var _row = _a.parentNode.parentNode;
+    //如果不是最后一行，则与下一行交换顺序
+    var _node = _row.nextSibling;
+    while (_node && _node.nodeType != 1) {
+        _node = _node.nextSibling;
+    }
+    if (_node) {
+        swapNode(_row, _node);
+    } else {
+        Mine.layer.tips("已经是最后一行了", 0);
+    }
+}
+
+function swapNode(node1, node2) {
+    //获取父结点
+    var _parent = node1.parentNode;
+    //获取两个结点的相对位置
+    var _t1 = node1.nextSibling;
+    var _t2 = node2.nextSibling;
+    //将node2插入到原来node1的位置
+    if (_t1) _parent.insertBefore(node2, _t1);
+    else _parent.appendChild(node2);
+    //将node1插入到原来node2的位置
+    if (_t2) _parent.insertBefore(node1, _t2);
+    else _parent.appendChild(node1);
+    Mine.layer.tips("排序成功！");
+}
+
+/**
+ * 表格列拖拽
+ * @param id
+ */
+function generateTable(id) {
+    var tTD; //用来存储当前更改宽度的Table Cell,避免快速移动鼠标的问题
+    var table = document.getElementById(id);
+    for (var j = 0; j < table.rows[0].cells.length; j++) {
+        table.rows[0].cells[j].onmousedown = function () {
+            //记录单元格
+            tTD = this;
+            if (event.offsetX > tTD.offsetWidth - 10) {
+                tTD.mouseDown = true;
+                tTD.oldX = event.x;
+                tTD.oldWidth = tTD.offsetWidth;
+            }
+            //记录Table宽度
+            table = tTD;
+            while (table.tagName != 'TABLE') table = table.parentElement;
+            tTD.tableWidth = table.offsetWidth;
+        };
+        table.rows[0].cells[j].onmouseup = function () {
+            //结束宽度调整
+            if (tTD == undefined) tTD = this;
+            tTD.mouseDown = false;
+            tTD.style.cursor = 'default';
+        };
+        table.rows[0].cells[j].onmousemove = function () {
+            //更改鼠标样式
+            if (event.offsetX > this.offsetWidth - 10)
+                this.style.cursor = 'col-resize';
+            else
+                this.style.cursor = 'default';
+            //取出暂存的Table Cell
+            if (tTD == undefined) tTD = this;
+            //调整宽度
+            if (tTD.mouseDown != null && tTD.mouseDown == true) {
+                tTD.style.cursor = 'default';
+                if (tTD.oldWidth + (event.x - tTD.oldX) > 0)
+                    tTD.width = tTD.oldWidth + (event.x - tTD.oldX);
+                //调整列宽
+                tTD.style.width = tTD.width;
+                tTD.style.cursor = 'col-resize';
+                //调整该列中的每个Cell
+                table = tTD;
+                while (table.tagName != 'TABLE') table = table.parentElement;
+                for (j = 0; j < table.rows.length; j++) {
+                    table.rows[j].cells[tTD.cellIndex].width = tTD.width;
+                }
+                //调整整个表
+                table.width = tTD.tableWidth + tTD.offsetWidth - tTD.oldWidth;
+                table.style.width = table.width;
+            }
+        };
     }
 }

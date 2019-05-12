@@ -22,7 +22,8 @@ public class ResultVO {
 	 */
 	public enum Status{
 		SUCCESS(Integer.valueOf(1)),
-		Failure(Integer.valueOf(0));
+		Failure(Integer.valueOf(0)),
+		Timeout(Integer.valueOf(-9));
 		
 		private Integer value;
 		
@@ -33,7 +34,7 @@ public class ResultVO {
 		public Integer getValue() {
 			return value;
 		}
-	}
+    }
 	/**
 	 * 方法正确执行，返回数据使用该构造器
 	 * @param data

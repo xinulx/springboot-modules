@@ -1,6 +1,8 @@
 package com.springboot.common.util;
 
 import nl.bitwalker.useragentutils.UserAgent;
+import org.apache.solr.common.SolrDocument;
+import org.apache.solr.common.SolrDocumentList;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
@@ -914,6 +916,47 @@ public class AppUtil {
             }
         }
         return map;
+    }
+
+    /**
+     * Solr文档对象转Java对象
+     *
+     * @param record
+     * @param clazz
+     * @return Object
+     */
+    public static Object toBean(SolrDocument record, Class<Object> clazz) {
+        Object o = null;
+        try {
+            o = clazz.newInstance();
+        } catch (InstantiationException e) {
+            System.out.println("Solr文档对象转Java对象实例化异常:" + e.getMessage());
+        } catch (IllegalAccessException e) {
+            System.out.println("Solr文档对象转Java对象非法访问异常:" + e.getMessage());
+        }
+        Field[] fields = clazz.getDeclaredFields();
+        for (Field field : fields) {
+            // log.warn("------------" + record.toString());
+            Object value = record.get(field.getName());
+            try {
+                if (value != null) {
+                    org.apache.commons.beanutils.BeanUtils.setProperty(o, field.getName(), value);
+                }
+            } catch (IllegalAccessException e) {
+                System.out.println("Solr文档对象转Java对象方法非法访问异常:" + e.getMessage());
+            } catch (InvocationTargetException e) {
+                System.out.println("Solr文档对象转Java对象调用目标异常:" + e.getMessage());
+            }
+        }
+        return o;
+    }
+
+    public static <T>List<T> toBeanList(SolrDocumentList records, Class clazz) {
+        List list = new ArrayList();
+        for (SolrDocument record : records) {
+            list.add(toBean(record, clazz));
+        }
+        return list;
     }
 
 }

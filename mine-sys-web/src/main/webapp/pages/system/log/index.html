@@ -1,28 +1,29 @@
 <div class="col-md-12 bg-warning" style="height: 30px;line-height: 30px;color:#c29d0b;margin: 0 0 10px 0;font-weight: bolder">JVM进程内的日志</div>
 <div class="col-xs-12" style="padding-left: 0;padding-bottom: 8px">
     <form class="form-inline tr search-toolbar pull-left" role="form">
-        <button type="button" class="btn btn-success" onclick="openSocket()">开启日志</button>
-        <button type="button" class="btn btn-danger" onclick="closeSocket()">关闭日志</button>
-        <button type="button" class="btn btn-primary" onclick="sendSocket()">发送消息</button>
-        <button type="button" class="btn btn-primary" onclick="senNoticeJsonpForContent()">测试JSONP</button>
-        <button type="button" class="btn btn-primary" onclick="startSolr(1)">启动solr</button>
-        <button type="button" class="btn btn-primary" onclick="startSolr(2)">启动solr（弹窗）</button>
-        <button type="button" class="btn btn-danger" onclick="startSolr(0)">关闭solr</button>
+        <button type="button" class="btn btn-sm btn-success" onclick="openSocket()">开启日志</button>
+        <button type="button" class="btn btn-sm btn-danger" onclick="closeSocket()">关闭日志</button>
+        <button type="button" class="btn btn-sm btn-primary" onclick="sendSocket()">发送消息</button>
+        <button type="button" class="btn btn-sm btn-primary" onclick="senNoticeJsonpForContent()">JSONP</button>
+        <!--<button type="button" class="btn btn-sm btn-primary" onclick="startSolr(1)">启动solr</button>-->
+        <button type="button" class="btn btn-sm btn-info" onclick="startSolr(2)">启动solr</button>
+        <button type="button" class="btn btn-sm btn-danger" onclick="startSolr(0)">关闭solr</button>
+        <button type="button" class="btn btn-sm btn-warning" onclick="sendTimeTips()">发送提示</button>
     </form>
 </div>
-<div id="log-container" style="height: 300px; overflow-y: scroll; background: #333; color: #aaa; padding: 10px;">
-    <div></div>
+<div id="fileLog-container" style="height: 560px; overflow-y: scroll; background: #333; color: #aaa; padding: 10px;">
+    <div contenteditable="true" style="outline: none;caret-color: red;"></div>
 </div>
-<div class="col-md-12 bg-warning" style="height: 30px;line-height: 30px;color:#c29d0b;margin: 10px 0;font-weight: bolder">指定监听日志文件的日志</div>
-<div class="col-xs-12" style="padding-left: 0;padding-bottom: 8px">
+<!--<div class="col-md-12 bg-warning hidden" style="height: 30px;line-height: 30px;color:#c29d0b;margin: 10px 0;font-weight: bolder">指定监听日志文件的日志</div>
+<div class="col-xs-12 hidden" style="padding-left: 0;padding-bottom: 8px">
     <form class="form-inline tr search-toolbar pull-left" role="form">
         <button type="button" class="btn btn-success" onclick="openSocket()">开启日志</button>
         <button type="button" class="btn btn-danger" onclick="closeSocket()">关闭日志</button>
     </form>
 </div>
-<div id="filelog-container" style="height: 330px; overflow-y: scroll; background: #333; color: #aaa; padding: 10px;margin-bottom: 30px">
-    <div></div>
-</div>
+<div id="log-container hidden" style="height: 330px; overflow-y: scroll; background: #333; color: #aaa; padding: 10px;margin-bottom: 30px">
+    <div contenteditable="true" style="outline: none;caret-color: red;"></div>
+</div>-->
 <script>
     var stompClient = null;
     $(document).ready(function () {
@@ -35,17 +36,17 @@
             stompClient = Stomp.over(socket);
         }
         stompClient.connect({token: "mq"}, function (frame) {
-            stompClient.subscribe('/topic/pullLogger', function (event) {
+            /*stompClient.subscribe('/topic/pullLogger', function (event) {
                 var content = JSON.parse(event.body);
                 $("#log-container div").append(content.timestamp + " " + content.level + " --- [" + content.threadName + "] " + content.className + "   :" + content.body).append("<br/>");
                 $("#log-container").scrollTop($("#log-container div").height() - $("#log-container").height());
             }, {
                 token: "mq_message"
-            });
+            });*/
             stompClient.subscribe('/topic/pullFileLogger', function (event) {
                 var content = event.body;
-                $("#filelog-container div").append(content).append("<br/>");
-                $("#filelog-container").scrollTop($("#filelog-container div").height() - $("#filelog-container").height());
+                $("#fileLog-container div").append(content).append("<br/>");
+                $("#fileLog-container").scrollTop($("#fileLog-container div").height() - $("#fileLog-container").height());
             }, {
                 token: "mq_message"
             });
@@ -134,6 +135,8 @@
         $.ajax({
             url:"/call/tomcat-solr?type=" + type,
             success:function(d){
+                console.log(d);
+                d = JSON.parse(atob(d));
                 if(d.status == 1){
                     Mine.layer.tips("操作成功！");
                 }else{
@@ -141,5 +144,14 @@
                 }
             }
         });
+    }
+
+    function sendTimeTips(){
+        var content = {
+            status : 0,
+            title:'系统消息',
+            body : "您有2条未完成的任务您有2条未完成的任务"
+        };
+        timeTips(content);
     }
 </script>

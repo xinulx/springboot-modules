@@ -36,6 +36,9 @@
     <script src="/js/sock.min.js" type="text/javascript"></script>
     <script src="/js/stomp.min.js" type="text/javascript"></script>
     <script src="/js/common.js" type="text/javascript"></script>
+    <script>
+        var GLOBAL_CONTEXTPATH = "${ctx}";
+    </script>
 </head>
 <body>
 <div class="container-fluid">
@@ -145,6 +148,10 @@
 
     function loadSysMenu() {
         $.post("/menu/getMenuTree", {type: "CATAGORY"}, function (result) {
+            if(result.status && result.status == -9){
+                layer.confirm('登陆超时，是否重新登陆？', {icon: 3,btn: ['确定', '取消']}, function () {location.href='/login/loginIn?etc='+new Date().getTime();});
+                return;
+            }
             $("#mainHeader").empty().html(template('headerMenu', {data: result}));
             $("#mainHeader ul li").click(function () {
                 $(this).addClass('active-header').siblings().removeClass('active-header');
@@ -156,6 +163,10 @@
     function loadLeftMenu(obj) {
         var id = $(obj).attr("data-id");
         $.post("/menu/getMenuTree", {id: id, queryFlag: '1'}, function (result) {
+            if(result.status && result.status == -9){
+                layer.confirm('登陆超时，是否重新登陆？', {icon: 3,btn: ['确定', '取消']}, function () {location.href='/login/loginIn?etc='+new Date().getTime();});
+                return;
+            }
             $("#mainMenu").empty().html("<ul class=\"sidebar-menu\">" + template('leftMenu', {data: result}) + "</ul>");
             $.sidebarMenu($('.sidebar-menu'));
             $('.sidebar-menu li').click(function () {

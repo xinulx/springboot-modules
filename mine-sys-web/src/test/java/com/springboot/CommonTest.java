@@ -1,14 +1,27 @@
 package com.springboot;
 
 import com.alibaba.fastjson.JSON;
+import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.DateUtil;
-import com.springboot.function.DateFormat;
 import org.apache.commons.lang3.StringEscapeUtils;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.junit.Test;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -108,5 +121,71 @@ public class CommonTest {
         Double a= 1.2;
         Double b = 2.0;
         System.out.println(a+b);
+    }
+
+    @Test
+    public void main1(){
+        Document doc = null;
+        StringBuilder content = new StringBuilder();
+        URL urlfile = null;
+        try {
+            urlfile = new URL("http://aqxxgk.anqing.gov.cn/list.php?unit=HA018&xxflid=39000000");
+            BufferedReader in = new BufferedReader(new InputStreamReader(urlfile.openStream()));
+            String inputLine = in.readLine();
+            while (inputLine != null) {
+                content.append(inputLine);
+                inputLine = in.readLine();
+            }
+            in.close();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        doc = Jsoup.parse(content.toString());
+        Elements tdItemDatas = doc.getElementsByClass("f-title");
+        for (Element tdItemData : tdItemDatas) {
+            String title = tdItemData.getElementsByTag("a").get(0).html();
+            String href = tdItemData.getElementsByTag("a").get(0).attr("href");
+            String date = tdItemData.parent().select(">td:eq(2)").html();
+
+            System.out.println(date);
+        }
+
+    }
+
+    /**
+     * 从新闻内容中获取原文件视频地址
+     * @param content
+     * @return
+     */
+    public static String getOldFilePath(String content){
+        Document doc = Jsoup.parse(content);
+        String flashvars = doc.getElementsByTag("embed").get(0).attr("flashvars");
+        String path =  "";
+        if(!AppUtil.isEmpty(flashvars)){
+            path = flashvars.split("&")[1];
+            path = path.replace("http://www.zglh.gov.cn","");
+            path = path.split("=")[1];
+        }
+        return path;
+    }
+    public static void main(String[] args){
+        System.out.println(getOldFilePath("<p align=\"center\">\n" +
+                "    <embed style=\"text-transform:none;text-indent:0px;font:13px/24px\n" +
+                " Simsun;white-space:normal;letter-spacing:normal;color:#333333;word-spacing:0px;-webkit\n" +
+                " -text-stroke-width:0px;\" id=\"CuPlayerV4\" height=\"180\" name=\"CuPlayerV4\" type=\"application/x-shockw\n" +
+                " ave-flash\" width=\"250\" src=\"http://www.zglh.gov.cn/cuplayer/CuPlayerMiniV4.swf\" flashvars=\"CuPlayerSetFile=http://www.zglh.gov.cn/cuplayer/CuPlayerSetFile.asp&amp;\n" +
+                " CuPlayerFile=http://www.zglh.gov.cn/files/lhsp/2016/04/lhtv160415.flv&amp;\n" +
+                " CuPlayerImage=http://www.zglh.gov.cn/cuplayer/images/start.jpg&amp;CuPlayerWidth=250&amp;CuPlayerHeight=180&amp;CuPlayerAutoPlay=yes&amp;CuPlayerLogo=http://www.zglh.gov.cn/cuplayer/images/logo.png&amp;CuPlayerPosition=bottom-right\" salign=\"lt\" wmode=\"opaque\"\n" +
+                "    allowscriptaccess=\"always\" allowfullscreen=\"true\" quality=\"high\" bgcolor=\"#000000\" />\n" +
+                "</p>"));
+
+        //MultipartFile Filedata = (MultipartFile) new File("C:\\Users\\lenovo\\Desktop\\work\\1.png");
+        //System.out.println(Filedata);
+
+        DateFormat dateFormat2 = new SimpleDateFormat("HH:mm");
+        System.out.println(dateFormat2.format(new Date()));
     }
 }

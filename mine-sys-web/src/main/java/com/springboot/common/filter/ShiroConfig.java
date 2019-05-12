@@ -7,6 +7,8 @@ import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.filter.authc.AnonymousFilter;
+import org.apache.shiro.web.filter.authc.LogoutFilter;
 import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
@@ -16,7 +18,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
+import javax.servlet.Filter;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -152,6 +156,11 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setLoginUrl("/login/loginIn");
         shiroFilterFactoryBean.setSuccessUrl("/index/goIndex");
         shiroFilterFactoryBean.setUnauthorizedUrl("/common/403");
+        Map<String, Filter> filters = new LinkedHashMap();
+        filters.put("logout", new LogoutFilter());
+        filters.put("anon", new AnonymousFilter());
+        filters.put("authc", new MyFormAuthentication());
+        shiroFilterFactoryBean.setFilters(filters);
 
         // 过滤器 配置不会被过滤的链接 顺序判断 过虑器链定义，从上向下顺序执行，一般将/**放在最下边
         Map<String, String> filterChainDefinitionMap = new HashMap<>();

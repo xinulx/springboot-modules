@@ -4,7 +4,13 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.springboot.entity.hibernate.impl.AMockEntity;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 
 /**
@@ -16,9 +22,6 @@ import java.util.Date;
 @Table(name = "CMS_BASE_CONTENT")
 public class BaseContentEO extends AMockEntity {
 
-    /**
-     *
-     */
     private static final long serialVersionUID = -1300742296285581640L;
 
     public enum TypeCode {
@@ -43,37 +46,20 @@ public class BaseContentEO extends AMockEntity {
         onlineDeclaration, // 在线申请
         commonProblem, // 常见问题
         relatedRule, // 相关资源
-        journal,//电子报刊
-        securityMateria,//安全生产素材
-        handleItems, //办事办件事项
-        readilyTake,//随手拍
-        specialNews,//专题
-        officePublicity,//办事结果公示
-        accountPublic,//预决算公开
+        suggest,//建言献策
         knowledgeBase,//问答知识库
-        saleChart, // 销售统计统计
-        dataOpen, //数据开放
-        scoreQuery, //成绩或录取查询
+        handleItems, //办事办件事项
+        govGazette,//政府公报
         menuTpl // 菜单模板
     }
 
-    public enum MemConStu {
-        noPut(0),//未提交
-        isPut(1),//已提交
-        isBack(2),//退回
-        isUse(3);//采用
-        private Integer sta;
-
-        private MemConStu(Integer sta) {
-            this.sta = sta;
-        }
-
-        public Integer getMemConStu() {
-            return sta;
-        }
-    }
-
     public static Integer STATUS_NOSTART = -1;// 未开始
+
+    public static Integer STATUS_HANDLING = 0;// 办理中
+
+    public static Integer STATUS_STOP = 1;// 终止
+
+    public static Integer STATUS_BANJIE = 2;// 已办结
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -146,6 +132,9 @@ public class BaseContentEO extends AMockEntity {
     // 点击量
     @Column(name = "HIT")
     private Long hit = 0L;
+    // app点击量
+    @Column(name = "APP_HIT")
+    private Long appHit = 0L;
     // 作者
     @Column(name = "AUTHOR")
     private String author;
@@ -182,7 +171,7 @@ public class BaseContentEO extends AMockEntity {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+08:00")
     private Date jobIssueDate;
 
-    @Column(name = "UNIT_ID")
+    @Column(name = "UNIT_ID", updatable = false)
     private Long unitId;
 
     @Column(name = "ATTACH_SAVED_NAME")
@@ -190,16 +179,38 @@ public class BaseContentEO extends AMockEntity {
     @Column(name = "ATTACH_REAL_NAME")
     private String attachRealName;// 附件真实名
     @Column(name = "ATTACH_SIZE")
-    private Long attachSize;// 附件大小
+    private String attachSize;// 附件大小
 
     @Column(name = "HANDLE_STATUS")
     private Integer handleStatus = 0;// 附件大小
 
-    @Column(name = "VIDEO_STATUS")
-    private Integer videoStatus = 100;//视频转换状态，默认100代表已经转换好，或者不存在视频信息，0为未转换
+    @Column(name = "msg_submit_id")
+    private Long msgSubmitId;// 报送Id
 
-    @Column(name = "old_schema_id")
-    private String oldSchemaId;
+    @Column(name = "IOS_PUSH")
+    private Long iosPush = 0L;// ios推送数量
+
+    @Column(name = "ANDROID_PUSH")
+    private Long androidPush = 0L;// 安卓推送数量
+
+    @Column(name = "SINA_PUSH")
+    private Long sinaPush = 0L;// 新浪微博推送数量
+
+    @Column(name = "TENCENT_PUSH")
+    private Long tencentPush = 0L;// 腾讯微博推送数量
+
+    @Column(name = "IS_PUSH")
+    private Integer isPush = 0;
+
+    @Column(name = "PUBLISH_USER_ID")
+    private Long publishUserId;// 发布人
+    @Column(name = "PUBLISH_ORGAN_ID")
+    private Long publishOrganId;// 发布单位
+    @Column(name = "RELEASE_DATE")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
+    private Date releaseDate; // 发布时间，点击发布时生成的时间
+
 
     @Column(name = "is_tofile")
     private Integer isToFile = 0;//是否归档
@@ -209,29 +220,13 @@ public class BaseContentEO extends AMockEntity {
     private Date toFileDate;//归档时间
     @Column(name = "to_fileid")
     private String toFileId;
-    @Column(name = "MEMBER")//会员名
-    private String member;
-    @Column(name = "MEMBER_CONTENT_STATUS")//会员稿件状态
-    private Integer memberConStu = MemConStu.noPut.getMemConStu();
-    @Column(name = "BACK_REASON")//会员稿件退回原因
-    private String backReason;
-    @Column(name = "MEMBER_PUT_DATE")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
-    private Date memPutDate;
-    @Column(name = "SHOW_START_TIME")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
-    private Date showStartTime;// 广告位显示开始时间
-    @Column(name = "SHOW_END_TIME")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
-    private Date showEndTime;// 广告位显示结束时间
-
-
+    @Column(name = "VIDEO_STATUS")
+    private Integer videoStatus = 100;//视频转换状态，默认100代表已经转换好，或者不存在视频信息，0为未转换
 
     @Transient
     private String article;
+    @Transient
+    private String publishUserName;//发布人
     @Transient
     private String contentName;
     @Transient
@@ -246,42 +241,6 @@ public class BaseContentEO extends AMockEntity {
     private String organName;// 单位热度排行
     @Transient
     private Long infoCount;// 信息条数排行
-    @Transient
-    private boolean referedNews = false; //是否被引用新闻
-    @Transient
-    private boolean referNews = false; //是否引用新闻
-
-    public String getMember() {
-        return member;
-    }
-
-    public void setMember(String member) {
-        this.member = member;
-    }
-
-    public Integer getMemberConStu() {
-        return memberConStu;
-    }
-
-    public void setMemberConStu(Integer memberConStu) {
-        this.memberConStu = memberConStu;
-    }
-
-    public String getBackReason() {
-        return backReason;
-    }
-
-    public void setBackReason(String backReason) {
-        this.backReason = backReason;
-    }
-
-    public Date getMemPutDate() {
-        return memPutDate;
-    }
-
-    public void setMemPutDate(Date memPutDate) {
-        this.memPutDate = memPutDate;
-    }
 
     public Integer getIsToFile() {
         return isToFile;
@@ -664,11 +623,11 @@ public class BaseContentEO extends AMockEntity {
         this.attachRealName = attachRealName;
     }
 
-    public Long getAttachSize() {
+    public String getAttachSize() {
         return attachSize;
     }
 
-    public void setAttachSize(Long attachSize) {
+    public void setAttachSize(String attachSize) {
         this.attachSize = attachSize;
     }
 
@@ -688,51 +647,99 @@ public class BaseContentEO extends AMockEntity {
         this.responsibilityEditor = responsibilityEditor;
     }
 
+    public Long getMsgSubmitId() {
+        return msgSubmitId;
+    }
+
+    public void setMsgSubmitId(Long msgSubmitId) {
+        this.msgSubmitId = msgSubmitId;
+    }
+
+    public Long getAppHit() {
+        return appHit;
+    }
+
+    public void setAppHit(Long appHit) {
+        this.appHit = appHit;
+    }
+
+    public Long getIosPush() {
+        return iosPush;
+    }
+
+    public void setIosPush(Long iosPush) {
+        this.iosPush = iosPush;
+    }
+
+    public Long getAndroidPush() {
+        return androidPush;
+    }
+
+    public void setAndroidPush(Long androidPush) {
+        this.androidPush = androidPush;
+    }
+
+    public Long getSinaPush() {
+        return sinaPush;
+    }
+
+    public void setSinaPush(Long sinaPush) {
+        this.sinaPush = sinaPush;
+    }
+
+    public Long getTencentPush() {
+        return tencentPush;
+    }
+
+    public void setTencentPush(Long tencentPush) {
+        this.tencentPush = tencentPush;
+    }
+
+    public Integer getIsPush() {
+        return isPush;
+    }
+
+    public void setIsPush(Integer isPush) {
+        this.isPush = isPush;
+    }
+
+    public Long getPublishUserId() {
+        return publishUserId;
+    }
+
+    public void setPublishUserId(Long publishUserId) {
+        this.publishUserId = publishUserId;
+    }
+
+    public Long getPublishOrganId() {
+        return publishOrganId;
+    }
+
+    public void setPublishOrganId(Long publishOrganId) {
+        this.publishOrganId = publishOrganId;
+    }
+
+    public Date getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public String getPublishUserName() {
+        return publishUserName;
+    }
+
+    public void setPublishUserName(String publishUserName) {
+        this.publishUserName = publishUserName;
+    }
+
     public Integer getVideoStatus() {
         return videoStatus;
     }
 
     public void setVideoStatus(Integer videoStatus) {
         this.videoStatus = videoStatus;
-    }
-
-    public String getOldSchemaId() {
-        return oldSchemaId;
-    }
-
-    public void setOldSchemaId(String oldSchemaId) {
-        this.oldSchemaId = oldSchemaId;
-    }
-
-    public Date getShowStartTime() {
-        return showStartTime;
-    }
-
-    public void setShowStartTime(Date showStartTime) {
-        this.showStartTime = showStartTime;
-    }
-
-    public Date getShowEndTime() {
-        return showEndTime;
-    }
-
-    public void setShowEndTime(Date showEndTime) {
-        this.showEndTime = showEndTime;
-    }
-
-    public boolean isReferedNews() {
-        return referedNews;
-    }
-
-    public void setReferedNews(boolean referedNews) {
-        this.referedNews = referedNews;
-    }
-
-    public boolean isReferNews() {
-        return referNews;
-    }
-
-    public void setReferNews(boolean referNews) {
-        this.referNews = referNews;
     }
 }

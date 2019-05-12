@@ -392,4 +392,32 @@ public class DateUtil {
         String time=format2.format(date);
         return time;
     }
+
+    /**
+     * 判断日期是否在时间范围内
+     * @param nowTime
+     * @param startTime
+     * @param endTime
+     * @return
+     */
+    public static boolean isEffectiveDate(Date nowTime, Date startTime, Date endTime) {
+        if (nowTime.getTime() == startTime.getTime()
+                || nowTime.getTime() == endTime.getTime()) {
+            return true;
+        }
+        Calendar date = Calendar.getInstance();
+        date.setTime(nowTime);
+
+        Calendar begin = Calendar.getInstance();
+        begin.setTime(startTime);
+
+        Calendar end = Calendar.getInstance();
+        end.setTime(endTime);
+
+        if (date.after(begin) && date.before(end)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -1,19 +1,16 @@
 package com.springboot.solr.demo.service;
 
-import java.io.IOException;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.List;
-
+import com.springboot.common.util.AppUtil;
 import com.springboot.solr.demo.vo.Items;
-import org.apache.commons.beanutils.BeanUtils;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
 import org.apache.solr.client.solrj.response.QueryResponse;
-import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.params.ModifiableSolrParams;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SolrServiceDemo {
     private final static String url = "http://localhost:8818/solr/collection1";
@@ -111,7 +108,7 @@ public class SolrServiceDemo {
             }
             SolrDocumentList results = response.getResults();
             if (!results.isEmpty()) {
-                List<Items> list = toBeanList(results, Items.class);
+                List<Items> list = AppUtil.toBeanList(results, Items.class);
                 for (Items s : list) {
                     System.out.println(s);
                 }
@@ -120,47 +117,6 @@ public class SolrServiceDemo {
         } catch (SolrServerException e) {
             e.printStackTrace();
         }
-    }
-
-    /**
-     * Solr文档对象转Java对象
-     *
-     * @param record
-     * @param clazz
-     * @return Object
-     */
-    public static Object toBean(SolrDocument record, Class<Object> clazz) {
-        Object o = null;
-        try {
-            o = clazz.newInstance();
-        } catch (InstantiationException e) {
-            System.out.println("Solr文档对象转Java对象实例化异常:" + e.getMessage());
-        } catch (IllegalAccessException e) {
-            System.out.println("Solr文档对象转Java对象非法访问异常:" + e.getMessage());
-        }
-        Field[] fields = clazz.getDeclaredFields();
-        for (Field field : fields) {
-            // log.warn("------------" + record.toString());
-            Object value = record.get(field.getName());
-            try {
-                if (value != null) {
-                    BeanUtils.setProperty(o, field.getName(), value);
-                }
-            } catch (IllegalAccessException e) {
-                System.out.println("Solr文档对象转Java对象方法非法访问异常:" + e.getMessage());
-            } catch (InvocationTargetException e) {
-                System.out.println("Solr文档对象转Java对象调用目标异常:" + e.getMessage());
-            }
-        }
-        return o;
-    }
-
-    public static List toBeanList(SolrDocumentList records, Class clazz) {
-        List list = new ArrayList();
-        for (SolrDocument record : records) {
-            list.add(toBean(record, clazz));
-        }
-        return list;
     }
 
     /**
