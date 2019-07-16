@@ -14,5 +14,6 @@
         <module>mine-sys-cms</module>
         <module>mine-sys-web</module>
         <module>mine-sys-websocket</module>
+        <module>mine-data-algorithm</module>
     </modules>
 </project>
