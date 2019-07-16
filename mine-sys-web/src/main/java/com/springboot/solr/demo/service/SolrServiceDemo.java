@@ -3,6 +3,7 @@ package com.springboot.solr.demo.service;
 import com.springboot.common.util.AppUtil;
 import com.springboot.solr.demo.vo.Items;
 import org.apache.solr.client.solrj.SolrServerException;
+import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
@@ -13,11 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SolrServiceDemo {
-    private final static String url = "http://localhost:8818/solr/collection1";
+    private final static String url = "http://127.0.0.1:123/solr/";
 
     public static void main(String[] args) {
         //new SolrServiceDemo().add();
-        //new SolrServiceDemo().delete();
+        new SolrServiceDemo().delete();
         //new SolrServiceDemo().update();
         new SolrServiceDemo().query();
     }
@@ -54,9 +55,11 @@ public class SolrServiceDemo {
      */
     public void delete() {
         try {
-            HttpSolrServer server = getSolrServer();
-            server.deleteById("1");
+            HttpSolrClient server = getSolrServer();
+            server.deleteById("22283853",200);
+            server.deleteById("collection1","22283853");
             server.commit();
+            server.commit("collection1");
             System.out.println("删除完成");
         } catch (SolrServerException e) {
             e.printStackTrace();
@@ -70,7 +73,7 @@ public class SolrServiceDemo {
      **/
     public void update() {
         try {
-            HttpSolrServer server = getSolrServer();
+            HttpSolrClient server = getSolrServer();
             Items item = new Items();
             item.setId(3);
             item.setName("item_modify");
@@ -95,11 +98,11 @@ public class SolrServiceDemo {
         try {
             HttpSolrServer server = getSolrServer();
             ModifiableSolrParams params = new ModifiableSolrParams();
-            params.set("q", "id:3"); // q表示查询字符串
+            params.set("q", "id:22283853"); // q表示查询字符串
             params.set("start", 0); // start是开始记录数 分页用
             params.set("rows", 3); // rows是返回记录条数 分页用
-            params.set("sort", "price desc");//sort是排序字段 字段名 排序类型
-            params.set("fl", "id,name,price,releaseTime,deals,hits"); //fl是 fieldlist缩写，就是需要返回的字段列表，用逗号和空格隔开
+//            params.set("sort", "price desc");//sort是排序字段 字段名 排序类型
+//            params.set("fl", "id,name,price,releaseTime,deals,hits"); //fl是 fieldlist缩写，就是需要返回的字段列表，用逗号和空格隔开
             QueryResponse response = null;
             try {
                 response = server.query(params);
@@ -108,10 +111,11 @@ public class SolrServiceDemo {
             }
             SolrDocumentList results = response.getResults();
             if (!results.isEmpty()) {
-                List<Items> list = AppUtil.toBeanList(results, Items.class);
-                for (Items s : list) {
-                    System.out.println(s);
-                }
+//                List<Items> list = AppUtil.toBeanList(results, Items.class);
+//                for (Items s : list) {
+//                    System.out.println(s);
+//                }
+                System.out.println(results.get(0));
             }
             System.out.println("参数查询完成");
         } catch (SolrServerException e) {

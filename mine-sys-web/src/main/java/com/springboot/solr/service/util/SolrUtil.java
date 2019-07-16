@@ -3,54 +3,56 @@ package com.springboot.solr.service.util;
 import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.PropertiesUtil;
 import com.springboot.solr.service.vo.SolrIndexVO;
+import com.springboot.solr.service.vo.SolrQueryVO;
+import org.apache.commons.collections.MapUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
+import org.apache.solr.common.SolrInputDocument;
 import org.apache.solr.common.params.ModifiableSolrParams;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class SolrUtil {
-    private HttpSolrClient solrClient = null;
+    private static HttpSolrClient solrClient = null;
 
-    public HttpSolrClient getSolrClient() {
+    /**
+     * 使用单例模式
+     *
+     * @return solrClient
+     */
+    public static HttpSolrClient getSolrClient() {
         if (solrClient == null) {
             solrClient = new HttpSolrClient(PropertiesUtil.getProperty("spring.data.solr.host"));
+            //solrClient.setParser(new XMLResponseParser()); // 设置响应解析器
+            //solrClient.setConnectionTimeout(500); // 建立连接的最长时间
         }
         return solrClient;
     }
 
-    public static void main(String[] args) {
-        //new SolrUtil().add();
-        //new SolrUtil().delete();
-        new SolrUtil().update();
-        //new SolrUtil().query();
-    }
-
     /**
-     * 添加
+     * 直接添加索引
+     *
+     * @param map
+     * @return
      */
-    public void add() {
+    public static void addDocument(Map<String, Object> map) {
+        if (MapUtils.isEmpty(map)) {
+            return;
+        }
+        HttpSolrClient solrClient = getSolrClient();
+        SolrInputDocument document = new SolrInputDocument();
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+            document.addField(entry.getKey(), entry.getValue());
+        }
         try {
-            HttpSolrClient client = getSolrClient();
-            List<SolrIndexVO> list = new ArrayList<SolrIndexVO>();
-            SolrIndexVO item = new SolrIndexVO();
-            item.setId(new Date().getTime()+"");
-            item.setAuthor("admin");
-            item.setTitle("热烈欢迎习主席视察我市");
-            item.setCreateDate(new Date());
-            item.setColumnId(19920419L);
-            item.setTypeCode("articleNews");
-            item.setSiteId(0L);
-            item.setRemark("热烈欢迎习主席视察我市，习主席热心慰问退休干部...");
-            list.add(item);
-            client.addBeans(list);
-            client.commit();
-            System.out.println("添加完成");
+            solrClient.add(document);
+            solrClient.commit();
         } catch (SolrServerException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -59,14 +61,47 @@ public class SolrUtil {
     }
 
     /**
-     * 删除
+     * 添加索引
+     *
+     * @param vo
      */
-    public void delete() {
+    public static void add(SolrIndexVO vo) {
+        HttpSolrClient solrClient = getSolrClient();
+        try {
+            solrClient.addBean(vo);
+            solrClient.commit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SolrServerException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 批量添加索引
+     *
+     * @param vos
+     */
+    public static void add(List<?> vos) {
+        HttpSolrClient solrClient = getSolrClient();
+        try {
+            solrClient.addBeans(vos);
+            solrClient.commit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SolrServerException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 删除索引
+     */
+    public static void delete(String id) {
         try {
             HttpSolrClient client = getSolrClient();
-            client.deleteById("1");
+            client.deleteById(id);
             client.commit();
-            System.out.println("删除完成");
         } catch (SolrServerException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -75,17 +110,34 @@ public class SolrUtil {
     }
 
     /**
-     * 修改
+     * 根据条件删除索引，若条件为空则删除所有
+     *
+     * @throws Exception
+     */
+    public void deleteByQuery(Map<String, Object> queryVO) throws Exception {
+        HttpSolrClient solrClient = getSolrClient();
+        if (MapUtils.isEmpty(queryVO)) {
+            solrClient.deleteByQuery("*:*");
+            return;
+        } else {
+            StringBuffer queryStr = new StringBuffer();
+            for (Map.Entry<String, Object> entry : queryVO.entrySet()) {
+                queryStr.append(entry.getKey()).append(":").append(entry.getValue()).append(",");
+            }
+            solrClient.deleteByQuery(queryStr.substring(0, queryStr.length() - 1));
+        }
+        solrClient.commit();
+    }
+
+
+    /**
+     * 修改:覆盖更新，不传的字段会被null覆盖
      **/
-    public void update() {
+    public static void update(SolrIndexVO vo) {
         try {
             HttpSolrClient client = getSolrClient();
-            SolrIndexVO item = new SolrIndexVO();
-            item.setId("1556964313067");
-            item.setTitle("热烈欢迎习主席视察我市...");
-            client.addBean(item);
+            client.addBean(vo);
             client.commit();
-            System.out.println("修改完成");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SolrServerException e) {
@@ -94,17 +146,44 @@ public class SolrUtil {
     }
 
     /**
-     * 查询
+     * 修改:覆盖更新，不传的字段会被null覆盖
+     **/
+    public static void update(List<?> vos) {
+        try {
+            HttpSolrClient client = getSolrClient();
+            client.addBeans(vos);
+            client.commit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SolrServerException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * solr查询
      */
-    public void query() {
+    public static List<?> query(SolrQueryVO vo) {
+        List<SolrIndexVO> list = null;
         try {
             HttpSolrClient client = getSolrClient();
             ModifiableSolrParams params = new ModifiableSolrParams();
-            params.set("q", "id:2654348"); // q表示查询字符串
-            params.set("start", 0); // start是开始记录数 分页用
-            params.set("rows", 10); // rows是返回记录条数 分页用
-            params.set("sort", "id desc");//sort是排序字段 字段名 排序类型
-            params.set("fl", "id,title"); //fl是 fieldlist缩写，就是需要返回的字段列表，用逗号和空格隔开
+            if (!AppUtil.isEmpty(vo.getQuery())) {
+                params.set("q", vo.getQuery()); // q表示查询字符串
+            }
+            if (!AppUtil.isEmpty(vo.getPageIndex())) {
+                params.set("start", vo.getPageIndex()); // start是开始记录数 分页用
+            }
+            if (!AppUtil.isEmpty(vo.getPageSize())) {
+                params.set("rows", vo.getPageSize()); // rows是返回记录条数 分页用
+            }
+            if (!AppUtil.isEmpty(vo.getSort())) {
+                params.set("sort", vo.getSort()); //sort是排序字段 字段名 排序类型
+            }
+            if (!AppUtil.isEmpty(vo.getFieldList())) {
+                params.set("fl", vo.getFieldList()); //fl是 fieldlist缩写，就是需要返回的字段列表，用逗号和空格隔开
+            }
+
             QueryResponse response = null;
             try {
                 response = client.query(params);
@@ -113,14 +192,37 @@ public class SolrUtil {
             }
             SolrDocumentList results = response.getResults();
             if (!results.isEmpty()) {
-                List<SolrIndexVO> list = AppUtil.toBeanList(results, SolrIndexVO.class);
-                for (SolrIndexVO s : list) {
-                    System.out.println(s);
+                list = AppUtil.toBeanList(results, SolrIndexVO.class);
+                for (SolrIndexVO solrIndexVO : list) {
+                    list.add(solrIndexVO);
                 }
             }
-            System.out.println("参数查询完成");
         } catch (SolrServerException e) {
             e.printStackTrace();
         }
+        return list;
+    }
+
+    /**
+     * @Function: Solr多核索引分片(Sharding index)查询
+     *  参数“shards”能够使请求被分发到shards所指定的小索引上
+     *  shards 的格式  ：host:port/base_url[,host:port/base_url]*
+     *  @description:   多核(例如core1、core2..)中添加索引field :coreFlag
+     *                  用于标识shards指定的小索引
+     */
+    public void querySharding () throws SolrServerException, IOException {
+        String SHARDS_URL = "http://localhost:8818/solr/collection1,http://localhost:8818/solr/collection2";
+        String queryValue = "((coreFlag:0 AND ..core1上的其他条件) OR (coreFlag:1 AND  ..core2 上的条件)) AND 其他条件 ";
+        SolrQuery query = new SolrQuery(queryValue);
+        query.setStart(0).setRows(10).setSort("name", SolrQuery.ORDER.desc);
+        if(StringUtils.isNotBlank(SHARDS_URL)){
+            query.set("shards",SHARDS_URL);
+        }
+        HttpSolrClient solrClient = getSolrClient();
+        QueryResponse resp = solrClient.query(query);
+        SolrDocumentList sdList = resp.getResults();
+        List<SolrIndexVO> searchList = solrClient.getBinder().getBeans(SolrIndexVO.class,sdList);
+        Long totalRecord = new Long(sdList.getNumFound());
+        System.out.println("已检索到" + totalRecord + "条记录");
     }
 }
