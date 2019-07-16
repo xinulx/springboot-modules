@@ -105,6 +105,20 @@
     color: #fff;
 }
 
+.top-header{
+    background: url(/images/top_header_bg.png) #60a7fe no-repeat;
+    background-size: cover;
+}
+
+.logo-title{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 900;
+    top:10px;
+    text-align: center;
+    color:#FFFFFF;
+}
+
 .main-sidebar {
     min-height: 100%;
     z-index: 810;
@@ -123,17 +137,15 @@ body{
     font-weight: bold;
 }
 .mainHeader{
-    position: absolute;
-    right: 15px;
-    top:40px;
+    margin-left: 135px;
 }
 .mainHeader ul li {
     float: left;
     list-style: none;
-    height: 30px;
-    line-height: 30px;
     width: auto;
-    padding: 0 10px;
+    padding: 10px;
+    color:#ffff60;
+    font-weight: 800;
 }
 
 .mainHeader ul li:hover {
@@ -153,7 +165,8 @@ body{
     width: auto;
     padding: 10px;
     cursor: pointer;
-
+    color:#FFFFFF;
+    font-weight: 800;
 }
 
 .f_left:hover {

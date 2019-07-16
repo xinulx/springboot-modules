@@ -210,7 +210,7 @@ public class SolrUtil {
      *  @description:   多核(例如core1、core2..)中添加索引field :coreFlag
      *                  用于标识shards指定的小索引
      */
-    public void querySharding () throws SolrServerException, IOException {
+    public List<SolrIndexVO> querySharding () throws SolrServerException, IOException {
         String SHARDS_URL = "http://localhost:8818/solr/collection1,http://localhost:8818/solr/collection2";
         String queryValue = "((coreFlag:0 AND ..core1上的其他条件) OR (coreFlag:1 AND  ..core2 上的条件)) AND 其他条件 ";
         SolrQuery query = new SolrQuery(queryValue);
@@ -224,5 +224,6 @@ public class SolrUtil {
         List<SolrIndexVO> searchList = solrClient.getBinder().getBeans(SolrIndexVO.class,sdList);
         Long totalRecord = new Long(sdList.getNumFound());
         System.out.println("已检索到" + totalRecord + "条记录");
+        return searchList;
     }
 }

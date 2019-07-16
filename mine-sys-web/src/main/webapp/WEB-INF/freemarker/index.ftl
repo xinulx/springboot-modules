@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="z-ch">
 <head>
-    <title>演示站点主页</title>
+    <title>Java Platform</title>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=8">
@@ -42,28 +42,25 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-12 bg-primary">
-            <div class="col-xs-2 banner">LONSUN EX8</div>
-            <div class="col-xs-10">
-                <div class="row pull-right">
-                    <div class="f_left">
-                        <span class="glyphicon glyphicon-home"></span>&nbsp;演示站点
-                    </div>
-                    <div class="f_left">
-                        <span class="glyphicon glyphicon-map-marker"></span>&nbsp;${(localUser.OrganName)!'单位'}
-                    </div>
-                    <div class="f_left">
-                        <span class="glyphicon glyphicon-edit"></span>&nbsp;${(localUser.PersonName)!'个人信息'}
-                    </div>
-                    <div class="f_left">
-                        <span class="glyphicon glyphicon-info-sign"></span>&nbsp;信息
-                    </div>
-                    <div class="f_left">
-                        <span class="glyphicon glyphicon-off"></span>&nbsp;退出登录
-                    </div>
+    <div class="row top-header">
+        <div class="col-xs-12">
+            <div class="pull-left">
+                <span class="logo-title">Java Platform</span>
+                <div id="mainHeader" class="row mainHeader"></div>
+            </div>
+            <div class="pull-right">
+                <div class="f_left">
+                    <span class="glyphicon glyphicon-map-marker"></span>&nbsp;${(localUser.OrganName)!'单位'}
                 </div>
-                <div id="mainHeader" class="row mainHeader pull-right"></div>
+                <div class="f_left">
+                    <span class="glyphicon glyphicon-edit"></span>&nbsp;${(localUser.PersonName)!'个人信息'}
+                </div>
+                <div class="f_left">
+                    <span class="glyphicon glyphicon-info-sign"></span>&nbsp;信息
+                </div>
+                <div class="f_left">
+                    <span class="glyphicon glyphicon-off"></span>&nbsp;退出登录
+                </div>
             </div>
         </div>
     </div>
