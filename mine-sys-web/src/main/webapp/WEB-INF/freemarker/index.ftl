@@ -129,10 +129,10 @@
     $(document).ready(function () {
         initSocket();
         loadSysMenu();
-        $(".f_left:eq(0)").click(function(){
+        $(".f_left:first").click(function(){
             window.open ("/login/mainSite");
         });
-        $(".f_left:eq(4)").click(function(){
+        $(".f_left:last").click(function(){
             $.get("/login/logout",function(d){
                 if(d.status == 1){
                     window.location.reload(true);
