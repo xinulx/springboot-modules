@@ -49,9 +49,9 @@ public class LoggerDisruptorQueue {
         activeDisruptor.handleEventsWith(activeMQEventHandler);
         fileLoggerEventDisruptor.handleEventsWith(fileLoggerEventHandler);
 
-        this.ringBuffer = disruptor.getRingBuffer();
-        this.activeMQEventRingBuffer = activeDisruptor.getRingBuffer();
-        this.fileLoggerEventRingBuffer = fileLoggerEventDisruptor.getRingBuffer();
+        ringBuffer = disruptor.getRingBuffer();
+        activeMQEventRingBuffer = activeDisruptor.getRingBuffer();
+        fileLoggerEventRingBuffer = fileLoggerEventDisruptor.getRingBuffer();
 
         disruptor.start();
         activeDisruptor.start();
