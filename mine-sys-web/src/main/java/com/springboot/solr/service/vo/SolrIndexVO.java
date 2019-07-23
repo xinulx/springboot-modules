@@ -40,7 +40,8 @@ public class SolrIndexVO {
     @Field
     private String author;// 作者
 
-    private String uri;
+    @Field
+    private Integer coreFlag = 0;//分片标识，默认存储core0
 
     public String getId() {
         return id;
@@ -122,28 +123,11 @@ public class SolrIndexVO {
         this.author = author;
     }
 
-    public String getUri() {
-        return uri;
+    public Integer getCoreFlag() {
+        return coreFlag;
     }
 
-    public void setUri(String uri) {
-        this.uri = uri;
-    }
-
-    @Override
-    public String toString() {
-        return "SolrIndexVO{" +
-                "id='" + id + '\'' +
-                ", columnId=" + columnId +
-                ", title='" + title + '\'' +
-                ", remark='" + remark + '\'' +
-                ", content='" + content + '\'' +
-                ", typeCode='" + typeCode + '\'' +
-                ", siteId=" + siteId +
-                ", createDate=" + createDate +
-                ", url='" + url + '\'' +
-                ", author='" + author + '\'' +
-                ", uri='" + uri + '\'' +
-                '}';
+    public void setCoreFlag(Integer coreFlag) {
+        this.coreFlag = coreFlag;
     }
 }

@@ -827,7 +827,7 @@ public class AppUtil {
      * 为对象target设置值，target、values以及unIngoreFields是否按约定传输，工具方法中不再进行验证
      *
      * @param target           待设值的对象
-     * @param values           key对应target的属性名，value对应属性的值
+     * @param source           key对应target的属性名，value对应属性的值
      * @param assignmentFields 此字段为空，那么map中的所有值都设值进去，如果不为空，那么只设值assignmentFields中的属性值
      */
     public static void copyPropertiesWithAssignmentFields(Object source, Object target, String... assignmentFields)
