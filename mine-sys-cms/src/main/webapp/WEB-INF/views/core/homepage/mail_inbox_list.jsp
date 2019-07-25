@@ -68,9 +68,9 @@
 <body class="skin-blue content-body">
 <jsp:include page="/WEB-INF/views/commons/show_message.jsp"/>
 <div class="content-header">
-    <h1><s:message code="homepage.mailInbox"/> - <s:message code="list"/>
+    <h4><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>&nbsp;<s:message code="homepage.mailInbox"/> - <s:message code="list"/>
         <small>(<s:message code="totalElements" arguments="${pagedList.totalElements}"/>)</small>
-    </h1>
+    </h4>
 </div>
 
 <div class="content">

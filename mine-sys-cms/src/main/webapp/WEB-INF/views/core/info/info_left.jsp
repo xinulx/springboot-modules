@@ -27,7 +27,7 @@ body{overflow-x:auto;}
 	var setting = {
 		view: {
 			nameIsHTML: true,
-		  showTitle: false,
+		  	showTitle: false,
 			expandSpeed: "",
 			dblClickExpand: dblClickExpand
 		},
@@ -73,8 +73,9 @@ body{overflow-x:auto;}
 		<option value="1"><s:message code="info.queryNodeType.1"/></option>
 		<option value="2"><s:message code="info.queryNodeType.2"/></option>
 	</select>
-	<%-- <label for="showChildren"><input id="showChildren" type="checkbox" checked="checked"/><s:message code="info.showChildren"/></label> --%>
+	<div class="form-control" style="height: auto">
+		<ul id="tree" class="ztree" style="height:680px;width: 100%;overflow: auto"></ul>
+	</div>
 </div>
-<ul id="tree" class="ztree" style="margin:7px 0 0 7px"></ul>
 </body>
 </html>

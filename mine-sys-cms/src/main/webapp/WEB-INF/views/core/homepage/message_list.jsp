@@ -65,7 +65,7 @@ function optDelete(form) {
 <body class="skin-blue content-body">
 <jsp:include page="/WEB-INF/views/commons/show_message.jsp"/>
 <div class="content-header">
-	<h1><s:message code="homepage.message"/> - <s:message code="list"/> <small>(<s:message code="totalElements" arguments="${pagedList.totalElements}"/>)</small></h1>
+	<h4><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;<s:message code="homepage.message"/> - <s:message code="list"/> <small>(<s:message code="totalElements" arguments="${pagedList.totalElements}"/>)</small></h4>
 </div>
 <div class="content">
 	<div class="box box-primary">

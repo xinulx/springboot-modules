@@ -64,7 +64,7 @@ $(function() {
 <body class="skin-blue content-body">
 <jsp:include page="/WEB-INF/views/commons/show_message.jsp"/>
 <div class="content-header">
-	<h1><s:message code="notification.management"/> - <s:message code="list"/> <small>(<s:message code="totalElements" arguments="${pagedList.totalElements}"/>)</small></h1>
+	<h4><span class="glyphicon glyphicon-bell" aria-hidden="true"></span>&nbsp;<s:message code="notification.management"/> - <s:message code="list"/> <small>(<s:message code="totalElements" arguments="${pagedList.totalElements}"/>)</small></h4>
 </div>
 <div class="content">
 	<div class="box box-primary">

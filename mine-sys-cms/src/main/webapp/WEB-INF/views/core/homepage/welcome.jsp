@@ -14,7 +14,7 @@
 </head>
 <body class="skin-blue content-body">
 <div class="content-header">
-	<h1>后台首页</h1>
+	<h4><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;后台首页</h4>
 </div>
 <div class="content">
 	<div class="row">

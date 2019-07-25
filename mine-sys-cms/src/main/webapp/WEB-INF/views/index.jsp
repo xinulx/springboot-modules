@@ -34,9 +34,9 @@
     <!-- Logo -->
     <a href="index.do" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b></b>CMS</span>
+      <span class="logo-mini"><b>·乐游·</b>简单·</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>jspX</b>CMS</span>
+      <span class="logo-lg"><b>·乐游·</b>简单·</span>
     </a>
 
     <!-- Header Navbar -->
