@@ -9,8 +9,6 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>mine-file-web</module>
-        <module>mine-file-convert</module>
         <module>mine-sys-cms</module>
         <module>mine-sys-web</module>
     </modules>
