@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.io.*;
 
 @Controller
-@RequestMapping("/call")
+@RequestMapping("/callService")
 @Slf4j
 public class CallService {
 

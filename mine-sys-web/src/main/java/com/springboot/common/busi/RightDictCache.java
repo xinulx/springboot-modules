@@ -22,7 +22,7 @@ public class RightDictCache {
     private static IDataDictItemService dataDictItemService;
 
     static {
-        cache = new ConcurrentHashMap<String, Object>();
+        cache = new ConcurrentHashMap<>();
         lock = new ReentrantReadWriteLock();
         read = lock.readLock();
         write = lock.writeLock();
@@ -30,11 +30,9 @@ public class RightDictCache {
         dataDictItemService = SpringContextHolder.getBean("dataDictItemService");
     }
 
-    /*
-     * 读取操作
-     * key : code;
-     * 组成字符串
-     * */
+    /**
+     * 读取操作 key : code 组成字符串
+     */
     public static List<DataDictItemEO> get(String dictCode) {
         read.lock();
         try {
@@ -47,9 +45,9 @@ public class RightDictCache {
         }
     }
 
-    /*
+    /**
      * 写入操作
-     * */
+     */
     public static void put(String key, Object object) {
         write.lock();
         try {
