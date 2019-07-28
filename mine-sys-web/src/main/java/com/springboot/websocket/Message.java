@@ -3,7 +3,7 @@ package com.springboot.websocket;
 /**
  * Content :日志消息实体
  */
-public class LoggerMessage {
+public class Message {
 
     private String body;
     private String timestamp;
@@ -12,7 +12,7 @@ public class LoggerMessage {
     private String level;
     private int status = 0;
 
-    public LoggerMessage(int status,String body, String timestamp, String threadName, String className, String level) {
+    public Message(int status, String body, String timestamp, String threadName, String className, String level) {
         this.status = status;
         this.body = body;
         this.timestamp = timestamp;
@@ -21,7 +21,7 @@ public class LoggerMessage {
         this.level = level;
     }
 
-    public LoggerMessage() {
+    public Message() {
     }
 
     public int getStatus() {

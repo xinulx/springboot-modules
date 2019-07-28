@@ -9,7 +9,7 @@
             <pattern>${CONSOLE_LOG_PATTERN}</pattern>
             <charset>utf8</charset>
         </encoder>
-        <filter class="com.springboot.websocket.ProcessLogFilter"></filter>
+        <filter class="com.springboot.websocket.ProcessFilter"></filter>
     </appender>
     <root level="INFO">
         <appender-ref ref="FILE" />

@@ -9,18 +9,18 @@ import java.sql.Date;
 import java.text.DateFormat;
 
 @Service
-public class ProcessLogFilter extends Filter<ILoggingEvent> {
+public class ProcessFilter extends Filter<ILoggingEvent> {
 
     @Override
     public FilterReply decide(ILoggingEvent event) {
-        LoggerMessage loggerMessage = new LoggerMessage(1,
+        Message message = new Message(1,
                 event.getMessage()
                 , DateFormat.getDateTimeInstance().format(new Date(event.getTimeStamp())),
                 event.getThreadName(),
                 event.getLoggerName(),
                 event.getLevel().levelStr
         );
-        LoggerDisruptorQueue.publishEvent(loggerMessage);
+        DisruptorQueue.publishEvent(message);
         return FilterReply.ACCEPT;
     }
 }  

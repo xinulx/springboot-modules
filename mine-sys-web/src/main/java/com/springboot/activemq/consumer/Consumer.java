@@ -1,8 +1,8 @@
 package com.springboot.activemq.consumer;
 
 import com.springboot.activemq.producer.Producer;
-import com.springboot.websocket.LoggerDisruptorQueue;
-import com.springboot.websocket.LoggerMessage;
+import com.springboot.websocket.DisruptorQueue;
+import com.springboot.websocket.Message;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -35,7 +35,7 @@ public class Consumer {
     public void receiveQueue(String text) {
         log.info("Consumer收到的报文为:{}", text);
         // 直接推送
-        final LoggerMessage message = new LoggerMessage(1, text, DateFormat.getDateTimeInstance().format(new Date(System.currentTimeMillis())), Thread.currentThread().getName(), this.getClass().getName(), this.getClass().getTypeName());
-        cachedThreadPool.execute(() -> LoggerDisruptorQueue.publishMQ(message));
+        final Message message = new Message(1, text, DateFormat.getDateTimeInstance().format(new Date(System.currentTimeMillis())), Thread.currentThread().getName(), this.getClass().getName(), this.getClass().getTypeName());
+        cachedThreadPool.execute(() -> DisruptorQueue.publishMQ(message));
     }
 }

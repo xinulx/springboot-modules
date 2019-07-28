@@ -329,9 +329,9 @@ function timeTips(content) {
         shade: false,
         offset: [function () {
             if (tipsCount == 1) {
-                return 75;
+                return 55;
             } else {
-                return 75 + (tipsCount - 1) * 110;
+                return 55 + (tipsCount - 1) * 110;
             }
         }, document.body.clientWidth - 380],
         closeBtn: 0,//不显示关闭按钮
@@ -381,9 +381,9 @@ function initSocket() {
         var socket = new SockJS('http://' + location.host + '/websocket?token=mq');
         stompClient = Stomp.over(socket);
     }
-    // var tipsCount = 0;
     stompClient.connect({token: "mq"}, function (frame) {
-        stompClient.subscribe('/queue/receiveMessage', function (event) {
+        console.log(frame);
+        stompClient.subscribe('/topic/receiveMessage', function (event) {
             var content = JSON.parse(event.body);
             $.toast({
                 text: content.body,
@@ -394,7 +394,7 @@ function initSocket() {
                 allowClickClose: true,
                 hideAfter: 5000,
                 stack: 5,
-                position: {left: 'auto', right: '20px', top: '75px', bottom: 'auto'},
+                position: {left: 'auto', right: '20px', top: '55px', bottom: 'auto'},
                 textAlign: 'left',
                 loader: true,
                 loaderBg: '#ffffbb',

@@ -16,8 +16,6 @@ public class DemoBeanService extends AbstractBeanService {
         Map root = new HashMap();
         root.put("num", num);
         root.put("desc", desc);
-        String html = processHtml(root);
-        html = html.toString().replaceAll("[\\n\\r]", "");
-        return html;
+        return processHtml(root);
     }
 }

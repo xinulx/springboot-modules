@@ -1,19 +1,19 @@
 package com.springboot.websocket.disruptor;
 
-import com.springboot.websocket.LoggerMessage;
+import com.springboot.websocket.Message;
 
 /**
  * Content :进程日志事件内容载体
  */
 public class LoggerEvent {
 
-    private LoggerMessage log;
+    private Message log;
 
-    public LoggerMessage getLog() {
+    public Message getLog() {
         return log;
     }
 
-    public void setLog(LoggerMessage log) {
+    public void setLog(Message log) {
         this.log = log;
     }
 }
