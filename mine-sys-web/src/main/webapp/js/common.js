@@ -385,11 +385,14 @@ function initSocket() {
         console.log(frame);
         stompClient.subscribe('/topic/receiveMessage', function (event) {
             var content = JSON.parse(event.body);
+            if(content.type == 'log' || content.type == 'fileLog'){
+                return;
+            }
             $.toast({
                 text: content.body,
                 heading: 'success',
                 icon: getIcon(content.status),
-                showHideTransition: 'slide',
+                showHideTransition: 'fade',
                 allowToastClose: true,
                 allowClickClose: true,
                 hideAfter: 5000,

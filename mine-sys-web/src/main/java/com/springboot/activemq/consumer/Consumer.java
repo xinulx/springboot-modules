@@ -1,15 +1,13 @@
 package com.springboot.activemq.consumer;
 
 import com.springboot.activemq.producer.Producer;
-import com.springboot.websocket.DisruptorQueue;
-import com.springboot.websocket.Message;
+import com.springboot.websocket.disruptor.entity.Message;
+import com.springboot.websocket.util.MessageSendUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Component;
 
-import java.sql.Date;
-import java.text.DateFormat;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -35,7 +33,10 @@ public class Consumer {
     public void receiveQueue(String text) {
         log.info("Consumer收到的报文为:{}", text);
         // 直接推送
-        final Message message = new Message(1, text, DateFormat.getDateTimeInstance().format(new Date(System.currentTimeMillis())), Thread.currentThread().getName(), this.getClass().getName(), this.getClass().getTypeName());
-        cachedThreadPool.execute(() -> DisruptorQueue.publishMQ(message));
+        final Message message = new Message();
+        message.setType(Message.Type.business.name());
+        message.setTitle("业务消息");
+        message.setBody(text);
+        cachedThreadPool.execute(() -> MessageSendUtil.sendTopicMessage(message));
     }
 }

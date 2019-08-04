@@ -1,29 +1,21 @@
-<div class="col-md-12 bg-warning" style="height: 30px;line-height: 30px;color:#c29d0b;margin: 0 0 10px 0;font-weight: bolder">JVM进程内的日志</div>
+<div class="col-md-12 bg-warning"
+     style="height: 30px;line-height: 30px;color:#c29d0b;margin: 0 0 10px 0;font-weight: bolder">JVM进程内的日志
+</div>
 <div class="col-xs-12" style="padding-left: 0;padding-bottom: 8px">
     <form class="form-inline tr search-toolbar pull-left" role="form">
         <button type="button" class="btn btn-sm btn-success" onclick="openSocket()">开启日志</button>
         <button type="button" class="btn btn-sm btn-danger" onclick="closeSocket()">关闭日志</button>
         <button type="button" class="btn btn-sm btn-primary" onclick="sendSocket()">发送消息</button>
-        <button type="button" class="btn btn-sm btn-primary" onclick="senNoticeJsonpForContent()">JSONP</button>
-        <!--<button type="button" class="btn btn-sm btn-primary" onclick="startSolr(1)">启动solr</button>-->
+        <button type="button" class="btn btn-sm btn-primary" onclick="senJsonp()">JSONP</button>
+        <button type="button" class="btn btn-sm btn-primary" onclick="startSolr(1)">启动solr</button>
         <button type="button" class="btn btn-sm btn-info" onclick="startSolr(2)">启动solr</button>
         <button type="button" class="btn btn-sm btn-danger" onclick="startSolr(0)">关闭solr</button>
         <button type="button" class="btn btn-sm btn-warning" onclick="sendTimeTips()">发送提示</button>
     </form>
 </div>
-<div id="fileLog-container" style="height: 560px; overflow-y: scroll; background: #333; color: #aaa; padding: 10px;">
+<div id="fileLogContainer" style="height: 560px; overflow-y: scroll; background: #333; color: #aaa; padding: 10px;">
     <div contenteditable="true" style="outline: none;caret-color: red;"></div>
 </div>
-<!--<div class="col-md-12 bg-warning hidden" style="height: 30px;line-height: 30px;color:#c29d0b;margin: 10px 0;font-weight: bolder">指定监听日志文件的日志</div>
-<div class="col-xs-12 hidden" style="padding-left: 0;padding-bottom: 8px">
-    <form class="form-inline tr search-toolbar pull-left" role="form">
-        <button type="button" class="btn btn-success" onclick="openSocket()">开启日志</button>
-        <button type="button" class="btn btn-danger" onclick="closeSocket()">关闭日志</button>
-    </form>
-</div>
-<div id="log-container hidden" style="height: 330px; overflow-y: scroll; background: #333; color: #aaa; padding: 10px;margin-bottom: 30px">
-    <div contenteditable="true" style="outline: none;caret-color: red;"></div>
-</div>-->
 <script>
     var stompClient = null;
     $(document).ready(function () {
@@ -32,90 +24,48 @@
 
     function openSocket() {
         if (stompClient == null) {
-            var socket = new SockJS('http://localhost:8816/websocket?token=mq');
+            const socket = new SockJS('http://localhost:8816/websocket?token=log');
             stompClient = Stomp.over(socket);
         }
-        stompClient.connect({token: "mq"}, function (frame) {
-            /*stompClient.subscribe('/topic/pullLogger', function (event) {
+        stompClient.connect({token: "log"}, function (frame) {
+            stompClient.subscribe('/topic/receiveMessage', function (event) {
                 var content = JSON.parse(event.body);
-                $("#log-container div").append(content.timestamp + " " + content.level + " --- [" + content.threadName + "] " + content.className + "   :" + content.body).append("<br/>");
-                $("#log-container").scrollTop($("#log-container div").height() - $("#log-container").height());
+                console.log(content);
+                if (content.type == 'fileLog') {
+                    $("#fileLogContainer div").append(content.timestamp
+                        + " " + content.level
+                        + " --- [" + content.threadName + "] "
+                        + content.className + "   :"
+                        + content.body).append("<br/>");
+                    $("#fileLogContainer").scrollTop($("#fileLogContainer div").height() - $("#fileLogContainer").height());
+                }
             }, {
-                token: "mq_message"
-            });*/
-            stompClient.subscribe('/topic/pullFileLogger', function (event) {
-                var content = event.body;
-                $("#fileLog-container div").append(content).append("<br/>");
-                $("#fileLog-container").scrollTop($("#fileLog-container div").height() - $("#fileLog-container").height());
-            }, {
-                token: "mq_message"
+                token: "log_message"
             });
         });
-        Mine.layer.tips("日志已开启",1);
+        Mine.layer.tips("日志已开启", 1);
     }
 
-    function senJsonp(){
+    function senJsonp() {
         $.ajax({
-            async : true,
-            url : "http://dict-mobile.iciba.com/interface/index.php",
-            type : "GET",
-            dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
-            jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+            async: true,
+            url: "http://dict-mobile.iciba.com/interface/index.php",
+            type: "GET",
+            dataType: "jsonp", // 返回的数据类型，设置为JSONP方式
+            jsonp: 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
             jsonpCallback: 'handleResponse', //设置回调函数名
-            data : {
-                c:"word",
-                nums:10,
-                m:"getsuggest",
-                ck:"709a0db45332167b0e2ce1868b84773e",
-                client:6,
-                uid:0,
-                timestamp:new Date().getTime(),
-                is_need_mean:1,
-                word:"shenfenzheng"
+            data: {
+                c: "word",
+                nums: 10,
+                m: "getsuggest",
+                ck: "709a0db45332167b0e2ce1868b84773e",
+                client: 6,
+                uid: 0,
+                timestamp: new Date().getTime(),
+                is_need_mean: 1,
+                word: "shenfenzheng"
             },
-            success: function(data, status, xhr){
-                console.log('状态为：' + status + ',状态是：' + xhr.statusText);
-                console.log(data);
-                sendSocket(JSON.stringify(data))
-            }
-        });
-    }
-
-    function senNoticeJsonp(){
-        $.ajax({
-            async : true,
-            url : "http://www.ahhfly.gov.cn/content/noticeList",
-            type : "POST",
-            dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
-            jsonp : 'callback', //指定参数名称来覆盖默认的jsonp回调参数名 callback
-            jsonpCallback: 'handleResponse',//设置回调函数名
-            data : {
-                siteId:4697420,
-                columnId:4701911,
-                pageIndex:0,
-                pageSize:10,
-                title:""
-            },
-            success: function(data, status, xhr){
-                console.log('状态为：' + status + ',状态是：' + xhr.statusText);
-                console.log(data);
-                sendSocket(JSON.stringify(data))
-            }
-        });
-    }
-
-    function senNoticeJsonpForContent(){
-        $.ajax({
-            async : true,
-            url : "http://www.ahhfly.gov.cn/content/noticeList",
-            type : "POST",
-            dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
-            jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
-            jsonpCallback: 'handleResponse',
-            data : {
-                contentId:528541
-            },
-            success: function(data, status, xhr){
+            success: function (data, status, xhr) {
                 console.log('状态为：' + status + ',状态是：' + xhr.statusText);
                 console.log(data);
                 sendSocket(JSON.stringify(data))
@@ -128,29 +78,29 @@
             stompClient.disconnect();
             stompClient = null;
         }
-        Mine.layer.tips("日志已关闭",1);
+        Mine.layer.tips("日志已关闭", 1);
     }
 
-    function startSolr(type){
+    function startSolr(type) {
         $.ajax({
-            url:"/call/tomcat-solr?type=" + type,
-            success:function(d){
+            url: "/call/tomcat-solr?type=" + type,
+            success: function (d) {
                 console.log(d);
                 d = JSON.parse(atob(d));
-                if(d.status == 1){
+                if (d.status == 1) {
                     Mine.layer.tips("操作成功！");
-                }else{
-                    Mine.layer.tips("操作失败！",2);
+                } else {
+                    Mine.layer.tips("操作失败！", 2);
                 }
             }
         });
     }
 
-    function sendTimeTips(){
-        var content = {
-            status : 0,
-            title:'系统消息',
-            body : "您有2条未完成的任务您有2条未完成的任务"
+    function sendTimeTips() {
+        const content = {
+            status: 1,
+            title: '系统消息',
+            body: "您有2条未完成的任务您有2条未完成的任务"
         };
         timeTips(content);
     }

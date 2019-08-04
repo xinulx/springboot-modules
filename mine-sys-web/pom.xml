@@ -63,6 +63,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.11</version>
         </dependency>
 
         <!-- Swagger -->
@@ -146,7 +147,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.0.5</version>
+            <version>1.1.10</version>
         </dependency>
 
         <!-- 引入freeMarker的依赖包. -->

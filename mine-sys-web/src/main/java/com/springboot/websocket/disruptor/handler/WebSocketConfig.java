@@ -1,4 +1,4 @@
-package com.springboot.websocket;
+package com.springboot.websocket.disruptor.handler;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -17,8 +17,10 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        //topic用来广播，user用来实现p2p
+        //声明服务端发给客户端的域：topic用来广播，user用来实现p2p
         config.enableSimpleBroker("/topic", "/user");
+        config.setUserDestinationPrefix("/user");
+        config.setApplicationDestinationPrefixes("/topic");
     }
 
     @Override

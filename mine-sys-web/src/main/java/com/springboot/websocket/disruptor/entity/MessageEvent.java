@@ -1,11 +1,10 @@
-package com.springboot.websocket.disruptor;
-
-import com.springboot.websocket.Message;
+package com.springboot.websocket.disruptor.entity;
 
 /**
- * Content :消息发送事件对象
+ * Content :消息事件内容载体
  */
-public class ActiveMQEvent {
+public class MessageEvent {
+
     private Message message;
 
     public Message getMessage() {

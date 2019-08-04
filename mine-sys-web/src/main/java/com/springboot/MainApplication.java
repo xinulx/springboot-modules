@@ -1,6 +1,7 @@
 package com.springboot;
 
 import com.springboot.activemq.producer.Producer;
+import com.springboot.common.util.PropertiesUtil;
 import org.apache.coyote.http11.AbstractHttp11Protocol;
 import org.hibernate.SessionFactory;
 import org.hibernate.jpa.HibernateEntityManagerFactory;
@@ -66,7 +67,7 @@ public class MainApplication extends SpringBootServletInitializer {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        openExploer();
+        openExplorer();
     }
 
     /**
@@ -92,8 +93,8 @@ public class MainApplication extends SpringBootServletInitializer {
         return application.sources(MainApplication.class);
     }
 
-    public static void openExploer(){
-        String cmd = "D:\\soft\\360se6\\Application\\360se.exe http://localhost:8816/login/loginIn";
+    public static void openExplorer(){
+        String cmd = PropertiesUtil.getProperty("explorer");
         Runtime run = Runtime.getRuntime();
         try{
             run.exec(cmd);

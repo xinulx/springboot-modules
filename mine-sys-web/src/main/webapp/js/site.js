@@ -7,7 +7,7 @@ var Menu = function (element, options) {
     this.element = $(element);
     this.options = $.extend(true, {}, this.options, options);
     this.init();
-}
+};
 
 Menu.prototype = {
 
@@ -122,5 +122,4 @@ Menu.prototype = {
 
         return me._idHash[id];
     }
-
 };

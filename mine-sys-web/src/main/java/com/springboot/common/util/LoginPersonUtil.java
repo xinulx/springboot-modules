@@ -43,7 +43,11 @@ public class LoginPersonUtil {
      * @return
      */
     public static <T> T getAttribute(Class<T> clazz, String key) {
-        return cast(clazz, getSession().getAttribute(key));
+        try {
+            return cast(clazz, getSession().getAttribute(key));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     /**

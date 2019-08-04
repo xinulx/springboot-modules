@@ -1,5 +1,7 @@
-package com.springboot.websocket;
+package com.springboot.websocket.disruptor.handler;
 
+import com.springboot.websocket.disruptor.entity.Message;
+import com.springboot.websocket.util.MessageSendUtil;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -16,14 +18,26 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 文件日志监听器
+ * 根据记录上次文件位置来查找有无新的日志信息
+ * 并推送到前端
+ */
 @Service
-public class FileLogListening implements ApplicationContextAware {
+public class FileLoggerListening implements ApplicationContextAware {
 
-    /**上次文件大小*/
+    /**
+     * 上次文件大小
+     */
     private long lastTimeFileSize = 0;
 
     @Autowired
     Environment environment;
+
+    /**
+     * 消息体
+     */
+    private static Message message = new Message();
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -36,10 +50,13 @@ public class FileLogListening implements ApplicationContextAware {
             exec.scheduleWithFixedDelay(() -> {
                 try {
                     randomFile.seek(lastTimeFileSize);
-                    String tmp = "";
+                    String tmp;
                     while ((tmp = randomFile.readLine()) != null) {
                         String log = new String(tmp.getBytes("ISO8859-1"));
-                        DisruptorQueue.publishEvent(log);
+                        message.setTitle("读取文件日志");
+                        message.setType(Message.Type.fileLog.name());
+                        message.setBody(log);
+                        MessageSendUtil.sendTopicMessage(message);
                     }
                     lastTimeFileSize = randomFile.length();
                 } catch (IOException e) {

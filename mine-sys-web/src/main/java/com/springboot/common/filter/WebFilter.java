@@ -9,8 +9,8 @@ import com.springboot.entity.business.PublishStrategyEO;
 import com.springboot.entity.vo.ResultVO;
 import com.springboot.service.hibernate.ILimitMappingService;
 import com.springboot.service.hibernate.IPublishStrategyService;
-import com.springboot.websocket.DisruptorQueue;
-import com.springboot.websocket.Message;
+import com.springboot.websocket.disruptor.entity.Message;
+import com.springboot.websocket.util.MessageSendUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.filters.RemoteIpFilter;
 import org.apache.commons.lang3.StringUtils;
@@ -108,12 +108,11 @@ public class WebFilter {
                 vo.setDesc(userJson);
                 AjaxRequestUtil.printAjax(response, vo);
                 // 发送消息
-                Message loggerMessage = new Message(3, "限时发布系统已开启，您当前的操作受到限制，请在规定时间内操作！",
-                        DateFormat.getDateTimeInstance().format(new java.sql.Date(System.currentTimeMillis())),
-                        Thread.currentThread().getName(),
-                        this.getClass().getName(),
-                        this.getClass().getTypeName()
-                );
+                Message loggerMessage = new Message();
+                loggerMessage.setStatus(Message.Status.warning.getValue());
+                loggerMessage.setType(Message.Type.business.name());
+                loggerMessage.setType("限时发布系统提醒");
+                loggerMessage.setBody("限时发布系统已开启，您当前的操作受到限制，请在规定时间内操作！");
                 final Message message = loggerMessage;
                 Executors.newCachedThreadPool().execute(() ->
                 {
@@ -122,7 +121,7 @@ public class WebFilter {
                     } catch (InterruptedException e) {
                         throw new BaseRunTimeException("推送消息发生错误:" + e.getMessage());
                     }
-                    DisruptorQueue.publishMQ(message);
+                    MessageSendUtil.sendTopicMessage(message);
                 });
             } else {
                 chain.doFilter(arg0, response);
