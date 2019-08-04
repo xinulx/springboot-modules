@@ -83,7 +83,7 @@
 
     function startSolr(type) {
         $.ajax({
-            url: "/call/tomcat-solr?type=" + type,
+            url: "/callService/tomcat-solr?type=" + type,
             success: function (d) {
                 console.log(d);
                 d = JSON.parse(atob(d));
