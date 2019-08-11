@@ -308,13 +308,13 @@ function timeTips(content) {
     var msg = '';
     msg += '<div style="font-size: 14px">';
     if (content.status == 1) {
-        $("#messageContent_" + time).css('background-color',"#009688");
+        $("#messageContent_" + time).css('background-color', "#009688");
         msg += '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;&nbsp;';
     } else {
-        $("#messageContent_" + time).css('background-color',"#a94442");
+        $("#messageContent_" + time).css('background-color', "#a94442");
         msg += '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;&nbsp;';
     }
-    msg += (content.title?'系统消息':content.title) + '</div>';
+    msg += (content.title ? '系统消息' : content.title) + '</div>';
     msg += '<div class="message-content-body">' + content.body + '</div>';
     msg += '<div id="process_' + time + '" class="bg-warning" style="height: 5px;width: 100%"></div>';
     $("#messageContent_" + time).html(msg).css({"cursor": "pointer"}).click(function () {
@@ -359,16 +359,16 @@ function timeTips(content) {
     }, 5000);
 }
 
-function getIcon(status){
-    if(status == null){
+function getIcon(status) {
+    if (status == null) {
         return "info";
-    }else if(status == 1){
+    } else if (status == 1) {
         return "success";
-    }else if(status == 2){
+    } else if (status == 2) {
         return "info";
-    }else if(status == 3){
+    } else if (status == 3) {
         return "warning";
-    }else if(status == 0){
+    } else if (status == 0) {
         return "error";
     }
 }
@@ -385,7 +385,7 @@ function initSocket() {
         console.log(frame);
         stompClient.subscribe('/topic/receiveMessage', function (event) {
             var content = JSON.parse(event.body);
-            if(content.type == 'log' || content.type == 'fileLog'){
+            if (content.type == 'log' || content.type == 'fileLog') {
                 return;
             }
             $.toast({
@@ -434,12 +434,11 @@ function initTreeData(result, oldData, type) {
 }
 
 function showPagination(id, url) {
-    $(".mask-loading").show();
-    setTimeout(function () {
-        $("#" + id).load(url, function () {
-            $(".mask-loading").hide();
-        });
-    }, 800);
+    $("#contentMgr").html('<div class="mop-load-x" align="center" style="position: absolute;top: 40%;left: 30%;font-size:30px"></div>');
+    Mopload();
+    $("#" + id).load(url, function () {
+        $(".mask-loading").hide();
+    });
 }
 
 function moveUp(_a) {
@@ -485,59 +484,104 @@ function swapNode(node1, node2) {
     Mine.layer.tips("排序成功！");
 }
 
-/**
- * 表格列拖拽
- * @param id
- */
-function generateTable(id) {
-    var tTD; //用来存储当前更改宽度的Table Cell,避免快速移动鼠标的问题
-    var table = document.getElementById(id);
-    for (var j = 0; j < table.rows[0].cells.length; j++) {
-        table.rows[0].cells[j].onmousedown = function () {
-            //记录单元格
-            tTD = this;
-            if (event.offsetX > tTD.offsetWidth - 10) {
-                tTD.mouseDown = true;
-                tTD.oldX = event.x;
-                tTD.oldWidth = tTD.offsetWidth;
-            }
-            //记录Table宽度
-            table = tTD;
-            while (table.tagName != 'TABLE') table = table.parentElement;
-            tTD.tableWidth = table.offsetWidth;
-        };
-        table.rows[0].cells[j].onmouseup = function () {
-            //结束宽度调整
-            if (tTD == undefined) tTD = this;
-            tTD.mouseDown = false;
-            tTD.style.cursor = 'default';
-        };
-        table.rows[0].cells[j].onmousemove = function () {
-            //更改鼠标样式
-            if (event.offsetX > this.offsetWidth - 10)
-                this.style.cursor = 'col-resize';
-            else
-                this.style.cursor = 'default';
-            //取出暂存的Table Cell
-            if (tTD == undefined) tTD = this;
-            //调整宽度
-            if (tTD.mouseDown != null && tTD.mouseDown == true) {
-                tTD.style.cursor = 'default';
-                if (tTD.oldWidth + (event.x - tTD.oldX) > 0)
-                    tTD.width = tTD.oldWidth + (event.x - tTD.oldX);
-                //调整列宽
-                tTD.style.width = tTD.width;
-                tTD.style.cursor = 'col-resize';
-                //调整该列中的每个Cell
-                table = tTD;
-                while (table.tagName != 'TABLE') table = table.parentElement;
-                for (j = 0; j < table.rows.length; j++) {
-                    table.rows[j].cells[tTD.cellIndex].width = tTD.width;
-                }
-                //调整整个表
-                table.width = tTD.tableWidth + tTD.offsetWidth - tTD.oldWidth;
-                table.style.width = table.width;
-            }
-        };
+function initevent() {
+    jQuery.event.add();
+}
+
+//获取随机数
+function getRandom(n) {
+    return Math.floor(Math.random() * n + 1)
+}
+
+function addfourstlye(obj, name, value) {
+    var four_list = ["-webkit-", "-moz-", "-o-", ""];
+    for (var i = 0; i < four_list.length; i++) {
+        obj.css(four_list[i] + name, value);
     }
+}
+
+function Mopload() {
+    var load_name_list = ["rotating-plane", "double-bounce", "wave", "wandering-cubes", "pulse", "chasing-dots", "three-bounce", "circle", "cube-grid", "run-ball", "fading-circle"];
+    var default_load = "rotating-plane";
+    var default_index = 0;
+    $("[class^=mop-load]").each(function (index) {
+        var _mop_html = $(this).html().trim();
+        var _mop_class = $(this).attr("class");
+        var _temp = _mop_class.split("mop-load-");
+        if (_temp.length < 2) {
+            return;
+        }
+        var arr = '<div class="mop-load-div">';
+        if (_temp[1].trim() * 1 < load_name_list.length) {
+            arr += '<div class="mop-css-' + _temp[1].trim() + '">'
+        } else if (_temp[1].trim() == "x") {
+            arr += '<div class="mop-css-x">';
+        } else {
+            return;
+        }
+        if (_mop_html == "") {
+            _mop_html = "Loading Resources……"
+        } else {
+            $(this).html(_mop_html);
+        }
+        arr += '</div><div class="mop-load-text" >' + _mop_html + '</div></div>';
+        $(this).html(arr);
+        //addfourstlye($(this),"transition","height 2s linear 0s;");
+        $(this).css("text-align", "center");
+        //$(this).find(".mop-load-div").hide();
+    });
+    $("[class^=mop-css]").each(function (index) {
+        var _mop_class = $(this).attr("class");
+        var _temp = _mop_class.split("mop-css-");
+        if (_temp == "mop-css") {
+            $(this).addClass(default_load);
+        }
+        if (_temp[1].trim() == "x") {
+            var rand = getRandom(load_name_list.length - 1);
+            $(this).addClass(load_name_list[rand]);
+        } else if (_temp[1] * 1 < load_name_list.length) {
+            $(this).addClass(load_name_list[_temp[1]]);
+        } else {
+            return;
+        }
+    });
+    $(".double-bounce").each(function (index) {
+        var arr = '<div class="double-bounce1"></div><div class="double-bounce2"></div>';
+        $(this).append(arr);
+    });
+    $(".wave").each(function (index) {
+        var arr = '<div class = "rect1" ></div><div class = "rect2" ></div><div class = "rect3" ></div><div class = "rect4" ></div><div class = "rect5" ></div>';
+        $(this).append(arr);
+    });
+    $(".wandering-cubes").each(function (index) {
+        var arr = '<div class="cube1"></div><div class="cube2"></div>';
+        $(this).append(arr);
+    });
+    $(".chasing-dots").each(function (index) {
+        var arr = '<div class="dot1"></div><div class="dot2"></div>';
+        $(this).append(arr);
+    });
+    $(".three-bounce").each(function (index) {
+        var arr = '<div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>';
+        $(this).append(arr);
+    });
+    $(".circle").each(function (index) {
+        var arr = '<div class="spinner-container container1"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div>';
+        arr += '<div class="spinner-container container2"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div>';
+        arr += '<div class="spinner-container container3"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div>'
+        $(this).append(arr);
+    });
+    $(".cube-grid").each(function (index) {
+        var arr = '<div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div>';
+        $(this).append(arr);
+    });
+    $(".run-ball").each(function (index) {
+        var arr = '<span class="sk-inner-circle"></span>';
+        $(this).append(arr);
+    });
+    $(".fading-circle").each(function (index) {
+        var arr = '<div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div>';
+        arr += '<div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div>';
+        $(this).append(arr);
+    });
 }
