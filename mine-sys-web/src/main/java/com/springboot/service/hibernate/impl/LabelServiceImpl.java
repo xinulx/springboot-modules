@@ -1,6 +1,6 @@
 package com.springboot.service.hibernate.impl;
 
-import com.springboot.common.busi.BaseRunTimeException;
+import com.springboot.common.business.CommonException;
 import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.Jacksons;
 import com.springboot.common.util.LoginPersonUtil;
@@ -76,7 +76,7 @@ public class LabelServiceImpl extends MockService<LabelEO> implements ILabelServ
 
         List<LabelEO> labelEO = labelDao.getByName(eo.getLabelName());
         if (labelEO.size() > 0) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "相同的标签名已经存在");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "相同的标签名已经存在");
         }
         eo.setRecordStatus(AMockEntity.RecordStatus.Normal.toString());
         //重置父目录 isparent 为真
@@ -98,7 +98,7 @@ public class LabelServiceImpl extends MockService<LabelEO> implements ILabelServ
 
         LabelEO labelEO = labelDao.getOneByName(eo.getLabelName(), eo.getId());
         if (!AppUtil.isEmpty(labelEO)) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "相同的标签名已经存在");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "相同的标签名已经存在");
         }
         if (StringUtils.isEmpty(eo.getLabelConfig())) {
             eo.setLabelConfig("[]");
@@ -126,7 +126,7 @@ public class LabelServiceImpl extends MockService<LabelEO> implements ILabelServ
 
         List<LabelEO> labelEO = labelDao.getByName(labelName);
         if (labelEO.size() > 0) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "相同的标签名已经存在");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "相同的标签名已经存在");
         }
 
         LabelEO newEO = new LabelEO();

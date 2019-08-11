@@ -1,8 +1,8 @@
 package com.springboot.controller;
 
 import com.alibaba.fastjson.JSONArray;
-import com.springboot.cache.redis.RedisUtil;
-import com.springboot.common.filter.ShiroUtil;
+import com.springboot.common.redis.RedisUtil;
+import com.springboot.common.shiro.SessionUtil;
 import com.springboot.entity.vo.ResponseData;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.SerializationUtils;
@@ -85,7 +85,7 @@ public class CacheController {
     @RequestMapping("deleteAll")
     @ResponseBody
     public Object delAll(){
-        RedisUtil.delByPrefix(ShiroUtil.SHIRO_CACHE_PREFIX);
+        RedisUtil.delByPrefix(SessionUtil.SHIRO_CACHE_PREFIX);
         return ResponseData.success();
     }
 }

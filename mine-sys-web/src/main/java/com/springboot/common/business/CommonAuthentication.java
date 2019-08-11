@@ -1,4 +1,4 @@
-package com.springboot.common.filter;
+package com.springboot.common.business;
 
 import com.springboot.common.util.AjaxRequestUtil;
 import com.springboot.entity.vo.InternalAccount;
@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.Date;
 
 @Component("myFormAuthentication")
-public class MyFormAuthentication extends FormAuthenticationFilter {
+public class CommonAuthentication extends FormAuthenticationFilter {
 
     /**
      * 跳转到登录页面
@@ -26,7 +26,7 @@ public class MyFormAuthentication extends FormAuthenticationFilter {
     @Override
     protected void saveRequestAndRedirectToLogin(ServletRequest request, ServletResponse response) throws IOException {
         if (AjaxRequestUtil.isAjax(request)) {// 返回ajax
-            String description = "登录超时！请<a href='/login/loginIn?etc="+new Date().getTime()+"'>重新登陆</a>";
+            String description = "登录超时！请<a href='/login/loginIn?etc=" + new Date().getTime() + "'>重新登陆</a>";
             // 请求类型
             String dataType = StringUtils.lowerCase(WebUtils.getCleanParam(request, InternalAccount.USER_DATATYPE));
             if ("html".equals(dataType)) {// 请求的是html
@@ -41,10 +41,10 @@ public class MyFormAuthentication extends FormAuthenticationFilter {
             }
         } else {
             // 判断当前请求地址是否是登录地址，不是则返回404
-            //if (!isLoginRequest(request, response)) { // 非登录请求
-            //    WebUtils.toHttp(response).sendError(HttpServletResponse.SC_NOT_FOUND);// 404
-            //    return;
-            //}
+            if (!isLoginRequest(request, response)) { // 非登录请求
+                WebUtils.toHttp(response).sendError(HttpServletResponse.SC_NOT_FOUND);
+                return;
+            }
             super.saveRequest(request);
             super.redirectToLogin(request, response);
         }

@@ -1,4 +1,4 @@
-package com.springboot.common.busi;
+package com.springboot.tag.common;
 
 import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
 

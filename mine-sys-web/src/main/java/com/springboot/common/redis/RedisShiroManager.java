@@ -1,4 +1,4 @@
-package com.springboot.cache.redis;
+package com.springboot.common.redis;
 
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;

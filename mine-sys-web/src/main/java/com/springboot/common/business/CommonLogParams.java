@@ -1,4 +1,4 @@
-package com.springboot.common.anno;
+package com.springboot.common.business;
 
 import java.lang.annotation.*;
 
@@ -6,13 +6,13 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
-public @interface LogParams {
+public @interface CommonLogParams {
 
     public Class value();// class
 
-    public String type();// busi type
+    public String type();// business type
 
-    public String desc() default "";// busi desc
+    public String desc() default "";// business desc
 
     public String method();// method
 }

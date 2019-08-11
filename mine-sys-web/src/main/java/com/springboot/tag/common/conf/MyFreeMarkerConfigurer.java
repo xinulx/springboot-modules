@@ -1,8 +1,8 @@
 package com.springboot.tag.common.conf;
 
-import com.springboot.common.busi.SpringContextHolder;
+import com.springboot.common.business.SpringContextHolder;
 import com.springboot.common.util.PropertiesUtil;
-import com.springboot.common.db.JdbcUtil;
+import com.springboot.common.business.CommonJdbcUtil;
 import com.springboot.tag.common.impl.LabelServiceImpl;
 import freemarker.template.TemplateException;
 import lombok.extern.slf4j.Slf4j;
@@ -20,12 +20,12 @@ public class MyFreeMarkerConfigurer extends FreeMarkerConfigurer {
 
     @Override
     public void afterPropertiesSet() throws IOException, TemplateException {
-        JdbcUtil util = null;
+        CommonJdbcUtil util = null;
         String url = PropertiesUtil.getProperty("spring.datasource.url");
         String username = PropertiesUtil.getProperty("spring.datasource.username");
         String password = PropertiesUtil.getProperty("spring.datasource.password");
         try {
-            util = new JdbcUtil(url, username, password);
+            util = new CommonJdbcUtil(url, username, password);
         } catch (Exception e) {
             e.printStackTrace();
         }

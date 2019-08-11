@@ -1,6 +1,6 @@
 package com.springboot.dao.business.impl;
 
-import com.springboot.common.busi.BaseRunTimeException;
+import com.springboot.common.business.CommonException;
 import com.springboot.dao.business.IReleaseDataDao;
 import com.springboot.dao.hibernate.impl.BaseDao;
 import com.springboot.entity.business.ReleaseDataEO;
@@ -72,7 +72,7 @@ public class ReleaseDataDaoImpl extends BaseDao<ReleaseDataEO> implements IRelea
             // 年度
             getYearData(resultData, map, seriesCount);
         } else {
-            throw new BaseRunTimeException("查询类型[type]错误，参考值0-最新数据 1-进度数据 2-年度数据");
+            throw new CommonException("查询类型[type]错误，参考值0-最新数据 1-进度数据 2-年度数据");
         }
         // 因为数据查询日期都是从大到小，前台是从小到大（ps：js的list.reverse()方法也可以）
         Collections.reverse(resultData);

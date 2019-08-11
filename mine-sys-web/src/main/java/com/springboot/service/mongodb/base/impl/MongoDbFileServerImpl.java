@@ -9,7 +9,7 @@ import com.mongodb.gridfs.GridFS;
 import com.mongodb.gridfs.GridFSDBFile;
 import com.mongodb.gridfs.GridFSFile;
 import com.mongodb.gridfs.GridFSInputFile;
-import com.springboot.common.busi.BaseRunTimeException;
+import com.springboot.common.business.CommonException;
 import com.springboot.common.util.LoginPersonUtil;
 import com.springboot.service.mongodb.base.IMongoDbFileServer;
 import com.springboot.entity.vo.MongoFileVO;
@@ -45,7 +45,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
     @Override
     public List<MongoFileVO> uploadMultipartFile(MultipartFile[] files, Long caseId, String collectionName) {
         if (caseId == null) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "外键不能为空");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "外键不能为空");
         }
         collectionName = getCollectionName(collectionName);
         GridFSFile gfile = null;
@@ -66,7 +66,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
                     gfile.save();
                     mfs.add(getMongoFileVO(gfile, caseId));
                 } catch (Exception e) {
-                    throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "mongoDb保存文件出错");
+                    throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb保存文件出错");
                 }
             }
         }
@@ -94,7 +94,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
                 // objectId = gfile.getId() == null?"":gfile.getId().toString();
                 mf = getMongoFileVO(gfile, null);
             } catch (Exception e) {
-                throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "mongoDb保存文件出错");
+                throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb保存文件出错");
             }
         }
         return mf;
@@ -142,7 +142,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
     public MongoFileVO uploadByteFile(byte[] filebytes, String fileName, Long caseId, String collectionName) {
         collectionName = getCollectionName(collectionName);
         if (filebytes == null || filebytes.length == 0) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "filebytes不能为空");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "filebytes不能为空");
         }
         GridFSFile gfile = null;
         GridFS gridFS = new GridFS(mongoTemplate.getDb(), collectionName);
@@ -160,7 +160,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
             gfile.save();
             mf = getMongoFileVO(gfile, null);
         } catch (Exception e) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "mongoDb保存文件出错");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb保存文件出错");
         }
         return mf;
     }
@@ -169,7 +169,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
     public MongoFileVO uploadByteFile(InputStream inputStream, String fileName, Long caseId, String collectionName) {
         collectionName = getCollectionName(collectionName);
         if (inputStream == null) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "inputStream不能为空");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "inputStream不能为空");
         }
         GridFSFile gfile = null;
         GridFS gridFS = new GridFS(mongoTemplate.getDb(), collectionName);
@@ -187,7 +187,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
             gfile.save();
             mf = getMongoFileVO(gfile, null);
         } catch (Exception e) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "mongoDb保存文件出错");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb保存文件出错");
         }
         return mf;
     }
@@ -253,7 +253,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
                 sos.flush();
                 sos.close();
             } catch (Exception e) {
-                throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "mongoDb下载文件出错");
+                throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb下载文件出错");
             }
         }
     }
@@ -281,7 +281,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
                 sos.flush();
                 sos.close();
             } catch (Exception e) {
-                throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "mongoDb下载文件出错");
+                throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb下载文件出错");
             }
         }
     }
@@ -294,7 +294,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
         try {
             gridFS.remove(query);
         } catch (Exception e) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "mongoDb删除文件出错");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb删除文件出错");
         }
         return true;
     }
@@ -307,7 +307,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
         try {
             gridFS.remove(objId);
         } catch (Exception e) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "mongoDb删除文件出错");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb删除文件出错");
         }
         return true;
     }
@@ -360,7 +360,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
     public MongoFileVO updateByteFile(String mongoId, MongoFileVO vo, String collectionName) {
         collectionName = getCollectionName(collectionName);
         if (mongoId == null || mongoId.equals("")) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "mongoId 不能为空");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoId 不能为空");
         }
         GridFSFile gfile = null;
         GridFS gridFS = new GridFS(mongoTemplate.getDb(), collectionName);
@@ -378,7 +378,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
             gfile.save();
             mf = getMongoFileVO(gfile, null);
         } catch (Exception e) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "mongoDb 更新文件出错");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb 更新文件出错");
         }
         return mf;
     }

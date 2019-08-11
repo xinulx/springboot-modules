@@ -1,4 +1,4 @@
-package com.springboot.cache.redis;
+package com.springboot.common.redis;
 
 import java.util.HashMap;
 import java.util.Map;

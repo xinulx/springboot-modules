@@ -1,6 +1,6 @@
 package com.springboot.common.util;
 
-import com.springboot.common.busi.SpringContextHolder;
+import com.springboot.common.business.SpringContextHolder;
 import com.springboot.tag.common.conf.MyFreeMarkerConfigurer;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;

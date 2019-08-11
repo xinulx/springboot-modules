@@ -1,4 +1,4 @@
-package com.springboot.cache.redis;
+package com.springboot.common.redis;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -6,12 +6,15 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class ObjectTranscoder {
+/**
+ * 序列化、反序列化
+ */
+public class ObjectTransCoder {
     public static byte[] serialize(Object value) {
         if (value == null) {
             throw new NullPointerException("Can't serialize null");
         }
-        byte[] rv = null;
+        byte[] rv;
         ByteArrayOutputStream bos = null;
         ObjectOutputStream os = null;
         try {

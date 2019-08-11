@@ -1,8 +1,8 @@
 package com.springboot.tag.common;
 
 import com.alibaba.fastjson.JSONObject;
-import com.springboot.common.busi.BaseRunTimeException;
-import com.springboot.common.busi.SpringContextHolder;
+import com.springboot.common.business.CommonException;
+import com.springboot.common.business.SpringContextHolder;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import lombok.extern.slf4j.Slf4j;
@@ -65,7 +65,7 @@ public abstract class AbstractBeanService {
             this.template = configurer.getConfiguration().getTemplate(templateName);
             return template;
         } catch (IOException e) {
-            throw new BaseRunTimeException("获取模板出错：" + e.getMessage());
+            throw new CommonException("获取模板出错：" + e.getMessage());
         }
     }
 

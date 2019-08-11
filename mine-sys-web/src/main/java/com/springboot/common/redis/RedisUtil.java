@@ -1,4 +1,4 @@
-package com.springboot.cache.redis;
+package com.springboot.common.redis;
 
 import com.springboot.common.util.PropertiesUtil;
 import org.springframework.stereotype.Component;
@@ -30,7 +30,7 @@ public class RedisUtil {
      * @dateTime 2018/4/24 9:47
      */
     public static Jedis getJedis() {
-        if(jedisPool == null){
+        if (jedisPool == null) {
             jedisPool = new JedisPool(
                     PropertiesUtil.getProperty("spring.redis.host"),
                     Integer.parseInt(PropertiesUtil.getProperty("spring.redis.port")));
@@ -78,16 +78,17 @@ public class RedisUtil {
 
     /**
      * 获取map
+     *
      * @param <T>
      * @param key
      * @return Map
      */
-    public static <T> Map<String,T> getMap(String key){
-        if(getJedis() == null || !getJedis().exists(key.getBytes())){
+    public static <T> Map<String, T> getMap(String key) {
+        if (getJedis() == null || !getJedis().exists(key.getBytes())) {
             return null;
         }
         byte[] in = getJedis().get(key.getBytes());
-        Map<String,T> map = (Map<String, T>) ObjectTranscoder.deserialize(in);
+        Map<String, T> map = (Map<String, T>) ObjectTransCoder.deserialize(in);
         return map;
     }
 
@@ -97,9 +98,9 @@ public class RedisUtil {
     public static byte[] get(byte[] key) {
         Jedis jedis = getJedis();
         try {
-            if(jedis.exists(key)){
+            if (jedis.exists(key)) {
                 return jedis.get(key);
-            }else{
+            } else {
                 return "{}".getBytes();
             }
         } finally {
@@ -113,7 +114,7 @@ public class RedisUtil {
     public static void del(byte[] key) {
         Jedis jedis = getJedis();
         try {
-            if(jedis.exists(key)){
+            if (jedis.exists(key)) {
                 jedis.del(key);
             }
         } finally {

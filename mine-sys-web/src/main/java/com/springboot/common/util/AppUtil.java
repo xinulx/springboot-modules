@@ -162,7 +162,7 @@ public class AppUtil {
         if (o == null) {
             return true;
         }
-        String s = null;
+        String s;
         if (!(o instanceof String)) {
             s = o.toString();
         } else {

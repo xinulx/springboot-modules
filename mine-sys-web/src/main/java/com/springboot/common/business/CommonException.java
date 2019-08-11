@@ -1,23 +1,16 @@
-package com.springboot.common.busi;
+package com.springboot.common.business;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * 运行时异常，用户无法处理或不需要处理的异常（包括无法处理或不需要处理的业务异常）
- * 系统RunTime基异常，系统中需要抛出的RunTime类型异常有以下两种做法：
  * 1.自定义继承自BaseRunTimeException的异常
  * 2.直接抛出BaseRunTimeException，并赋与不同的key（在定义key之前需要查看异常约定文档以确保key不重复）
  */
-public class BaseRunTimeException extends RuntimeException {
+public class CommonException extends RuntimeException {
 
-    /**
-     * serialVersionUID
-     */
-    private static final long serialVersionUID = -6320797208357263746L;
-
-    protected Logger logger = LoggerFactory.getLogger(BaseRunTimeException.class);
-
+    protected Logger logger = LoggerFactory.getLogger(CommonException.class);
 
     /**
      * 用于标识获取异常提示信息的方式
@@ -38,21 +31,21 @@ public class BaseRunTimeException extends RuntimeException {
 
     private Integer errCode;
 
-    public BaseRunTimeException() {
+    public CommonException() {
         super();
     }
 
-    public BaseRunTimeException(String message) {
+    public CommonException(String message) {
         super(message);
     }
 
-    public BaseRunTimeException(String key, Object[] keyWords) {
+    public CommonException(String key, Object[] keyWords) {
         super();
         this.key = key;
         this.keyWords = keyWords;
     }
 
-    public BaseRunTimeException(String tipsMode, String value) {
+    public CommonException(String tipsMode, String value) {
         this(value);
         if (!TipsMode.Key.toString().equals(tipsMode) && !TipsMode.Message.toString().equals(tipsMode)) {
             throw new IllegalArgumentException();
@@ -104,5 +97,4 @@ public class BaseRunTimeException extends RuntimeException {
     public void setErrCode(Integer errCode) {
         this.errCode = errCode;
     }
-
 }

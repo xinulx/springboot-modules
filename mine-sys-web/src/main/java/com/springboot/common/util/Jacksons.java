@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
-import com.springboot.common.busi.BaseRunTimeException;
+import com.springboot.common.business.CommonException;
 
 /**
  * jackson一些转换方法
@@ -43,10 +43,10 @@ public class Jacksons {
 	 * <pre>
 	 * 使用方法:先给ObjectMapper添加一个filter，然后还要在需要过滤的类上加@JsonFilter("filterName")注解。
 	 * 比如说要过滤User 上的name属性，先
-	 * Jacksons.json().filter("myFilter", "name").readAsString(user)，具体看Jacksons代码。并在User类上加@JsonFilter("myFilter")。
+	 * Jacksons.json().shiro("myFilter", "name").readAsString(user)，具体看Jacksons代码。并在User类上加@JsonFilter("myFilter")。
 	 * 有点不爽的是如果用另外一个没有添加该filter的ObjectMapper解析的话会报错。	 	
 	 * 如果这个User类已经添加了@JsonFilter("myFilter")注解，但在另外一个地方又要解析它并不想过滤name 属性，那只能是
-	 * 	Jacksons.json().filter("myFilter", "")，然后在读出来。
+	 * 	Jacksons.json().shiro("myFilter", "")，然后在读出来。
 	 * </pre>
 	 * 
 	 * @param filterName
@@ -157,7 +157,7 @@ public class Jacksons {
 			list = objectMapper.readValue(json, javaType);
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new BaseRunTimeException("解析json错误");
+			throw new CommonException("解析json错误");
 		}
 		return list;
 	}
@@ -194,7 +194,7 @@ public class Jacksons {
 			map = objectMapper.readValue(json, javaType);
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new BaseRunTimeException("解析json错误");
+			throw new CommonException("解析json错误");
 		}
 		return map;
 	}
@@ -223,7 +223,7 @@ public class Jacksons {
 			map = objectMapper.readValue(json, javaType);
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new BaseRunTimeException("解析json错误");
+			throw new CommonException("解析json错误");
 		}
 		return map;
 	}
@@ -244,7 +244,7 @@ public class Jacksons {
 			return objectMapper.readValue(json, List.class);
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new BaseRunTimeException("解析json错误");
+			throw new CommonException("解析json错误");
 		}
 	}
 }

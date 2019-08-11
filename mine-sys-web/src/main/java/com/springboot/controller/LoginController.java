@@ -1,8 +1,8 @@
 package com.springboot.controller;
 
-import com.springboot.common.anno.LogParams;
+import com.springboot.common.business.CommonLogParams;
 import com.springboot.entity.vo.ResponseData;
-import com.springboot.common.filter.ShiroUtil;
+import com.springboot.common.shiro.SessionUtil;
 import com.springboot.common.util.BrowserUtils;
 import com.springboot.common.util.CodeUtil;
 import com.springboot.common.util.GraphicHelper;
@@ -116,7 +116,7 @@ public class LoginController {
 
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
     @ResponseBody
-    @LogParams(value = LoginController.class, type = "login", method = "userLogin", desc = "用户登陆")
+    @CommonLogParams(value = LoginController.class, type = "login", method = "userLogin", desc = "用户登陆")
     public Object userLogin(HttpServletRequest request, String username, String password, String validCode) {
         logger.info(username + " " + password + " " + validCode);
         Object code = request.getSession().getAttribute("/login/getGhCode");
@@ -149,7 +149,7 @@ public class LoginController {
         } finally {
             if (CmsLoginHistoryEO.LoginStatus.Success.name().equals(eo.getLoginStatus())) {
                 // 用户认证成功,获取当前用户
-                userEO = ShiroUtil.getCurrentUser();
+                userEO = SessionUtil.getCurrentUser();
                 initThreadLocal(userEO, request);
                 eo.setUid(ThreadUtil.getString(ThreadUtil.LocalParamsKey.UserName));
                 eo.setCreateUser(ThreadUtil.getString(ThreadUtil.LocalParamsKey.PersonName));
@@ -157,7 +157,7 @@ public class LoginController {
                 eo.setOrganName(ThreadUtil.getString(ThreadUtil.LocalParamsKey.OrganName));
             } else {
                 // 用户认证失败,删除当前用户
-                ShiroUtil.removeCurrentUser();
+                SessionUtil.removeCurrentUser();
                 eo.setUid(username);
                 Map map = new HashMap();
                 map.put("userId", username);
@@ -173,7 +173,7 @@ public class LoginController {
         ResponseData role = userService.selectByUserAccount(username);
         if (role == null) {
             // 用户认证失败,删除当前用户
-            ShiroUtil.removeCurrentUser();
+            SessionUtil.removeCurrentUser();
             return ResponseData.fail("当前用户没有配置角色", "登陆失败");
         }
         // 在此添加权限信息到用户
@@ -207,13 +207,13 @@ public class LoginController {
         map.put(ThreadUtil.LocalParamsKey.Callback.toString(), "callback");
         map.put(ThreadUtil.LocalParamsKey.DataFlag.toString(), true);
         map.put(ThreadUtil.LocalParamsKey.IP.toString(), IpUtil.getIpAddr(request));
-        ShiroUtil.setAttribute("threadLocal", map);
+        SessionUtil.setAttribute("threadLocal", map);
         ThreadUtil.set(map);
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     @ResponseBody
-    @LogParams(value = LoginController.class, type = "logout", method = "logout", desc = "用户登出")
+    @CommonLogParams(value = LoginController.class, type = "logout", method = "logout", desc = "用户登出")
     public ResponseData logout() {
         Subject subject = SecurityUtils.getSubject();
         //注销

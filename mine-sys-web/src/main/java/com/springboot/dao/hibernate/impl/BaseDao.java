@@ -1,7 +1,6 @@
 package com.springboot.dao.hibernate.impl;
 
-import com.springboot.common.busi.BaseRunTimeException;
-import com.springboot.common.busi.RecordsException;
+import com.springboot.common.business.CommonException;
 import com.springboot.common.util.ThreadUtil;
 import com.springboot.dao.hibernate.IBaseDao;
 import com.springboot.entity.hibernate.IBaseEntity;
@@ -65,7 +64,7 @@ public class BaseDao<T extends IBaseEntity> implements IBaseDao<T> {
             if (entities.size() == 1) {
                 entity = entities.get(0);
             } else {
-                throw new BaseRunTimeException();
+                throw new CommonException();
             }
         }
         return entity;
@@ -345,7 +344,7 @@ public class BaseDao<T extends IBaseEntity> implements IBaseDao<T> {
         T t = null;
         if (ts != null && ts.size() > 0) {
             if (ts.size() != 1) {
-                throw new RecordsException();
+                throw new CommonException();
             }
             t = ts.get(0);
         }
@@ -549,7 +548,7 @@ public class BaseDao<T extends IBaseEntity> implements IBaseDao<T> {
                                     String hql, final Object[] values) {
         //分页数量边界控制
         if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-            throw new BaseRunTimeException();
+            throw new CommonException();
         }
         List<?> results = getPaginationRecores(hql,
                 Pagination.getStartNumber(pageIndex, pageSize).intValue(),
@@ -564,7 +563,7 @@ public class BaseDao<T extends IBaseEntity> implements IBaseDao<T> {
                                     String hql, final Map<String, Object> values) {
         //分页数量边界控制
         if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-            throw new BaseRunTimeException();
+            throw new CommonException();
         }
         List<?> results = getPaginationRecores(hql,
                 Pagination.getStartNumber(pageIndex, pageSize).intValue(),
@@ -581,7 +580,7 @@ public class BaseDao<T extends IBaseEntity> implements IBaseDao<T> {
                                     final Class<?> convertBean) {
         // 分页数量边界控制
         if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-            throw new BaseRunTimeException();
+            throw new CommonException();
         }
         List<Object> results = getPaginationRecores(hql, Pagination
                         .getStartNumber(pageIndex, pageSize).intValue(),
@@ -604,7 +603,7 @@ public class BaseDao<T extends IBaseEntity> implements IBaseDao<T> {
                                          final Class<?> convertBean, String[] queryFields) {
         // 分页数量边界控制
         if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-            throw new BaseRunTimeException();
+            throw new CommonException();
         }
         List<?> results = getPaginationRecoresBySql(sql, Pagination
                         .getStartNumber(pageIndex, pageSize).intValue(),

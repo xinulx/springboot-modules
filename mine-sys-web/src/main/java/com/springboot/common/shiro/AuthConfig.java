@@ -1,7 +1,7 @@
-package com.springboot.common.filter;
+package com.springboot.common.shiro;
 
-import com.springboot.cache.redis.RedisShiroManager;
-import com.springboot.common.session.RedisShiroSessionDao;
+import com.springboot.common.redis.RedisShiroManager;
+import com.springboot.common.business.CommonAuthentication;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
@@ -31,20 +31,20 @@ import java.util.Map;
  */
 @Configuration
 @Slf4j
-public class ShiroConfig {
+public class AuthConfig {
 
     /**
      * @description:自定义realm
      */
     @Bean
-    public ShiroAuthRealm createMyRealm() {
+    public AuthRealm createMyRealm() {
         // 加密相关
         HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
         // 散列算法
-        hashedCredentialsMatcher.setHashAlgorithmName(ShiroUtil.HASH_ALGORITHM_NAME);
+        hashedCredentialsMatcher.setHashAlgorithmName(SessionUtil.HASH_ALGORITHM_NAME);
         // 散列次数
-        hashedCredentialsMatcher.setHashIterations(ShiroUtil.HASH_ITERATIONS);
-        ShiroAuthRealm shiroAuthRealm = new ShiroAuthRealm();
+        hashedCredentialsMatcher.setHashIterations(SessionUtil.HASH_ITERATIONS);
+        AuthRealm shiroAuthRealm = new AuthRealm();
         shiroAuthRealm.setCredentialsMatcher(hashedCredentialsMatcher);
         log.debug("自定义realm注入完成");
         return shiroAuthRealm;
@@ -53,8 +53,8 @@ public class ShiroConfig {
     /**
      * @description: 自定义sessionDao
      */
-    public RedisShiroSessionDao createRedisShiroSessionDao() {
-        RedisShiroSessionDao sessionDao = new RedisShiroSessionDao();
+    public RedisSession createRedisShiroSessionDao() {
+        RedisSession sessionDao = new RedisSession();
         // 设置缓存管理器
         sessionDao.setCacheManager(createCacheManager());
         log.debug("自定义sessionDao");
@@ -65,7 +65,7 @@ public class ShiroConfig {
      * @description: 自定义shiro session cookie
      */
     public SimpleCookie createSessionIdCookie() {
-        SimpleCookie simpleCookie = new SimpleCookie(ShiroUtil.SESSIONID_COOKIE_NAME);
+        SimpleCookie simpleCookie = new SimpleCookie(SessionUtil.SESSIONID_COOKIE_NAME);
         // 保证该系统不会受到跨域的脚本操作攻击
         simpleCookie.setHttpOnly(true);
         // 定义Cookie的过期时间，单位为秒，如果设置为-1表示浏览器关闭，则Cookie消失
@@ -83,7 +83,7 @@ public class ShiroConfig {
         // 自定义sessionDao
         sessionManager.setSessionDAO(createRedisShiroSessionDao());
         // session的失效时长,单位是毫秒
-        sessionManager.setGlobalSessionTimeout(ShiroUtil.GLOBAL_SESSION_TIMEOUT);
+        sessionManager.setGlobalSessionTimeout(SessionUtil.GLOBAL_SESSION_TIMEOUT);
         // 删除失效的session
         sessionManager.setDeleteInvalidSessions(true);
         // 所有的session一定要将id设置到Cookie之中，需要提供有Cookie的操作模版
@@ -98,7 +98,7 @@ public class ShiroConfig {
      * @description: 记住我cookie
      */
     public SimpleCookie createRemeberMeCookie() {
-        SimpleCookie simpleCookie = new SimpleCookie(ShiroUtil.REMEBER_ME_COOKIE_NAME);
+        SimpleCookie simpleCookie = new SimpleCookie(SessionUtil.REMEBER_ME_COOKIE_NAME);
         // 保证该系统不会受到跨域的脚本操作攻击
         simpleCookie.setHttpOnly(true);
         // 定义Cookie的过期时间，单位为秒，如果设置为-1表示浏览器关闭，则Cookie消失
@@ -159,7 +159,7 @@ public class ShiroConfig {
         Map<String, Filter> filters = new LinkedHashMap();
         filters.put("logout", new LogoutFilter());
         filters.put("anon", new AnonymousFilter());
-        filters.put("authc", new MyFormAuthentication());
+        filters.put("authc", new CommonAuthentication());
         shiroFilterFactoryBean.setFilters(filters);
 
         // 过滤器 配置不会被过滤的链接 顺序判断 过虑器链定义，从上向下顺序执行，一般将/**放在最下边

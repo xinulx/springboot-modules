@@ -1,6 +1,6 @@
 package com.springboot.dao.hibernate.impl;
 
-import com.springboot.common.busi.BaseRunTimeException;
+import com.springboot.common.business.CommonException;
 import com.springboot.dao.hibernate.IHistoryDao;
 import com.springboot.entity.hibernate.ParamUtil;
 import com.springboot.entity.hibernate.Pagination;
@@ -202,7 +202,7 @@ public class HistoryDao<T> implements IHistoryDao<T> {
 			if (entities.size() == 1) {
 				entity = entities.get(0);
 			} else {
-				throw new BaseRunTimeException();
+				throw new CommonException();
 			}
 		}
 		return entity;
@@ -331,7 +331,7 @@ public class HistoryDao<T> implements IHistoryDao<T> {
 			final Integer pageSize, String hql, final Object[] values) {
 		// 分页数量边界控制
 		if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-			throw new BaseRunTimeException();
+			throw new CommonException();
 		}
 		List<Object> results = getPaginationRecores(hql, Pagination
 				.getStartNumber(pageIndex, pageSize).intValue(),
@@ -347,7 +347,7 @@ public class HistoryDao<T> implements IHistoryDao<T> {
 			final Class<?> convertBean) {
 		// 分页数量边界控制
 		if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-			throw new BaseRunTimeException();
+			throw new CommonException();
 		}
 		List<Object> results = getPaginationRecores(hql, Pagination
 				.getStartNumber(pageIndex, pageSize).intValue(),
@@ -372,7 +372,7 @@ public class HistoryDao<T> implements IHistoryDao<T> {
              final Class<?> convertBean,final String[] queryFields) {
         // 分页数量边界控制
         if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-            throw new BaseRunTimeException();
+            throw new CommonException();
         }
        List<?> results = getPaginationRecoresBySql(sql, Pagination
                         .getStartNumber(pageIndex, pageSize).intValue(),
@@ -388,7 +388,7 @@ public class HistoryDao<T> implements IHistoryDao<T> {
              final Class<?> convertBean,final String[] queryFields) {
         // 分页数量边界控制
         if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-            throw new BaseRunTimeException();
+            throw new CommonException();
         }
         List<?> results = getPaginationRecoresBySql(sql, Pagination
                         .getStartNumber(pageIndex, pageSize).intValue(),
@@ -403,7 +403,7 @@ public class HistoryDao<T> implements IHistoryDao<T> {
 			final Integer pageSize, String sql, final Object[] values) {
 		// 分页数量边界控制
 		if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-			throw new BaseRunTimeException();
+			throw new CommonException();
 		}
 		List<Object> results = getPaginationRecoresBySql(sql, Pagination
 				.getStartNumber(pageIndex, pageSize).intValue(),
@@ -419,7 +419,7 @@ public class HistoryDao<T> implements IHistoryDao<T> {
 			final List<String> fields) {
 		// 分页数量边界控制
 		if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-			throw new BaseRunTimeException();
+			throw new CommonException();
 		}
 		List<Object> results = getPaginationRecoresBySql(sql, Pagination
 				.getStartNumber(pageIndex, pageSize).intValue(),
@@ -434,7 +434,7 @@ public class HistoryDao<T> implements IHistoryDao<T> {
 			final Integer pageSize, String hql, final Map<String, Object> values) {
 		// 分页数量边界控制
 		if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-			throw new BaseRunTimeException();
+			throw new CommonException();
 		}
 		List<Object> results = getPaginationRecords(hql, Pagination
 						.getStartNumber(pageIndex, pageSize).intValue(),

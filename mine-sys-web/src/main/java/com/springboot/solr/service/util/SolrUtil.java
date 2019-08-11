@@ -1,6 +1,6 @@
 package com.springboot.solr.service.util;
 
-import com.springboot.common.busi.BaseRunTimeException;
+import com.springboot.common.business.CommonException;
 import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.PropertiesUtil;
 import com.springboot.solr.service.vo.SolrIndexVO;
@@ -118,7 +118,7 @@ public class SolrUtil {
             } else if (id instanceof List) {
                 client.deleteById((List<String>) id);
             } else {
-                throw new BaseRunTimeException("删除索引的参是必须是String或String的集合");
+                throw new CommonException("删除索引的参是必须是String或String的集合");
             }
             client.commit();
             client.close();

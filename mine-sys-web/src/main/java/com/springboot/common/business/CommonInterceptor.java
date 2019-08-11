@@ -1,7 +1,6 @@
-package com.springboot.common.filter;
+package com.springboot.common.business;
 
 import com.alibaba.fastjson.JSON;
-import com.springboot.common.anno.LogParams;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,7 +12,7 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 @Slf4j
-public class LogIntercepter extends HandlerInterceptorAdapter {
+public class CommonInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest arg0, HttpServletResponse arg1,Object handler) {
@@ -25,7 +24,7 @@ public class LogIntercepter extends HandlerInterceptorAdapter {
         // 从方法处理器中获取出要调用的方法
         Method method = handlerMethod.getMethod();
         // 获取出方法上的Access注解
-        LogParams systemLogAnnotation = method.getAnnotation(LogParams.class);
+        CommonLogParams systemLogAnnotation = method.getAnnotation(CommonLogParams.class);
         if (systemLogAnnotation == null) {
             // 如果注解为null, 说明不需要拦截, 直接放过
             return true;

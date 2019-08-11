@@ -1,4 +1,4 @@
-package com.springboot.common.busi;
+package com.springboot.common.business;
 
 import com.springboot.entity.business.DataDictEO;
 import com.springboot.entity.business.DataDictItemEO;
@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public class RightDictCache {
+public class CommonDictCache {
 
     private static Map<String, Object> cache;
     private static ReentrantReadWriteLock lock;
@@ -65,12 +65,11 @@ public class RightDictCache {
             for (DataDictEO eo : list) {
                 List<DataDictItemEO> items = dataDictItemService.getListByDictId(eo.getDictId());
                 if (null != items) {
-                    RightDictCache.put(eo.getCode(), items);
+                    CommonDictCache.put(eo.getCode(), items);
                 }
             }
         } finally {
             write.unlock();
         }
     }
-
 }

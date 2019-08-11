@@ -1,6 +1,6 @@
 package com.springboot.common.util;
 
-import com.springboot.common.busi.BaseRunTimeException;
+import com.springboot.common.business.CommonException;
 import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
@@ -41,7 +41,7 @@ public class DocumentUtil {
             return map;
         } catch (Throwable e) {
             logger.error("参数[" + param + "]解析错误.", e);
-            throw new BaseRunTimeException("参数[" + param + "]解析错误." + e.getMessage());
+            throw new CommonException("参数[" + param + "]解析错误." + e.getMessage());
         }
     }
 }

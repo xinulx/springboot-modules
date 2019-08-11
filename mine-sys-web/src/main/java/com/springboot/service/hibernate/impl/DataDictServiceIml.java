@@ -1,6 +1,6 @@
 package com.springboot.service.hibernate.impl;
 
-import com.springboot.common.busi.RightDictCache;
+import com.springboot.common.business.CommonDictCache;
 import com.springboot.common.util.SysLog;
 import com.springboot.dao.business.IDataDictDao;
 import com.springboot.entity.business.CmsLogEO;
@@ -38,7 +38,7 @@ public class DataDictServiceIml extends BaseService<DataDictEO> implements
         dataDictDao.delete(DataDictEO.class, dictId);
         dataDictItemService.deleteItemByDictId(dictId);
         SysLog.log("删除数据字典 >> ID：" + dictId, "DataDictEO", CmsLogEO.Operation.Delete.toString());
-        RightDictCache.refresh();
+        CommonDictCache.refresh();
     }
 
     @Override

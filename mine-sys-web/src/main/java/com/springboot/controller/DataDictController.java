@@ -1,6 +1,6 @@
 package com.springboot.controller;
 
-import com.springboot.common.busi.RightDictCache;
+import com.springboot.common.business.CommonDictCache;
 import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.LoginPersonUtil;
 import com.springboot.entity.business.DataDictEO;
@@ -119,7 +119,7 @@ public class DataDictController {
         if (LoginPersonUtil.isRoot()) {
             // 删除数据字典
             dataDictService.deleteDict(id);
-            RightDictCache.refresh();
+            CommonDictCache.refresh();
             return ResponseData.success();
         } else {
             return ResponseData.fail("您无此权限");

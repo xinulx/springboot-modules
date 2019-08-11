@@ -1,6 +1,6 @@
 package com.springboot.service.hibernate.impl;
 
-import com.springboot.common.busi.RightDictCache;
+import com.springboot.common.business.CommonDictCache;
 import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.LoginPersonUtil;
 import com.springboot.common.util.SysLog;
@@ -45,7 +45,7 @@ public class DataDictItemServiceImpl extends BaseService<DataDictItemEO> impleme
     public void deleteItemByDictId(Long dictId) {
         dataDictItemDao.deleteItemByDictId(dictId);
         SysLog.log("删除数据字典项 >> ID：" + dictId, "DataDictItemEO", CmsLogEO.Operation.Delete.toString());
-        RightDictCache.refresh();
+        CommonDictCache.refresh();
     }
 
     @Override
@@ -81,7 +81,7 @@ public class DataDictItemServiceImpl extends BaseService<DataDictItemEO> impleme
             dataDictItemDao.updateDefault(itemEO.getDataDicId(), itemEO.getItemId(), 0, siteId);
         }
         updateEntity(itemEO);
-        RightDictCache.refresh();
+        CommonDictCache.refresh();
         SysLog.log("修改数据字典项 >> 数据字典：" + itemEO.getDataDicName() + "，字典项：" + itemEO.getName(), "DataDictItemEO", CmsLogEO.Operation.Update.toString());
     }
 
@@ -92,7 +92,7 @@ public class DataDictItemServiceImpl extends BaseService<DataDictItemEO> impleme
         if (itemEO.getIsDefault() == 1) {
             dataDictItemDao.updateDefault(itemEO.getDataDicId(), id, 0, siteId);
         }
-        RightDictCache.refresh();
+        CommonDictCache.refresh();
         SysLog.log("保存数据字典项 >> 数据字典：" + itemEO.getDataDicName() + "，字典项：" + itemEO.getName(), "DataDictItemEO", CmsLogEO.Operation.Add.toString());
         return id;
 

@@ -1,6 +1,6 @@
 package com.springboot.dao.hibernate.impl;
 
-import com.springboot.common.busi.BaseRunTimeException;
+import com.springboot.common.business.CommonException;
 import com.springboot.entity.vo.BaseQuery;
 import com.springboot.entity.vo.CountQueryStringBuilder;
 import com.springboot.entity.vo.JpqlQuery;
@@ -473,7 +473,7 @@ public class MockDao<T extends IMockEntity> implements IMockDao<T> {
 									final Integer pageSize, String hql, final Object[] values) {
 		// 分页数量边界控制
 		if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-			throw new BaseRunTimeException();
+			throw new CommonException();
 		}
 		List<Object> results = getPaginationRecores(hql, Pagination
 				.getStartNumber(pageIndex, pageSize).intValue(),
@@ -489,7 +489,7 @@ public class MockDao<T extends IMockEntity> implements IMockDao<T> {
 			final Class<?> convertBean) {
 		// 分页数量边界控制
 		if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-			throw new BaseRunTimeException();
+			throw new CommonException();
 		}
 		List<Object> results = getPaginationRecores(hql, Pagination
 				.getStartNumber(pageIndex, pageSize).intValue(),
@@ -514,7 +514,7 @@ public class MockDao<T extends IMockEntity> implements IMockDao<T> {
              final Class<?> convertBean,final String[] queryFields) {
         // 分页数量边界控制
         if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-            throw new BaseRunTimeException();
+            throw new CommonException();
         }
         List<?> results = getPaginationRecoresBySql(sql, Pagination
                         .getStartNumber(pageIndex, pageSize).intValue(),
@@ -530,7 +530,7 @@ public class MockDao<T extends IMockEntity> implements IMockDao<T> {
              final Class<?> convertBean,final String[] queryFields) {
         // 分页数量边界控制
         if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-            throw new BaseRunTimeException();
+            throw new CommonException();
         }
         List<?> results = getPaginationRecoresBySql(sql, Pagination
                         .getStartNumber(pageIndex, pageSize).intValue(),
@@ -545,7 +545,7 @@ public class MockDao<T extends IMockEntity> implements IMockDao<T> {
 			final Integer pageSize, String sql, final Object[] values) {
 		// 分页数量边界控制
 		if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-			throw new BaseRunTimeException();
+			throw new CommonException();
 		}
 		List<Object> results = getPaginationRecoresBySql(sql, Pagination
 				.getStartNumber(pageIndex, pageSize).intValue(),
@@ -561,7 +561,7 @@ public class MockDao<T extends IMockEntity> implements IMockDao<T> {
 			final List<String> fields) {
 		// 分页数量边界控制
 		if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-			throw new BaseRunTimeException();
+			throw new CommonException();
 		}
 		List<Object> results = getPaginationRecoresBySql(sql, Pagination
 				.getStartNumber(pageIndex, pageSize).intValue(),
@@ -576,7 +576,7 @@ public class MockDao<T extends IMockEntity> implements IMockDao<T> {
 			final Integer pageSize, String hql, final Map<String, Object> values) {
 		// 分页数量边界控制
 		if (pageSize <= 0 || pageSize > Pagination.MAX_SIZE) {
-			throw new BaseRunTimeException();
+			throw new CommonException();
 		}
 		List<Object> results = getPaginationRecords(hql, Pagination
 						.getStartNumber(pageIndex, pageSize).intValue(),

@@ -1,7 +1,7 @@
 package com.springboot.controller;
 
+import com.springboot.common.shiro.AuthRealm;
 import com.springboot.entity.vo.ResponseData;
-import com.springboot.common.filter.ShiroAuthRealm;
 import com.springboot.common.util.SysLog;
 import com.springboot.dao.business.IUserDao;
 import com.springboot.entity.business.HbUserEO;
@@ -48,7 +48,7 @@ public class UserController {
     public Object saveEO(HbUserEO eo){
         // 密码加密
         SysLog.log("系统管理-保存用户","HbUserEO","更新");
-        eo.setPassWord(ShiroAuthRealm.encrypt(eo.getPassWord(),eo.getKey()));
+        eo.setPassWord(AuthRealm.encrypt(eo.getPassWord(),eo.getKey()));
         if(eo.getId() != null){
             userDao.update(eo);
         }else{

@@ -1,7 +1,6 @@
-package com.springboot.common.filter;
+package com.springboot.common.business;
 
 import com.alibaba.fastjson.JSON;
-import com.springboot.common.busi.BaseRunTimeException;
 import com.springboot.common.util.AjaxRequestUtil;
 import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.DateUtil;
@@ -46,7 +45,7 @@ import java.util.concurrent.Executors;
 @Configuration
 @ImportResource("applicationContext.xml")
 @Slf4j
-public class WebFilter {
+public class SpringWebFilter {
     @Bean
     public RemoteIpFilter remoteIpFilter() {
         return new RemoteIpFilter();
@@ -119,7 +118,7 @@ public class WebFilter {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
-                        throw new BaseRunTimeException("推送消息发生错误:" + e.getMessage());
+                        throw new CommonException("推送消息发生错误:" + e.getMessage());
                     }
                     MessageSendUtil.sendTopicMessage(message);
                 });

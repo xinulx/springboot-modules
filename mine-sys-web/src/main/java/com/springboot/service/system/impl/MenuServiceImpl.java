@@ -1,7 +1,7 @@
 package com.springboot.service.system.impl;
 
 import com.alibaba.fastjson.JSONArray;
-import com.springboot.cache.redis.RedisUtil;
+import com.springboot.common.redis.RedisUtil;
 import com.springboot.common.util.ThreadUtil;
 import com.springboot.entity.mybatis.BtnInfoEO;
 import com.springboot.entity.mybatis.MenuEO;

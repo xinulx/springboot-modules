@@ -1,20 +1,36 @@
-package com.springboot.common.filter;
+package com.springboot.common.business;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
  * web MVC 适配器 * 配置拦截器、处理静态资源、配置消息转换等
  */
 @Component
-public class WebConfig extends WebMvcConfigurerAdapter {
+public class SpringWebConfig extends WebMvcConfigurerAdapter {
 
+    /**
+     * 设置默认页面，类似于web.xml的welcome-page
+     */
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("pages/index");
+        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+        super.addViewControllers(registry);
+    }
+
+    /**
+     * 初始化时创建实例
+     * @return
+     */
     @Bean
-    public LogIntercepter logInterceptor() {
-        return new LogIntercepter();
+    public CommonInterceptor logInterceptor() {
+        return new CommonInterceptor();
     }
 
     /**

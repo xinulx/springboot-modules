@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.springboot.common.busi.BaseRunTimeException;
+import com.springboot.common.business.CommonException;
 import com.springboot.common.util.StringUtils;
 
 /**
@@ -57,7 +57,7 @@ public class ExceptionTipsMessage {
      * @return
      * @throws UnsupportedEncodingException
      */
-    public String get(BaseRunTimeException be) {
+    public String get(CommonException be) {
         String key = be.getKey();
         Object[] keyWords = be.getKeyWords();
         if (key != null && !"".equals(key)) {

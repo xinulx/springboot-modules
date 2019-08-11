@@ -1,6 +1,6 @@
 package com.springboot.controller;
 
-import com.springboot.common.filter.ShiroUtil;
+import com.springboot.common.shiro.SessionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ public class IndexController {
     @RequestMapping(value = "/goIndex", method = RequestMethod.GET)
     public String goIndex(Model model) {
         logger.info("=================进入首页============================");
-        model.addAttribute("localUser", ShiroUtil.getAttribute("threadLocal"));
+        model.addAttribute("localUser", SessionUtil.getAttribute("threadLocal"));
         //return "/pages/index";
         return "/index";
     }

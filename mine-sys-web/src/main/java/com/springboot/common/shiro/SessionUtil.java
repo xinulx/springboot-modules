@@ -1,4 +1,4 @@
-package com.springboot.common.filter;
+package com.springboot.common.shiro;
 
 import com.springboot.entity.mybatis.UserEO;
 import org.apache.shiro.SecurityUtils;
@@ -10,16 +10,16 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author wangshibao
- * @className: ShiroUtil
+ * @className: SessionUtil
  * @description: 管理shiro session的工具类
  * @dateTime 2018/4/19 10:15
  */
-public class ShiroUtil {
+public class SessionUtil {
 
     /**
      * 日志管理
      */
-    private static Logger log = LoggerFactory.getLogger(ShiroUtil.class);
+    private static Logger log = LoggerFactory.getLogger(SessionUtil.class);
     /**
      * 当前用户
      */
@@ -35,7 +35,7 @@ public class ShiroUtil {
     /**
      * 全局session过期时间
      */
-    public static final int GLOBAL_SESSION_TIMEOUT = 60*60*1000;
+    public static final int GLOBAL_SESSION_TIMEOUT = 60 * 60 * 1000;
     /**
      * 自定义shiro session的cookie名称
      */
@@ -60,14 +60,14 @@ public class ShiroUtil {
     /**
      * @description: 私有化构造函数
      */
-    private ShiroUtil() {
+    private SessionUtil() {
     }
 
     /**
      * @description: 获取session
      */
     public static Session getSession() {
-        Session session = null;
+        Session session;
         try {
             Subject currentUser = SecurityUtils.getSubject();
             session = currentUser.getSession();
@@ -95,7 +95,7 @@ public class ShiroUtil {
      * @description: 获取shiro session中的数据
      */
     public static Object getAttribute(Object key) {
-        Object value = null;
+        Object value;
         try {
             Session session = getSession();
             value = session.getAttribute(key);

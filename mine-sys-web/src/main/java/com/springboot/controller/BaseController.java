@@ -1,7 +1,7 @@
 package com.springboot.controller;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.springboot.common.busi.BaseRunTimeException;
+import com.springboot.common.business.CommonException;
 import com.springboot.common.util.AjaxObj;
 import com.springboot.common.util.CSRFTokenManager;
 import com.springboot.common.util.JSONFilterNamesType;
@@ -87,7 +87,7 @@ public abstract class BaseController {
     protected void checkBindResult(BindingResult result) {
         if (result != null && !result.getAllErrors().isEmpty()) {
             ObjectError error = result.getAllErrors().get(0);
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), error.getDefaultMessage());
+            throw new CommonException(CommonException.TipsMode.Message.toString(), error.getDefaultMessage());
         }
     }
 

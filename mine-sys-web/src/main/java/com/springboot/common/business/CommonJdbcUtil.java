@@ -1,4 +1,4 @@
-package com.springboot.common.db;
+package com.springboot.common.business;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidPooledConnection;
@@ -8,14 +8,11 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-public class JdbcUtil {
+public class CommonJdbcUtil {
 
     private static DruidDataSource dataSource;
 
-    static { //初始化数据源参数
-    }
-
-    public JdbcUtil(String url,String username,String password) throws Exception {
+    public CommonJdbcUtil(String url, String username, String password) {
         dataSource = new DruidDataSource();
         dataSource.setUrl(url);
         dataSource.setUsername(username);
@@ -29,19 +26,29 @@ public class JdbcUtil {
         dataSource.setTestWhileIdle(true);
         dataSource.setTestOnBorrow(false);
         dataSource.setTestOnReturn(false);
+        if (url.contains("mysql")) {
+            setDbType("mysql");
+        } else if (url.contains("oracle")) {
+            setDbType("oracle");
+        } else if (url.contains("sqlserver")) {
+            setDbType("sqlserver");
+        } else if (url.contains("db2")) {
+            setDbType("db2");
+        }
     }
 
     public void setDbType(String dbType) {
         dataSource.setDbType(dbType);
     }
 
-    public String isConnected() {
-        String rst = null;
+    public boolean isConnected() {
+        boolean rst = true;
         try {
             DruidPooledConnection connection = dataSource.getConnection();
             dataSource.validateConnection(connection);
         } catch (SQLException e) {
-            rst = e.getMessage();
+            rst = false;
+            System.out.println("数据库连接失败：" + e.getMessage());
         }
 
         return rst;
@@ -54,17 +61,20 @@ public class JdbcUtil {
     }
 
     public JdbcTemplate getJdbcTemplate() {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-        return jdbcTemplate;
+        if (isConnected()) {
+            return new JdbcTemplate(dataSource);
+        } else {
+            throw new CommonException("数据库连接异常");
+        }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         try {
-            JdbcUtil util = new JdbcUtil("jdbc:mysql://localhost:3306/zhpt?useUnicode=true&characterEncoding=UTF-8&useSSL=false","root","root");
-            List<Map<String,Object>> obj = util.getJdbcTemplate().queryForList("select * from cms_system_label");
+            CommonJdbcUtil util = new CommonJdbcUtil("jdbc:mysql://localhost:3306/zhpt?useUnicode=true&characterEncoding=UTF-8&useSSL=false&&serverTimezone=UTC", "root", "root");
+            List<Map<String, Object>> obj = util.getJdbcTemplate().queryForList("select * from cms_system_label");
             System.out.println(obj);
         } catch (Exception e) {
-            System.out.println("出错了:"+e.getMessage());
+            System.out.println("出错了:" + e.getMessage());
         }
     }
 

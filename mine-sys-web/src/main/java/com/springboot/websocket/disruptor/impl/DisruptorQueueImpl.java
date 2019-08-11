@@ -2,7 +2,7 @@ package com.springboot.websocket.disruptor.impl;
 
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
-import com.springboot.common.busi.BaseRunTimeException;
+import com.springboot.common.business.CommonException;
 import com.springboot.websocket.disruptor.IDisruptorQueue;
 import com.springboot.websocket.disruptor.entity.Message;
 import com.springboot.websocket.disruptor.entity.MessageEvent;
@@ -70,7 +70,7 @@ public class DisruptorQueueImpl implements IDisruptorQueue {
             // 根据索引序号获取对应元素
             MessageEvent event = ringBuffer.get(sequence);
             event.setMessage(message);
-        } catch (BaseRunTimeException e) {
+        } catch (CommonException e) {
             logger.info("从环形缓冲数据中获取数据出错", e);
         } finally {
             ringBuffer.publish(sequence);

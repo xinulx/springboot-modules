@@ -1,4 +1,4 @@
-package com.springboot.common.filter;
+package com.springboot.common.shiro;
 
 import com.springboot.entity.vo.ResponseData;
 import com.springboot.entity.mybatis.UserEO;
@@ -18,12 +18,12 @@ import java.util.List;
 
 /**
  * @author wangshibao
- * @className: ShiroAuthRealm
+ * @className: AuthRealm
  * @description: 自定义realm
  * @dateTime 2018/4/18 15:40
  */
 @Slf4j
-public class ShiroAuthRealm extends AuthorizingRealm {
+public class AuthRealm extends AuthorizingRealm {
 
     /**
      * 用户业务逻辑,因为使用的spring的自动装配，
@@ -85,7 +85,7 @@ public class ShiroAuthRealm extends AuthorizingRealm {
             throw new DisabledAccountException("帐号不可用");
         }
         // 保存当前用户信息到shiro session中
-        ShiroUtil.setCurrentUser(userEO);
+        SessionUtil.setCurrentUser(userEO);
         // 与UsernamePasswordToken(userAccount, userPassword)进行比较
         // 如果没有配置Shiro加密，会直接进行比较
         // 如果配置了Shiro的加密,会先对UsernamePasswordToken(userAccount, userPassword)中的密码进行加密，

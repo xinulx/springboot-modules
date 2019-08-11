@@ -1,6 +1,6 @@
 package com.springboot.common.util;
 
-import com.springboot.common.busi.BaseRunTimeException;
+import com.springboot.common.business.CommonException;
 import com.springboot.entity.business.DataDictEO;
 import com.springboot.entity.business.DataDictItemEO;
 import com.springboot.service.hibernate.IDataDictItemService;
@@ -35,7 +35,7 @@ public class DataDictionaryUtil {
         map.put("code", code);
         DataDictEO ddeo = dataDictService.getEntity(DataDictEO.class, map);
         if (null == ddeo) {
-            throw new BaseRunTimeException(BaseRunTimeException.TipsMode.Message.toString(), "数据字典数据不存在！");
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "数据字典数据不存在！");
         }
 
         return dataDictItemService.getItemList(ddeo.getDictId());

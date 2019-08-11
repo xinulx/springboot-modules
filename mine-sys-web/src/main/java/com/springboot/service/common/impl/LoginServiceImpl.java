@@ -1,7 +1,7 @@
 package com.springboot.service.common.impl;
 
+import com.springboot.common.shiro.SessionUtil;
 import com.springboot.entity.vo.ResponseData;
-import com.springboot.common.filter.ShiroUtil;
 import com.springboot.entity.mybatis.UserEO;
 import com.springboot.service.common.ILoginService;
 import com.springboot.service.system.IUserService;
@@ -49,7 +49,7 @@ public class LoginServiceImpl implements ILoginService {
             token.setRememberMe(true);
             subject.login(token);
             // 用户认证成功,获取当前用户
-            userEO = ShiroUtil.getCurrentUser();
+            userEO = SessionUtil.getCurrentUser();
             // 完成认证的后续操作
             // 修改用户信息
 //            userEO.setLastLoginTime(new Date());
@@ -70,7 +70,7 @@ public class LoginServiceImpl implements ILoginService {
             log.warn(msg, e);
         }
         // 用户认证失败,删除当前用户
-        ShiroUtil.removeCurrentUser();
+        SessionUtil.removeCurrentUser();
         return ResponseData.fail(msg);
     }
 

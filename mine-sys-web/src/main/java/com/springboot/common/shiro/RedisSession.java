@@ -1,7 +1,6 @@
-package com.springboot.common.session;
+package com.springboot.common.shiro;
 
-import com.springboot.cache.redis.RedisUtil;
-import com.springboot.common.filter.ShiroUtil;
+import com.springboot.common.redis.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO;
@@ -15,18 +14,18 @@ import java.util.Set;
 
 /**
  * @author wangshibao
- * @className: RedisShiroSessionDao
+ * @className: RedisSession
  * @description: 使用redis管理shiro session
  * @dateTime 2018/4/24 9:26
  */
 @Slf4j
-public class RedisShiroSessionDao extends EnterpriseCacheSessionDAO {
+public class RedisSession extends EnterpriseCacheSessionDAO {
 
     /**
      * @description: 获取加工后的key的字节数组
      */
     private byte[] getKey(String key) {
-        return (ShiroUtil.SHIRO_SESSION_PREFIX + key).getBytes();
+        return (SessionUtil.SHIRO_SESSION_PREFIX + key).getBytes();
     }
 
     /**
@@ -75,7 +74,7 @@ public class RedisShiroSessionDao extends EnterpriseCacheSessionDAO {
             // 把session信息存储到redis中
             RedisUtil.set(key, value);
             // 设置过期时间
-            RedisUtil.expire(key, ShiroUtil.EXPIRE_SECONDS);
+            RedisUtil.expire(key, SessionUtil.EXPIRE_SECONDS);
             log.info("创建session:{}", session);
             return sessionId;
         }
@@ -105,7 +104,7 @@ public class RedisShiroSessionDao extends EnterpriseCacheSessionDAO {
     public Collection<Session> getActiveSessions() {
         List<Session> sessionList = new ArrayList<>(16);
         // 从redis从查询
-        Set<byte[]> keyByteArraySet = RedisUtil.keys(ShiroUtil.SHIRO_SESSION_PREFIX);
+        Set<byte[]> keyByteArraySet = RedisUtil.keys(SessionUtil.SHIRO_SESSION_PREFIX);
         for (byte[] keyByteArray : keyByteArraySet) {
             // 反序列化
             Session session = (Session) SerializationUtils.deserialize(keyByteArray);

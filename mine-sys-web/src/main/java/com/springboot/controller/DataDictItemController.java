@@ -1,6 +1,6 @@
 package com.springboot.controller;
 
-import com.springboot.common.busi.RightDictCache;
+import com.springboot.common.business.CommonDictCache;
 import com.springboot.common.util.LoginPersonUtil;
 import com.springboot.entity.business.DataDictEO;
 import com.springboot.entity.business.DataDictItemEO;
@@ -128,7 +128,7 @@ public class DataDictItemController {
                 dataDictItemService.delete(DataDictItemEO.class, id);
             }
         }
-        RightDictCache.refresh();
+        CommonDictCache.refresh();
         return ResponseData.success();
     }
 

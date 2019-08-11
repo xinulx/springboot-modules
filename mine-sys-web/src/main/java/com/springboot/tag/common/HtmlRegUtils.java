@@ -1,11 +1,10 @@
 package com.springboot.tag.common;
 
 import com.alibaba.fastjson.JSONObject;
-import com.springboot.common.busi.BaseRunTimeException;
-import com.springboot.common.busi.SpringContextHolder;
+import com.springboot.common.business.CommonException;
+import com.springboot.common.business.SpringContextHolder;
 import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.DocumentUtil;
-import com.springboot.tag.common.AbstractBeanService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -134,7 +133,7 @@ public class HtmlRegUtils {
                 try {
 
                 } catch (Throwable e) {
-                    throw new BaseRunTimeException("预处理[" + entry.getKey() + "]后台处理逻辑不存在."+ e.getMessage());
+                    throw new CommonException("预处理[" + entry.getKey() + "]后台处理逻辑不存在."+ e.getMessage());
                 }
             }
             // 由于$出现在replacement中时，表示对捕获组的反向引用，所以要对上面替换内容中的$进行替换

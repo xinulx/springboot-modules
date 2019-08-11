@@ -1,4 +1,4 @@
-package com.springboot.common.busi;
+package com.springboot.common.business;
 
 import java.io.IOException;
 

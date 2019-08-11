@@ -1,6 +1,6 @@
-package com.springboot.cache.redis;
+package com.springboot.common.redis;
 
-import com.springboot.common.filter.ShiroUtil;
+import com.springboot.common.shiro.SessionUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
@@ -14,7 +14,6 @@ import java.util.Set;
 
 /**
  * @author wangshibao
- * @className: RedisShiroCache
  * @description: redis管理shiro缓存
  * @dateTime 2018/4/24 16:04
  */
@@ -25,7 +24,7 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
      * @description: 获取加工后的key的字节数组
      */
     private byte[] getKey(Object key) {
-        return (ShiroUtil.SHIRO_CACHE_PREFIX + key).getBytes();
+        return (SessionUtil.SHIRO_CACHE_PREFIX + key).getBytes();
     }
 
     /**
@@ -85,7 +84,7 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
      */
     @Override
     public void clear() throws CacheException {
-        RedisUtil.delByPrefix(ShiroUtil.SHIRO_CACHE_PREFIX);
+        RedisUtil.delByPrefix(SessionUtil.SHIRO_CACHE_PREFIX);
     }
 
     /**
@@ -93,7 +92,7 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
      */
     @Override
     public int size() {
-        Set<byte[]> keyByteArraySet = RedisUtil.keys(ShiroUtil.SHIRO_CACHE_PREFIX);
+        Set<byte[]> keyByteArraySet = RedisUtil.keys(SessionUtil.SHIRO_CACHE_PREFIX);
         return keyByteArraySet.size();
     }
 
@@ -102,7 +101,7 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
      */
     @Override
     public Set keys() {
-        Set<byte[]> keyByteArraySet = RedisUtil.keys(ShiroUtil.SHIRO_CACHE_PREFIX);
+        Set<byte[]> keyByteArraySet = RedisUtil.keys(SessionUtil.SHIRO_CACHE_PREFIX);
         return keyByteArraySet;
     }
 
