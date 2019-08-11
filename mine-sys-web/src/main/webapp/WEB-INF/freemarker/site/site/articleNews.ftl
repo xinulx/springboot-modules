@@ -132,7 +132,6 @@
                     updateNum(docIDS, orderIDS);
                 }
             }).disableSelection();
-            generateTable("contentTable");
             $("#page").initPage(d.total,d.pageIndex + 1,function(curPage){
                 getPageData(curPage - 1);
             });

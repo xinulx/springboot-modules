@@ -11,7 +11,8 @@
     <meta http-equiv="Cache" content="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, userEO-scalable=no">
-    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
+    <meta name="keywords"
+          content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
     <meta name="author" content="设计：王齐 <wangqi@bootcss.com>">
     <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/plugins/pagination/css/jquery.pagination.css" rel="stylesheet"/>
@@ -41,6 +42,8 @@
     </script>
 </head>
 <body>
+<div class="mop-load-x" align="center"
+     style="width:100%;height:100%;background:#ffffff;position: absolute;font-size:30px;z-index:19920419;padding:15%;"></div>
 <div class="container-fluid">
     <div class="row top-header">
         <div class="col-xs-12">
@@ -127,16 +130,26 @@
 </script>
 <script>
     $(document).ready(function () {
-        initSocket();
-        loadSysMenu();
-        $(".f_left:first").click(function(){
-            window.open ("/login/mainSite");
+        Mopload();
+        setTimeout(function () {
+            $('.mop-load-text').html('Loading WebSocket......');
+        }, 1000);
+        setTimeout(function () {
+            initSocket();
+            $('.mop-load-text').html('Loading System Menu......');
+        }, 2000);
+        setTimeout(function () {
+            loadSysMenu();
+            $('.mop-load-text').html('Loading Content......');
+        }, 3000);
+        $(".f_left:first").click(function () {
+            window.open("/login/mainSite");
         });
-        $(".f_left:last").click(function(){
-            $.get("/login/logout",function(d){
-                if(d.status == 1){
+        $(".f_left:last").click(function () {
+            $.get("/login/logout", function (d) {
+                if (d.status == 1) {
                     window.location.reload(true);
-                }else{
+                } else {
                     window.location = "/login/logout";
                 }
             });
@@ -145,8 +158,10 @@
 
     function loadSysMenu() {
         $.post("/menu/getMenuTree", {type: "CATAGORY"}, function (result) {
-            if(result.status && result.status == -9){
-                layer.confirm('登陆超时，是否重新登陆？', {icon: 3,btn: ['确定', '取消']}, function () {location.href='/login/loginIn?etc='+new Date().getTime();});
+            if (result.status && result.status == -9) {
+                layer.confirm('登陆超时，是否重新登陆？', {icon: 3, btn: ['确定', '取消']}, function () {
+                    location.href = '/login/loginIn?etc=' + new Date().getTime();
+                });
                 return;
             }
             $("#mainHeader").empty().html(template('headerMenu', {data: result}));
@@ -154,14 +169,19 @@
                 $(this).addClass('active-header').siblings().removeClass('active-header');
             });
             $("#mainHeader ul li:first").trigger("click");
+            setTimeout(function () {
+                $('.mop-load-x').hide();
+            }, 2000);
         });
     }
 
     function loadLeftMenu(obj) {
         var id = $(obj).attr("data-id");
         $.post("/menu/getMenuTree", {id: id, queryFlag: '1'}, function (result) {
-            if(result.status && result.status == -9){
-                layer.confirm('登陆超时，是否重新登陆？', {icon: 3,btn: ['确定', '取消']}, function () {location.href='/login/loginIn?etc='+new Date().getTime();});
+            if (result.status && result.status == -9) {
+                layer.confirm('登陆超时，是否重新登陆？', {icon: 3, btn: ['确定', '取消']}, function () {
+                    location.href = '/login/loginIn?etc=' + new Date().getTime();
+                });
                 return;
             }
             $("#mainMenu").empty().html("<ul class=\"sidebar-menu\">" + template('leftMenu', {data: result}) + "</ul>");
@@ -200,10 +220,11 @@
             });
         });
     }
-    setInterval(function(){
+
+    setInterval(function () {
         var h = document.documentElement.clientHeight;
         var bodyHeight = document.getElementById("mainContainer");
         bodyHeight.style.height = (h - 70) + "px";
-    },200);
+    }, 200);
 </script>
 </html>

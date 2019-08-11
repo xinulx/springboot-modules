@@ -201,7 +201,7 @@ public class SearchFilter {
 			String[] names = StringUtils.split(key, "_");
 			if (names.length < 2) {
 				throw new IllegalArgumentException(key
-						+ " is not a valid search filter name");
+						+ " is not a valid search shiro name");
 			}
 			Operator operator = Operator.valueOf(names[0]);
 			String filedName = names[1];

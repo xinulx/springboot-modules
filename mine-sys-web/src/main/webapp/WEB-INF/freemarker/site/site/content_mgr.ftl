@@ -3,9 +3,8 @@
         <ul id="columnTree" class="ztree"></ul>
     </div>
     <div showCollapseButton="true">
-        <div id="contentMgr" style="overflow-y: auto;overflow-x: hidden"></div>
-        <div class="mask-loading">
-            <div class="show-mask">页面正在加载中...</div>
+        <div id="contentMgr" style="overflow-y: auto;overflow-x: hidden">
+            <div class="mop-load-x"></div>
         </div>
     </div>
 </div>
