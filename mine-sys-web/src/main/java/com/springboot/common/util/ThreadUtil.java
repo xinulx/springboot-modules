@@ -17,6 +17,7 @@ public abstract class ThreadUtil {
 
     /**
      * 设置缓存map
+     *
      * @param map
      */
     public static void set(Map<String, Object> map) {
@@ -27,6 +28,7 @@ public abstract class ThreadUtil {
 
     /**
      * 根据key获取session值
+     *
      * @param key
      * @return
      */
@@ -48,6 +50,7 @@ public abstract class ThreadUtil {
 
     /**
      * 根据key获取session值
+     *
      * @param key
      * @return
      */
@@ -58,6 +61,7 @@ public abstract class ThreadUtil {
 
     /**
      * 根据key获取session值
+     *
      * @param key
      * @return
      */
@@ -68,6 +72,7 @@ public abstract class ThreadUtil {
 
     /**
      * 根据key获取session值
+     *
      * @param key
      * @return
      */
@@ -94,6 +99,7 @@ public abstract class ThreadUtil {
         OP_OrganId,
         OP_CatId, RoleId, UserName;
 
-        LocalParamsKey() {}
+        LocalParamsKey() {
+        }
     }
 }

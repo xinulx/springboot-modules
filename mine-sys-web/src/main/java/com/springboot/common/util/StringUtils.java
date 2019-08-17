@@ -20,9 +20,9 @@ public class StringUtils {
      * @return
      */
     public static String getEncoding(String str) {
-        String[] encodes = new String[]{"ISO-8859-1","UTF-8","GB2312","GBK"};
+        String[] encodes = new String[]{"ISO-8859-1", "UTF-8", "GB2312", "GBK"};
         String encode = "UTF-8";
-        for(String e:encodes){
+        for (String e : encodes) {
             try {
                 //如果已获取到匹配的字符串格式，那么直接跳出循环
                 if (str.equals(new String(str.getBytes(e), e))) {

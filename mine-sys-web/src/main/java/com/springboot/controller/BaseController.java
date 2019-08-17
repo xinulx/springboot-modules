@@ -3,10 +3,9 @@ package com.springboot.controller;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.springboot.common.business.CommonException;
 import com.springboot.common.util.AjaxObj;
-import com.springboot.common.util.CSRFTokenManager;
 import com.springboot.common.util.JSONFilterNamesType;
 import com.springboot.common.util.JSONHelper;
-import com.springboot.common.util.Jacksons;
+import com.springboot.common.util.Jackson;
 import com.springboot.common.util.ThreadUtil;
 import com.springboot.entity.vo.ResultVO;
 import org.apache.commons.lang3.StringUtils;
@@ -15,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 import java.util.Set;
 
@@ -33,8 +31,8 @@ public abstract class BaseController {
      */
     public Object getObject() {
         ResultVO result = new ResultVO();
-        Object object = null;
-        Object tempObj = null;
+        Object object;
+        Object tempObj;
         Integer dataFlag = ThreadUtil.getInteger(ThreadUtil.LocalParamsKey.DataFlag);
         String callback = ThreadUtil.getString(ThreadUtil.LocalParamsKey.Callback);
         if (dataFlag != null && dataFlag != 0) {
@@ -43,7 +41,7 @@ public abstract class BaseController {
             tempObj = result;
         }
         if (!StringUtils.isEmpty(callback)) {
-            object = Jacksons.json().fromObjectToJson(new JSONPObject(callback, tempObj));
+            object = Jackson.json().fromObjectToJson(new JSONPObject(callback, tempObj));
         } else {
             object = tempObj;
         }
@@ -61,8 +59,8 @@ public abstract class BaseController {
         if (value != null) {
             result.setData(value);
         }
-        Object object = null;
-        Object tempObj = null;
+        Object object;
+        Object tempObj;
         Integer dataFlag = ThreadUtil.getInteger(ThreadUtil.LocalParamsKey.DataFlag);
         String callback = ThreadUtil.getString(ThreadUtil.LocalParamsKey.Callback);
         if (dataFlag != null && dataFlag != 0) {
@@ -71,7 +69,7 @@ public abstract class BaseController {
             tempObj = result;
         }
         if (!StringUtils.isEmpty(callback)) {
-            object = Jacksons.json().fromObjectToJson(new JSONPObject(callback, tempObj));
+            object = Jackson.json().fromObjectToJson(new JSONPObject(callback, tempObj));
         } else {
             object = tempObj;
         }
@@ -90,8 +88,6 @@ public abstract class BaseController {
             throw new CommonException(CommonException.TipsMode.Message.toString(), error.getDefaultMessage());
         }
     }
-
-    // edit by dzl 2014.09.25
 
     /**
      * 简化的错误输出方法: 参数错误<br/>
@@ -309,34 +305,16 @@ public abstract class BaseController {
      * @return
      */
     protected String toJSON(AjaxObj obj, final String[] filterNames, JSONFilterNamesType t, String dateFormat) {
-        Object tempObj = null;
-        String returnStr = "";
-        Integer dataFlag = ThreadUtil.getInteger(ThreadUtil.LocalParamsKey.DataFlag);
-        Integer convertCN = ThreadUtil.getInteger(ThreadUtil.LocalParamsKey.ConvertCN);
-        String callback = ThreadUtil.getString(ThreadUtil.LocalParamsKey.Callback);
-        if (dateFormat == null || "".equals(dateFormat)) {
-            dateFormat = "yyyy-MM-dd HH:mm:ss";
-        }
-        if (dataFlag != null && dataFlag != 0) {
-            tempObj = obj.getData();
-        } else {
-            tempObj = obj;
-        }
-        String json = (convertCN != null && convertCN != 0) ? JSONHelper.toJSON(tempObj, filterNames, t, dateFormat, true)
-                : JSONHelper.toJSON(tempObj, filterNames, t, dateFormat, false);
-
-
-        if (!StringUtils.isEmpty(callback)) {
-            returnStr = callback + "(" + json + ")";
-        } else {
-            returnStr = json;
-        }
-        return returnStr;
+        return toJSONString(obj, filterNames, t, dateFormat);
     }
 
     protected String toJSON(AjaxObj obj, Map<Class<?>, Set<String>> filterMap, JSONFilterNamesType t, String dateFormat) {
-        Object tempObj = null;
-        String returnStr = "";
+        return toJSONString(obj, filterMap, t, dateFormat);
+    }
+
+    private String toJSONString(AjaxObj obj, Object filterObj, JSONFilterNamesType t, String dateFormat) {
+        Object tempObj;
+        String returnStr, json;
         Integer dataFlag = ThreadUtil.getInteger(ThreadUtil.LocalParamsKey.DataFlag);
         Integer convertCN = ThreadUtil.getInteger(ThreadUtil.LocalParamsKey.ConvertCN);
         String callback = ThreadUtil.getString(ThreadUtil.LocalParamsKey.Callback);
@@ -348,8 +326,15 @@ public abstract class BaseController {
         } else {
             tempObj = obj;
         }
-        String json = (convertCN != null && convertCN != 0) ? JSONHelper.toJSON(tempObj, filterMap, t, dateFormat, true)
-                : JSONHelper.toJSON(tempObj, filterMap, t, dateFormat, false);
+        if (filterObj instanceof Map) {
+            Map<Class<?>, Set<String>> tempFilterObj = (Map<Class<?>, Set<String>>) filterObj;
+            json = (convertCN != null && convertCN != 0) ? JSONHelper.toJSON(tempObj, tempFilterObj, t, dateFormat, true)
+                    : JSONHelper.toJSON(tempObj, tempFilterObj, t, dateFormat, false);
+        } else {
+            String[] tempFilterObj = (String[]) filterObj;
+            json = (convertCN != null && convertCN != 0) ? JSONHelper.toJSON(tempObj, tempFilterObj, t, dateFormat, true)
+                    : JSONHelper.toJSON(tempObj, tempFilterObj, t, dateFormat, false);
+        }
 
         if (!StringUtils.isEmpty(callback)) {
             returnStr = callback + "(" + json + ")";
@@ -358,23 +343,4 @@ public abstract class BaseController {
         }
         return returnStr;
     }
-
-    /**
-     * 验证ajax提交中的headers中的__RequestVerificationToken值与session中的token是否不致
-     * <p>var headers = {};</p>
-     * <p>headers['__RequestVerificationToken'] = $("#CSRFToken").val();</p>
-     * <p>$.ajax({ type: "POST",headers: headers,cache: false,...});</p>
-     *
-     * @param request
-     * @return
-     */
-    protected boolean isValidCsrfHeaderToken(HttpServletRequest request) {
-        String token1 = request.getHeader("__RequestVerificationToken");
-        String token2 = request.getSession().getAttribute(CSRFTokenManager.CSRF_TOKEN4SESSION_ATTRNAME) == null ? null : request.getSession().getAttribute(CSRFTokenManager.CSRF_TOKEN4SESSION_ATTRNAME).toString();
-        if (token1 == null || token2 == null || !token1.equals(token2)) {
-            return false;
-        }
-        return true;
-    }
-
 }

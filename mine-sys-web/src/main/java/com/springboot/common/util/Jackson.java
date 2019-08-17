@@ -16,23 +16,23 @@ import com.springboot.common.business.CommonException;
  * jackson一些转换方法
  * 
  * <pre>
- * Jacksons.json().setDateFormate();
+ * Jackson.json().setDateFormate();
  * </pre>
  */
-public class Jacksons {
+public class Jackson {
 
 	private ObjectMapper objectMapper;
 	/** 格式化时间的string */
 	private static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
-	public static Jacksons json() {
-		return new Jacksons();
+	public static Jackson json() {
+		return new Jackson();
 	}
 
 	/**
 	 * 构造方法
 	 */
-	private Jacksons() {
+	private Jackson() {
 		objectMapper = JacksonMapper.getInstance();
 		this.setDateFormate();
 	}
@@ -43,10 +43,10 @@ public class Jacksons {
 	 * <pre>
 	 * 使用方法:先给ObjectMapper添加一个filter，然后还要在需要过滤的类上加@JsonFilter("filterName")注解。
 	 * 比如说要过滤User 上的name属性，先
-	 * Jacksons.json().shiro("myFilter", "name").readAsString(user)，具体看Jacksons代码。并在User类上加@JsonFilter("myFilter")。
+	 * Jackson.json().shiro("myFilter", "name").readAsString(user)，具体看Jacksons代码。并在User类上加@JsonFilter("myFilter")。
 	 * 有点不爽的是如果用另外一个没有添加该filter的ObjectMapper解析的话会报错。	 	
 	 * 如果这个User类已经添加了@JsonFilter("myFilter")注解，但在另外一个地方又要解析它并不想过滤name 属性，那只能是
-	 * 	Jacksons.json().shiro("myFilter", "")，然后在读出来。
+	 * 	Jackson.json().shiro("myFilter", "")，然后在读出来。
 	 * </pre>
 	 * 
 	 * @param filterName
@@ -55,7 +55,7 @@ public class Jacksons {
 	 *            要过滤的字段名称
 	 * @return
 	 */
-	public Jacksons filter(String filterName, String... properties) {
+	public Jackson filter(String filterName, String... properties) {
 		FilterProvider filterProvider = new SimpleFilterProvider().addFilter(
 				filterName,
 				SimpleBeanPropertyFilter.serializeAllExcept(properties));
@@ -70,7 +70,7 @@ public class Jacksons {
 	 *            自定义的日期/时间格式。该属性的值遵循java标准的date/time格式规范。如：yyyy-MM-dd
 	 * @return
 	 */
-	public Jacksons setDateFormate(String dateFormat) {
+	public Jackson setDateFormate(String dateFormat) {
 		objectMapper.setDateFormat(new SimpleDateFormat(dateFormat));
 		return this;
 	}
@@ -80,7 +80,7 @@ public class Jacksons {
 	 * 
 	 * @return
 	 */
-	public Jacksons setDateFormate() {
+	public Jackson setDateFormate() {
 		objectMapper.setDateFormat(new SimpleDateFormat(DATE_TIME_FORMAT));
 		return this;
 	}
@@ -186,6 +186,11 @@ public class Jacksons {
 		} else if (Collection.class.isAssignableFrom(keyClazz)||Collection.class.isAssignableFrom(valueClazz)) {
 			throw new IllegalArgumentException("不支持集合类型");
 		}
+		Map<?, ?> map = getMap(json, keyClazz, valueClazz);
+		return map;
+	}
+
+	private Map<?, ?> getMap(String json, Class<?> keyClazz, Class<?> valueClazz) {
 		// 构造返回类型
 		JavaType javaType = objectMapper.getTypeFactory()
 				.constructParametricType(Map.class, keyClazz, valueClazz);
@@ -216,15 +221,7 @@ public class Jacksons {
 			throw new NullPointerException();
 		}
 		// 构造返回类型
-		JavaType javaType = objectMapper.getTypeFactory()
-				.constructParametricType(Map.class, keyClazz, valueClazz);
-		Map<?, ?> map = null;
-		try {
-			map = objectMapper.readValue(json, javaType);
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new CommonException("解析json错误");
-		}
+		Map<?, ?> map = getMap(json, keyClazz, valueClazz);
 		return map;
 	}
 
@@ -234,7 +231,6 @@ public class Jacksons {
 	 * @param json
 	 * @return list
 	 */
-	@SuppressWarnings("unchecked")
 	@Deprecated
 	public List<Map<String, Object>> fromJsonToList(String json) {
 		if(AppUtil.isEmpty(json) ){

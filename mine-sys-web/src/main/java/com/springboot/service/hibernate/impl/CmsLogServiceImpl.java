@@ -23,7 +23,7 @@ public class CmsLogServiceImpl extends MockService<CmsLogEO> implements ICmsLogS
 
     @Override
     public void recLog(String description, String caseType, String operation) {
-        HttpServletRequest request = null;
+        HttpServletRequest request;
         try {
             request = LoginPersonUtil.getRequest();
         } catch (Exception e) {
@@ -41,7 +41,7 @@ public class CmsLogServiceImpl extends MockService<CmsLogEO> implements ICmsLogS
         logEO.setUserAgent(request.getHeader("user-agent"));
         logEO.setRequestUri(request.getRequestURI());
         logEO.setMethod(request.getMethod());
-        logEO.setBroswer(BrowserUtils.checkBrowse(request));
+        logEO.setBroswer(BrowserUtils.getBrowserType(request));
         logEO.setSiteId(LoginPersonUtil.getSiteId());
         cmsLogDao.save(logEO);
     }
@@ -53,7 +53,7 @@ public class CmsLogServiceImpl extends MockService<CmsLogEO> implements ICmsLogS
 
     @Override
     public Pagination getPage(Long pageIndex, Integer pageSize, Date startDate, Date endDate, String type, String key, Long siteId) {
-        return (Pagination) cmsLogDao.getPage(pageIndex, pageSize, startDate, endDate, type, key, siteId);
+        return cmsLogDao.getPage(pageIndex, pageSize, startDate, endDate, type, key, siteId);
     }
 
     @Override

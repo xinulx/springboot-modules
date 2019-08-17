@@ -1,12 +1,5 @@
 package com.springboot.common.util;
 
-import java.lang.reflect.Field;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Properties;
-
 import org.apache.ibatis.executor.parameter.ParameterHandler;
 import org.apache.ibatis.executor.statement.RoutingStatementHandler;
 import org.apache.ibatis.executor.statement.StatementHandler;
@@ -23,14 +16,22 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.lang.reflect.Field;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Properties;
+
 /**
  * myabtis的拦截器，用于在执行SQL前拦截SQL语句实现动态条件追加
+ *
  * @author wangshibao
  * @ClassName: TPageInterceptor
  * @Description:
  * @date 2015年1月23日 下午12:28:59
  */
-@Intercepts({@Signature(method = "prepare", type = StatementHandler.class, args = {Connection.class,Integer.class})})
+@Intercepts({@Signature(method = "prepare", type = StatementHandler.class, args = {Connection.class, Integer.class})})
 @Component // 配置mybatis.config-location 属性也可以
 public class SQLInterceptor implements Interceptor {
 
@@ -38,6 +39,7 @@ public class SQLInterceptor implements Interceptor {
 
     @Value("mysql")
     private String databaseType;
+
     /**
      * 拦截后要执行的方法
      */

@@ -143,29 +143,29 @@ public class LoginPersonUtil {
 
     /**
      * 判断是否为开发商
-     * */
+     */
     public static boolean isRoot() {
         return InternalAccount.DEVELOPER_ADMIN_CODE.equals(getUserName());
     }
 
     /**
      * 判断是否为超管账号
-     * */
+     */
     public static boolean isSuperAdmin() {
         return getAttribute(Boolean.class, InternalAccount.USER_ISSUPERADMIN);
     }
 
     /**
      * 判断是否为当前站点管理员账号
-     * */
+     */
     public static boolean isSiteAdmin() {
         //如果是站管，并且管理当前站点
-        if(getAttribute(Boolean.class, InternalAccount.USER_ISSITEADMIN)){
+        if (getAttribute(Boolean.class, InternalAccount.USER_ISSITEADMIN)) {
             String siteIds = getAttribute(String.class, InternalAccount.USER_MAINTENANCE_SITE);
-            if(StringUtils.isEmpty(siteIds)){
+            if (StringUtils.isEmpty(siteIds)) {
                 return false;
             }
-            return siteIds.contains(","+String.valueOf(getSiteId())+",");
+            return siteIds.contains("," + String.valueOf(getSiteId()) + ",");
         }
         return false;
     }

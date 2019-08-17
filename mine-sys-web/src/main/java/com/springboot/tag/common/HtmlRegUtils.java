@@ -4,17 +4,20 @@ import com.alibaba.fastjson.JSONObject;
 import com.springboot.common.business.CommonException;
 import com.springboot.common.business.SpringContextHolder;
 import com.springboot.common.util.AppUtil;
-import com.springboot.common.util.DocumentUtil;
+import org.apache.commons.lang3.StringUtils;
+import org.dom4j.Attribute;
+import org.dom4j.Document;
+import org.dom4j.DocumentHelper;
+import org.dom4j.Element;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * parse page template of string
- */
 public class HtmlRegUtils {
 
     // 该正则表达式支持两种闭合方式、支持标签嵌套、支持取单独属性，暂不支持相同标签嵌套
@@ -126,14 +129,14 @@ public class HtmlRegUtils {
             String key = m.group(1).trim();// 字段
             String param = m.group(2).trim();// 参数
             // 参数map
-            Map<String, String> paramMap = DocumentUtil.parseText(param);
+            Map<String, String> paramMap = parseText(param);
             System.out.println("属性：" + key + "参数：" + paramMap);
             // 预处理字段值
             for (Map.Entry<String, String> entry : paramMap.entrySet()) {
                 try {
 
                 } catch (Throwable e) {
-                    throw new CommonException("预处理[" + entry.getKey() + "]后台处理逻辑不存在."+ e.getMessage());
+                    throw new CommonException("预处理[" + entry.getKey() + "]后台处理逻辑不存在." + e.getMessage());
                 }
             }
             // 由于$出现在replacement中时，表示对捕获组的反向引用，所以要对上面替换内容中的$进行替换
@@ -146,16 +149,41 @@ public class HtmlRegUtils {
     public static void main(String[] args) {
         String content = "测试标签<div>[mine:title length=\"30\"]\n{mine:aa num=1 name=test}{/mine:aa}{mine:bb num=1 name=test}{/mine:bb}{mine:cc a=1 b=2/}</div>";
         System.out.println(parseLabel(content));
-        System.out.println(parseProperty(content,"211221" ));
+        System.out.println(parseProperty(content, "211221"));
     }
 
-    public static String processStr(String str){
-        if(AppUtil.isEmpty(str)){
+    public static String processStr(String str) {
+        if (AppUtil.isEmpty(str)) {
             return "";
         }
-        if(str.length()>=2){
-            return str.substring(1,str.length()-1);
+        if (str.length() >= 2) {
+            return str.substring(1, str.length() - 1);
         }
         return "";
+    }
+
+    /**
+     * 解析参数，针对相同参数做缓存处理
+     */
+    public static Map<String, String> parseText(String param) {
+        Map<String, String> map = new HashMap<String, String>();// 参数map
+        // 判断空
+        if (StringUtils.isEmpty(param)) {
+            return map;
+        }
+        try {
+            String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><Regex " + param.replaceAll("&", "&amp;") + "></Regex>";
+            Document document = DocumentHelper.parseText(xml);
+            Element element = document.getRootElement();
+            Iterator<?> it = element.attributeIterator();
+            while (it.hasNext()) {
+                Attribute attr = (Attribute) it.next();
+                map.put(attr.getName(), attr.getValue());
+            }
+            return map;
+        } catch (Throwable e) {
+            System.err.println("参数[" + param + "]解析错误.\n" + e.getMessage());
+            throw new CommonException("参数[" + param + "]解析错误." + e.getMessage());
+        }
     }
 }

@@ -4,7 +4,7 @@ import com.springboot.common.business.CommonLogParams;
 import com.springboot.entity.vo.ResponseData;
 import com.springboot.common.shiro.SessionUtil;
 import com.springboot.common.util.BrowserUtils;
-import com.springboot.common.util.CodeUtil;
+import com.springboot.common.util.ValidCodeUtil;
 import com.springboot.common.util.GraphicHelper;
 import com.springboot.common.util.IpUtil;
 import com.springboot.common.util.LoginPersonUtil;
@@ -65,7 +65,7 @@ public class LoginController {
     @RequestMapping("/getCode")
     public void getValidCode(HttpServletRequest req, HttpServletResponse resp) {
         // 调用工具类生成的验证码和验证码图片
-        Map<String, Object> codeMap = CodeUtil.generateCodeAndPic();
+        Map<String, Object> codeMap = ValidCodeUtil.generateCodeAndPic();
 
         // 将四位数字的验证码保存到Session中。
         HttpSession session = req.getSession();
@@ -137,7 +137,7 @@ public class LoginController {
         eo.setSiteId(LoginPersonUtil.getSiteId());
         eo.setOs(OSUtil.get().get("os.name").toString());
         eo.setResolutionRatio(Screen.getScreen());
-        eo.setBrowser(BrowserUtils.checkBrowse(request) + "-" + BrowserUtils.getBrowserType(request).name());
+        eo.setBrowser("IE:" + BrowserUtils.getIEVersion(request) + "-" + BrowserUtils.getBrowserType(request));
         try {
             subject.login(token);
             eo.setLoginStatus(CmsLoginHistoryEO.LoginStatus.Success.name());

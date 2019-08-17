@@ -1,3 +1,8 @@
+<style>
+    .mini-layout-region-header .mini-tools, .mini-layout-proxy .mini-tools {
+        top: 0;
+    }
+</style>
 <div class="col-md-2 tree-bg">
     <div id="ui_tree" class="ztree"></div>
 </div>

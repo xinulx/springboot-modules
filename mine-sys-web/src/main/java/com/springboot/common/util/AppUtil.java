@@ -3,23 +3,23 @@ package com.springboot.common.util;
 import nl.bitwalker.useragentutils.UserAgent;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
-import org.springframework.beans.BeansException;
-import org.springframework.beans.FatalBeanException;
-import org.springframework.util.Assert;
 import org.springframework.util.ObjectUtils;
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.beans.PropertyDescriptor;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -27,7 +27,6 @@ import java.net.URLConnection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -45,19 +44,21 @@ import java.util.UUID;
 public class AppUtil {
 
     /**
-     *是否是Ajax请求,如果是ajax请求响应头会有，x-requested-with
+     * 是否是Ajax请求,如果是ajax请求响应头会有，x-requested-with
+     *
      * @param request
      * @return
      */
-    public static boolean isAjax(ServletRequest request){
-        return "XMLHttpRequest".equalsIgnoreCase(((HttpServletRequest)request).getHeader("X-Requested-With"));
+    public static boolean isAjax(ServletRequest request) {
+        return "XMLHttpRequest".equalsIgnoreCase(((HttpServletRequest) request).getHeader("X-Requested-With"));
     }
 
     /**
      * response 设置超时
+     *
      * @param servletResponse
      */
-    public static void out(ServletResponse servletResponse){
+    public static void setTimeout(ServletResponse servletResponse) {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         response.setCharacterEncoding("UTF-8");
         //在响应头设置session状态
@@ -79,7 +80,7 @@ public class AppUtil {
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int min = calendar.get(Calendar.MINUTE);
         int sec = calendar.get(Calendar.SECOND);
-        int millsec = calendar.get(Calendar.MILLISECOND);
+        int millSecond = calendar.get(Calendar.MILLISECOND);
         if (month < 10) {
             buffer.append(0);
         }
@@ -100,13 +101,13 @@ public class AppUtil {
             buffer.append(0);
         }
         buffer.append(sec);
-        if (millsec < 100) {
-            if (millsec < 10) {
+        if (millSecond < 100) {
+            if (millSecond < 10) {
                 buffer.append(0);
             }
             buffer.append(0);
         }
-        buffer.append(millsec);
+        buffer.append(millSecond);
         String random = String.valueOf(Math.random());
         random = random.substring(random.length() - 8, random.length());
         buffer.append(random);
@@ -117,6 +118,7 @@ public class AppUtil {
     /**
      * <p>Discription:[根据request获取前台浏览器标识]</p>
      * Created on 2017年11月20日 下午7:30:08
+     *
      * @param request request对象
      * @return String 浏览器标识
      */
@@ -128,23 +130,24 @@ public class AppUtil {
 
     /**
      * 判断地址是否可用
+     *
      * @param urlString
      * @param timeOutMillSeconds
      * @return
      */
-    public static boolean checkUrlWithTimeOut(String urlString,int timeOutMillSeconds){
+    public static boolean checkUrl(String urlString, int timeOutMillSeconds) {
         URL url;
         try {
             url = new URL(urlString);
-            URLConnection co =  url.openConnection();
-            HttpURLConnection httpUrlConnection  =  (HttpURLConnection) co;
+            URLConnection co = url.openConnection();
+            HttpURLConnection httpUrlConnection = (HttpURLConnection) co;
             httpUrlConnection.setConnectTimeout(timeOutMillSeconds);
             httpUrlConnection.setReadTimeout(timeOutMillSeconds);
             httpUrlConnection.connect();
             String code = new Integer(httpUrlConnection.getResponseCode()).toString();
             String message = httpUrlConnection.getResponseMessage();
-            System.out.println("getResponseCode code ="+ code);
-            System.out.println("getResponseMessage message ="+ message);
+            System.out.println("getResponseCode code =" + code);
+            System.out.println("getResponseMessage message =" + message);
             return true;
         } catch (Exception e1) {
             return false;
@@ -245,14 +248,6 @@ public class AppUtil {
     }
 
     /**
-     * 将对象转为整型值
-     */
-    public static int getint(Object obj) {
-        Integer result = getInteger(obj);
-        return null == result ? 0 : result.intValue();
-    }
-
-    /**
      * *
      * 将对象转为短整型
      *
@@ -311,14 +306,6 @@ public class AppUtil {
     }
 
     /**
-     * 将对象转为整型值
-     */
-    public static long getlong(Object obj) {
-        Long result = getLong(obj);
-        return null == result ? 0 : result.longValue();
-    }
-
-    /**
      * *
      * 获取长整型
      *
@@ -347,7 +334,7 @@ public class AppUtil {
     }
 
     /**
-     * *
+     * 获取Float浮点型
      *
      * @param obj
      * @return
@@ -389,10 +376,10 @@ public class AppUtil {
         }
         return isNumeric(sCheck);
     }
-    /*
+
+    /**
      * 将对象转为指定的字符串
      */
-
     public static String getValue(Object obj) {
         if (null == obj) {
             return "";
@@ -414,7 +401,7 @@ public class AppUtil {
         final BeanWrapper src = new BeanWrapperImpl(orig);
         java.beans.PropertyDescriptor[] pds = src.getPropertyDescriptors();
 
-        Set<String> emptyNames = new HashSet<String>();
+        Set<String> emptyNames = new HashSet<>();
         for (java.beans.PropertyDescriptor pd : pds) {
             Object srcValue = src.getPropertyValue(pd.getName());
             if (ObjectUtils.isEmpty(srcValue)) emptyNames.add(pd.getName());
@@ -435,9 +422,7 @@ public class AppUtil {
     }
 
     /**
-     * *
-     * <p>
-     * 属性拷贝
+     * 属性拷贝,可忽略某些字段
      *
      * @param dest
      * @param orig
@@ -460,8 +445,8 @@ public class AppUtil {
             return null;
         }
         String strs[] = str.split(delimiter);
-        List<Long> tempList = new ArrayList<Long>();
-        Long temp = null;
+        List<Long> tempList = new ArrayList<>();
+        Long temp;
         for (int i = 0; i < strs.length; i++) {
             temp = getLong(strs[i]);
             if (null != temp) {
@@ -492,7 +477,7 @@ public class AppUtil {
      * @return
      * @Time 2014年8月19日 下午7:32:59
      */
-    public static String getUuid() {
+    public static String getUUID() {
         UUID uuid = UUID.randomUUID();
         return uuid.toString();
     }
@@ -538,7 +523,7 @@ public class AppUtil {
      * @Time 2014年9月5日 上午11:17:10
      */
     public static int getCurrentYear() {
-        return getint(Calendar.getInstance().getTime().toString().substring(Calendar.getInstance().getTime().toString().length() - 4));
+        return getInteger(Calendar.getInstance().getTime().toString().substring(Calendar.getInstance().getTime().toString().length() - 4));
     }
 
     /**
@@ -548,7 +533,7 @@ public class AppUtil {
      * @Time 2014年9月13日 下午3:20:02
      */
     public static int getYearByDate(Date date) {
-        return getint(date.toString().substring(date.toString().length() - 4));
+        return getInteger(date.toString().substring(date.toString().length() - 4));
     }
 
     /**
@@ -558,7 +543,7 @@ public class AppUtil {
      * @Time 2014年9月13日 下午3:08:05
      */
     public static int getCurrentWeekOfYear() {
-        return getint(Calendar.getInstance().get(Calendar.WEEK_OF_YEAR));
+        return getInteger(Calendar.getInstance().get(Calendar.WEEK_OF_YEAR));
     }
 
     /**
@@ -571,7 +556,7 @@ public class AppUtil {
     public static int getWeekOfYearByDate(Date date) {
         Calendar c = Calendar.getInstance();
         c.setTime(date);
-        int weekOfYear = getint(c.get(Calendar.WEEK_OF_YEAR));
+        int weekOfYear = getInteger(c.get(Calendar.WEEK_OF_YEAR));
         //中国化日期修改，星期天作为一周的开始
         if (c.get(Calendar.DAY_OF_WEEK) == 1) {
             weekOfYear--;
@@ -579,178 +564,12 @@ public class AppUtil {
         return weekOfYear;
     }
 
-    /**
-     * 获取不重复的ID串的集合
-     *
-     * @param str       id串
-     * @param delimiter 分隔符
-     * @return Long型的Set集合
-     */
-    public static Set<Long> getLongSet(String str, String delimiter) {
-        if (null == str || null == delimiter || "".equals(str) || "".equals(delimiter)) {
-            return null;
-        }
-        String strs[] = str.split(delimiter);
-        Set<Long> resultSet = new HashSet<Long>(strs.length);
-        Long temp = null;
-        for (int i = 0; i < strs.length; i++) {
-            temp = getLong(strs[i]);
-            if (null != temp) {
-                resultSet.add(temp);
-            }
-        }
-        return resultSet;
-    }
-
-    public static Object transMapTO(Map<String, Object> map, Class<?> valueObjectClass) {
-        return setFieldValue(map, valueObjectClass);
-    }
-
-    public static void transMapTO(Map<String, Object> map, Object obj) {
-        setFieldValue(map, obj);
-    }
-
-    /**
-     * 返回由Map的key对属性，value对应值组成的对应
-     *
-     * @return
-     */
-    public static Object setFieldValue(Map<String, Object> data, Class<?> setCls) {
-        Object setObj = null;
-        try {
-            setObj = setCls.newInstance();
-            Class<?>[] setType = null;
-            Method[] setMethods = setCls.getMethods();
-            int setLen = "set".length();
-            String name = null;
-            for (Method setMethod : setMethods) {
-                name = setMethod.getName();
-                if (!name.startsWith("set") || name.length() <= setLen) continue;
-                name = name.substring(setLen);
-                name = name.substring(0, 1).toLowerCase() + name.substring(1);
-
-                setType = setMethod.getParameterTypes();
-                if (null == setType || setType.length != 1) continue;
-                if (!getBaseData(setType[0])) continue;
-
-                if (data.containsKey(name)) {
-                    setType = setMethod.getParameterTypes();
-                    if (null != setType && setType.length == 1) {
-                        Object objValue = setTypeConversion(setType[0], data.get(name));
-                        setMethod.invoke(setObj, objValue);
-                    }
-
-                }
-
-
-            }
-        } catch (SecurityException e) {
-            e.printStackTrace();
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return setObj;
-
-    }
-
-    /**
-     * 为对象target设置值，target、values以及unIngoreFields是否按约定传输，工具方法中不再进行验证
-     *
-     * @param target           待设值的对象
-     * @param values           key对应target的属性名，value对应属性的值
-     * @param assignmentFields 此字段为空，那么map中的所有值都设值进去，如果不为空，那么只设值assignmentFields中的属性值
-     * @param dateFormat       匹配的日期类型格式
-     */
-    public static void setFieldsValue(Object target, Map<String, Object> values, List<String> assignmentFields, String... dateFormat) {
-        Class<?> clazz = target.getClass();
-        Field[] fields = clazz.getDeclaredFields();
-        if (fields != null && fields.length > 0) {
-            //是否只设值unIngoreFields中的属性
-            boolean hasUnIngreFields = false;
-            if (assignmentFields != null && assignmentFields.size() > 0) {
-                hasUnIngreFields = true;
-            }
-            //待更新属性值容器中的key集合
-            Set<String> keys = values.keySet();
-            for (Field field : fields) {
-                String fieldName = field.getName();
-                //判断是否属于指定的更新字段，如果是，那么验证是否在待更新范围内，如果不在，那么跳出此次循环
-                //如果传值容器中不包含此属性的-即keys中不包含fieldName，那么也直接跳出循环
-                if ((hasUnIngreFields && !assignmentFields.contains(fieldName)) || !keys.contains(fieldName)) {
-                    continue;
-                }
-                Object value = values.get(fieldName);
-                try {
-                    field.setAccessible(true);
-                    //类型转换
-                    value = setTypeConversion(field.getType(), value, dateFormat);
-                    field.set(target, value);
-                } catch (IllegalArgumentException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    /**
-     * 返回由Map的key对属性，value对应值组成的对应
-     *
-     * @return
-     */
-    public static void setFieldValue(Map<String, Object> data, Object setObj) {
-        Class<?> setCls = setObj.getClass();
-        try {
-            Class<?>[] setType = null;
-            Method[] setMethods = setCls.getMethods();
-            int setLen = "set".length();
-            String name = null;
-            for (Method setMethod : setMethods) {
-                name = setMethod.getName();
-                if (!name.startsWith("set") || name.length() <= setLen) continue;
-                name = name.substring(setLen);
-                name = name.substring(0, 1).toLowerCase() + name.substring(1);
-
-                setType = setMethod.getParameterTypes();
-                if (null == setType || setType.length != 1) continue;
-                if (!getBaseData(setType[0])) continue;
-
-                if (data.containsKey(name)) {
-                    setType = setMethod.getParameterTypes();
-                    if (null != setType && setType.length == 1) {
-                        Object objValue = setTypeConversion(setType[0], data.get(name));
-                        setMethod.invoke(setObj, objValue);
-                    }
-
-                }
-
-
-            }
-        } catch (SecurityException e) {
-            e.printStackTrace();
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
-    }
-
     /***
      * 判断 参数是否基本类型可基本类型包装类
      * @param setCls
      * @return
      */
-    private static boolean getBaseData(Class<?> setCls) {
+    private static boolean isBaseType(Class<?> setCls) {
         //基本类型
         if (setCls.getClass().isPrimitive()) {
             return true;
@@ -776,10 +595,16 @@ public class AppUtil {
                     "Character[]".equals(getType)
             );
         }
-
     }
 
-    //强转对应的值类型
+    /**
+     * 强转对应的值类型
+     *
+     * @param setCls
+     * @param value
+     * @param dateFormat
+     * @return
+     */
     public static Object setTypeConversion(Class<?> setCls, Object value, String... dateFormat) {
         if (isEmpty(value)) return null;
         if (setCls.isArray()) return value;
@@ -824,58 +649,16 @@ public class AppUtil {
     }
 
     /**
-     * 为对象target设置值，target、values以及unIngoreFields是否按约定传输，工具方法中不再进行验证
-     *
-     * @param target           待设值的对象
-     * @param source           key对应target的属性名，value对应属性的值
-     * @param assignmentFields 此字段为空，那么map中的所有值都设值进去，如果不为空，那么只设值assignmentFields中的属性值
-     */
-    public static void copyPropertiesWithAssignmentFields(Object source, Object target, String... assignmentFields)
-            throws BeansException {
-        Assert.notNull(source, "Source must not be null");
-        Assert.notNull(target, "Target must not be null");
-        Class<?> actualEditable = target.getClass();
-        PropertyDescriptor[] targetPds = BeanUtils.getPropertyDescriptors(actualEditable);
-        List<String> assignmentList = (assignmentFields != null) ? Arrays.asList(assignmentFields) : null;
-
-        for (PropertyDescriptor targetPd : targetPds) {
-            Method writeMethod = targetPd.getWriteMethod();
-            if (writeMethod != null && (assignmentFields == null || (assignmentList.contains(targetPd.getName())))) {
-                PropertyDescriptor sourcePd = BeanUtils.getPropertyDescriptor(source.getClass(), targetPd.getName());
-                if (sourcePd != null) {
-                    Method readMethod = sourcePd.getReadMethod();
-                    if (readMethod != null &&
-                            writeMethod.getParameterTypes()[0].isAssignableFrom(readMethod.getReturnType())) {
-                        try {
-                            if (!Modifier.isPublic(readMethod.getDeclaringClass().getModifiers())) {
-                                readMethod.setAccessible(true);
-                            }
-                            Object value = readMethod.invoke(source);
-                            if (!Modifier.isPublic(writeMethod.getDeclaringClass().getModifiers())) {
-                                writeMethod.setAccessible(true);
-                            }
-                            writeMethod.invoke(target, value);
-                        } catch (Throwable ex) {
-                            throw new FatalBeanException(
-                                    "Could not copy property '" + targetPd.getName() + "' from source to target", ex);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    /**
      * 将request参数放入Map中
      *
      * @param request
      * @return
      */
-    public static Map<String, Object> parseRequestToMap(HttpServletRequest request) {
+    public static Map<String, Object> getRequestParams(HttpServletRequest request) {
         if (null == request) return null;
         Map<String, String[]> map = request.getParameterMap();
         Map<String, Object> resultMap = new HashMap<String, Object>(map.size());
-        String[] strArray = null;
+        String[] strArray;
         for (String key : map.keySet()) {
             strArray = map.get(key);
             if (null != strArray && strArray.length > 0) {
@@ -885,15 +668,6 @@ public class AppUtil {
         return resultMap;
     }
 
-
-    //转换小写
-    public static String lowerCase(String str) {
-        if (!isEmpty(str)) {
-            return str.toLowerCase();
-        }
-        return str;
-    }
-
     /**
      * 将List转换成Map
      *
@@ -901,14 +675,14 @@ public class AppUtil {
      * @param key  转换成Map时的Key
      * @return
      */
-    public static Map<?, ?> parseListToMap(List<?> list, String key) {
+    public static Map<?, ?> listToMap(List<?> list, String key) {
         Map<Object, Object> map = new HashMap<Object, Object>();
         if (null == list) return map;
         if (isEmpty(key)) return map;
-        Object keyValue = null;
+        Object keyValue;
         for (Object obj : list) {
             try {
-                key = key.substring(0, 1).toUpperCase() + key.substring(1, key.length());
+                key = key.substring(0, 1).toUpperCase() + key.substring(1);
                 keyValue = obj.getClass().getMethod("get" + key).invoke(obj);
                 map.put(keyValue, obj);
             } catch (Exception e) {
@@ -951,12 +725,97 @@ public class AppUtil {
         return o;
     }
 
-    public static <T>List<T> toBeanList(SolrDocumentList records, Class clazz) {
+    public static <T> List<T> toBeanList(SolrDocumentList records, Class clazz) {
         List list = new ArrayList();
         for (SolrDocument record : records) {
             list.add(toBean(record, clazz));
         }
         return list;
+    }
+
+    /**
+     * 序列化对象
+     *
+     * @param value
+     * @return
+     */
+    public static byte[] serialize(Object value) {
+        if (value == null) {
+            throw new NullPointerException("Can't serialize null");
+        }
+        byte[] rv;
+        ByteArrayOutputStream bos = null;
+        ObjectOutputStream os = null;
+        try {
+            bos = new ByteArrayOutputStream();
+            os = new ObjectOutputStream(bos);
+            os.writeObject(value);
+            os.close();
+            bos.close();
+            rv = bos.toByteArray();
+        } catch (IOException e) {
+            throw new IllegalArgumentException("Non-serializable object", e);
+        } finally {
+            try {
+                if (os != null) os.close();
+                if (bos != null) bos.close();
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+        return rv;
+    }
+
+    /**
+     * 反序列化对象
+     *
+     * @param in
+     * @return
+     */
+    public static Object deserialize(byte[] in) {
+        Object rv = null;
+        ByteArrayInputStream bis = null;
+        ObjectInputStream is = null;
+        try {
+            if (in != null) {
+                bis = new ByteArrayInputStream(in);
+                is = new ObjectInputStream(bis);
+                rv = is.readObject();
+                is.close();
+                bis.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (is != null) is.close();
+                if (bis != null) bis.close();
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+        return rv;
+    }
+
+    /**
+     * BASE64解密
+     *
+     * @param key
+     * @return
+     * @throws Exception
+     */
+    public static byte[] decodeBase64(String key) throws Exception {
+        return (new BASE64Decoder()).decodeBuffer(key);
+    }
+
+    /**
+     * BASE64加密
+     *
+     * @param key
+     * @return
+     */
+    public static String encodeBase64(byte[] key) {
+        return (new BASE64Encoder()).encodeBuffer(key);
     }
 
 }

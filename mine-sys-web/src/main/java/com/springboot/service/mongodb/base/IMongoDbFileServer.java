@@ -32,7 +32,6 @@ public interface IMongoDbFileServer {
      *
      * @param collectionName 集合名    默认值： fs , 如果想分清楚模块集合可自行设置
      * @param file           文件
-     * @param caseId         外键
      */
     public MongoFileVO uploadMultipartFile(MultipartFile file, String collectionName);
 
@@ -41,12 +40,9 @@ public interface IMongoDbFileServer {
      * 存储文件 (单文件)
      *
      * @param collectionName 集合名    默认值： fs , 如果想分清楚模块集合可自行设置
-     * @param (byte[])
      * @param caseId         外键
      */
-    public MongoFileVO uploadByteFile(byte[] filebytes, String fileName, Long caseId, String collectionName);
-
-    public MongoFileVO uploadByteFile(InputStream inputStream, String fileName, Long caseId, String collectionName);
+    public MongoFileVO uploadFile(Object fileObj, String fileName, Long caseId, String collectionName);
 
     public MongoFileVO uploadMultipartFile(MultipartFile file, String collectionName, String _id);
 

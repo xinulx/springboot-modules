@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationContext;
 
 public class LabelUtils {
 
-    public static void register(){
+    public static void register() {
         ApplicationContext ctx = SpringContextHolder.getApplicationContext();
         BeanDefinition bean = new GenericBeanDefinition();
         //类的全路径
@@ -17,8 +17,8 @@ public class LabelUtils {
         bean.setBeanClassName(beanName);
         DefaultListableBeanFactory factory = (DefaultListableBeanFactory) ctx.getAutowireCapableBeanFactory();
         //删除Bean
-        String beanId ="freemarkerConfig";
-        if(factory.containsBean(beanId)){
+        String beanId = "freemarkerConfig";
+        if (factory.containsBean(beanId)) {
             factory.removeBeanDefinition(beanId);
         }
         //注册Bean

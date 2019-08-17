@@ -2,7 +2,7 @@ package com.springboot.service.hibernate.impl;
 
 import com.springboot.common.business.CommonException;
 import com.springboot.common.util.AppUtil;
-import com.springboot.common.util.Jacksons;
+import com.springboot.common.util.Jackson;
 import com.springboot.common.util.LoginPersonUtil;
 import com.springboot.entity.hibernate.impl.AMockEntity;
 import com.springboot.service.common.impl.MockService;
@@ -139,7 +139,7 @@ public class LabelServiceImpl extends MockService<LabelEO> implements ILabelServ
     }
 
     private String convertConfig(String name, String str, Integer labelType) {
-        LabelFieldVO[] json = Jacksons.json().fromJsonToObject(str, LabelFieldVO[].class);
+        LabelFieldVO[] json = Jackson.json().fromJsonToObject(str, LabelFieldVO[].class);
         String label = "{mine:" + name + " ";
         if(labelType == 1){
             label = "<@" + name + " ";

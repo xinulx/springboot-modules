@@ -30,7 +30,7 @@ public class PropertiesUtil {
             }
             ///保存属性到b.properties文件
             FileOutputStream oFile = new FileOutputStream("tmpSimilar.properties", true);//true表示追加打开
-            prop.setProperty("date", DateUtils.getDate());
+            prop.setProperty("date", DateUtil.getStrToday());
             prop.store(oFile, "The New properties file");
             oFile.close();
         } catch (Exception e) {
@@ -38,11 +38,5 @@ public class PropertiesUtil {
         }
         log.info("*********************************读取配置属性end********************************");
         return null;
-    }
-
-    public static void main(String[] args){
-        String dir = System.getProperty("user.dir");
-        System.out.println(dir);
-        getProperty("test-open");
     }
 }

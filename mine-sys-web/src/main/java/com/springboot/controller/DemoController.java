@@ -1,11 +1,10 @@
 package com.springboot.controller;
 
-import com.springboot.entity.vo.ResponseData;
 import com.springboot.common.util.LabelUtils;
 import com.springboot.entity.mybatis.UserEO;
+import com.springboot.entity.vo.ResponseData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;

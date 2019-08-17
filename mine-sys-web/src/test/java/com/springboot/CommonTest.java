@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.DateUtil;
-import com.springboot.common.util.JdbcUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.jsoup.Connection;
@@ -30,8 +29,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CommonTest {
 
@@ -379,33 +376,5 @@ public class CommonTest {
         System.out.println(JSON.parse(content));
         JSONObject jsonObject = HttpRequestUtil.sendGet("http://amr.hefei.gov.cn/sj/spcjtg/defaul_5178.json", null);
         System.out.println(JSON.toJSONString(jsonObject));
-    }
-
-    /**
-     * UBB标签抓取
-     */
-    @Test
-    public void testMessage() {
-        //String reg = "\\[[a-z]+(=(.*?))?\\][\\s\\S]*?\\[/[a-z]+\\]";
-        String reg = "\\[[a-z]+(=(.*?))?\\]";
-        JdbcUtils jdbcUtils = JdbcUtils.getInstance();
-        jdbcUtils.setDRIVER("com.mysql.jdbc.Driver");
-        jdbcUtils.setURLSTR("jdbc:mysql://127.0.0.1:3306/ultrax?useUnicode=true&characterEncoding=UTF-8&useSSL=false");
-        jdbcUtils.setUSERNAME("root");
-        jdbcUtils.setUSERPASSWORD("root");
-
-        List<Object> objects = jdbcUtils.excuteQuery("select message from pre_forum_post where message like '%[%' and message like '%]%'", null);
-        List result = new ArrayList();
-        for (Object o : objects) {
-            String message = (String) ((Map) o).get("message");
-            Matcher matcher = Pattern.compile(reg, Pattern.DOTALL | Pattern.CASE_INSENSITIVE | Pattern.MULTILINE).matcher(message);
-            while (matcher.find()) {
-                if (!result.contains(matcher.group(0).split("=")[0])) {
-                    result.add(matcher.group(0).split("=")[0]);
-                    System.out.println(matcher.group(0));
-                }
-            }
-        }
-        System.out.println(result);
     }
 }

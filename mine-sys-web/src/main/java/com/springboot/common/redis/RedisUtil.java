@@ -1,5 +1,6 @@
 package com.springboot.common.redis;
 
+import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.PropertiesUtil;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
@@ -88,7 +89,7 @@ public class RedisUtil {
             return null;
         }
         byte[] in = getJedis().get(key.getBytes());
-        Map<String, T> map = (Map<String, T>) ObjectTransCoder.deserialize(in);
+        Map<String, T> map = (Map<String, T>) AppUtil.deserialize(in);
         return map;
     }
 

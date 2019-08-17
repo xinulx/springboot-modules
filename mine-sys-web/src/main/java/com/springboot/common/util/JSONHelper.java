@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.springboot.common.util;
 
 import com.alibaba.fastjson.serializer.JSONSerializer;
@@ -91,7 +86,6 @@ public class JSONHelper {
      * @param dataFormat  日期格式 默认为yyyy-MM-dd HH:mm:ss
      * @return
      */
-    @SuppressWarnings("resource")
     public static String toJSON(Object obj, final String[] filterNames, JSONFilterNamesType t, String dataFormat, Boolean convertCN) {
 
         // fastjson 过滤不需要序列化的属性,防止进入死循环
@@ -132,6 +126,10 @@ public class JSONHelper {
                 return !isInclude;
             }
         };
+        return getString(obj, dataFormat, convertCN, filter);
+    }
+
+    private static String getString(Object obj, String dataFormat, Boolean convertCN, PropertyFilter filter) {
         SerializeWriter sw = convertCN ? new SerializeWriter(featuresConvertCN) : new SerializeWriter(features);
         JSONSerializer serializer = new JSONSerializer(sw);
         serializer.setDateFormat(dataFormat);
@@ -152,18 +150,16 @@ public class JSONHelper {
         return toJSON(obj, filterMap, t, "yyyy-MM-dd HH:mm:ss", false);
     }
 
-    @SuppressWarnings("resource")
     public static String toJSON(Object obj, Map<Class<?>, Set<String>> filterMap, JSONFilterNamesType t, String dataFormat, boolean convertCN) {
 
         // fastjson 过滤不需要序列化的属性,防止进入死循环
         final boolean isInclude = JSONFilterNamesType.INCLUDE.equals(t);
         JSONSimplePropertyFilter spf = new JSONSimplePropertyFilter(filterMap, isInclude);
-        SerializeWriter sw = convertCN ? new SerializeWriter(featuresConvertCN) : new SerializeWriter(features);
-        JSONSerializer serializer = new JSONSerializer(sw);
-        serializer.setDateFormat(dataFormat);
-        serializer.getPropertyFilters().add(spf);
-        serializer.write(obj);
-        return sw.toString();
+        return getString(obj, dataFormat, convertCN, spf);
+    }
+
+    private static String getString(Object obj, String dataFormat, boolean convertCN, JSONSimplePropertyFilter spf) {
+        return getString(obj, dataFormat, convertCN, spf);
     }
 
 }

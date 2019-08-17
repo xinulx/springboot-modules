@@ -87,32 +87,4 @@ public class AjaxRequestUtil {
             }
         }
     }
-
-    /**
-     * 获取请求参数
-     * @param request
-     * @return
-     */
-    public Map<String,Object> getReuqetParams(ServletRequest request, boolean... isArray){
-        Map map=request.getParameterMap();
-        Set keSet=map.entrySet();
-        Map rtMap = new HashMap();
-        for(Iterator itr = keSet.iterator(); itr.hasNext();){
-            Map.Entry me=(Map.Entry)itr.next();
-            Object ok=me.getKey();
-            Object ov=me.getValue();
-            String[] value=new String[1];
-            if(ov instanceof String[]){
-                value=(String[])ov;
-            }else{
-                value[0]=ov.toString();
-            }
-            if(isArray != null && isArray.length == 1 && isArray[0]){
-                rtMap.put(ok,value);
-            }else{
-                rtMap.put(ok,StringUtils.join(value,","));
-            }
-        }
-        return rtMap;
-    }
 }

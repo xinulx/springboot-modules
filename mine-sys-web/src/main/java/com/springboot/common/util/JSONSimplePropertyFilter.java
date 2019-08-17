@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.springboot.common.util;
 
 import com.alibaba.fastjson.serializer.PropertyFilter;
@@ -45,21 +40,7 @@ public class JSONSimplePropertyFilter implements PropertyFilter {
      */
     @Override
     public boolean apply(Object source, String name, Object value) {
-        if (value instanceof HibernateProxy) {//hibernate代理对象
-            LazyInitializer initializer = ((HibernateProxy) value).getHibernateLazyInitializer();
-            if (initializer.isUninitialized()) {
-                return false;
-            }
-        } else if (value instanceof PersistentCollection) {//实体关联集合一对多等
-            PersistentCollection collection = (PersistentCollection) value;
-            if (!collection.wasInitialized()) {
-                return false;
-            }
-            Object val = collection.getValue();
-            if (val == null) {
-                return false;
-            }
-        }
+        if (aa(value)) return false;
         for (Entry<Class<?>, Set<String>> entry : map.entrySet()) {
             Class<?> class1 = entry.getKey();
             if (source.getClass() == class1) {
@@ -73,5 +54,24 @@ public class JSONSimplePropertyFilter implements PropertyFilter {
         }
         if (AjaxObj.class == source.getClass()) return true;
         return !this.isInclude;
+    }
+
+    private boolean aa(Object value) {
+        if (value instanceof HibernateProxy) {//hibernate代理对象
+            LazyInitializer initializer = ((HibernateProxy) value).getHibernateLazyInitializer();
+            if (initializer.isUninitialized()) {
+                return true;
+            }
+        } else if (value instanceof PersistentCollection) {//实体关联集合一对多等
+            PersistentCollection collection = (PersistentCollection) value;
+            if (!collection.wasInitialized()) {
+                return true;
+            }
+            Object val = collection.getValue();
+            if (val == null) {
+                return true;
+            }
+        }
+        return false;
     }
 }

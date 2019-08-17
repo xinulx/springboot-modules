@@ -3,9 +3,9 @@ package com.springboot.common.util;
 import com.springboot.common.business.CommonException;
 import com.springboot.entity.business.DataDictEO;
 import com.springboot.entity.business.DataDictItemEO;
+import com.springboot.entity.vo.DataDictVO;
 import com.springboot.service.hibernate.IDataDictItemService;
 import com.springboot.service.hibernate.IDataDictService;
-import com.springboot.entity.vo.DataDictVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -31,14 +31,14 @@ public class DataDictionaryUtil {
         if (StringUtils.isEmpty(code)) {
             return null;
         }
-        Map<String, Object> map = new HashMap<String, Object>();
+        Map<String, Object> map = new HashMap<>();
         map.put("code", code);
-        DataDictEO ddeo = dataDictService.getEntity(DataDictEO.class, map);
-        if (null == ddeo) {
+        DataDictEO dataDictEO = dataDictService.getEntity(DataDictEO.class, map);
+        if (null == dataDictEO) {
             throw new CommonException(CommonException.TipsMode.Message.toString(), "数据字典数据不存在！");
         }
 
-        return dataDictItemService.getItemList(ddeo.getDictId());
+        return dataDictItemService.getItemList(dataDictEO.getDictId());
     }
 
     /**
@@ -51,7 +51,7 @@ public class DataDictionaryUtil {
         if (null == itemList || itemList.isEmpty()) {
             return Collections.emptyList();
         }
-        List<DataDictVO> list = new ArrayList<DataDictVO>();
+        List<DataDictVO> list = new ArrayList<>();
         for (DataDictItemEO eo : itemList) {
             if (eo.getIsHide() == 1) {
                 continue;
@@ -78,7 +78,7 @@ public class DataDictionaryUtil {
         if (null == itemList || itemList.isEmpty()) {
             return Collections.emptyList();
         }
-        List<DataDictVO> list = new ArrayList<DataDictVO>();
+        List<DataDictVO> list = new ArrayList<>();
         for (DataDictItemEO eo : itemList) {
             if (eo.getIsHide() == 1) {
                 continue;

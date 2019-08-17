@@ -3,6 +3,7 @@ package com.springboot.common.util;
 public class Screen {
     /**
      * 如果出现异常请在VM中添加：-Djava.awt.headless=false
+     *
      * @return
      */
     public static String getScreen() {

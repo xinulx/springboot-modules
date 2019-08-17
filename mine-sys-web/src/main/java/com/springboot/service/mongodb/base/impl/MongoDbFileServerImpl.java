@@ -11,8 +11,8 @@ import com.mongodb.gridfs.GridFSFile;
 import com.mongodb.gridfs.GridFSInputFile;
 import com.springboot.common.business.CommonException;
 import com.springboot.common.util.LoginPersonUtil;
-import com.springboot.service.mongodb.base.IMongoDbFileServer;
 import com.springboot.entity.vo.MongoFileVO;
+import com.springboot.service.mongodb.base.IMongoDbFileServer;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,23 +48,16 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
             throw new CommonException(CommonException.TipsMode.Message.toString(), "外键不能为空");
         }
         collectionName = getCollectionName(collectionName);
-        GridFSFile gfile = null;
+        GridFSFile gridFSFile;
         GridFS gridFS = new GridFS(mongoTemplate.getDb(), collectionName);
-        List<MongoFileVO> mfs = new ArrayList<MongoFileVO>(files.length);
+        List<MongoFileVO> mfs = new ArrayList<>(files.length);
         for (MultipartFile file : files) {
             // 判断文件是否为空
             if (!file.isEmpty()) {
-                // 后缀名
-                String suffix = getSuffix(file.getOriginalFilename());
                 try {
-                    gfile = gridFS.createFile(file.getBytes());
-                    gfile.put("filename", file.getOriginalFilename());
-                    //gfile.put("filename", RandomFileName(suffix));
-                    gfile.put("caseId", caseId);
-                    gfile.put("contentType", suffix);
-                    gfile.put("metadata", MongoMetaData(file.getOriginalFilename()));
-                    gfile.save();
-                    mfs.add(getMongoFileVO(gfile, caseId));
+                    gridFSFile = gridFS.createFile(file.getBytes());
+                    saveFile(caseId, gridFSFile, file);
+                    mfs.add(getMongoFileVO(gridFSFile, caseId));
                 } catch (Exception e) {
                     throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb保存文件出错");
                 }
@@ -73,26 +66,27 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
         return mfs;
     }
 
+    private void saveFile(Long caseId, GridFSFile gridFSFile, MultipartFile file) {
+        String suffix = getSuffix(file.getOriginalFilename());
+        gridFSFile.put("filename", file.getOriginalFilename());
+        gridFSFile.put("caseId", caseId);
+        gridFSFile.put("contentType", suffix);
+        gridFSFile.put("metadata", MongoMetaData(file.getOriginalFilename()));
+        gridFSFile.save();
+    }
+
     @Override
     public MongoFileVO uploadMultipartFile(MultipartFile file, String collectionName) {
         collectionName = getCollectionName(collectionName);
-        GridFSFile gfile = null;
+        GridFSFile gridFSFile;
         GridFS gridFS = new GridFS(mongoTemplate.getDb(), collectionName);
         MongoFileVO mf = null;
         // 判断文件是否为空
         if (!file.isEmpty()) {
             try {
-                gfile = gridFS.createFile(file.getBytes());
-//                gfile.put("filename", file.getOriginalFilename());
-                // 后缀名
-                String suffix = getSuffix(file.getOriginalFilename());
-                gfile.put("filename", RandomFileName(suffix));
-                gfile.put("caseId", "");
-                gfile.put("contentType", suffix);
-                gfile.put("metadata", MongoMetaData(file.getOriginalFilename()));
-                gfile.save();
-                // objectId = gfile.getId() == null?"":gfile.getId().toString();
-                mf = getMongoFileVO(gfile, null);
+                gridFSFile = gridFS.createFile(file.getBytes());
+                saveFile(null, gridFSFile, file);
+                mf = getMongoFileVO(gridFSFile, null);
             } catch (Exception e) {
                 throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb保存文件出错");
             }
@@ -109,76 +103,51 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
         if (gridFSDBFile != null) {
             myFS.remove(new ObjectId(_id));
         }
-        GridFSInputFile gridFSInputFile = null;
+        GridFSInputFile gridFSInputFile;
         try {
             gridFSInputFile = myFS.createFile(file.getInputStream());
+            gridFSInputFile.put("_id", _id);
+            saveFile(null, gridFSInputFile, file);
+            mf = getMongoFileVO(gridFSInputFile, null);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        gridFSInputFile.put("_id", _id);
-        // 后缀名
-        String suffix = getSuffix(file.getOriginalFilename());
-        gridFSInputFile.put("filename", RandomFileName(suffix));
-//        gridFSInputFile.put("filename", file.getOriginalFilename());
-        //gridFSInputFile.put("filename", RandomFileName(suffix));
-        gridFSInputFile.put("caseId", "");
-        gridFSInputFile.put("contentType", suffix);
-        gridFSInputFile.put("metadata", MongoMetaData(file.getOriginalFilename()));
-        gridFSInputFile.save();
-        mf = getMongoFileVO(gridFSInputFile, null);
         return mf;
     }
 
     /**
      * doing
      *
-     * @param filebytes
+     * @param fileObj
      * @param fileName
      * @param caseId         外键
      * @param collectionName 集合名    默认值： fs , 如果想分清楚模块集合可自行设置
      * @return
      */
     @Override
-    public MongoFileVO uploadByteFile(byte[] filebytes, String fileName, Long caseId, String collectionName) {
+    public MongoFileVO uploadFile(Object fileObj, String fileName, Long caseId, String collectionName) {
         collectionName = getCollectionName(collectionName);
-        if (filebytes == null || filebytes.length == 0) {
-            throw new CommonException(CommonException.TipsMode.Message.toString(), "filebytes不能为空");
+        if (fileObj == null) {
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "文件对象不能为空");
         }
-        GridFSFile gfile = null;
-        GridFS gridFS = new GridFS(mongoTemplate.getDb(), collectionName);
-        MongoFileVO mf = null;
-        // 判断文件是否为空
-        try {
-            gfile = gridFS.createFile(filebytes);
-//            gfile.put("filename", fileName);
-            // 后缀名
-            String suffix = getSuffix(fileName);
-            gfile.put("filename", RandomFileName(suffix));
-            gfile.put("caseId", caseId);
-            gfile.put("contentType", suffix);
-            gfile.put("metadata", MongoMetaData(fileName));
-            gfile.save();
-            mf = getMongoFileVO(gfile, null);
-        } catch (Exception e) {
-            throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb保存文件出错");
+        if (!(fileObj instanceof byte[]) && !(fileObj instanceof InputStream)) {
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "文件对象的参数类型错误");
         }
-        return mf;
-    }
 
-    @Override
-    public MongoFileVO uploadByteFile(InputStream inputStream, String fileName, Long caseId, String collectionName) {
-        collectionName = getCollectionName(collectionName);
-        if (inputStream == null) {
-            throw new CommonException(CommonException.TipsMode.Message.toString(), "inputStream不能为空");
+        if (fileObj instanceof byte[] && ((byte[]) fileObj).length == 0) {
+            throw new CommonException(CommonException.TipsMode.Message.toString(), "文件对象不能为空");
         }
-        GridFSFile gfile = null;
+
+        GridFSFile gfile;
         GridFS gridFS = new GridFS(mongoTemplate.getDb(), collectionName);
-        MongoFileVO mf = null;
+        MongoFileVO mf;
         // 判断文件是否为空
         try {
-            gfile = gridFS.createFile(inputStream);
-//            gfile.put("filename", fileName);
-            // 后缀名
+            if (fileObj instanceof InputStream) {
+                gfile = gridFS.createFile((InputStream) fileObj);
+            } else {
+                gfile = gridFS.createFile((byte[]) fileObj);
+            }
             String suffix = getSuffix(fileName);
             gfile.put("filename", RandomFileName(suffix));
             gfile.put("caseId", caseId);
@@ -198,7 +167,7 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
         DBObject query = new BasicDBObject("caseId", caseId);
         GridFS gridFS = new GridFS(mongoTemplate.getDb(), collectionName);
         List<GridFSDBFile> gridFSDBFileList = gridFS.find(query);
-        List<MongoFileVO> list = new ArrayList<MongoFileVO>(gridFSDBFileList.size());
+        List<MongoFileVO> list = new ArrayList<>(gridFSDBFileList.size());
         if (gridFSDBFileList != null && gridFSDBFileList.size() > 0) {
             for (GridFSDBFile gfile : gridFSDBFileList) {
                 list.add(getMongoFileVO(gfile, caseId));
@@ -221,26 +190,22 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
         GridFS gridFS = new GridFS(mongoTemplate.getDb(), collectionName);
         //如果是文件名称
         if (mongoDbId.indexOf(".") != -1) {
-            GridFSDBFile gridFSDBFile = (GridFSDBFile) gridFS.findOne(mongoDbId);
+            GridFSDBFile gridFSDBFile = gridFS.findOne(mongoDbId);
             return gridFSDBFile;
         }
         ObjectId objId = new ObjectId(mongoDbId);
-        GridFSDBFile gridFSDBFile = (GridFSDBFile) gridFS.findOne(objId);
+        GridFSDBFile gridFSDBFile = gridFS.findOne(objId);
         return gridFSDBFile;
     }
 
     @Override
     public void downloadFile(HttpServletResponse response, String mongoDbId, String collectionName) {
         GridFSDBFile gridFSDBFile = getGridFSDBFile(mongoDbId, collectionName);
-        java.io.OutputStream sos = null;
+        java.io.OutputStream sos;
         if (gridFSDBFile != null) {
             try {
                 sos = response.getOutputStream();
-                // 获取原文件名
-//                String fileName = gridFSDBFile.getFilename();
                 String fileName = String.valueOf(gridFSDBFile.getMetaData().get("OriginalFilename"));
-                // String outFile = URLEncoder.encode(fileName,
-                // "UTF-8").concat(".").concat(gridFSDBFile.getContentType());
                 response.setContentType("application/octet-stream");
                 String agent = LoginPersonUtil.getRequest().getHeader("User-Agent").toLowerCase();
                 if (!StringUtils.isEmpty(agent) && agent.indexOf("firefox") > 0) {
@@ -260,16 +225,12 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
 
     @Override
     public void viewFile(HttpServletResponse response, GridFSDBFile gridFSDBFile) {
-        java.io.OutputStream sos = null;
+        java.io.OutputStream sos;
         if (gridFSDBFile != null) {
             try {
                 sos = response.getOutputStream();
-                // 获取原文件名
-//                String fileName = gridFSDBFile.getFilename();
                 String fileName = String.valueOf(gridFSDBFile.getMetaData().get("OriginalFilename"));
                 String agent = LoginPersonUtil.getRequest().getHeader("User-Agent").toLowerCase();
-                // String outFile = URLEncoder.encode(fileName,
-                // "UTF-8").concat(".").concat(gridFSDBFile.getContentType());
                 response.setContentType("application/pdf");
                 if (!StringUtils.isEmpty(agent) && agent.indexOf("firefox") > 0) {
                     response.addHeader("Content-Disposition", "filename=" + new String(fileName.getBytes("GB2312"), "ISO-8859-1"));
@@ -288,11 +249,8 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
 
     @Override
     public boolean deleteByCaseId(Long caseId, String collectionName) {
-        collectionName = getCollectionName(collectionName);
-        GridFS gridFS = new GridFS(mongoTemplate.getDb(), collectionName);
-        DBObject query = new BasicDBObject("caseId", caseId);
         try {
-            gridFS.remove(query);
+            deleteMongoFile(caseId,collectionName);
         } catch (Exception e) {
             throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb删除文件出错");
         }
@@ -301,25 +259,32 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
 
     @Override
     public boolean delete(String mongoDbId, String collectionName) {
-        collectionName = getCollectionName(collectionName);
-        GridFS gridFS = new GridFS(mongoTemplate.getDb(), collectionName);
-        ObjectId objId = new ObjectId(mongoDbId);
         try {
-            gridFS.remove(objId);
+            deleteMongoFile(mongoDbId,collectionName);
         } catch (Exception e) {
             throw new CommonException(CommonException.TipsMode.Message.toString(), "mongoDb删除文件出错");
         }
         return true;
     }
 
-    //自定义metadata
+    private void deleteMongoFile(Object id,String collectionName){
+        collectionName = getCollectionName(collectionName);
+        GridFS gridFS = new GridFS(mongoTemplate.getDb(), collectionName);
+        if(id instanceof String){
+            ObjectId objId = new ObjectId(id.toString());
+            gridFS.remove(objId);
+        } else {
+            DBObject query = new BasicDBObject("caseId", id);
+            gridFS.remove(query);
+        }
+    }
+
     private DBObject MongoMetaData(String OriginalFilename) {
         DBObject metaData = new BasicDBObject();
         metaData.put("OriginalFilename", OriginalFilename);
         return metaData;
     }
 
-    //生成uuid
     private String RandomFileName(String suffix) {
         return UUID.randomUUID().toString().replaceAll("\\-", "").concat(".").concat(suffix);
     }
@@ -368,8 +333,6 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
         // 判断文件是否为空
         try {
             gfile = gridFS.findOne(new ObjectId(mongoId));
-//            gfile.put("filename", vo.getFileName());
-            // 后缀名
             String suffix = getSuffix(vo.getFileName());
             gfile.put("filename", RandomFileName(suffix));
             gfile.put("caseId", vo.getCaseId());
@@ -389,7 +352,8 @@ public class MongoDbFileServerImpl implements IMongoDbFileServer {
         DBCollection collection = db.getCollection("contentMongoEO");//集合名
         DBObject query = new BasicDBObject();
         query.put("_id", "39695");
-        DBCursor cursor = collection.find(ref, keys);//.limit(1000);//.skip(76001);//.sort(new BasicDBObject("title", -1));
+        //.limit(1000);//.skip(76001);//.sort(new BasicDBObject("title", -1));
+        DBCursor cursor = collection.find(ref, keys);
         return cursor;
     }
 

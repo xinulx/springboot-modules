@@ -21,8 +21,6 @@ import java.util.regex.Pattern;
  * （5）第15、16位数字表示：所在地的派出所的代码；
  * （6）第17位数字表示性别：奇数表示男性，偶数表示女性
  * （7）第18位数字是校检码：根据一定算法生成
- *
- * @author tong
  */
 
 public class IDCardValidate {
@@ -36,7 +34,6 @@ public class IDCardValidate {
             tipInfo = "身份证号码长度应该为15位或18位。";
             return tipInfo;
         }
-
 
         // 18位身份证前17位位数字，如果是15位的身份证则所有号码都为数字
         if (IDStr.length() == 18) {
@@ -100,19 +97,19 @@ public class IDCardValidate {
     }
 
 
-    /*
+    /**
      * 判断第18位校验码是否正确
-    * 第18位校验码的计算方式：
-       　　1. 对前17位数字本体码加权求和
-       　　公式为：S = Sum(Ai * Wi), i = 0, ... , 16
-       　　其中Ai表示第i个位置上的身份证号码数字值，Wi表示第i位置上的加权因子，其各位对应的值依次为： 7 9 10 5 8 4 2 1 6 3 7 9 10 5 8 4 2
-       　　2. 用11对计算结果取模
-       　　Y = mod(S, 11)
-       　　3. 根据模的值得到对应的校验码
-       　　对应关系为：
-       　　 Y值：     0  1  2  3  4  5  6  7  8  9  10
-       　　校验码： 1  0  X  9  8  7  6  5  4  3   2
-    */
+     * 第18位校验码的计算方式：
+     * 　　1. 对前17位数字本体码加权求和
+     * 　　公式为：S = Sum(Ai * Wi), i = 0, ... , 16
+     * 　　其中Ai表示第i个位置上的身份证号码数字值，Wi表示第i位置上的加权因子，其各位对应的值依次为： 7 9 10 5 8 4 2 1 6 3 7 9 10 5 8 4 2
+     * 　　2. 用11对计算结果取模
+     * 　　Y = mod(S, 11)
+     * 　　3. 根据模的值得到对应的校验码
+     * 　　对应关系为：
+     * 　　 Y值：     0  1  2  3  4  5  6  7  8  9  10
+     * 　　校验码： 1  0  X  9  8  7  6  5  4  3   2
+     */
     private static boolean isVarifyCode(String Ai, String IDStr) {
         String[] VarifyCode = {"1", "0", "X", "9", "8", "7", "6", "5", "4", "3", "2"};
         String[] Wi = {"7", "9", "10", "5", "8", "4", "2", "1", "6", "3", "7", "9", "10", "5", "8", "4", "2"};
@@ -224,6 +221,4 @@ public class IDCardValidate {
         IdCard = IdCard.toUpperCase();
         System.out.println(IDCardValidate(IdCard));
     }
-
-
 }
