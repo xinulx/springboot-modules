@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/jquery-ui.css">
-<script src="/js/jquery-ui.js"></script>
+<script src="/js/common/jquery-ui.js"></script>
 <div id="toolBtn" class="table-toolbar" style="padding: 5px">
     <div class="row">
         <div class="col-md-7">

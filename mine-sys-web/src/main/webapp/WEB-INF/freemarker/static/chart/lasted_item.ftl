@@ -1,23 +1,19 @@
-<!--最新发布-->
-<div class="sjfb_title"><span>最新发布<i></i></span></div>
 <!-- 分类数据项 -->
-<div class="sjfb_tab">
-    <div class="j-scroll" data-setting="{autoScroll:false}">
-        <span class="prev"></span>
-        <span class="next"></span>
-        <div class="scroll-wrap">
-            <ul class="scroll-body">
-                <#list resultObj as item>
-                <li>
-                    <a desc="${item.desc}" href="javascript:void(0)" data-id="#atab${item_index + 1}"
-                       data-toggle="mouse">
-                        ${item.name}
-                    </a>
-                </li>
-                </#list>
-            </ul>
+<div class="col-md-12" align="center" style="margin: 0 15%">
+    <ul class="col-md-8 nav nav-tabs">
+    <#list resultObj as item>
+        <li role="atab${item_index + 1}" <#if item_index == 0>class="active"</#if>>
+            <a href="#atab${item_index + 1}" class="btn" desc="${item.desc}" data-toggle="tab">${item.name}</a>
+        </li>
+    </#list>
+    </ul>
+</div>
+<div class="col-md-12 tab-content bg-danger" align="center">
+    <#list resultObj as item>
+        <div class="tab-pane <#if item_index == 0>active</#if>" id="atab${item_index + 1}" style="width:100%">
+            <#include "item_chart.ftl">
         </div>
-    </div>
+    </#list>
 </div>
 <!-- 子数据项 -->
 <div class="date_one datecon">
@@ -42,24 +38,3 @@
     </#list>
 </div>
 <!-- 数据项说明及图表展示 -->
-<div class="sjfb_ny" id="tabs1">
-    <div class="guimo_con">
-        <div class="active">
-            <ul class="guimo_list">
-                <li><span>指标解释：</span><span id="desc_0"></span></li>
-                <li><span>相关资料</span></li>
-            </ul>
-        </div>
-    </div>
-    <div class="guimo_tab2">
-        <ul class="clearfix">
-            <li class="active">
-                <a href="javascript:void(0)" data-id="#agtab1" data-toggle="mouse">绝对量<span></span></a>
-            </li>
-            <li>
-                <a href="javascript:void(0)" data-id="#agtab2" data-toggle="mouse">增速（%）<span></span></a>
-            </li>
-        </ul>
-    </div>
-    <div class="date_list" id="chart_0"></div>
-</div>

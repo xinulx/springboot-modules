@@ -1,46 +1,4 @@
-<!DOCTYPE html>
-<html lang="z-ch">
-<head>
-    <title>Java Platform</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=8">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="Cache" content="no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, userEO-scalable=no">
-    <meta name="keywords"
-          content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
-    <meta name="author" content="设计：王齐 <wangqi@bootcss.com>">
-    <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/plugins/pagination/css/jquery.pagination.css" rel="stylesheet"/>
-    <link href="/plugins/ztree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet"/>
-    <link href="/plugins/niceValidator/dist/jquery.validator.css" rel="stylesheet"/>
-    <link href="/plugins/video/css/video-js.min.css" rel="stylesheet"/>
-    <link href="/plugins/jquery-toast/src/jquery.toast.css" rel="stylesheet"/>
-    <link href="/css/icon/iconfont.css" rel="stylesheet"/>
-    <link href="/css/menu.css" rel="stylesheet"/>
-    <link href="/css/common.css" rel="stylesheet"/>
-    <script src="/js/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="/plugins/layer/layer.js" type="text/javascript"></script>
-    <script src="/plugins/niceValidator/dist/jquery.validator.min.js?local=zh-CN" type="text/javascript"></script>
-    <script src="/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="/plugins/ztree/js/jquery.ztree.all.min.js" type="text/javascript"></script>
-    <script src="/plugins/pagination/js/jquery.pagination.min.js" type="text/javascript"></script>
-    <script src="/js/juicer.js"></script>
-    <script src="/js/art.template.js"></script>
-    <script src="/plugins/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
-    <script src="/plugins/jquery-toast/src/jquery.toast.js" type="text/javascript"></script>
-    <script src="/js/boot.js" type="text/javascript"></script>
-    <script src="/js/sock.min.js" type="text/javascript"></script>
-    <script src="/js/stomp.min.js" type="text/javascript"></script>
-    <script src="/js/common.js" type="text/javascript"></script>
-    <script>
-        var GLOBAL_CONTEXTPATH = "${ctx}";
-    </script>
-</head>
+<#include "common/header.ftl">
 <body>
 <div class="mop-load-x" align="center"
      style="width:100%;height:100%;background:#ffffff;position: absolute;font-size:30px;z-index:19920419;padding:15%;"></div>
@@ -75,8 +33,8 @@
 <div id="layerWin" class="hidden"></div>
 <div id="layerWin2" class="hidden"></div>
 <iframe id="download_frame" name="download_frame" class="hide" src="about:blank"></iframe>
-</body>
-<script src="/js/sidebar-menu.js"></script>
+<#include "common/footer.ftl">
+<script src="/js/common/sidebar-menu.js"></script>
 <script id="headerMenu" type="text/html">
     <ul>
         <% for( var i = 0 ; i < data.length ; i ++ ) {%>
@@ -227,4 +185,5 @@
         bodyHeight.style.height = (h - 70) + "px";
     }, 200);
 </script>
+</body>
 </html>

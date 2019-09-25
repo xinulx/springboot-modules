@@ -9,7 +9,7 @@
           content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
     <meta name="author" content="设计：王齐 <wangqi@bootcss.com>">
     <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <script src="/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="/js/common/jquery.min.js" type="text/javascript"></script>
     <script src="/plugins/layer/layer.js" type="text/javascript"></script>
     <script src="/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="/plugins/niceValidator/dist/jquery.validator.min.js?local=zh-CN" type="text/javascript"></script>

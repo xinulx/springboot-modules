@@ -11,6 +11,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -61,5 +62,39 @@ public class AnqingXXGK {
             e.printStackTrace();
         }
         System.out.println(document);
+    }
+
+    @Test
+    public void processXSS() {
+        Map<String, String> paramMap = new HashMap<>();
+        paramMap.put("ddd","?Dwqd");
+        if(paramMap != null && paramMap.size() > 0){
+            Iterator<Map.Entry<String, String>> iterator = paramMap.entrySet().iterator();
+            while(iterator.hasNext()){
+                Map.Entry<String, String> item = iterator.next();
+                String value = item.getValue();
+                paramMap.put(item.getKey(),value);
+            }
+        }
+        System.out.println(paramMap);
+        System.out.println("/mas/clickCountRank_lm".replaceAll("[`~!@#$%^*()+|{}';',\\[\\]<>~！@#￥%……*（）——+|{}【】‘；：”“’。，、？]",""));
+    }
+
+    @Test
+    public void testDangtu(){
+        try {
+            Document document = Jsoup.connect("http://dtxzwgk.mas.gov.cn/").timeout(5000).get();
+            Elements lis = document.select(".is-open .u-content ul:eq(0) li");
+            for(Element element:lis){
+                String date = element.select("span").text();
+                String title = element.select("a").text();
+                String url = element.select("a").attr("href");
+                System.out.println(date);
+                System.out.println(title);
+                System.out.println(url);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

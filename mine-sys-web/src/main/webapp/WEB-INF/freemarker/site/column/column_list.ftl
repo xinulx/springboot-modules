@@ -1,4 +1,4 @@
-<div class="col-md-2 tree-bg">
+<div class="col-md-2" style="background-color: #f6fafd;overflow: auto;">
     <ul id="columnTree" class="ztree"></ul>
 </div>
 <div class="col-md-10 col-md-offset-2 hidden right-layout" id="rightInfo">

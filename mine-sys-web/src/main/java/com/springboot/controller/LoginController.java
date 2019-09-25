@@ -59,7 +59,7 @@ public class LoginController {
     @RequestMapping("/loginIn")
     public String toLogin() {
         logger.info("跳转登陆页面...");
-        return "/pages/login";
+        return "login";
     }
 
     @RequestMapping("/getCode")
@@ -219,11 +219,5 @@ public class LoginController {
         //注销
         subject.logout();
         return ResponseData.success("成功注销！");
-    }
-
-    @RequestMapping("mainSite")
-    public String goHome(Model model) {
-        model.addAttribute("title", "主站点后台管理系统");
-        return "/site/index";
     }
 }

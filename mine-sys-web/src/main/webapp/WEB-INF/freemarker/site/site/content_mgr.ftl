@@ -1,5 +1,5 @@
 <div class="mini-splitter" style="width:100%" id="mainSplitter">
-    <div size="10%" showCollapseButton="true" class="tree-bg">
+    <div size="15%" showCollapseButton="true" style="background-color: #f6fafd;overflow: auto;">
         <ul id="columnTree" class="ztree"></ul>
     </div>
     <div showCollapseButton="true">
