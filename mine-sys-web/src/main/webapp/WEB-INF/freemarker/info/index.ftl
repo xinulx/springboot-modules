@@ -1,4 +1,3 @@
-<link href="/css/jsonviewer.css" type="text/css" rel="stylesheet" />
 <div class="col-md-12">
     <ul class="nav nav-tabs">
         <li role="presentation1" class="active"><a href="#">菜单模板</a></li>
@@ -8,7 +7,6 @@
     <div id="presentation1">
         <div class="col-xs-12">
             <button id="saveBtn" class="btn btn-default" title="run save()">保存</button>
-            <button id="previewBtn" class="btn btn-success" title="run save()">预览</button>
             <button id="btn-json-viewer" class="btn btn-info" title="run jsonViewer()">转换Json数据</button>
             <label class="checkbox-inline"> <input type="checkbox" id="collapsed"> 收缩所有的节点 </label>
             <label class="checkbox-inline"> <input type="checkbox" id="with-quotes">为Key添加双引号 </label>
@@ -61,9 +59,6 @@
                 $("#presentation1").hide();
                 $("#presentation2").show();
             }
-        });
-        $('#previewBtn').click(function() {
-            window.open("/login/mainSite");
         });
         $('#btn-json-viewer').click(function() {
             initJsonView();

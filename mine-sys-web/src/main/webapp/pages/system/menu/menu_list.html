@@ -63,8 +63,8 @@
 </div>
 <div class="col-md-10 col-md-offset-2 hidden right-layout" id="buttonInfo"></div>
 <script type="text/javascript">
-    autoHeight("menuTree", 85);
-    autoHeight("buttonInfo", 85);
+    $.autoHeight("menuTree", 85);
+    $.autoHeight("buttonInfo", 85);
     var zTree, currNode, optType = "add", selectNode;
     var setting = {
         view: {
@@ -174,7 +174,7 @@
             dataType: 'json',
             async: false,
             success: function (result) {
-                initTreeData(zNodes, result, 'name');
+                Mine.initTreeData(zNodes, result, 'name');
             }
         });
         return zNodes;
@@ -187,8 +187,8 @@
             $("#menuTree").empty().append('<li><a href="javascript:showEditForm()">暂无菜单，点击添加菜单</a></li>');
         }
         formValid();
-        getConstant("type", "SYS_MENU", "MENU_TYPE", "菜单类型");
-        getConstant("status", "SYS_MENU", "STATUS", "菜单状态");
+        $.getConstant("type", "SYS_MENU", "MENU_TYPE", "菜单类型");
+        $.getConstant("status", "SYS_MENU", "STATUS", "菜单状态");
     });
 
     function showEditForm() {

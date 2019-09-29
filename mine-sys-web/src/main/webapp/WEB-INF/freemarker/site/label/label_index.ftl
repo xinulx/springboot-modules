@@ -24,7 +24,7 @@
 <script src="${ctx}/js/pages/label_mgr.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        resetHeight("label_tree", 100);
+        $.resetHeight("label_tree", 100);
         label_mgr.init();
     });
 </script>

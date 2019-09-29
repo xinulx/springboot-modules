@@ -90,7 +90,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    autoHeight("organTree",85);
+    $.autoHeight("organTree",85);
     var zTree, currNode, optType = "add", selectNode;
     var setting = {
         view: {
@@ -210,7 +210,7 @@
             dataType: 'json',
             async: false,
             success: function (result) {
-                initTreeData(zNodes,result,'organName');
+                Mine.initTreeData(zNodes,result,'organName');
                 for(var i = 0 ; i < zNodes.length ; i ++){
                     zNodes[i].icon = '/images/organ/'+ zNodes[i].organType +'.png';
                 }
@@ -228,7 +228,7 @@
             zTree.expandNode(zTree.getNodes()[0], true, false, true);
         }
         formValid();
-        getConstant("organType", "SYS_ORGAN", "ORGAN_TYPE", "组织机构类型");
+        $.getConstant("organType", "SYS_ORGAN", "ORGAN_TYPE", "组织机构类型");
         $("#createTime,#updateTime").val(new Date().format('yyyy-MM-dd HH:mm:ss'));
     });
 

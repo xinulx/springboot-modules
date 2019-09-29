@@ -1,4 +1,3 @@
-<link href="/css/jsonviewer.css" type="text/css" rel="stylesheet" />
 <div class="portlet light">
     <div class="portlet-body">
         <div class="table-toolbar" style="margin-bottom: 5px">

@@ -4,7 +4,7 @@
 <div class="col-md-10 col-md-offset-2 hidden right-layout" id="rightInfo"></div>
 
 <script type="text/javascript">
-    autoHeight("organTree",85);
+    $.autoHeight("organTree",85);
     var zTree, selectNode;
     var setting = {
         data: {
@@ -38,7 +38,7 @@
             dataType: 'json',
             async: false,
             success: function (result) {
-                initTreeData(zNodes,result,'organName');
+                Mine.initTreeData(zNodes,result,'organName');
                 for(var i = 0 ; i < zNodes.length ; i ++){
                     zNodes[i].icon = '/images/organ/'+ zNodes[i].organType +'.png';
                 }

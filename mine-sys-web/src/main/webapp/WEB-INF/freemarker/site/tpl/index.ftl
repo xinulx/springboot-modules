@@ -63,10 +63,10 @@
 <script src="${ctx}/js/pages/tpl_manage.js"></script>
 <script src="${ctx}/js/pages/label_select.js"></script>
 <script>
-    resetHeight("ui_tree",85);
-    resetHeight("label_layout",176);
-    resetHeight("tplContent",185);
-    resetHeight("datagrid",135);
+    $.resetHeight("ui_tree",85);
+    $.resetHeight("label_layout",176);
+    $.resetHeight("tplContent",185);
+    $.resetHeight("datagrid",135);
     mini.parse();
     var cur = {
         editBtn: $('#btn_edit'),
@@ -136,7 +136,7 @@
                 }else{
                     Mine.layer.tips(resp.desc, 1);
                     $('#tplContent').data("version",resp.data);
-                    sendSocket("更新模板["+cur.node.name+"]内容"+resp.desc);
+                    Mine.sendSocket("更新模板["+cur.node.name+"]内容"+resp.desc);
                 }
             }
         });

@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="/css/jquery-ui.css">
-<script src="/js/common/jquery-ui.js"></script>
+<link rel="stylesheet" href="/css/jquery.ui.css">
+<script src="/js/common/jquery.ui.js"></script>
 <div id="toolBtn" class="table-toolbar" style="padding: 5px">
     <div class="row">
         <div class="col-md-7">
@@ -55,8 +55,8 @@
     <tr class="content-record">
         <td scope="row"><%=rowNum%></td>
         <td class="arrow-move">
-            <span class="sort-order" onclick="moveUp(this)">↑</span>
-            <span class="sort-order" onclick="moveDown(this)">↓</span>
+            <span class="sort-order" onclick="Mine.moveUp(this)">↑</span>
+            <span class="sort-order" onclick="Mine.moveDown(this)">↓</span>
         </td>
         <td>
             <div class="checkbox-div">

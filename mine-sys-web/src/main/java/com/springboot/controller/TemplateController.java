@@ -117,11 +117,11 @@ public class TemplateController {
     public Object saveTplContent(ContentMongoEO eo) {
         // 获取历史最新版本
         Long lastVersion = tplHistoryService.getLastVersion(eo.getId());
-        if (lastVersion > eo.getVersion()) {
+        if (lastVersion > eo.getVersion() && eo.getVersion() != 0) {
             return ResponseData.fail("当前模板已被更改，请先更新！");
         }
         tplHistoryService.saveTplContent(eo);
-        TemplateConfEO eo1 = (TemplateConfEO) this.tplConfService.getEntity(TemplateConfEO.class, eo.getId());
+        TemplateConfEO eo1 = this.tplConfService.getEntity(TemplateConfEO.class, eo.getId());
         if (eo1 != null) {
             SysLog.log("【站群管理】更新模板，模板名称：" + eo1.getName(), "ContentMongoEO", CmsLogEO.Operation.Update.toString());
         }

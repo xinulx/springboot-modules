@@ -51,7 +51,7 @@
 </div>
 <div class="col-md-10 col-md-offset-2 hidden right-layout" id="buttonInfo"></div>
 <script type="text/javascript">
-    autoHeight("columnTree", 85);
+    $.autoHeight("columnTree", 85);
     var zTree, currNode, optType = "add", selectNode;
     var setting = {
         view: {
@@ -158,7 +158,7 @@
             dataType: 'json',
             async: false,
             success: function (result) {
-                initTreeData(zNodes, result, 'name');
+                Mine.initTreeData(zNodes, result, 'name');
                 Mine.treeDataFilter(zNodes, Mine.treeDataType.COLUMN);
                 zNodes[0].open = true;
             }
@@ -173,7 +173,7 @@
             $("#columnTree").empty().append('<li><a href="javascript:showEditForm()">暂无栏目，点击添加栏目</a></li>');
         }
         formValid();
-        getConstant("type", "CMS_COLUMN_INFO", "TYPE", "栏目类型");
+        $.getConstant("type", "CMS_COLUMN_INFO", "TYPE", "栏目类型");
     });
 
     function showEditForm() {

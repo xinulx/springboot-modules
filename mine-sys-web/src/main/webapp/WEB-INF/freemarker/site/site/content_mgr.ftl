@@ -3,13 +3,11 @@
         <ul id="columnTree" class="ztree"></ul>
     </div>
     <div showCollapseButton="true">
-        <div id="contentMgr" style="overflow-y: auto;overflow-x: hidden">
-            <div class="mop-load-x"></div>
-        </div>
+        <div id="contentMgr" style="overflow-y: auto;overflow-x: hidden"></div>
     </div>
 </div>
 <script type="text/javascript">
-    resetHeight("mainSplitter", 85);
+    $.resetHeight("mainSplitter", 85);
     var zTree, curNode;
     var setting = {
         view: {
@@ -27,7 +25,7 @@
         callback: {
             onClick: function (event, treeId, treeNode) {
                 curNode = treeNode;
-                showPagination("contentMgr","/content/" + treeNode.type);
+                Mine.showPagination("contentMgr","/content/" + treeNode.type);
             }
         }
     };
@@ -40,7 +38,7 @@
             dataType: 'json',
             async: false,
             success: function (result) {
-                initTreeData(zNodes, result, 'name');
+                Mine.initTreeData(zNodes, result, 'name');
                 Mine.treeDataFilter(zNodes, Mine.treeDataType.COLUMN);
                 zNodes[0].open = true;
             }
@@ -50,7 +48,7 @@
 
     $(document).ready(function () {
         mini.parse();
-        autoHeight("contentMgr", 100);
+        $.autoHeight("contentMgr", 100);
         zTree = $.fn.zTree.init($("#columnTree"), setting, getNodes());
     });
 </script>

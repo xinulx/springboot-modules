@@ -9,4 +9,5 @@
 <script src="${ctx}/plugins/jquery-toast/src/jquery.toast.js" type="text/javascript"></script>
 <script src="${ctx}/plugins/miniui/miniui.js" type="text/javascript" type="text/javascript"></script>
 <script src="${ctx}/js/common/sock.min.js" type="text/javascript"></script>
+<script src="${ctx}/js/common/util.js" type="text/javascript"></script>
 <script src="${ctx}/js/common/common.js" type="text/javascript"></script>

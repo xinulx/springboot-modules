@@ -1,7 +1,5 @@
 <#include "common/header.ftl">
 <body>
-<div class="mop-load-x" align="center"
-     style="width:100%;height:100%;background:#ffffff;position: absolute;font-size:30px;z-index:19920419;padding:15%;"></div>
 <div class="container-fluid">
     <div class="row top-header">
         <div class="col-xs-12">
@@ -34,7 +32,6 @@
 <div id="layerWin2" class="hidden"></div>
 <iframe id="download_frame" name="download_frame" class="hide" src="about:blank"></iframe>
 <#include "common/footer.ftl">
-<script src="/js/common/sidebar-menu.js"></script>
 <script id="headerMenu" type="text/html">
     <ul>
         <% for( var i = 0 ; i < data.length ; i ++ ) {%>
@@ -88,21 +85,8 @@
 </script>
 <script>
     $(document).ready(function () {
-        Mopload();
-        setTimeout(function () {
-            $('.mop-load-text').html('Loading WebSocket......');
-        }, 1000);
-        setTimeout(function () {
-            initSocket();
-            $('.mop-load-text').html('Loading System Menu......');
-        }, 2000);
-        setTimeout(function () {
-            loadSysMenu();
-            $('.mop-load-text').html('Loading Content......');
-        }, 3000);
-        $(".f_left:first").click(function () {
-            window.open("/login/mainSite");
-        });
+        Mine.initSocket();
+        loadSysMenu();
         $(".f_left:last").click(function () {
             $.get("/login/logout", function (d) {
                 if (d.status == 1) {
@@ -127,9 +111,6 @@
                 $(this).addClass('active-header').siblings().removeClass('active-header');
             });
             $("#mainHeader ul li:first").trigger("click");
-            setTimeout(function () {
-                $('.mop-load-x').hide();
-            }, 2000);
         });
     }
 
@@ -179,11 +160,7 @@
         });
     }
 
-    setInterval(function () {
-        var h = document.documentElement.clientHeight;
-        var bodyHeight = document.getElementById("mainContainer");
-        bodyHeight.style.height = (h - 70) + "px";
-    }, 200);
+    $.autoHeight('mainContainer', 70);
 </script>
 </body>
 </html>

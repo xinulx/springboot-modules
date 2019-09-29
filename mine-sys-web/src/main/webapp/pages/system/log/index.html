@@ -5,7 +5,7 @@
     <form class="form-inline tr search-toolbar pull-left" role="form">
         <button type="button" class="btn btn-sm btn-success" onclick="openSocket()">开启日志</button>
         <button type="button" class="btn btn-sm btn-danger" onclick="closeSocket()">关闭日志</button>
-        <button type="button" class="btn btn-sm btn-primary" onclick="sendSocket()">发送消息</button>
+        <button type="button" class="btn btn-sm btn-primary" onclick="Mine.sendSocket()">发送消息</button>
         <button type="button" class="btn btn-sm btn-primary" onclick="senJsonp()">JSONP</button>
         <button type="button" class="btn btn-sm btn-primary" onclick="startSolr(1)">启动solr</button>
         <button type="button" class="btn btn-sm btn-info" onclick="startSolr(2)">启动solr</button>
@@ -68,7 +68,7 @@
             success: function (data, status, xhr) {
                 console.log('状态为：' + status + ',状态是：' + xhr.statusText);
                 console.log(data);
-                sendSocket(JSON.stringify(data))
+                Mine.sendSocket(JSON.stringify(data))
             }
         });
     }
@@ -102,6 +102,6 @@
             title: '系统消息',
             body: "您有2条未完成的任务您有2条未完成的任务"
         };
-        timeTips(content);
+        Mine.timeTips(content);
     }
 </script>

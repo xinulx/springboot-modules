@@ -28,7 +28,7 @@ window.UEDITOR_HOME_URL = "${ctx}/static/vendor/ueditor/";
 </script>
 <script src="${ctx}/static/vendor/jquery/jquery.min.js"></script>
 <script src="${ctx}/static/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="${ctx}/static/vendor/jquery-ui/jquery-ui.js"></script>
+<script src="${ctx}/static/vendor/jquery-ui/jquery.ui.js"></script>
 <script src="${ctx}/static/vendor/jquery-validation/jquery-validation.min.js"></script>
 <script src="${ctx}/static/js/jquery.validation_zh_CN.js"></script>
 <script src="${ctx}/static/vendor/jquery-file-upload/js/jquery.iframe-transport.js"></script>

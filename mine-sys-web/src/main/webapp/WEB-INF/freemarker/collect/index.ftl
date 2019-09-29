@@ -32,7 +32,7 @@
     mini.parse();
     var grid = mini.get("dataGrid");
     var organId = '${organId!''}';
-    resetHeight("dataGrid",169);
+    $.resetHeight("dataGrid",169);
     grid.load({organId:organId});
     function search(){
         grid.load({searchKey:$("#key").val()});

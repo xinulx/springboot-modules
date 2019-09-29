@@ -33,7 +33,7 @@
     </div>
 </div>
 <script>
-    resetHeight("label_datagrid",130);
+    $.resetHeight("label_datagrid",130);
     label_mgr.id = ${id};
     label_mgr.gridData = ${labelConfig};
     function getFormData() {
