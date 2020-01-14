@@ -143,7 +143,8 @@ var tpl_manage = function () {
                     id: cur.node.id
                 },
                 success: function (resp) {
-                    $('#tplContent').val(Mine.decode(resp.content)).data("version", resp.version);
+                    // $('#tplContent').val(Mine.decode(resp.content)).data("version", resp.version);
+                    editor.setValue(Mine.decode(resp.content));
                     $("#btn_preview").attr({"href": "/site/tpl/" + cur.node.id});
                 }
             });

@@ -33,7 +33,7 @@
     </div>
 </div>
 <div id="jsonDiv" class="hidden"><pre id="json-renderer-his" style="height: 500px"></pre></div>
-<script src="/js/jsonviewer.js"></script>
+<script src="/js/common/jsonviewer.js"></script>
 <script>
     $(function() {
         mini.parse();

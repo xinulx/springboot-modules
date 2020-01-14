@@ -18,13 +18,9 @@ $.extend({
             data: {tableName: tableName, columnName: columnName},
             async: false,
             success: function (result) {
-                if (result.data.length == 0) {
-                    sel.empty().append('<option value="">请选择' + desc + '</option>');
-                } else {
-                    sel.empty().append('<option value="">请选择' + desc + '</option>');
-                    for (var i = 0; i < result.data.length; i++) {
-                        sel.append('<option value="' + result.data[i].CODE + '">' + result.data[i].NAME + '</option>');
-                    }
+                sel.empty().append('<option value="">请选择' + desc + '</option>');
+                for (var i = 0; i < result.data.length; i++) {
+                    sel.append('<option value="' + result.data[i].CODE + '">' + result.data[i].NAME + '</option>');
                 }
             }
         });
@@ -257,7 +253,7 @@ var Mine = {
         var time = new Date().getTime();
         var msgDiv = '<div id="messageContent_' + time + '" class="hidden message-content"></div>';
         $('body').append(msgDiv);
-        this.tipsCount++;
+        Mine.tipsCount++;
         var msg = '';
         msg += '<div style="font-size: 14px">';
         if (content.status == 1) {
@@ -273,18 +269,18 @@ var Mine = {
         $("#messageContent_" + time).html(msg).css({"cursor": "pointer"}).click(function () {
             layer.close(index);
             $("#messageContent_" + time).remove();
-            if (this.tipsCount > 0) {
-                this.tipsCount--;
+            if (Mine.tipsCount > 0) {
+                Mine.tipsCount--;
             }
         }).attr("title", "点击立即关闭提醒");
         var index = layer.open({
             type: 1,
             shade: false,
             offset: [function () {
-                if (this.tipsCount == 1) {
+                if (Mine.tipsCount == 1) {
                     return 55;
                 } else {
-                    return 55 + (this.tipsCount - 1) * 110;
+                    return 55 + (Mine.tipsCount - 1) * 110;
                 }
             }, document.body.clientWidth - 380],
             closeBtn: 0,//不显示关闭按钮
@@ -292,8 +288,8 @@ var Mine = {
             content: $("#messageContent_" + time),
             cancel: function () {
                 $("#messageContent_" + time).remove();
-                if (this.tipsCount > 0) {
-                    this.tipsCount--;
+                if (Mine.tipsCount > 0) {
+                    Mine.tipsCount--;
                 }
             }
         });
@@ -306,8 +302,8 @@ var Mine = {
             clearInterval(id);
             layer.close(index);
             $("#messageContent_" + time).remove();
-            if (this.tipsCount > 0) {
-                this.tipsCount--;
+            if (Mine.tipsCount > 0) {
+                Mine.tipsCount--;
             }
         }, 5000);
     },
@@ -473,3 +469,41 @@ window.alert = function (msg, callback) {
         }
     });
 };
+
+(function ($) {
+    'use strict';
+    $.fn.LineProgressbar = function (options) {
+        var options = $.extend({
+            percentage: 0,
+            ShowProgressCount: true,
+            duration: 1000,
+            fillBackgroundColor: '#38db73',
+            backgroundColor: '#EEEEEE',
+            radius: '0px',
+            height: '15px',
+            width: '100%'
+        }, options);
+        return this.each(function (index, el) {
+            $(el).html('<div class="progressbar"><div class="proggress"></div><div class="percentCount"></div></div>');
+            var progressFill = $(el).find('.proggress');
+            var progressBar = $(el).find('.progressbar');
+            progressFill.css({
+                backgroundColor: options.fillBackgroundColor,
+                height: options.height,
+                borderRadius: options.radius
+            });
+            progressBar.css({
+                width: options.width,
+                backgroundColor: options.backgroundColor,
+                borderRadius: options.radius
+            });
+            progressFill.animate({width: options.percentage + "%"}, {
+                step: function (x) {
+                    if (options.ShowProgressCount) {
+                        $(el).find(".percentCount").text(Math.round(x) + "%");
+                    }
+                }, duration: options.duration
+            });
+        });
+    }
+})(jQuery);

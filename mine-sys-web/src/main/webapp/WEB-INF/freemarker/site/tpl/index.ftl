@@ -3,6 +3,7 @@
         top: 0;
     }
 </style>
+<link href="${ctx}/plugins/codemirror/lib/codemirror.css" rel="stylesheet" type="text/css"/>
 <div class="col-md-2 tree-bg">
     <div id="ui_tree" class="ztree"></div>
 </div>
@@ -60,12 +61,17 @@
     </div>
 </div>
 <iframe style="display: none;" id="downLoad"></iframe>
+<script src="${ctx}/plugins/codemirror/lib/codemirror.js" type="text/javascript"></script>
+<script src="${ctx}/plugins/codemirror/mode/xml/xml.js" type="text/javascript"></script>
+<script src="${ctx}/plugins/codemirror/mode/javascript/javascript.js" type="text/javascript"></script>
+<script src="${ctx}/plugins/codemirror/mode/css/css.js" type="text/javascript"></script>
+<script src="${ctx}/plugins/codemirror/mode/htmlmixed/htmlmixed.js" type="text/javascript"></script>
+<script src="${ctx}/plugins/codemirror/addon/edit/matchbrackets.js" type="text/javascript"></script>
 <script src="${ctx}/js/pages/tpl_manage.js"></script>
 <script src="${ctx}/js/pages/label_select.js"></script>
 <script>
     $.resetHeight("ui_tree",85);
     $.resetHeight("label_layout",176);
-    $.resetHeight("tplContent",185);
     $.resetHeight("datagrid",135);
     mini.parse();
     var cur = {
@@ -81,6 +87,16 @@
     };
 
     var rec = null;
+    var editor = CodeMirror.fromTextArea(document.getElementById("tplContent"), {
+        lineNumbers: true,//是否显示每一行的行数
+        readOnly:false,//只读
+        styleActiveLine: true,
+        lineWrapping: true,	//代码折叠
+        foldGutter: true,
+        gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+        matchBrackets: true
+    });
+    editor.setSize('100%', '950px');
     $(document).ready(function () {
         $("#center_tab").css('display', 'none');
         tpl_manage.tpl();
@@ -118,6 +134,7 @@
     function saveTpl() {
         if (cur.node == null || !cur.node.template) {
             $('#tplContent').val('');
+            editor.setValue('');
             return;
         }
         $.ajax({
@@ -125,7 +142,8 @@
             type:'post',
             data: {
                 id: cur.node.id,
-                content:  Mine.encode($('#tplContent').val()),// base64编码
+                // content:  Mine.encode($('#tplContent').val()),// base64编码
+                content:  Mine.encode(editor.getValue()),// base64编码
                 version: $('#tplContent').data("version"),
                 base64: 'content'
             },
@@ -183,7 +201,7 @@
                 id: cur.node.id
             },
             success: function (resp) {
-                $('#tplContent').val(Mine.decode(resp.content));
+                $('#tplContent').val(editor.setValue(Mine.decode(resp.content)));
                 cur.historygrid.load({id: cur.node.id});
             }
         });

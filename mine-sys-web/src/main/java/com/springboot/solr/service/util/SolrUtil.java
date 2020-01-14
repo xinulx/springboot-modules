@@ -277,9 +277,6 @@ public class SolrUtil {
         } else {
             query.set("q","*:*");
         }
-        if (StringUtils.isNotBlank(SHARDS_URL)) {
-            query.set("shards", SHARDS_URL);
-        }
         if (!AppUtil.isEmpty(queryVO.getSort())) {
             query.set("createDate", queryVO.getSort()); //sort是排序字段 字段名 排序类型
         } else{

@@ -4,8 +4,17 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.springboot.common.util.AppUtil;
 import com.springboot.common.util.DateUtil;
+import jdk.nashorn.internal.scripts.JO;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -14,18 +23,24 @@ import org.jsoup.select.Elements;
 import org.junit.Test;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -376,5 +391,215 @@ public class CommonTest {
         System.out.println(JSON.parse(content));
         JSONObject jsonObject = HttpRequestUtil.sendGet("http://amr.hefei.gov.cn/sj/spcjtg/defaul_5178.json", null);
         System.out.println(JSON.toJSONString(jsonObject));
+    }
+
+    @Test
+    public void testDate() throws ParseException, IOException {
+        //SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:hh:ss");
+        //System.out.println(format.parse("2019-10-01 00:00:00"));
+        //SimpleDateFormat format2 = new SimpleDateFormat("HH");
+        //System.out.println(Integer.valueOf("01"));
+        //System.out.println(format2.format(new Date()));
+
+        Document doc = Jsoup.connect("http://xxgk.cnbz.gov.cn/GPI/index.aspx?gpiid=40007&dept=92337799").get();
+        Elements items = doc.select("#form1>div:eq(1)>table:eq(3)>tbody>tr>td>table:eq(0)>tbody>tr>td:eq(2)>table:eq(2)>tbody>tr:eq(1)>td table tr:gt(0)");
+        System.out.println(items.size());
+        for (Element e : items) {
+            //System.out.println(e.select("td:eq(1)").text());
+        }
+        System.out.println(new SimpleDateFormat("yyyyMMdd").parse("20150101"));
+    }
+
+    @Test
+    public void getInfo() {
+        HttpURLConnection conn = null;
+        OutputStream os = null;
+        InputStream is = null;
+        try {
+            URL wsUrl = new URL("http://60.171.153.50/buildingservice/service.asmx");
+            conn = (HttpURLConnection) wsUrl.openConnection();
+            conn.setDoInput(true);
+            conn.setDoOutput(true);
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "text/xml;charset=UTF-8");
+            conn.setRequestProperty("Content-Length", "");
+            conn.setRequestProperty("SOAPAction", "WS_BuildingService/BuildingService");
+            os = conn.getOutputStream();
+
+            StringBuilder sb = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+            sb.append("<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">");
+            sb.append("<soap:Body>");
+            sb.append("<BuildingService xmlns=\"WS_BuildingService\">");
+            sb.append(" <strSQL>" + 6 + "</strSQL>");
+            sb.append("</BuildingService>");
+
+            sb.append("</soap:Body>");
+            sb.append("</soap:Envelope>");
+            os.write(sb.toString().getBytes());
+            is = conn.getInputStream();
+            byte[] b = new byte[1024];
+            int len = 0;
+            String s = "";
+            while ((len = is.read(b)) != -1) {
+
+                String ss = new String(b, 0, len, "UTF-8");
+                s += ss;
+            }
+            //返回的是拦截中的返回体；
+            s = Jsoup.parse(s).html();
+            FileUtils.write(new File("D:\\upload\\test.txt"), s);
+        } catch (Exception e) {
+        } finally {
+            try {
+                if (null != is) {
+                    is.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                if (null != os) {
+                    os.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if (null != conn) {
+                conn.disconnect();
+            }
+        }
+    }
+
+    @Test
+    public void test111() throws IOException {
+        String domain = "http://zwgk.mas.gov.cn";
+        String url = "http://zwgk.mas.gov.cn/opennessTarget/?branch_id=57a3df762c262ea9a00aae7e&column_code=320000";
+        Boolean isReadFile = true;
+        List<PostItemVO> list = new ArrayList<PostItemVO>();
+        Document doc = null;
+        StringBuilder content = new StringBuilder();
+        if (!AppUtil.isEmpty(url)) {
+            URL urlfile = null;
+            try {
+                urlfile = new URL(url);
+                BufferedReader in = new BufferedReader(new InputStreamReader(urlfile.openStream()));
+                String inputLine = in.readLine();
+                while (inputLine != null) {
+                    content.append(inputLine);
+                    inputLine = in.readLine();
+                }
+                in.close();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            doc = Jsoup.parse(content.toString());
+            Elements datas = doc.select(".m-lsbody ul>li");
+            for (Element data : datas) {
+                PostItemVO item = new PostItemVO();
+                String title = data.select(".m-listview>ol>li:eq(4)").text().replace("名称：", "");
+                if (isReadFile == null || !isReadFile) {
+                } else {
+                    Elements readFiles = data.select(".u-ls2 a:gt(0)");
+                    if (readFiles.size() > 0) {
+                        String readFilePaths = "";
+                        for (Element readFile : readFiles) {
+                            String readFilePath = readFile.outerHtml();
+                            if (!readFilePath.contains("http")) {
+                                readFilePaths += readFilePath.replaceAll("/openness", domain + "/openness") + "|";
+                            }
+                        }
+                        item.setReadFile(readFilePaths.substring(0, readFilePaths.length() - 1));
+                    }
+                }
+                String href = data.select(".u-ls2 a").attr("href");
+                String date = data.select(".u-ls4").text();
+                item.setInfoTitle(title.trim());
+                item.setInfoDate(date);
+                if (href.contains("http")) {
+                    item.setInfoUrl(href);
+                } else {
+                    item.setInfoUrl(domain + href);
+                }
+                item.setImageLink("");
+                list.add(item);
+            }
+        }
+    }
+
+
+    @Test
+    public void testDangtu() {
+        //String url = "http://u.mas.gov.cn/api/opennessContent/masDtContent.php";
+        //String params = "branch=57a3df762c262ea9a00aadf0&column=010000&curTime=1447893796&key=7297d92677ab177da6b0a9f5fa77d5d7";
+        //Map<String, String> paramsMap = new HashMap<String, String>();
+        //paramsMap.put("curTime", "1447893796");
+        //paramsMap.put("key", "7297d92677ab177da6b0a9f5fa77d5d7");
+        //String[] paramsArr = params.split("&");
+        //for (String param : paramsArr) {
+        //    String[] strArr = param.split("=");
+        //    paramsMap.put(strArr[0], strArr[1]);
+        //}
+        //String result = HttpClientUtils.get(url, paramsMap);
+        //JSONObject jsonObject = JSON.parseObject(result);
+        //JSONObject jsonObject2 = HttpRequestUtil.sendGet(url, params);
+        //System.out.println(jsonObject2);
+        String TOKEN_URL = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET";
+        //JSONObject json = HttpRequestUtil.doPost(TOKEN_URL.replace("APPID", "wx4d5b3e2a6fa7726b").replace("APPSECRET", "fc1cf2f12490ef3a2bb934bae7cef26f"), null);
+        //System.out.println(json);
+
+        JSONObject json = null;
+        try {
+            URL l = new URL(TOKEN_URL.replace("APPID", "wx4d5b3e2a6fa7726b").replace("APPSECRET", "fc1cf2f12490ef3a2bb934bae7cef26f"));
+            URI uri = new URI(l.getProtocol(), l.getHost(), l.getPath(), l.getQuery(), null);
+            HttpPost post = new HttpPost(uri);
+            CloseableHttpClient client = HttpClients.createDefault();
+            StringEntity entity = new StringEntity("", ContentType.APPLICATION_JSON);// 解决中文乱码问题
+            entity.setContentEncoding("UTF-8");
+            entity.setContentType("application/json");
+            post.setEntity(entity);
+            HttpResponse httpResponse = client.execute(post);
+            if (httpResponse.getStatusLine().getStatusCode() == 200) {
+                String entityUtils = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
+                json = JSONObject.parseObject(entityUtils);
+                System.out.println(entityUtils);
+                System.out.println(json);
+
+            } else {
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test11() {
+        List<PostItemVO> list = new ArrayList<PostItemVO>();
+        Document doc = null;
+        try {
+            Connection conn = Jsoup.connect("http://www.xinyu.gov.cn/xyywn2/list.shtml").timeout(5000);
+            conn.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+            conn.header("Accept-Encoding", "gzip, deflate, sdch");
+            conn.header("Accept-Language", "zh-CN,zh;q=0.8");
+            conn.header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36");
+            doc = conn.get();
+            Elements datas = doc.select(".lph_listnrqj li");
+
+            for (Element data : datas) {
+                PostItemVO item = new PostItemVO();
+                String title = data.select("a").attr("title");
+                String href = "http://www.xinyu.gov.cn" + data.select("a").attr("href");
+                String date = data.select("span").text();
+                item.setInfoTitle(title);
+                item.setInfoDate(date);
+                item.setInfoUrl(href);
+                item.setImageLink("");
+                list.add(item);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

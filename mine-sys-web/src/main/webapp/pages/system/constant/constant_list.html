@@ -185,7 +185,7 @@
     }
 
     function save(id,type){
-        $.getConstantInfo(id,type);
+        getConstantInfo(id,type);
         var loadIndex = layer.msg('加载中', {
             icon: 16
             ,shade: 0.01
@@ -276,7 +276,7 @@
     }
 
     function view(id,type){
-        $.getConstantInfo(id,type);
+        getConstantInfo(id,type);
         var loadIndex = layer.msg('加载中', {
             icon: 16
             ,shade: 0.01
