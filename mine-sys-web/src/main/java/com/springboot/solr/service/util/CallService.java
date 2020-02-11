@@ -21,11 +21,11 @@ public class CallService {
     public Object start(Integer type) {
         String command;
         if (type == 0) {
-            command = "D:\\Server\\apache-tomcat-solr\\bin\\shutdown.bat";//关闭tomcat命令
+            command = "D:\\server\\apache-tomcat-solr\\bin\\shutdown.bat";//关闭tomcat命令
         } else if (type == 1) {
-            command = "D:\\Server\\apache-tomcat-solr\\bin\\tomcat7w.exe";//启动Tomcat命令，仅限windows版本，无弹框
+            command = "D:\\server\\apache-tomcat-solr\\bin\\tomcat7w.exe";//启动Tomcat命令，仅限windows版本，无弹框
         } else if (type == 2) {
-            command = "D:\\Server\\apache-tomcat-solr\\bin\\startup.bat";//启动tomcat命令
+            command = "D:\\server\\apache-tomcat-solr\\bin\\startup.bat";//启动tomcat命令
         } else {
             return ResponseData.fail("参数错误");
         }
@@ -45,7 +45,7 @@ public class CallService {
     private void callCommand(String command) throws IOException {
         Runtime runtime = Runtime.getRuntime();//返回与当前的Java应用相关的运行时对象
         //指示Java虚拟机创建一个子进程执行指定的可执行程序，并返回与该子进程对应的Process对象实例
-        Process process = runtime.exec(command,null,new File("D:\\Server\\apache-tomcat-solr\\bin"));
+        Process process = runtime.exec(command,null,new File("D:\\server\\apache-tomcat-solr\\bin"));
         runtime.gc();//运行垃圾回收器
         String line;
         BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));

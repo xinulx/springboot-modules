@@ -602,4 +602,63 @@ public class CommonTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void testJson(){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Map<String, Object> infoMap = new HashMap<String, Object>();
+        infoMap.put("validateData", "epointjweb4.0@Q2Y6ljqyf6MEERWjsys0q3IalMk=@MTg5MDM0ODcxMQ==");//安全验证码
+        infoMap.put("categoryNum", "010");//栏目
+        infoMap.put("titleType", "Text");
+        infoMap.put("infoId", "fbcd977f-e395-4eb8-9710-42e3491b1ad6");
+        infoMap.put("loginId", "admin");
+        infoMap.put("startDate", "");
+        infoMap.put("endDate", "");
+        infoMap.put("author", "马鞍山市公共资源交易中心" );
+        infoMap.put("zhuanZai", "马鞍山市公共资源交易中心");
+        infoMap.put("siteGuid", "");
+        infoMap.put("strComment", "");
+        infoMap.put("title", "111");
+        infoMap.put("content", "111");
+        infoMap.put("infoDate", format.format(new Date()));
+        infoMap.put("keyWord", "");
+        infoMap.put("subTitle", "");
+        infoMap.put("linkUrl", "");
+        infoMap.put("infoProperty", "News");
+        infoMap.put("isShowTitle", "");
+        infoMap.put("titleEx", "111");
+        infoMap.put("otherAttr",new HashMap());
+
+        String params2 = "params = {\n" +
+                "    \"loginId\": \"admin\",\n" +
+                "    \"startDate\": \"\",\n" +
+                "    \"zhuanZai\": \"市公管局\",\n" +
+                "    \"linkUrl\": \"\",\n" +
+                "    \"otherAttr\": {},\n" +
+                "    \"infoProperty\": \"News\",\n" +
+                "    \"validateData\": \"epointjweb4.0@Q2Y6ljqyf6MEERWjsys0q3IalMk=@MTg5MDM0ODcxMQ==\",\n" +
+                "    \"strComment\": \"\",\n" +
+                "    \"endDate\": \"\",\n" +
+                "    \"infoId\": \"10055147\",\n" +
+                "    \"keyWord\": \"\",\n" +
+                "    \"titleEx\": \"市公管局赴省招标投标协会交流工作\",\n" +
+                "    \"content\": \"\",\n" +
+                "    \"subTitle\": \"\",\n" +
+                "    \"author\": \"交易管理科\",\n" +
+                "    \"title\": \"市公管局赴省招标投标协会交流工作\",\n" +
+                "    \"siteGuid\": \"4706331\",\n" +
+                "    \"infoDate\": \"2020-01-16 17:00:29\",\n" +
+                "    \"isShowTitle\": \"\",\n" +
+                "    \"titleType\": \"Text\",\n" +
+                "    \"categoryNum\": \"001001\"\n" +
+                "}\n";
+
+        // 格式化参数
+        String params = "params=" + JSON.toJSONString(infoMap);
+        String url = "http://wstb.mas.gov.cn/mas_epointwebbuilder/rest/webBuilderRestForThree/informationAdd";
+        JSONObject resultObj = (JSONObject) HttpRequestUtil.sendPost(url, params2,"");
+        System.out.println(JSON.toJSONString(resultObj));
+        String string = resultObj.getJSONObject("EpointDataBody").getJSONObject("DATA").getJSONObject("ReturnInfo").getString("Status");
+        System.out.println(string);
+    }
 }
